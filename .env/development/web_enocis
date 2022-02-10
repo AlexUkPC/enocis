@@ -1,0 +1,2 @@
+DATABASE_HOST=database_enocis
+DISABLE_SPRING=true

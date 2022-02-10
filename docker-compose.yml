@@ -1,0 +1,52 @@
+version: "3"
+services:
+  web_enocis:
+    build:
+      context: .
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    ports:
+      - "3033:3000"
+    volumes: 
+      - ./enocis:/opt/app
+      - gem_cache_enocis:/gems
+    env_file: 
+      - .env/development/database_enocis
+      - .env/development/web_enocis
+    environment: 
+      - WEBPACKER_DEV_SERVER_HOST=webpack_dev_server_enocis
+    networks:
+      - network
+  webpack_dev_server_enocis:
+    build:
+      context: .
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    command: ./bin/webpack-dev-server
+    ports: 
+      - "3067:3067"
+    volumes: 
+      - ./enocis:/opt/app
+      - gem_cache_enocis:/gems
+    env_file: 
+      - .env/development/database_enocis
+      - .env/development/web_enocis
+    environment: 
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+    networks:
+      - network
+  database_enocis:
+    image: postgres
+    env_file: 
+      - .env/development/database_enocis
+    volumes: 
+      - db_data_enocis:/var/lib/postgresql/data
+    networks:
+      - network
+volumes: 
+  db_data_enocis:
+  gem_cache_enocis:
+networks:
+  network:
