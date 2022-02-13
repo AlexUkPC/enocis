@@ -30,40 +30,8 @@
 				</div>
 				<div class="col-md-6">
 					<h4>Lasa-ne un mesaj</h4>
-					 <!--@if($slug == '' || $slug == 'home')-->
-					<form id="BottomContact" class="bottom_contact_form" method="POST" action="/home/contact">
-					<!--@else-->
-					<%# <form id="BottomContact" class="bottom_contact_form" method="POST" action="{{request()->url()}}/contact"> %>
-					<!--@endif
-						{{ csrf_field() }}-->
-						<span>
-							<input name="nume" type="text" class="form-control" placeholder="Nume..." >
-						</span>
-						<span>
-							<input name="email" type="text" class="form-control" placeholder="Email..." >
-						</span>
-						<span>
-							<input name="telefon" type="text" class="form-control" placeholder="Telefon..." >
-						</span>
-						<span>
-							<textarea name="mesaj" class="form-control" placeholder="Mesaj..." ></textarea>
-						</span>
-						<span>
-							<div class="g-recaptcha" data-sitekey="6LfTtWgUAAAAAD97lCbMzTZ1BZeI0eXAt0zFnhPe"></div>
-						</span>
-						<span>
-							<input type="submit" value="Trimite" id="bottom_form_submit" onclick="gtag_report_conversion()"/>
-						</span>
-	                    <!--@if(count($errors->BottomForm))
-	                    <div class="alert alert-danger">
-	                    	<ul>
-	                    		@foreach($errors->BottomForm->all() as $error)
-	                    			<li>{{$error}}</li>
-	                    		@endforeach
-	                    	</ul>
-	                    </div>
-	                    @endif-->
-					</form>
+					<%= render 'contact_forms/form_footer', contact_form: @contact_form %>
+					 
 				</div>
 			</div>
 		</div>

@@ -1,10 +1,14 @@
 <% if controller_path =="home" %>
   <nav class="navbar navbar-expand-md navbar-light fixed-top navbar2">
     <div class="container">
-      <a class="navbar-brand my_logo" href="/"><%= image_tag 'enocis_alb_150.png', alt: 'Logo' %></a>
+      <%= link_to root_path, class: "navbar-brand my_logo" do %>
+        <%= image_tag 'enocis_alb_150.png', alt: 'Logo' %>
+      <% end %>
 <% else %>
   <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light my_navbar white_bg">
-    <a class="navbar-brand my_logo" href="/"><%= image_tag 'enocis_negru_150.png', alt: 'Logo' %></a>
+    <%= link_to root_path, class: "navbar-brand my_logo" do %>
+      <%= image_tag 'enocis_negru_150.png', alt: 'Logo' %>
+    <% end %>
 <% end %>  
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

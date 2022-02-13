@@ -153,7 +153,6 @@ h2{
   color:red;
 }
 .text_container{
-
   padding:20px;
   font-family: 'Ubuntu',sans-serif;
   font-weight: 300;
@@ -161,8 +160,10 @@ h2{
   line-height: 25px;
   color: #666;
   letter-spacing: .5px;
+  margin: 0 0 10px;
+}
+.text_container_serv{
   margin: 20px 0 10px;
-
 }
 .text_container .form-control::placeholder{
   color:#ddd;
