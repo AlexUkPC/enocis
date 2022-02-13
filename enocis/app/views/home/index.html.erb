@@ -1,2 +1,104 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<main role="main" class="home_page">
+	<%= render 'slider' %>	
+	<%= render 'home_menu' %>	
+	<div class="container home_info">
+		<div class="row">
+			<div class="col-md-8">
+				<h2>De ce <span>enocis</span>?</h2>
+				<p>
+					Pasiunea noastra pentru design interior ne ajuta sa oferim clientilor<br/>solutii personalizate la cele mai inalte standarde.
+				</p>
+				<div class="row">
+					<div class="col-md-6">
+						<div>
+							<span aria-hidden="true" class="icons icon-tools"></span>
+						</div>
+						<div>
+							<h3>Design Inovator</h3>
+							<p>
+								Echipa noastra studiaza trendurile internationale, pentru a putea oferi cele mai inovatoare solutii. 
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div>
+							<span aria-hidden="true" class="icons icon-happy"></span>
+						</div>
+						<div>
+							<h3>100% clienti satisfacuti</h3>
+							<p>
+								Satisfactia clientilor este intotdeauna prioritatea noastra. 
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div>
+							<span aria-hidden="true" class="icons icon-presentation "></span>
+						</div>
+						<div>
+							<h3>Servicii Profesionale</h3>
+							<p>
+								Profesionalsimul este un stâlp de susținere în compania noastră.  
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div>
+							<span aria-hidden="true" class="icons icon-clock"></span>
+						</div>
+						<div>
+							<h3>Suport 24/7</h3>
+							<p>
+								Stam mereu la dispozitia clientilor pentru o tranzitie simpla de la concept la proiectul finalizat. 
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<%= image_tag 'benjamin-voros-310026-unsplash-e1533804406348.jpg', alt: 'de ce enocis' %>
+			</div>
+		</div>
+	</div>
+	<div class="container servicii_container">
+		<div class="center">
+			<span class="title">
+				Servicii
+			</span>
+			<p>
+				Punem la dispozitia dumneavoastra o gama variata de servicii personalizate.
+			</p>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= image_tag 'bed-bedroom-closet-90319-e1533141627971.jpg', alt: 'mobila de interior' %>
+				<h3>
+					Mobilier de interior
+				</h3>
+				<p>
+					Suntem la dispozitia dumneavoastra pentru a va ajuta sa va decorati spatiul propriu intr-un mod cat mai armonios.
+				</p>
+			</div>
+			<div class="col-md-4">
+				<%= image_tag 'beach-beautiful-blue-988508-e1533142246233.jpg', alt: 'mobila de exterior' %>
+				<h3>
+					Mobilier de exterior
+				</h3>
+				<p>
+					Fie ca e vorba de spatii private sau spatii publice, echipa noastra este pregatita sa va decoreze spatiul în cele mai noi tendinte.
+				</p>
+			</div>
+			<div class="col-md-4">
+				<%= image_tag 'apartment-apple-building-265125-e1533145223486.jpg', alt: 'mobilier corporate' %>
+				<h3>
+					Mobilier Corporate
+				</h3>
+				<p>
+					Va oferim solurii profesionale pentru ca spatiul in care va desfasurati activitatea, sa reflecte serviciile pe care le oferiti.
+				</p>
+			</div>
+		</div>
+	</div>
+</main>
