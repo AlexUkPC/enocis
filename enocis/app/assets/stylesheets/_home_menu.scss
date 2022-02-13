@@ -1,0 +1,95 @@
+.home_menu {
+  border-bottom:2px solid #ccc;
+  background:#fff;
+  .nav-item {
+    position:relative;
+    height:152px;
+    background-attachment: scroll;
+    background-color: transparent;
+    background-size: cover;
+    background-position: 50% 0;
+    a {
+      height: 152px;
+      padding: 45px 0;
+      position:absolute;
+      z-index:1;
+      width:100%;
+      background-color: rgba(255, 255, 255, 1);
+      cursor:pointer;
+      &:hover{
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        background-color: rgba(255, 255, 255, 0.75);
+      }
+      .icon{
+        font-family: "furniture" !important;
+        content: attr(data-icon);
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+        speak: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size:30px;
+        display: block;
+        margin-bottom:10px;
+        color:#666;
+      }
+      h3{
+        color:#666;
+        font-weight:400;
+        font-size:15px;
+      }
+    }
+    img{
+      position:absolute;
+      z-index:0;
+      left:0;
+      top:0;
+    }
+  }
+  .item1{
+    background-image: url('living-room-3539587_1920-e1533230270290.jpg');
+  }
+  .item2{
+      background-image: url('apartment-architecture-cabinet-273843-e1533232003973.jpg');
+  }
+  .item3{
+      background-image: url('apartment-bed-bedroom-271624-e1533232136586.jpg');
+  }
+  .item4{
+      background-image: url('architecture-bathroom-contemporary-280209-e1533232533110.jpg');
+  }
+  .item5{
+      background-image: url('black-and-white-blackboard-blinds-260928-1-e1533232707191.jpg');
+  }
+  .item6{
+      background-image: url('bed-empty-flowers-879010-e1533232837305.jpg');
+  }
+}
+
+@media (max-width: 480px) {
+  .home_menu {
+    .container{
+      padding:0 5px;
+      .nav-item{
+        height:120px;
+        a{
+          height:120px;
+          padding:32px 0;
+          h3{
+            font-size:11px;
+          }
+          .icon{
+            font-size:25px;
+          }
+        }
+      }
+    }
+  }
+}

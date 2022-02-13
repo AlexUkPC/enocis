@@ -1,0 +1,316 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Ubuntu%3A300%2C500%7CMontserrat%3A400%2C700%7CDroid+Serif%3A400italic%7CRaleway%3A300%2C400%2C500%2C700%2C800%7CNoticia+Text%3A400&#038;subset=latin%2Clatin-ext");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400%2C700");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "bootstrap.css";
+
+// Et_line
+@import "et-line.css";
+
+// font awesome
+@import "font-awesome.css";
+
+// furniture
+@import "furniture.css";
+
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background:#fafafa !important
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #222222;
+  padding: 0px;
+}
+.opac{
+  background-color:rgba(0, 0, 0, 0.7);
+  width:100%;
+  height:100%;
+}
+.opac8{
+  background-color:rgba(0, 0, 0, 0.8);
+  width:100%;
+  height:100%;
+}
+.opac5{
+  background-color:rgba(0, 0, 0, 0.5);
+  width:100%;
+  height:100%;
+}
+.parallax_container{
+  
+  height:530px;
+  position:absolute;
+  width:100%;
+  background-attachment: scroll;
+  background-color: transparent;
+  background-image: inherit;
+  background-size: cover;
+  z-index: 0;
+  background-position: 50% 0;
+  left:0;
+  top:105px;
+  z-index:-1;
+
+}
+.content{
+  background:#fff;
+}
+.main_img{
+  width:100%;
+}
+.white_bg{
+  background:#fff!important;
+}
+
+main.container{
+  margin-top:105px;
+}
+.page_container{
+  padding:10px;
+}
+h1{
+  color:#fff;
+  padding:30px 0 ;
+  font-size:2rem;
+  margin:0;
+  text-transform:capitalize;
+}
+.dropdown-toggle::after {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: 0;
+  vertical-align: auto;
+  content: "";
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+}
+h2{
+
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 400;
+  color: #222;
+  margin: 30px 0 15px 0;
+  padding: 0;
+  font-size: 18px;
+
+
+}
+.h2_address{
+  color: #fe7e00;
+}
+.h2_callnow{
+  color: #e5ae49;
+}
+.h2_email{
+  color: #56c2a2;
+}
+.h2_mesaj{
+  color: #e45b46;
+  text-transform:uppercase;
+}
+.phone_call{
+  color:#868686;
+}
+.phone_call:hover{
+  color:#868686;
+}
+.red{
+  color:red;
+}
+.text_container{
+  padding:20px;
+  font-family: 'Ubuntu',sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 25px;
+  color: #666;
+  letter-spacing: .5px;
+  margin: 0 0 10px;
+}
+.text_container_serv{
+  margin: 20px 0 10px;
+}
+.text_container .form-control::placeholder{
+  color:#ddd;
+  font-size:13px;
+}
+.alert-success{
+  z-index:10101010;
+  position:absolute;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%);
+  left:50%;
+  top:0;
+}
+.contact_submit{
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 10px 25px;
+  background: #E5AE49;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+h3 .nav-link:hover{
+  color:#666;
+}
+h4{
+  margin-top:30px;
+  margin-bottom: 30px;
+  padding: 0px;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 27px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+p{
+  font-family: 'Ubuntu',sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 25px;
+  color: #666;
+  letter-spacing: .5px;
+  margin: 0 0 10px;
+}
+.nav-justified h3 a{
+  color:#e5ae49;
+  font-size:15px;
+  font-weight:normal;
+}
+.myicon{
+  font-size: 30px;
+  color: #e5ae49;
+  margin-right:10px;
+}
+.mycc::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background: #e5ae49;
+  margin-top: 10px;
+}
+.mycc{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #222222;
+  margin: 30px 0px 10px;
+  padding: 0px;
+}
+#gmap{
+  width:100%;
+  border:0;
+}
+.dropdown.open .dropdown-menu{
+  display:block;
+} 
+.cookie_consent{
+  padding:20px 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 100000;
+  background:rgba(255, 255, 255, 0.9);
+  width: 100%;
+}
+.cookie_consent img{
+  width:60px;    
+}
+.cookie_consent .col-md-2{
+  text-align:center;
+}
+.cookie_but{
+  margin: 10px 0px 0px;
+  background: #F18020;
+  border: 0;
+  display: inline-block;
+  color: #ffffff;
+  padding: 15px 20px;
+  font-size: 13px;
+  line-height: 14px;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 3px;
+      -webkit-transition: all .3s ease-in-out 0s;
+      -moz-transition: all .3s ease-in-out 0s;
+      -ms-transition: all .3s ease-in-out 0s;
+      -o-transition: all .3s ease-in-out 0s;
+      transition: all .3s ease-in-out 0s;
+}
+.cookie_but:hover{
+  color:#fff;
+  text-decoration:none;
+  background: #dc7e0d;
+  border: 0;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+}
+  table.cookie_table td,table.cookie_table th{
+      border:1px solid #ccc;
+      padding:2px;
+  }
+  table.cookie_table th{
+      background:#eee;
+  }
+  .cookie_table .no-padding{
+      padding:0;
+  }
+
+@media (max-width: 480px) {
+  .parallax_container {
+    height: 270px;
+  }
+}
+@media (max-width: 767px) {
+  h4{
+    margin-top:40px;
+  }
+}

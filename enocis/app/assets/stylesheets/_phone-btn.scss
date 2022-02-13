@@ -1,0 +1,16 @@
+.call{
+  text-align:center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  width: 80px;
+  .call_phone{
+    background-size:100%;
+    background-image:url('logos_whatsapp.png');
+    width:50px;
+    height:50px;
+    display:block;
+    margin:5px auto;
+  }
+}
