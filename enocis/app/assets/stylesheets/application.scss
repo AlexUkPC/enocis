@@ -161,7 +161,7 @@ h2{
   line-height: 25px;
   color: #666;
   letter-spacing: .5px;
-  margin: 0 0 10px;
+  margin: 20px 0 10px;
 
 }
 .text_container .form-control::placeholder{
@@ -302,8 +302,11 @@ p{
   .cookie_table .no-padding{
       padding:0;
   }
-.my_logo{
-    padding:10px 20px;
+
+@media (max-width: 480px) {
+  .parallax_container {
+    height: 270px;
+  }
 }
 @media (max-width: 767px) {
   h4{
