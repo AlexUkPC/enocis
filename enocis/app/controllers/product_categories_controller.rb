@@ -4,6 +4,7 @@ class ProductCategoriesController < ApplicationController
   # GET /product_categories or /product_categories.json
   def index
     @product_categories = ProductCategory.all
+    @contact_form = ContactForm.new
   end
 
   # GET /product_categories/1 or /product_categories/1.json
@@ -13,6 +14,7 @@ class ProductCategoriesController < ApplicationController
   # GET /product_categories/new
   def new
     @product_category = ProductCategory.new
+    @contact_form = ContactForm.new
   end
 
   # GET /product_categories/1/edit
