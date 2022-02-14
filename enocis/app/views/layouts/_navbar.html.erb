@@ -16,24 +16,24 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>  
+          <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/" data-turbolinks="false">Home</a>  
         </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle {{ (request()->is('mobila-living')) || (request()->is('mobila-bucatarie')) || (request()->is('mobila-dormitor')) || (request()->is('mobilier-baie')) || (request()->is('mobilier-birou')) || (request()->is('mobila-exterior')) ? 'active' : '' }}" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produse</a>
+            <a class="nav-link dropdown-toggle {{ (request()->is('mobila-living')) || (request()->is('mobila-bucatarie')) || (request()->is('mobila-dormitor')) || (request()->is('mobilier-baie')) || (request()->is('mobilier-birou')) || (request()->is('mobila-exterior')) ? 'active' : '' }}" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-turbolinks="false">Produse</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item {{ request()->is('mobila-living') ? 'active' : '' }}" href="mobila-living">Mobila Living</a>
-              <a class="dropdown-item {{ request()->is('mobila-bucatarie') ? 'active' : '' }}" href="mobila-bucatarie">Mobila bucatarie</a>
-              <a class="dropdown-item {{ request()->is('mobila-dormitor') ? 'active' : '' }}" href="mobila-dormitor">Mobila dormitor</a>
-              <a class="dropdown-item {{ request()->is('mobilier-baie') ? 'active' : '' }}" href="mobilier-baie">Mobilier baie</a>
-              <a class="dropdown-item {{ request()->is('mobilier-birou') ? 'active' : '' }}" href="mobilier-birou">Mobilier birou</a>
-        <a class="dropdown-item {{ request()->is('mobila-exterior') ? 'active' : '' }}" href="mobila-exterior">Mobila exterior</a>
+              <a class="dropdown-item {{ request()->is('mobila-living') ? 'active' : '' }}" href="mobila-living" data-turbolinks="false">Mobila Living</a>
+              <a class="dropdown-item {{ request()->is('mobila-bucatarie') ? 'active' : '' }}" href="mobila-bucatarie" data-turbolinks="false">Mobila bucatarie</a>
+              <a class="dropdown-item {{ request()->is('mobila-dormitor') ? 'active' : '' }}" href="mobila-dormitor" data-turbolinks="false">Mobila dormitor</a>
+              <a class="dropdown-item {{ request()->is('mobilier-baie') ? 'active' : '' }}" href="mobilier-baie" data-turbolinks="false">Mobilier baie</a>
+              <a class="dropdown-item {{ request()->is('mobilier-birou') ? 'active' : '' }}" href="mobilier-birou" data-turbolinks="false">Mobilier birou</a>
+        <a class="dropdown-item {{ request()->is('mobila-exterior') ? 'active' : '' }}" href="mobila-exterior" data-turbolinks="false">Mobila exterior</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->is('servicii') ? 'active' : '' }}" href="/servicii">Servicii</a>
+            <a class="nav-link {{ request()->is('servicii') ? 'active' : '' }}" href="/servicii" data-turbolinks="false">Servicii</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="/contact">Contact</a>
+            <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="/contact" data-turbolinks="false">Contact</a>
           </li>
         </ul>
       </div>

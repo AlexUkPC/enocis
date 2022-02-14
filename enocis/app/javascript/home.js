@@ -1,5 +1,5 @@
-$(document).on('turbolinks:load', function(){
 
+$(document).ready(function(){
 	// moving menu
 	$(window).scroll(function() {
 
@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function(){
 		}
 
 	});
-
+	
 	// slider
 	$('.navbar2').mouseover(function () {
 		$('.slide_buttons').addClass('show');
