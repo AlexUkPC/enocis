@@ -3,8 +3,7 @@ class ProductCategoriesController < ApplicationController
 
   # GET /product_categories or /product_categories.json
   def index
-    @product_categories = ProductCategory.all
-    @contact_form = ContactForm.new
+    @product_categories = ProductCategory.all.order("id ASC")
   end
 
   # GET /product_categories/1 or /product_categories/1.json
@@ -14,7 +13,6 @@ class ProductCategoriesController < ApplicationController
   # GET /product_categories/new
   def new
     @product_category = ProductCategory.new
-    @contact_form = ContactForm.new
   end
 
   # GET /product_categories/1/edit
@@ -67,6 +65,6 @@ class ProductCategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_category_params
-      params.require(:product_category).permit(:name, :title)
+      params.require(:product_category).permit(:name, :title, :data_icon, :description, :cover_image, :front_image)
     end
 end

@@ -21,6 +21,26 @@
     <%= form.text_field :title %>
   </div>
 
+  <div class="field">
+    <%= form.label :data_icon %>
+    <%= form.text_field :data_icon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.rich_text_area :description %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :cover_image %>
+    <%= form.file_field :cover_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :front_image %>
+    <%= form.file_field :front_image %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

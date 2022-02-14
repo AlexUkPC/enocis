@@ -1,14 +1,88 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product_category.name %>
-</p>
+<main role="main" class="products">
 
-<p>
-  <strong>Title:</strong>
-  <%= @product_category.title %>
-</p>
+	<div class="parallax_container" style="background-image: url(<% if @product_category.cover_image.attached? %>
+        <%=rails_blob_url(@product_category.cover_image) %>
+    <% end %>);">
+		<div class="opac">
+		</div>
+	</div>
 
-<%= link_to 'Edit', edit_product_category_path(@product_category) %> |
-<%= link_to 'Back', product_categories_path %>
+	<div class="container main_margin_top">
+		<h1><%= @product_category.name %></h1>
+		<div class="white_bg page_container">
+      <% if @product_category.front_image.attached? %>
+        <%= image_tag @product_category.front_image, alt: 'Servicii', class: 'main_img' %>
+      <% end %>
+		</div>
+	</div>
+
+	<%# <div class="row">
+		@foreach ($products as $product)
+			<div class="col-sm-4">
+				<div class="product_list_container">
+					@foreach($product->productimages as $prod)
+						@if($prod->featured == '1')
+							<img src="{{$prod->path}}"/>
+						@endif
+					@endforeach
+					<a href="/{{ $product->slug }}" class="overlay">
+						<div class="top">
+							<span class="title">
+								{{ $product->title }}
+							</span>
+							<span class="subtitle">
+								Pret incepand de la {{ number_format($product->price) }} ron
+							</span>
+						</div>
+						<div class="bottom">
+							<span>
+								<i class="fa fa-external-link"></i> Vezi detalii
+							</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		@endforeach
+	</div> %>
+
+	<div class="container">
+
+		<div class="white_bg page_container">
+
+			<div class="text_container">
+
+				<h2><%= @product_category.title %></h2>
+				<p><%= @product_category.description %></p>
+  
+        <h2>
+          La orice comanda de mobila living sunt incluse:
+        </h2>
+
+        <p>
+              <span class="icon-tools" style="font-size: 15px;color: #e5ae49; margin-right:5px;width: 28px;"></span> Design.<br>
+              <span class="icon-tools-2" style="font-size: 15px;color: #e5ae49; margin-right:5px;width: 28px;"></span> Montaj.<br>
+              <span class="icon-bike" style="font-size: 15px;color: #e5ae49; margin-right:5px;width: 28px;"></span> Transport.<br>
+              <span class="icon-alarmclock" style="font-size: 15px;color: #e5ae49; margin-right:5px;width: 28px;"></span> Revizuirea mobilierului semestrial/anual pe o perioada de 2 ani.<br>
+              <span class="icon-gears" style="font-size: 15px;color: #e5ae49; margin-right:5px;width: 28px;"></span> Ajustari post-montaj.
+        </p>
+
+        <h2>
+          Servicii optionale pentru mobila living:
+        </h2>
+
+        <p style="text-align:left!important;">
+              <span class="icon-alarmclock" style="font-size: 15px;color: #e5ae49; margin-right:5px;width: 28px;"></span> Revizuirea mobilierului semestrial/anual pe o perioada stabilita prin contract.<br>
+              <span class="icon-flag" style="font-size: 15px;color: #e5ae49; margin-right:5px;width: 28px;"></span> Relocare.<br>
+          </p>
+			    <%# @include('layouts.second_nav') %>
+
+			</div>
+
+		</div>
+		
+	</div>
+
+</main>
+<%= render '/layouts/footer' %>

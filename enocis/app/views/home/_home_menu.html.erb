@@ -1,42 +1,14 @@
 <div class="home_menu">
 		<div class="container">
 		    <ul class="nav nav-justified">
-		    	<li class="nav-item item1">
-		    		<a class="nav-link" href="/mobila-living">
-		    			<span data-icon="h" class="icon"></span>
-		    			<h3>Mobila Living</h3>
-		    		</a>
-		    	</li>
-		    	<li class="nav-item item2">
-		    		<a class="nav-link" href="/mobila-bucatarie">
-		    			<span data-icon="v" class="icon"></span>
-		    			<h3>Mobila Bucatarie</h3>
-		    		</a>
-		    	</li>
-		    	<li class="nav-item item3">
-		    		<a class="nav-link" href="/mobila-dormitor">
-		    			<span data-icon="z" class="icon"></span>
-		    			<h3>Mobila Dormitor</h3>
-		    		</a>
-		    	</li>
-		    	<li class="nav-item item4">
-		    		<a class="nav-link" href="/mobilier-baie">
-		    			<span data-icon="Y" class="icon"></span>
-		    			<h3>Mobilier Baie</h3>
-		    		</a>
-		    	</li>
-		    	<li class="nav-item item5">
-		    		<a class="nav-link" href="/mobilier-birou">
-		    			<span data-icon="l" class="icon"></span>
-		    			<h3>Mobilier Birou</h3>
-		    		</a>
-		    	</li>
-		    	<li class="nav-item item6">
-		    		<a class="nav-link" href="/mobila-exterior">
-		    			<span data-icon="H" class="icon"></span>
-		    			<h3>Mobila Exterior</h3>
-		    		</a>
-		    	</li>		    	
+						<% @product_categories.each do |product_category| %>
+							<li class="nav-item item<%= product_category.id %>">
+                <%= link_to product_category, data: "turbolinks='false'", class: "nav-link" do %>
+									<span data-icon="<%= product_category.data_icon %>" class="icon"></span>
+									<h3><%= product_category.name %></h3>
+								<% end %>
+							</li>
+            <% end %>
 		    </ul>
 		</div>
 	</div>
