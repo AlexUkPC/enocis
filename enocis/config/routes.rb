@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   resources :product_categories
   root 'home#index'
   resources :contact_forms
