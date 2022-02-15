@@ -13,39 +13,13 @@
 		<h1><%= @product_category.name %></h1>
 		<div class="white_bg page_container">
       <% if @product_category.front_image.attached? %>
-        <%= image_tag @product_category.front_image, alt: 'Servicii', class: 'main_img' %>
+        <%= image_tag @product_category.front_image, alt: @product_category.name , class: 'main_img' %>
       <% end %>
 		</div>
 	</div>
-
-	<%# <div class="row">
-		@foreach ($products as $product)
-			<div class="col-sm-4">
-				<div class="product_list_container">
-					@foreach($product->productimages as $prod)
-						@if($prod->featured == '1')
-							<img src="{{$prod->path}}"/>
-						@endif
-					@endforeach
-					<a href="/{{ $product->slug }}" class="overlay">
-						<div class="top">
-							<span class="title">
-								{{ $product->title }}
-							</span>
-							<span class="subtitle">
-								Pret incepand de la {{ number_format($product->price) }} ron
-							</span>
-						</div>
-						<div class="bottom">
-							<span>
-								<i class="fa fa-external-link"></i> Vezi detalii
-							</span>
-						</div>
-					</a>
-				</div>
-			</div>
-		@endforeach
-	</div> %>
+  <div class="row">
+    <%= render @product_category.products %>
+  </div> 
 
 	<div class="container">
 

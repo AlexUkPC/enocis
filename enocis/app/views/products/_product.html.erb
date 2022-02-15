@@ -1,0 +1,22 @@
+<div class="col-sm-4">
+	<div class="product_list_container">
+		<% if product.image.attached? %>
+			<%= image_tag product.image, alt: product.name %>
+		<% end %>
+		<%= link_to product_path(product.id), class: "overlay" do %> 
+			<div class="top">
+				<span class="title">
+					<%= product.name %>
+				</span>
+				<span class="subtitle">
+					Pret incepand de la <%= product.price %> ron
+				</span>
+			</div>
+			<div class="bottom">
+				<span>
+					<i class="fa fa-external-link"></i> Vezi detalii
+				</span>
+			</div>
+		<% end %>
+	</div>
+</div>
