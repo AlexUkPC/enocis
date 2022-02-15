@@ -1,0 +1,19 @@
+<h2>Vezi si:</h2>
+<ul class="nav nav-justified">
+  <% @product_categories.each do |product_category| %>
+    <% if !current_page?(product_category_path(product_category.id)) %>
+      <li class="nav-item">
+        <h3>
+          <%= link_to product_category.name, product_category, data: "turbolinks='false'", class: "nav-link" %>
+        </h3>
+      </li>
+    <% end %>
+  <% end %>
+  <% if !current_page?(servicii_path) %>
+      <li class="nav-item">
+        <h3>
+          <%= link_to "Servicii", servicii_path, data: "turbolinks='false'", class: "nav-link" %>
+        </h3>
+      </li>
+    <% end %>
+</ul>
