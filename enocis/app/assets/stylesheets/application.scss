@@ -318,11 +318,7 @@ p{
       padding:0;
   }
 
-@media (max-width: 480px) {
-  .parallax_container {
-    height: 270px;
-  }
-}
+
 @media (max-width: 767px) {
   h4{
     margin-top:40px;
@@ -717,5 +713,8 @@ p{
 
   .products .product_list_container:hover img {
     max-width: 580px;
+  }
+  .parallax_container {
+    height: 270px;
   }
 }
