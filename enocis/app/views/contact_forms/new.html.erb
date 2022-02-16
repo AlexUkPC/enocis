@@ -1,9 +1,5 @@
 <main role="main" class="container">
-
-	<div class="parallax_container" style="background-image: url('<%= asset_path('blur-bottle-bright-building-273238.jpg')%>');">
-		<div class="opac">
-		</div>
-	</div>
+	<%= render '/layouts/parallax_container', image: 'blur-bottle-bright-building-273238.jpg' %> 
 
 	<h1>Contact</h1>
 
@@ -46,14 +42,11 @@
 				</div>
 			</div>
 
-			<!-- {!! $page->body !!} -->
-
-		    <%# @include('layouts.second_nav') %>
-
+		<%= render '/layouts/second_nav' %>
 		</div>
-
+	
 	</div>
-  <%= render '/layouts/second_nav' %>
+  
 </main>
 
 

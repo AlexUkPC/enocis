@@ -1,3 +1,53 @@
 // Place all the styles related to the ContactForms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+h2{
+
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 400;
+  color: #222;
+  margin: 30px 0 15px 0;
+  padding: 0;
+  font-size: 18px;
+}
+.h2_address{
+  color: #fe7e00;
+}
+.h2_callnow{
+  color: #e5ae49;
+}
+.h2_email{
+  color: #56c2a2;
+}
+.h2_mesaj{
+  color: #e45b46;
+  text-transform:uppercase;
+}
+.phone_call{
+  color:#868686;
+}
+.phone_call:hover{
+  color:#868686;
+}
+.red{
+  color:red;
+}
+.text_container .form-control::placeholder{
+  color:#ddd;
+  font-size:13px;
+}
+.contact_submit{
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 10px 25px;
+  background: #E5AE49;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+#gmap{
+  width:100%;
+  border:0;
+}

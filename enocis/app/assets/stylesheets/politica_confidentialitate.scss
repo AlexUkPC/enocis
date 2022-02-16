@@ -1,3 +1,8 @@
 // Place all the styles related to the politica-confidentialitate controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.text_container{
+  &.pol{
+    margin: 20px 0 10px;
+  }
+}

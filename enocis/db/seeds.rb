@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 product_category1 = ProductCategory.create!(
   id: 1,
-  name: "Mobila living",
+  name: "Mobila Living",
   title: "Oferim solutii personalizate de mobila living potrivite stilului dumneavoastra",
   data_icon: "h"
 )
@@ -155,7 +155,7 @@ product11.image.attach(io: File.open(Rails.root.join('app/assets/images/Living_5
 
 product_category2 = ProductCategory.create!(
   id: 2,
-  name: "Mobila bucatarie",
+  name: "Mobila Bucatarie",
   title: "Mobila bucatarie creata pentru utilitatea si confortul dumneavoastra",
   data_icon: "v"
 )
@@ -304,7 +304,7 @@ product22.image.attach(io: File.open(Rails.root.join('app/assets/images/Bucatari
 
 product_category3 = ProductCategory.create!(
   id: 3,
-  name: "Mobila dormitor",
+  name: "Mobila Dormitor",
   title: "Mobila dormitor personalizata pentru confortul dumneavoastra",
   data_icon: "z"
 )
@@ -395,7 +395,7 @@ product28.image.attach(io: File.open(Rails.root.join('app/assets/images/Dormitor
 
 product_category4 = ProductCategory.create!(
   id: 4,
-  name: "Mobilier baie",
+  name: "Mobilier Baie",
   title: "Mobilier baie proiectat pentru a ingloba necsitatile dumneavoastra",
   data_icon: "Y"
 )
@@ -496,7 +496,7 @@ product35.image.attach(io: File.open(Rails.root.join('app/assets/images/Baie_30.
 
 product_category5 = ProductCategory.create!(
   id: 5,
-  name: "Mobilier birou",
+  name: "Mobilier Birou",
   title: "Mobilier birou adaptat la standardele dumneavoastra",
   data_icon: "l"
 )
@@ -555,7 +555,7 @@ product39.image.attach(io: File.open(Rails.root.join('app/assets/images/Birou_16
 
 product_category6 = ProductCategory.create!(
   id: 6,
-  name: "Mobila exterior",
+  name: "Mobila Exterior",
   title: "Solutii personalizate de mobila exterior pentru spatiul dumneavoastra",
   data_icon: "H"
 )

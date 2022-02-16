@@ -76,6 +76,20 @@
     color: #222;
   }
 }
+.dropdown-toggle::after {
+  display: none;
+  border: 0;
+  // display: block;
+  // width: 0;
+  // height: 0;
+  // margin-left: 0;
+  // vertical-align: auto;
+  // content: "";
+  // border-top: 0;
+  // border-right: 0;
+  // border-bottom: 0;
+  // border-left: 0;
+}
 .navbar-collapse.collapse.in{
   display:block!important;
 }
@@ -170,4 +184,7 @@
   .dropdown:hover .dropdown-menu {
     display: block;
   }
+  .dropdown.open .dropdown-menu{
+    display:block;
+  } 
 }
