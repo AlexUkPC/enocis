@@ -17,22 +17,22 @@
     height:100%;
   }
 }
+@media (max-width: 1200px) {
+  .parallax_container {
+    height: 470px;
+  }
+}
 @media (max-width: 992px) {
-  
-
   .parallax_container {
     height: 380px;
   }
 }
 @media (max-width: 768px) {
-  
-
   .parallax_container {
     height: 310px;
   }
 }
 @media (max-width: 480px) {
-  
   .parallax_container {
     height: 270px;
   }

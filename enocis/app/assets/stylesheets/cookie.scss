@@ -1,0 +1,56 @@
+.cookie_consent{
+  padding:20px 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 100000;
+  background:rgba(255, 255, 255, 0.9);
+  width: 100%;
+}
+.cookie_consent img{
+  width:60px;    
+}
+.cookie_consent .col-md-2{
+  text-align:center;
+}
+.cookie_but{
+  margin: 10px 0px 0px;
+  background: #F18020;
+  border: 0;
+  display: inline-block;
+  color: #ffffff;
+  padding: 15px 20px;
+  font-size: 13px;
+  line-height: 14px;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 3px;
+      -webkit-transition: all .3s ease-in-out 0s;
+      -moz-transition: all .3s ease-in-out 0s;
+      -ms-transition: all .3s ease-in-out 0s;
+      -o-transition: all .3s ease-in-out 0s;
+      transition: all .3s ease-in-out 0s;
+}
+.cookie_but:hover{
+  color:#fff;
+  text-decoration:none;
+  background: #dc7e0d;
+  border: 0;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+}
+table.cookie_table td,table.cookie_table th{
+    border:1px solid #ccc;
+    padding:2px;
+}
+table.cookie_table th{
+    background:#eee;
+}
+.cookie_table .no-padding{
+    padding:0;
+}

@@ -2,9 +2,9 @@
 <main role="main" class="product">
 	<div class="container">
 		<div class="text-center">
-			
-			<a href="/{{ $last_page }}" class="back"><i class="fa fa-arrow-left"></i> Inapoi</a>
-			
+			<%= link_to  :back, class: 'back' do %>
+				<i class="fa fa-arrow-left"></i> Inapoi
+			<% end %>
 		</div>
 		<div class="text-center">
 			<h1><%= @product.name %></h1>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<main role="main" class="products">
+<main role="main" class="product_category">
   <%= render '/layouts/parallax_container', image: if @product_category.cover_image.attached?; rails_blob_url(@product_category.cover_image); end  %> 
 
 	<div class="container main_margin_top">
