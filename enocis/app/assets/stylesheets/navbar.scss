@@ -106,6 +106,7 @@ nav{
   }
   &.Top0{
     background: rgba(0, 0, 0, 0.7) ;
+    padding-top: 0;
   }
   .navbar-nav{
     .dropdown{
@@ -156,6 +157,7 @@ nav{
       border-bottom:1px solid #eee;
     }
     &.my_navbar {
+      padding: .5rem 1rem;
       .navbar-nav{
         li {
           a{
@@ -211,9 +213,12 @@ nav{
   }  
 }
 @media (max-width: 480px) {
-  .my_logo {
-    img{
-      width:100px;
+  nav{
+    .my_logo {
+      padding: .3125rem 0;
+      img{
+        width:100px;
+      }
     }
   }
 }
