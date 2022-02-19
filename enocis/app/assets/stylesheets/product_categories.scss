@@ -98,6 +98,20 @@
       }
     }
   }
+  .container {
+    .page_container {
+      .text_container {
+        p {
+          span {
+            font-size: 15px;
+            color: #e5ae49; 
+            margin-right:5px;
+            width: 28px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1200px) {
