@@ -25,12 +25,12 @@
         background-color: rgba(255, 255, 255, 0.75);
       }
       .icon{
-        font-family: "furniture" !important;
+        font-family: "furniture";
         content: attr(data-icon);
-        font-style: normal !important;
-        font-weight: normal !important;
-        font-variant: normal !important;
-        text-transform: none !important;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
         speak: none;
         line-height: 1;
         -webkit-font-smoothing: antialiased;
@@ -39,6 +39,10 @@
         display: block;
         margin-bottom:10px;
         color:#666;
+        &[data-icon]:before {
+          font-family: "furniture";
+          content: attr(data-icon);
+        }
       }
       h3{
         color:#666;

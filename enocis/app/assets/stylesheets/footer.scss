@@ -138,13 +138,8 @@ footer.bottom{
   background:#000;
   padding:30px 0;
 }
-@media (max-width: 480px) {
-  .bottom_call{
-      font-size:30px!important;
-  }
-}
 @media (max-width: 767px) {
-footer.bottom{
+  footer.bottom{
     .bottom_container{
       padding-top:40px;
       .footer_heading_container{
@@ -156,6 +151,17 @@ footer.bottom{
       }
       h4{
         margin-top:40px;
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  footer.bottom{
+    .bottom_container{
+      .footer_heading_container{
+        .bottom_call{
+            font-size:30px;
+        }
       }
     }
   }

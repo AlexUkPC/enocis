@@ -5,7 +5,7 @@
         <%= image_tag 'enocis_alb_150.png', alt: 'Logo' %>
       <% end %>
 <% else %>
-  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light my_navbar white_bg">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top my_navbar white_bg">
     <%= link_to root_path, class: "navbar-brand my_logo", data: { turbolinks: false } do %>
       <%= image_tag 'enocis_negru_150.png', alt: 'Logo' %>
     <% end %>
@@ -15,9 +15,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link #{'active' if controller_path=='home'}" , data: { turbolinks: false } %> 
-        </li>
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: "nav-link #{'active' if controller_path=='home'}" , data: { turbolinks: false } %> 
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle <%= 'active' if controller_path=='product_categories' %>" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-turbolinks="false">Produse</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
