@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :frezarimdfs
+  get 'frezarimdfs', to: 'frezarimdfs#index'
   get 'politica-confidentialitate', to: 'politica_confidentialitate#index'
   get 'contact', to: 'contact_forms#new'
   get 'servicii', to: 'servicii#index'

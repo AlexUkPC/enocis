@@ -1,0 +1,32 @@
+<%= form_with(model: frezarimdf) do |form| %>
+  <% if frezarimdf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(frezarimdf.errors.count, "error") %> prohibited this frezarimdf from being saved:</h2>
+
+      <ul>
+        <% frezarimdf.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+   <!--<div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+    <%= form.text_area :image %>
+  </div>-->
+   <div class="field">
+    <%= form.label :image_svg %>
+    <%= form.file_field :image_svg %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
