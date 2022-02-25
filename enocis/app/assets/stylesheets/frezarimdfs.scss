@@ -74,9 +74,11 @@
     
     .next {
       right: 0;
+      margin-right: 0;
       border-radius: 3px 0 0 3px;
     }
     .prev:hover, .next:hover {
+      color: #E5AE49;
       background-color: rgba(0,0,0,0.1);
     }
     a{
@@ -234,6 +236,7 @@
     grid-area: change_frezare;
     .small{
       line-height: 30px;
+      color: #b9b9b9;
     }
   }
 }

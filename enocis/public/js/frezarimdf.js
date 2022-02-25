@@ -174,6 +174,11 @@ function add_to_fav(hex) {
   for (i = 0; i < fav_colors.length; i++) {
     hex_arr = hexToRgb(hex);
     if (getComputedStyle(fav_colors[i]).backgroundColor == 'rgb(238, 238, 238)'){
+      for (j = 0; j < fav_colors.length; j++) {
+        if ( getComputedStyle(fav_colors[j]).backgroundColor == `rgb(${hex_arr[0]}, ${hex_arr[1]}, ${hex_arr[2]})`){
+          return
+        }
+      }
       fav_colors[i].style.backgroundColor = hex;
       for (j = 0; j < fav_colors.length; j++) {
         fav_colors[j].className = fav_colors[j].className.replace(" last_changed", "").replace(" clicked", "");
