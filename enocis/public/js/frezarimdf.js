@@ -4,7 +4,7 @@ let id_eqv={}
 let slideIndex = 1
 window.onload = function() {
 
-  let slides = document.getElementsByClassName('mySlides');
+  let slides = document.getElementsByClassName('frezare_slide');
   for (j = 0; j < slides.length; j++) {
     slides[j].id += `slide-${j}`;
     id_eqv[slides[j].dataset.id] = j+1;
@@ -55,7 +55,7 @@ function changeSVG(red, green, blue, cls, slide){
 }
 
 function changeImage(evt, hex){
-  const slides = document.getElementsByClassName('mySlides');
+  const slides = document.getElementsByClassName('frezare_slide');
   for (i = 0; i < slides.length; i++) {
     let red = hexToRgb(hex)[0]
     let green = hexToRgb(hex)[1]
@@ -257,7 +257,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("frezare_slide");
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {

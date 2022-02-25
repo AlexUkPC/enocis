@@ -1,501 +1,87 @@
+@use "frezaremdf";
 .container.wider{
   max-width: 1640px;
+  h1{
+    padding-bottom: 5px;
+  }
+  p{
+    color:#e5ae49;
+  }
+  .page_container.no-btm-pad{
+    padding-bottom: 0;
+  }
 }
 .gray_bg{
   background-color: #eeeeee;
 }
 .container_frezari{
-  padding: 20px;
-  background-color: white;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr) 1.5fr;
-  grid-template-rows: 41px 1fr 60px 60px;
-  grid-template-areas: 
-    'slider slider slider tab_btns'
-    'slider slider slider tabs_content'
-    'name_and_color_name name_and_color_name fav_colors load_all'
-    'change_frezare change_frezare change_frezare change_frezare';
-  gap: 10px;
-  align-items: center;
-  button, a {
-    background-color: transparent;
-    float: left;
-    border: 2px solid #e5ae49;
-    color: #e5ae49;
-    outline: none;
-    cursor: pointer;
-    padding: 5px 16px;
-    transition: 0.3s;
-    font-size: 13px;
-    font-weight: 500;
-    border-radius: 30px;
-    letter-spacing: 2px;
-    &:nth-child(1){
-      margin-right: 10px;
-    }
-    font-family: 'Ubuntu';
-    &:hover {
-      background-color: #e5ae49;
-      color: #fff;
-    }
-    &.active {
-      background-color: #e5ae49;
-      color: #fff;
-    }
+  position: relative;
+  background-image: url('frezari.jpg');
+  background-size: cover;
+  padding: 30px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.8);
   }
-  a{text-decoration: none;margin-right: 20px;}
-  .frezari_slider_main_container{
-    grid-area: slider;
-    .mySlides {
-      display: none;
-    }
-    .slideshow-container {
-      // max-width: 1000px;
-      position: relative;
-      margin: auto;
-    }
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      margin-top: -22px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-    }
-    .active{
-      background-color: #717171;
-    }
-    
-    .next {
-      right: 0;
-      margin-right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-    .prev:hover, .next:hover {
-      color: #E5AE49;
-      background-color: rgba(0,0,0,0.1);
-    }
-    a{
-      border: none;
-    }
-    // .fade {
-    //   -webkit-animation-name: fade;
-    //   -webkit-animation-duration: 1.5s;
-    //   animation-name: fade;
-    //   animation-duration: 1.5s;
-    // }
-    
-    // @-webkit-keyframes fade {
-    //   from {opacity: .4} 
-    //   to {opacity: 1}
-    // }
-    
-    // @keyframes fade {
-    //   from {opacity: .4} 
-    //   to {opacity: 1}
-    // }
-  } 
-  .tab_btns{
-    grid-area: tab_btns;
+  .frezari_categories{
+    position: relative;
+    color: white;
   }
-  .tabs_content{
-    height: 100%;
-    grid-area: tabs_content;
-    .colors{
-      display: flex;
-      flex-wrap: wrap;
-      height: 28vw;
-      max-height: 463px;
-      overflow-y: scroll;
-      scrollbar-color: #E5AE49 white;
-      scrollbar-width: thin;
-      &::-webkit-scrollbar {
-        width: 14px;
-      }
-      &::-webkit-scrollbar-track {
-        display: none;
-    
-      }
-      &::-webkit-scrollbar-thumb {
-        background: #E5AE49;
-        border-left: 3px white solid;
-        border-right: 3px white solid;
-        min-height: 7vh;
-      }
-      &::-webkit-scrollbar-thumb:hover {
-        background: rgb(226, 165, 51);
-      }
-      .color{
-        position: relative;
-        display: none;
-        flex: 1 1 50%;
-        padding: 33px 10px;
-        font-size: 12px;
-        justify-content: center;
-        text-align: center;
-        span{
-          cursor: default;
-        }
-        &.active{
-          display: flex;
-        }
-        &.default{
-          display: flex;
-        }
-        &.clicked{
-          i{
-            display: inline-block;
-          }
-          box-shadow:inset 0px 0px 0px 4px white;
-        }
-        i{
-          display: none;
-          position: absolute;
-          top: 0;
-          right: 0;
-          font-size: 30px;
-          line-height: 30px;
-          font-weight: 700;
-          width: 26px;
-          height: 28px;
-        }
-        &:focus,&:active,&:hover,&.selected{
-          i{
-            display: inline-block;
-          }
-          box-shadow:inset 0px 0px 0px 4px white;
-        }
-        
-      }
-    }
+  hr{
+    position: relative;
+    background-color: white;
   }
-  .name_and_color_name{
-    grid-area: name_and_color_name;
-    h2{
-      color: #E5AE49;
-      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-      font-size: 34px;
-      font-weight: 700;
-      margin: 15px 0;
-      .frezare_name{
-        display: none;
-      }
-      span{
-        color: black;
-      }
-    }
-  }
-  .fav_colors{
-    grid-area: fav_colors;
-    display: flex;
-    justify-content: right;
-    .fav_col{
-      margin: 20px 8px;
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      background-color: #eee;
-      position: relative;
-      &.clicked{
-        i{
-          display: inline-block;
-        }
-        box-shadow: 0px 0px 0px 3px #E5AE49;
-      }
-      i{
-        display: none;
-        position: absolute;
-        top: -14px;
-        right: -20px;
-        font-size: 15px;
-        line-height: 20px;
-        color: #E5AE49;
-        width: 28px;
-        height: 28px;
-      }
-      &:focus,&:active,&:hover,&.selected{
-        i{
-          display: inline-block;
-        }
-        box-shadow: 0px 0px 0px 3px #E5AE49;
-      }
-      
-    }
-  }
-  .load_all{
-    grid-area: load_all;
-    justify-self: end;
-  }
-  .change_frezare{
-    grid-area: change_frezare;
-    .small{
-      line-height: 30px;
-      color: #b9b9b9;
-    }
-  }
-}
-.description{
-  padding: 50px 10px;
-  display: flex;
-  flex-wrap: wrap;
-  .left{
-    flex: 1 1 550px;
-    h2{
-      color: black;
-      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-      font-size: 34px;
-      font-weight: 700;
-      span{
-        color: #E5AE49;
-      }
-    }
-    p{
-      margin-right: 25px;
-    }
-  }
-  .right{
-    flex: 1 1 1020px;
+  .frezari{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    .content{
+    align-items: center;
+    justify-content: space-between;
+    // gap: 30px;
+    .frezare{
+      flex: 0 0 32%;
       position: relative;
-      flex: 1 1 500px;
-      
-      img{
-        width: 100%;
-        
-      }
-      .title{
+      margin-bottom: 30px;
+      box-shadow: 0 0 0 4px white;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      .name{
         position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        padding: 20px;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        &:hover{
-          background: rgba(0,0,0,.5);
-          -moz-transition: all 0.3s ease;
-          -o-transition: all 0.3s ease;
-          -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-        }
-        &::before{
-          content: "";
-          border: 1px solid #fff;
-          top: 20px;
-          left: 20px;
-          bottom: 20px;
-          right: 20px;
-          position: absolute;
-          -moz-transition: all 0.3s ease;
-          -o-transition: all 0.3s ease;
-          -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-        }
-        span{
-          position: absolute;
-          color: #fff;
-          font-size: 30px;
-          line-height: 56px;
-          margin: 0;
-          font-weight: 100;
-          transition: 0.35s;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%,-50%);
+        bottom:-16px;
+        left:10px;
+        color: #e5ae49;
+        font-weight: 700;
+        background-color: white;
+        padding: 5px 1vw;
+        border-radius: 20px;
+      }
+      .links{
+        position: absolute;
+        bottom:15px;
+        right:10px;
+        a{
+          color: white;
+          text-decoration: none;
         }
       }
+      &:hover{
+        box-shadow: none;
+      }
+    }
+  }
+  .link_new{
+    position: relative;
+    a{
+      color: white;
+      text-decoration: none;
     }
   }
 }
-@media (max-width: 1200px) {
-  .container_frezari{
-    grid-template-columns: repeat(3, 1fr) 2fr;
-    button, a {
-      letter-spacing: 1.7px;
-      &:nth-child(1){
-        margin-right: 5px;
-      } 
-    }
-    .tabs_content{
-      .colors{
-        height: 25vw;
-        max-height: 300px;
-        .color{
-          padding: 23px 3px;
-        }
-      }
-    }
-    .fav_colors{
-      grid-area: fav_colors;
-      display: flex;
-      justify-content: right;
-      .fav_col{
-        margin: 20px 6px;
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        background-color: #eee;
-      }
-    }
-  }
-}
-@media (max-width: 992px) {
-  .container_frezari{
-    button, a {
-      letter-spacing: 0.5px;
-      padding: 5px 5px;
-    }
-    .tabs_content{
-      .colors{
-        .color{
-          padding: 13px 3px;
-        }
-      }
-    }
-    .name_and_color_name{
-      h2{
-        font-size: 24px;
-        margin: 15px 0;
-      }
-    }
-    .fav_colors{
-      .fav_col{
-        margin: 20px 4px;
-        height: 30px;
-        width: 30px;
-      }
-    } 
-  }
-}
-@media (max-width: 767px) {
-  .container.wider{
-    max-width: 650px;
-  }
-  .container_frezari{
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 40px 40px 0.5fr 40px;
-    grid-template-areas: 
-      'slider slider'
-      'name_and_color_name fav_colors'
-      'tab_btns tab_btns'
-      'tabs_content tabs_content'
-      'load_all load_all'
-      'change_frezare change_frezare';
-    button, a {
-      padding: 5px 16px;
-      letter-spacing: 2px;
-      &:nth-child(1){
-        margin-right: 10px;
-      }
-    }
-    .tab_btns{
-      justify-self: center;
-    }  
-    .tabs_content{
-      .colors{
-        height: 40vw;
-        max-height: 55vw;
-      }
-    }
-    .load_all{
-      justify-self: center;
-    }
-    .change_frezare{
-      display: flex;
-      flex-direction: column;
-      padding: 0 10vw;
-      a{
-        text-align: center;
-      }
-      .small{
-        padding-top: 10px;
-        line-height: 18px;
-      }
-    }
-  }
-}
-@media (max-width: 575px) {
-  .container_frezari{
-    // .change_frezare{
-    //   display: flex;
-    //   flex-direction: column;
-    //   padding: 0 10vw;
-    //   a{
-    //     text-align: center;
-    //   }
-    //   .small{
-    //     padding-top: 10px;
-    //   }
-    // }
-  }
-}
-@media (max-width: 480px) {
-  .container_frezari{
-    padding: 0;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 30px 40px 40px 0.5fr 40px 120px;
-    grid-template-areas: 
-      'slider'
-      'name_and_color_name'
-      'fav_colors'
-      'tab_btns'
-      'tabs_content'
-      'load_all'
-      'change_frezare';
-    gap: 5px;
-    button, a {
-      padding: 5px 16px;
-      letter-spacing: 1px;
-      &:nth-child(1){
-        margin-right: 10px;
-      }
-    }
-    .name_and_color_name{
-      justify-self: center;
-      h2{
-        margin: 5px 0;
-      }
-    }
-    .fav_colors{
-      justify-self: center;
-      .fav_col{
-        margin: 0 4px;
-      }
-    }
-    .tabs_content{
-      .colors{
-        height: 55vw;
-        max-height: 55vw;
-      }
-    }
-  }
-  .description{
-    .left{
-      h2{
-        font-size: 24px;
-      }
-    }
-    .right{
-      .content{
-        .title{
-          span{
-            font-size: 20px;
-            line-height: 20px;
-          }
-        }
-      }
-    }
-  }
-}
+

@@ -1,32 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Frezarimdfs</h1>
+<main role="main" class="container wider">
+  <%= render '/layouts/parallax_container', image: 'frezari.jpg' %> 
+	
+	<h1>Model frezare</h1>
+  <p>
+    Alegeti modelul de frezare apasand pe modelul dorit, urmand ca sa selectati culoarea potrivita din paletarul de culori RAL sau NCS
+    <br>
+    NOTA: In pasul urmator puteti schimba modelul de frezare utilizand slideru-ul.
+  </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="white_bg page_container no-btm-pad">
+    <div class="container_frezari">
+      <div class="frezari_categories">
+        Toate | Clasic | Modern | Line
+      </div>
+      <hr>
+      <div class="frezari">
+        <% @frezarimdfs.each do |frezarimdf| %>
+          <div class="frezare">
+            
+            
+            <%= link_to frezarimdf_path(frezarimdf.id), data: { turbolinks: false } do %>
+              <% if frezarimdf.image_svg.attached? %>
+                <%= image_tag frezarimdf.image_svg %>
+              <% end %>
+              <div class="name"><%= frezarimdf.name %></div>
+            <% end %>
+            
+            
 
-  <tbody>
-    <% @frezarimdfs.each do |frezarimdf| %>
-      <tr>
-        <td><%= frezarimdf.name %></td>
-        <td style="width: 300px">
-          <% if frezarimdf.image_svg.attached? %>
-            <%= image_tag frezarimdf.image_svg %>
-          <% end %>
-        </td>
-        <td style="padding: 10px"><%= link_to 'Show', frezarimdf_path(frezarimdf.id), data: { turbolinks: false } %></td>
-        <td style="padding: 10px"><%= link_to 'Edit', edit_frezarimdf_path(frezarimdf), data: { turbolinks: false } %></td>
-        <td style="padding: 10px"><%= link_to 'Destroy', frezarimdf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Frezarimdf', new_frezarimdf_path %>
+            <div class="links">
+              <%= link_to 'Edit', edit_frezarimdf_path(frezarimdf), data: { turbolinks: false } %>
+            
+              <%= link_to 'Destroy', frezarimdf, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="link_new"><%= link_to 'New Frezarimdf', new_frezarimdf_path %></div>
+    </div>
+  </div>
+</main>
+<%= render '/layouts/footer' %>

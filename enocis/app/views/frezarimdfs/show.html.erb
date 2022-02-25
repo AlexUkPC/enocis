@@ -5,12 +5,11 @@
 	
 	<h1>Frezari MDF</h1>
   <div class="gray_bg page_container">
-    <div class="container_frezari">
-      
+    <div class="container_frezare">
         <div class="frezari_slider_main_container">
           <div class="slideshow-container">
             <% @frezarimdfs.each do |frezarimdf| %>
-              <div data-id="<%= frezarimdf.id %>" class="mySlides"> 
+              <div data-id="<%= frezarimdf.id %>" class="frezare_slide"> 
                 <% if frezarimdf.image_svg.attached? %>
                   <%= embedded_svg ActiveStorage::Blob.service.path_for(frezarimdf.image_svg.key)%>
                 <% end %> 
