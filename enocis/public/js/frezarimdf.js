@@ -31,9 +31,9 @@ window.onload = function() {
   }
   let array = window.location.href.split('/');
   slideIndex=id_eqv[array[array.length-1]]
-  // showSlides(slideIndex);
-  // changeImage('load', '#E9E5CE');
-  // openTab('load', 'RAL');
+  showSlides(slideIndex);
+  changeImage('load', '#E9E5CE');
+  openTab('load', 'RAL');
 }
 const hexToRgb = hex =>
 hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
@@ -270,17 +270,3 @@ function showSlides(n) {
   }
   frezare_name[slideIndex-1].style.display = "inline-block";  
 }
-
-// function activate(evt) {
-//   let links = document.getElementsByClassName('cat_link');
-//   for (i = 0; i < links.length; i++) {
-//     if ( evt != 'load' ){ 
-//       links[i].className = links[i].className.replace(" cat_btn_active", ""); 
-//     }
-//   }
-//   console.log(evt.currentTarget.className)
-//   // if ( evt != 'load' ){
-//     evt.currentTarget.className += " cat_btn_active";
-//   // }
-//   console.log(evt.currentTarget.className)
-// }
