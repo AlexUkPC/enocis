@@ -176,6 +176,10 @@ function add_to_fav(hex) {
     if (getComputedStyle(fav_colors[i]).backgroundColor == 'rgb(238, 238, 238)'){
       for (j = 0; j < fav_colors.length; j++) {
         if ( getComputedStyle(fav_colors[j]).backgroundColor == `rgb(${hex_arr[0]}, ${hex_arr[1]}, ${hex_arr[2]})`){
+          for (k = 0; k < fav_colors.length; k++) {
+            fav_colors[k].className = fav_colors[k].className.replace(" clicked", "");
+          }   
+          fav_colors[j].className += ' clicked';
           return
         }
       }

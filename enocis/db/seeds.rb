@@ -562,3 +562,32 @@ product_category6 = ProductCategory.create!(
 ActionText::RichText.create!(record_type: 'ProductCategory',record_id: product_category6.id, name: 'description', body: '<div class="trix-content"><p>Fie ca vorbim de curtea casei dumneavoastra sau de afacerea pe care o desfasurati in aer liber, va punem la dispozitie mobila exterior la cele mai inalte standarde. Mobila exterior, realizata din lemn, asigura longevitate, o utilitate optima si o intretinere cat mai usoara. </p></div>')
 product_category6.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/balcony-cafe-chairs-1237073-2-e1533660340869.jpg')), filename: 'balcony-cafe-chairs-1237073-2-e1533660340869.jpg')
 product_category6.front_image.attach(io: File.open(Rails.root.join('app/assets/images/autumn-basket-blur-263039-e1533660282783.jpg')), filename: 'autumn-basket-blur-263039-e1533660282783.jpg')
+
+frezarimdf_category1 = FrezarimdfCategory.create!(
+  id: 1,
+  name: "Clasic",
+  data_icon: "N"
+)
+frezarimdf_category2 = FrezarimdfCategory.create!(
+  id: 2,
+  name: "Modern",
+  data_icon: "A"
+)
+frezarimdf_category3 = FrezarimdfCategory.create!(
+  id: 3,
+  name: "Line",
+  data_icon: "7"
+)
+frezarimdf1 = Frezarimdf.create!(
+  id: 1,
+  name: "ENO-01",
+  frezarimdf_category_id: "1"
+)
+frezarimdf1.image_svg.attach(io: File.open(Rails.root.join('app/assets/images/ENO-01.svg')), filename: 'ENO-01.svg')
+
+frezarimdf2 = Frezarimdf.create!(
+  id: 2,
+  name: "ENO-02",
+  frezarimdf_category_id: "1"
+)
+frezarimdf2.image_svg.attach(io: File.open(Rails.root.join('app/assets/images/ENO-02.svg')), filename: 'ENO-02.svg')
