@@ -30,23 +30,86 @@
   }
   .frezari_categories{
     position: relative;
-    color: white;
+    .frezari_cat_btns{
+      display: flex;
+      gap: 20px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      a{
+        color: white;
+        text-decoration: none;
+        flex: 0 1 130px;
+        // min-width: 20%;
+        .cat_btn{
+          border: 2px solid white;
+          padding: 15px 20px;
+          border-radius: 50px;
+          text-align: center;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .icon{
+            font-family: "furniture";
+            content: attr(data-icon);
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size:20px;
+            margin-right: 10px;
+            &[data-icon]:before {
+              font-family: "furniture";
+              content: attr(data-icon);
+            }
+          }
+          
+        }
+        &.cat_btn_active{
+          .cat_btn{
+            color: #e5ae49;
+            border: 2px solid #e5ae49;
+          }
+        }
+        &:hover{
+          .cat_btn{
+            color: #e5ae49;
+            border: 2px solid #e5ae49;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+          }
+          background-color: transparent;
+        }
+        
+      }
+    }
   }
   hr{
     position: relative;
     background-color: white;
+    margin-bottom: 35px;
   }
   .frezari{
     position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    // gap: 30px;
+    // justify-content: center;
+    padding: 4px;
+    gap: 30px;
     .frezare{
-      flex: 0 0 32%;
+      justify-self: start;
+      flex: 1 1 487px;
+      max-width: 100%;
+      min-width: 0;
       position: relative;
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
+      // margin: 1%;
       box-shadow: 0 0 0 4px white;
       -moz-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
@@ -85,3 +148,13 @@
   }
 }
 
+@media (max-width: 767px) {
+  .container_frezari{
+    .frezari_categories{
+      .frezari_cat_btns{
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

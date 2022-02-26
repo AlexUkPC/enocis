@@ -1,0 +1,2 @@
+module FrezarimdfCategoriesHelper
+end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :frezarimdf_categories
   resources :frezarimdfs
   get 'frezarimdfs', to: 'frezarimdfs#index'
   get 'politica-confidentialitate', to: 'politica_confidentialitate#index'

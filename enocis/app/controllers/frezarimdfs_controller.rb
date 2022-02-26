@@ -3,7 +3,15 @@ class FrezarimdfsController < ApplicationController
 
   # GET /frezarimdfs or /frezarimdfs.json
   def index
-    @frezarimdfs = Frezarimdf.all.order("id ASC")
+    @frezarimdf_categories = FrezarimdfCategory.all
+    cate = params[:cate]
+    if !cate.nil?
+      @frezarimdfs = Frezarimdf.where(frezarimdf_category_id: cate)
+    else
+      @frezarimdfs = Frezarimdf.all.order("id ASC")
+    end
+
+    
   end
 
   # GET /frezarimdfs/1 or /frezarimdfs/1.json
@@ -66,6 +74,6 @@ class FrezarimdfsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def frezarimdf_params
-      params.require(:frezarimdf).permit(:name, :image, :image_svg)
+      params.require(:frezarimdf).permit(:name, :image, :image_svg, :frezarimdf_category_id)
     end
 end

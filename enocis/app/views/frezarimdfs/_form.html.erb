@@ -25,6 +25,9 @@
     <%= form.label :image_svg %>
     <%= form.file_field :image_svg %>
   </div>
+  <div class="field">
+      <%= form.select :frezarimdf_category_id, FrezarimdfCategory.all.map {|c| [c.name, c.id]} %>
+  </div> 
 
   <div class="actions">
     <%= form.submit %>

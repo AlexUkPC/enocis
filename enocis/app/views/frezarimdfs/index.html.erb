@@ -13,7 +13,22 @@
   <div class="white_bg page_container no-btm-pad">
     <div class="container_frezari">
       <div class="frezari_categories">
-        Toate | Clasic | Modern | Line
+        <div class="frezari_cat_btns">
+          <%= link_to frezarimdfs_path,class: "#{'cat_btn_active' if  !current_page?(frezarimdfs_path(cate: 1)) && !current_page?(frezarimdfs_path(cate: 2)) && !current_page?(frezarimdfs_path(cate: 3)) && !current_page?(frezarimdfs_path(cate: 4)) && !current_page?(frezarimdfs_path(cate: 5)) && !current_page?(frezarimdfs_path(cate: 6)) && !current_page?(frezarimdfs_path(cate: 7)) && !current_page?(frezarimdfs_path(cate: 8)) && !current_page?(frezarimdfs_path(cate: 9))}", data: { turbolinks: false } do %>
+            <div class="cat_btn">
+             <span data-icon=">" class="icon"></span>
+             <span >Toate</span>
+            </div>
+          <% end %>
+          <% @frezarimdf_categories.each do |frezarimdf_category| %>
+            <%= link_to frezarimdfs_path(:cate => frezarimdf_category.id), class: "#{'cat_btn_active' if current_page?(frezarimdfs_path(:cate => frezarimdf_category.id))}", data: { turbolinks: false } do %>   
+              <div class="cat_btn">
+                  <span data-icon="<%= frezarimdf_category.data_icon %>" class="icon"></span>
+                  <span><%= frezarimdf_category.name %></span>
+              </div>
+            <% end %>
+        <% end %>
+        </div>
       </div>
       <hr>
       <div class="frezari">
@@ -38,6 +53,7 @@
           </div>
         <% end %>
       </div>
+      <br><br><br><br>
       <div class="link_new"><%= link_to 'New Frezarimdf', new_frezarimdf_path %></div>
     </div>
   </div>
