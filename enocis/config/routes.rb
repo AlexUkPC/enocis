@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :projects
+  resources :project_categories
   resources :frezarimdf_categories
   resources :frezarimdfs
-  get 'frezarimdfs', to: 'frezarimdfs#index'
+  get 'frezarimdf', to: 'frezarimdfs#index'
+  get 'proiecte', to: 'projects#index'
   get 'politica-confidentialitate', to: 'politica_confidentialitate#index'
   get 'contact', to: 'contact_forms#new'
   get 'servicii', to: 'servicii#index'

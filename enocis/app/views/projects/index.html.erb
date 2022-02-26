@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.name %></td>
+        <td><%= project.author %></td>
+        <td><%= project.date %></td>
+        <td><%= project.description %></td>
+        <td>
+          <% for project_category in project.project_categories %>
+            <%= project_category.name %> <br>
+          <% end %>
+        </td>
+        <td>
+          <% if project.images.any? %>
+            <%# project.images.each do |image| %>
+              <%#= image_tag image %>
+            <%# end %>
+            <%= image_tag project.images.first %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>

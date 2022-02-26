@@ -5,6 +5,44 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+project_category1 = ProjectCategory.create!(
+  id: 1,
+  name: "Mobila Living"
+)
+project_category2 = ProjectCategory.create!(
+  id: 2,
+  name: "Mobila Bucatarie"
+)
+project_category3 = ProjectCategory.create!(
+  id: 3,
+  name: "Mobila Dormitor"
+)
+project_category4 = ProjectCategory.create!(
+  id: 4,
+  name: "Mobilier Baie"
+)
+project_category5 = ProjectCategory.create!(
+  id: 5,
+  name: "Mobilier Birou"
+)
+project_category6 = ProjectCategory.create!(
+  id: 6,
+  name: "Mobila Exterior"
+)
+project1 = Project.create!(
+  id: 1,
+  name: "Project 1",
+  author: "John Doe",
+  date: "2022-02-10",
+  project_category_ids: ["1","4"]
+)
+
+ActionText::RichText.create!(record_type: 'Project',record_id: project1.id, name: 'description', body: '<div class="trix-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum cupiditate hic ea perspiciatis natus sint error sunt dolorum. Minima eum in autem sequi enim placeat, nisi et nesciunt iste.</p>
+
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, sint vero, quis et perferendis qui provident, dolore repellat id quod repudiandae expedita exercitationem minima laborum facere ratione velit harum illum.</p>
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi quis quidem corporis dolorum aliquam veniam distinctio quam fuga, voluptatum nostrum at aspernatur sunt molestiae corrupti et fugit deleniti nulla!</p></div>')
+
 product_category1 = ProductCategory.create!(
   id: 1,
   name: "Mobila Living",
