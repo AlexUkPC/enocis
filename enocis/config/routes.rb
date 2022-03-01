@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :testimonials
   resources :projects
   resources :project_categories
   resources :frezarimdf_categories
