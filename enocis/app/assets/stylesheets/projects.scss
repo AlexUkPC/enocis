@@ -1,3 +1,293 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.projects {
+  .main_margin_top {
+    margin-top: 105px;
+    .white_bg{
+      padding-bottom: 0;
+    }
+  }
+  .row {
+    margin: 0;
+    background-color: #252525;
+    .project_cat_btns{
+      max-width: 1640px;
+      margin: 0 auto;
+      a{
+        display: inline-block;
+        margin: 10px 0;
+        text-decoration: none;
+        color: #666;
+        font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+        border-right: 1px solid rgba(255,255,255,.1);
+        padding: 13px 35px;
+        margin-left: -4px;
+        &:hover{
+          background: #e5ae49;
+          color: #fff;
+        }
+        &:last-child{
+          border-right: none;
+        }
+        &.cat_btn_active{
+          background: #e5ae49;
+          color: #fff;
+        }
+      }
+    }
+    .col-sm-4 {
+      padding: 0 1px 1px 0;
+      .project_list_container {
+        height: 380px;
+        overflow: hidden;
+        position: relative;
+        img {
+          max-width: 650px;
+          -webkit-transition: all 0.5s ease-in-out 0s;
+          transition: all 0.5s ease-in-out 0s;
+        }
+        &:hover img {
+          max-width: 750px;
+        }
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s;
+          text-align: right;
+          .top {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            .title {
+              font-family: Arial, sans-serif;
+              font-weight: 700;
+              font-size: 14px;
+              color: #e5ae49;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+            }
+            .subtitle {
+              color: #fff;
+              font-family: 'Ubuntu', sans-serif;
+              font-weight: 400;
+              font-size: 14px;
+              letter-spacing: 0.5px;
+              text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+              span{
+                display: inline;
+                &.category{
+                  border-right: 2px solid white;
+                  margin-right: 5px;
+                  padding: 0 5px;
+                  &:last-child{
+                    border-right: none;
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+            span {
+              display: block;
+            }
+          }
+          .bottom {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-family: Arial, sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            -webkit-transition: all 0.5s ease-in-out 0s;
+            transition: all 0.5s ease-in-out 0s;
+            span:after {
+              content: '';
+              display: block;
+              width: 100%;
+              height: 1px;
+              background: #e5ae49;
+              position: absolute;
+              bottom: 0;
+              left: -100%;
+              -webkit-transition: all 0.5s ease-in-out 0s;
+              transition: all 0.5s ease-in-out 0s;
+            }
+          }
+          &:hover {
+            background: rgba(0, 0, 0, 0.7);
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+            .bottom {
+              color: #e5ae49;
+              span:after {
+                left: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.modal-popup {
+  max-width: 1090px;
+  // padding-top: 105px;
+  // min-width: 60vw;
+  max-height: 90vh;
+  background-color: rgb(15, 15, 15);
+  // line-height: 1.647;
+  overflow-y: auto;
+  padding: 5vw;
+  h1 {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #e5ae49;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4vw;
+    text-align: center;
+    padding: 0;
+  }
+  .detalii {
+    color: #fff;
+    margin-bottom: 4vw;
+    .row {
+      padding: 5px 0;
+    }
+    & > div:first-of-type {
+      text-align: left;
+    }
+    & > div > div > div:first-of-type {
+      text-align: right;
+      padding-right: 5px;
+    }
+    & > div > div > div:last-of-type {
+      text-align: left;
+      color: #e5ae49;
+    }
+    p{
+      font-family: 'Ubuntu',sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 25px;
+      color: rgb(224, 224, 224);
+      letter-spacing: .5px;
+      margin: 0;
+    }
+  }
+  .carousel {
+    position: relative;
+  }
+  .carousel-item {
+    &.picture{
+      // max-width: 881px;
+      height: 610px;
+    }
+  }
+  .carousel-item img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+  #carousel-thumbs {
+    background: rgba(255, 255, 255, 0);
+    bottom: 0;
+    left: 0;
+    padding: 0 50px;
+    right: 0;
+    
+  }
+  #carousel-thumbs img {
+    border: 5px solid transparent;
+    cursor: pointer;
+    object-fit: cover;
+    width: 112px;
+    height: 77px;
+  }
+  #carousel-thumbs img:hover {
+    border-color: rgba(255,255,255,.3);
+  }
+  #carousel-thumbs .selected img {
+    border-color: #fff;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+  }
+  
+  // position: relative;
+  // top: 0;
+  // display: flex;
+  // flex-wrap: wrap;
+  // align-items: center;
+  // justify-content: center;
+  
+  // img{
+  //   width: 800px;
+  // }
+  // .name{
+  //   flex: 1 1 100%;
+  //   text-align: center;
+  //   margin: 20px auto;
+  //   color: #e5ae49;
+  //   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+  //   font-size: 30px;
+  //   font-weight: 700;
+  //   text-transform: uppercase;
+  // }
+  // .description{
+  //   flex: 1 1 70%;
+  //   line-height: normal;
+  //   p{
+  //     margin: 0;
+  //   }
+  // }
+  // .about{
+  //   flex: 1 1 30%;
+  // }
+  // .images{
+  //   flex: 1 1 100%;
+  //   align-self: center;
+  // }
+  // .controls{
+  //   flex: 1 1 100%;
+  // }
+  // // display: grid;
+  // // grid-auto-columns: repeat(3, 1fr);
+  // // grid-auto-rows: 200px;
+  // // grid-template-areas: 
+  // //   'name name name'
+  // //   'description description about'
+  // //   'images images images'
+  // //   'controls controls controls'
+  // // ;
+  // // img{
+  // //   max-width: 200px;
+  // // }
+  // // .name{
+  // //   grid-area: 'name';
+  // // }
+  // // .description{
+  // //   grid-area: 'description';
+  // // }
+  // // .about{
+  // //   grid-area: 'about';
+  // // }
+  // // .images{
+  // //   grid-area: 'images';
+  // // }
+  // // .controls{
+  // //   grid-area: 'controls';
+  // // }
+}

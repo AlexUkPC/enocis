@@ -3,7 +3,14 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    @projects = Project.all
+    
+    @project_categories = ProjectCategory.all
+    cate = params[:cate]
+    if !cate.nil?
+      @projects = Project.joins(:project_categories).where(project_categories: {id: cate}).order("id ASC")
+    else
+      @projects = Project.all.order("id ASC")
+    end 
   end
 
   # GET /projects/1 or /projects/1.json

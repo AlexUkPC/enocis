@@ -1,45 +1,186 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<main role="main" class="projects">
+ <%= render '/layouts/parallax_container', image: 'projects_bg.jpg' %> 
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Author</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+	<div class="container main_margin_top">
+		<h1>Proiecte</h1>
+		<div class="white_bg page_container">
+      <%= image_tag 'projects_front.jpg', alt: 'Proiecte', class: 'main_img' %>
+		</div>
+    
+	</div>
+  <div class="row">
+    <div class="project_cat_btns">
+      <%= link_to projects_path,class: "#{'cat_btn_active' if  !current_page?(projects_path(cate: 1)) && !current_page?(projects_path(cate: 2)) && !current_page?(projects_path(cate: 3)) && !current_page?(projects_path(cate: 4)) && !current_page?(projects_path(cate: 5)) && !current_page?(projects_path(cate: 6)) && !current_page?(projects_path(cate: 7)) && !current_page?(projects_path(cate: 8)) && !current_page?(projects_path(cate: 9))}", data: { turbolinks: false } do %>
+        <div class="cat_btn">
+          <span >Toate</span>
+        </div>
+      <% end %>
+      <% @project_categories.each do |project_category| %>
+        <%= link_to projects_path(:cate => project_category.id), class: "#{'cat_btn_active' if current_page?(projects_path(:cate => project_category.id))}", data: { turbolinks: false } do %>   
+          <div class="cat_btn">
+              <span><%= project_category.name %></span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+	</div>
+  <div class="row">
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.author %></td>
-        <td><%= project.date %></td>
-        <td><%= project.description %></td>
-        <td>
-          <% for project_category in project.project_categories %>
-            <%= project_category.name %> <br>
-          <% end %>
-        </td>
-        <td>
-          <% if project.images.any? %>
-            <%# project.images.each do |image| %>
-              <%#= image_tag image %>
-            <%# end %>
-            <%= image_tag project.images.first %>
-          <% end %>
-        </td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="col-sm-4">
+        <div class="project_list_container">
+          <div class="project_item">
+            <% if project.images.any? %>
+              <%= image_tag project.images.first %>
+            <% end %>
+            <%= link_to "#modal-#{project.id}", class: "overlay" do %> 
+              <div class="top">
+                <span class="title">
+                  <%= project.name %>
+                </span>
+                <span class="subtitle">
+                  <% for project_category in project.project_categories %>
+                    <span class="category"> 
+                      <%= project_category.name %>
+                    </span>
+                  <% end %>
+                </span>
+              </div>
+              <div class="bottom">
+                <span>
+                  <i class="fa fa-external-link"></i> Vezi detalii
+                </span>
+              </div>
+            <% end %>
+          </div>
+          <div id="modal-<%= project.id %>" hidden>
+            <div class="modal-popup">
+              <div class="text-center">
+                <h1><%= project.name %></h1>
+              </div>
+              <div class="row text-center detalii">
+                <% if(!project.description.empty?) %>
+                  <div class="col-sm-8">
+                    <%= project.description %>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="row">
+                      <div class="col-sm-6">Autor:</div>
+                      <div class="col-sm-6"><%= project.author %></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">Data:</div>
+                      <div class="col-sm-6"><%= project.date %></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">Categorii:</div> 
+                      <div class="col-sm-6">
+                        <% for project_category in project.project_categories %>
+                          <span class="category"> 
+                            <%= project_category.name %>
+                          </span>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                <% else %>
+                  <div class="col-sm-12 detalii">
+                    <div class="row">
+                      <div class="col-sm-6">Autor:</div>
+                      <div class="col-sm-6"><%= project.author %></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">Data:</div>
+                      <div class="col-sm-6"><%= project.date %></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">Categorii:</div>
+                      <div class="col-sm-6">
+                        <% for project_category in project.project_categories %>
+                          <span class="category"> 
+                            <%= project_category.name %>
+                          </span>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
 
+
+              <% if project.images.any? %>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <% x=0  %>
+                    <% project.images.each do |image| %>
+                       <div class="carousel-item picture <%= 'active' if (image==project.images.first) %>" data-slide-number="<%= x %>"> 
+                        <%= image_tag image ,class: "d-block w-100", alt:"..." %>
+                      </div>
+                    <% x+=1  %>
+                    <% end %>
+                  </div>
+                </div>
+
+                <!-- Carousel Navigation -->
+                <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    
+                        <% x=0  %>
+                        <% project.images.each do |image| %>
+                          <% if ( x%6==0 ) %>
+                            <div class="carousel-item <%= 'active' if (x==0) %>">
+                              <div class="row mx-0">
+                          <% end %>
+                                <div id="carousel-selector-<%= x %>" class="thumb col-4 col-sm-2 px-1 py-2 <%= 'selected' if (image==project.images.first) %>" data-target="#myCarousel" data-slide-to="<%= x %>">
+                                  <%= image_tag image ,class: "img-fluid", alt:"..." %>
+                                </div>
+                          <% if ( (x+1)%6==0 && x!=0 ) %>
+                              </div>
+                            </div>
+                          <% end %>
+                          <% x+=1  %>
+                        <% end %>
+                      <% if ( x%6!=0 ) %>
+                        <% until (x%6==0) do %>
+                          <div class="col-2 px-1 py-2"></div>
+                          <% x+=1  %>
+                        <% end %>
+                          </div>
+                        </div>
+                      <% end %>
+                  </div>
+                
+                  <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              <% end %>
+
+
+              
+              <div class="controls">
+                <%= link_to 'Edit', edit_project_path(project) %>
+                <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
+<%= render '/layouts/footer' %>
+<br>
+<br>
 <br>
 
 <%= link_to 'New Project', new_project_path %>
+<script src="../../js/plugins.js"></script>
+<script src="../../js/project_carousel.js"></script>
+<script src="../../js/projects.js"></script>

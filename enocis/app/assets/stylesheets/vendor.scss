@@ -1,0 +1,66 @@
+/* ===================================================================
+ * # Basiclightbox
+ *
+ * ------------------------------------------------------------------- */
+ .basicLightbox {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  top: 100px;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: calc(100vh-105px);
+  // padding: 100px 105px;
+  background: #151515b7;
+  // opacity: 0.01;
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+  z-index: 1000;
+  will-change: opacity;
+}
+
+.basicLightbox::after {
+  content: "";
+  position: absolute;
+  top: 1.8rem;
+  right: 1.8rem;
+  width: 2em;
+  height: 2em;
+  background: url(icon-close.svg);
+  background-position: center;
+  background-size: 1.8rem 1.8rem;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.basicLightbox--visible {
+  opacity: 1;
+}
+
+.basicLightbox__placeholder {
+  max-width: 100%;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  z-index: 1;
+  will-change: transform;
+  opacity: 0;
+}
+
+
+
+.basicLightbox--visible .basicLightbox__placeholder {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}

@@ -6,17 +6,15 @@ class FrezarimdfsController < ApplicationController
     @frezarimdf_categories = FrezarimdfCategory.all
     cate = params[:cate]
     if !cate.nil?
-      @frezarimdfs = Frezarimdf.where(frezarimdf_category_id: cate)
+      @frezarimdfs = Frezarimdf.where(frezarimdf_category_id: cate).order("id ASC")
     else
-      @frezarimdfs = Frezarimdf.all.order("id ASC")
-    end
-
-    
+      @frezarimdfs = Frezarimdf.all.order("id DESC")
+    end 
   end
 
   # GET /frezarimdfs/1 or /frezarimdfs/1.json
   def show
-    @frezarimdfs = Frezarimdf.all.order("id ASC")
+    @frezarimdfs = Frezarimdf.all.order("id DESC")
   end
 
   # GET /frezarimdfs/new
