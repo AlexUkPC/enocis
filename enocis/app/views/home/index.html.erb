@@ -62,8 +62,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="container testimoniale">
-		
+	<div class="testimoniale">
+		<div class="opac8">
+			<%= render 'testimoniale', testimonials: @testimonials %>
+		</div>
 	</div>
 	<div class="container servicii_container">
 		<div class="center">
@@ -106,3 +108,4 @@
 	</div>
 </main>
 <%= render '/layouts/footer' %>
+<script src="../../js/testimonials.js"></script>
