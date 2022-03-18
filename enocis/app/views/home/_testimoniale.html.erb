@@ -1,25 +1,29 @@
-<div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <% x=0  %>
-    <% testimonials.each do |testimonial| %>
-        <div class="carousel-item picture <%= 'active' if (testimonial==testimonials.first) %>" data-slide-number="<%= x %>"> 
-        <%= testimonial.name %>
-        <%= testimonial.title %>
-        <%= testimonial.comment %>
-        <% if testimonial.image.attached? %>
-          <%= image_tag testimonial.image %>
-        <% end %>
-      </div>
-    <% x+=1  %>
-    <% end %>
+<div id="testimonialCarousel" class="carousel slide row" data-ride="carousel">
+  <div class="container">
+    <div class="carousel-inner ">
+      <% x=0  %>
+      <% testimonials.each do |testimonial| %>
+          <div class="carousel-item <%= 'active' if (testimonial==testimonials.first) %>" data-slide-number="<%= x %>"> 
+          <div class="comment"><%= testimonial.comment %></div>
+          <div class="image">
+            <% if testimonial.image.attached? %>
+              <%= image_tag testimonial.image %>
+            <% end %>
+          </div>
+          <span class="name"><%= testimonial.name %></span>
+          <span class="title"><%= testimonial.title %></span>
+          
+        </div>
+      <% x+=1  %>
+      <% end %>
+      <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </div>
-
-  <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>

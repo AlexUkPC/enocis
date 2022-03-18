@@ -2,45 +2,78 @@
   background-image: url('inter10.jpg');
   background-position: center;
   background-size: cover;
-  height: 600px;
   color: white;
   .carousel {
-    position: relative;
-  }
-  .carousel-item {
-    &.picture{
-      // max-width: 881px;
-      height: 610px;
+    position: relative;    
+    height: 600px;
+    .carousel-inner{
+      max-width: 1140px;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    .carousel-item {
+      padding: 0 170px;
+      text-align: center;
+
+      .comment{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        font-style: italic;
+        color: #ffffff;
+        line-height: 32px;
+      }
+      .name{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 14px;
+        color: #e5ae49;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+        letter-spacing: 2px;
+      }
+      .title{
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #FFFFFF;
+        display: block;
+        text-align: center;
+      }
+      .image {
+        // object-fit: contain;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        padding: 3px;
+        margin: 25px auto;
+        border: 1px solid #e5ae49;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          border: 0;
+          vertical-align: middle;
+        }
+      }
     }
   }
-  .carousel-item img {
-    object-fit: contain;
-    height: 100%;
-    width: 100%;
-  }
-  #carousel-thumbs {
-    background: rgba(255, 255, 255, 0);
-    bottom: 0;
-    left: 0;
-    padding: 0 50px;
-    right: 0;
-    
-  }
-  #carousel-thumbs img {
-    border: 5px solid transparent;
-    cursor: pointer;
-    object-fit: cover;
-    width: 112px;
-    height: 77px;
-  }
-  #carousel-thumbs img:hover {
-    border-color: rgba(255,255,255,.3);
-  }
-  #carousel-thumbs .selected img {
-    border-color: #fff;
-  }
+  
   .carousel-control-prev,
   .carousel-control-next {
     width: 50px;
+  }
+  .carousel-control-prev {
+    left: 30%;
+  }
+  .carousel-control-next {
+    right: 30%;
   }
 }

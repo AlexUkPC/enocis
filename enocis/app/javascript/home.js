@@ -80,11 +80,7 @@ $(document).ready(function(){
 				else
 					next_slide = parseInt(current_slide_number) - 1;
 			}
-
-			// console.log('nr of slides' + nr_of_slides);
-			// console.log('current slide' + current_slide);
-			// console.log('next slide nr' + next_slide);
-
+			
 			changeSlide(current_slide_number,next_slide);
 
 		}
