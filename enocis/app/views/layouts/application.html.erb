@@ -18,5 +18,6 @@
   <body>
     <%= render '/layouts/navbar' %>
     <%= yield %>
+    <%= render '/layouts/footer' if controller_path!='contact_forms' %>
   </body>
 </html>
