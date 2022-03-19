@@ -1,4 +1,4 @@
-<div id="testimonialCarousel" class="carousel slide row" data-ride="carousel">
+<div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
   <div class="container">
     <div class="carousel-inner ">
       <% x=0  %>
@@ -8,6 +8,8 @@
           <div class="image">
             <% if testimonial.image.attached? %>
               <%= image_tag testimonial.image %>
+            <% else %>
+              <%= image_tag 'avatar-png-icon-3.jpg', alt: 'avatar' %>
             <% end %>
           </div>
           <span class="name"><%= testimonial.name %></span>
