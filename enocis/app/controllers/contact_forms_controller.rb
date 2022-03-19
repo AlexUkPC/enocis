@@ -4,6 +4,7 @@ class ContactFormsController < ApplicationController
   # GET /contact_forms or /contact_forms.json
   def index
     @contact_forms = ContactForm.all
+    @contact_form = ContactForm.new
   end
 
   # GET /contact_forms/1 or /contact_forms/1.json

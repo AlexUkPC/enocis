@@ -1,0 +1,31 @@
+.admin_panel_menu{
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  a{
+    color: white;
+    text-transform: uppercase;
+    flex: 0 1 140px;
+    &:hover{
+      text-decoration: none;
+      color: #e5ae49;
+      li{
+        border: 3px solid #e5ae49;
+      }
+    }
+    &.active{
+      color: #e5ae49;
+      li{
+        border: 3px solid #e5ae49;
+      }
+    }
+    li{
+      
+      list-style: none;
+      border: 3px solid white;
+      padding: 40px 10px;
+      margin: 10px;
+      text-align: center;
+      }
+  }
+}

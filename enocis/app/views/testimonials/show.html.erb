@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%= render '/layouts/admin_panel' do %>
+  <p>
+    <strong>Name:</strong>
+    <%= @testimonial.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @testimonial.name %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @testimonial.title %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @testimonial.title %>
-</p>
+  <p>
+    <strong>Comment:</strong>
+    <%= @testimonial.comment %>
+  </p>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @testimonial.comment %>
-</p>
+  <p>
+    <strong>Approved:</strong>
+    <%= @testimonial.approved %>
+  </p>
 
-<p>
-  <strong>Approved:</strong>
-  <%= @testimonial.approved %>
-</p>
-
-<%= link_to 'Edit', edit_testimonial_path(@testimonial) %> |
-<%= link_to 'Back', testimonials_path %>
+  <%= link_to 'Edit', edit_testimonial_path(@testimonial) %> |
+  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+<% end %>

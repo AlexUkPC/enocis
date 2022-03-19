@@ -1,6 +1,8 @@
-<h1>Editing Testimonial</h1>
+<%= render '/layouts/admin_panel' do %>
+  <h2>Editing Testimonial</h2>
 
-<%= render 'form', testimonial: @testimonial %>
+  <%= render 'form', testimonial: @testimonial %>
 
-<%= link_to 'Show', @testimonial %> |
-<%= link_to 'Back', testimonials_path %>
+  <%= link_to 'Show', @testimonial %> |
+  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+<% end %>

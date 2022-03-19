@@ -1,5 +1,7 @@
-<h1>New Product</h1>
+<%= render '/layouts/admin_panel' do %>
+  <h2>New Product</h2>
 
-<%= render 'form', product: @product %>
+  <%= render 'form', product: @product %>
 
-<%= link_to 'Back', products_path %>
+  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+<% end %>

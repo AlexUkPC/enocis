@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :frezarimdf_categories
   resources :frezarimdfs
   get 'frezarimdf', to: 'frezarimdfs#index'
+  get 'admin_frezarimdfs', to: 'frezarimdfs#admin_index'
+  get 'admin_projects', to: 'projects#admin_index'
+  get 'admin_panel', to: 'admin_quick_access#index'
   get 'proiecte', to: 'projects#index'
   get 'politica-confidentialitate', to: 'politica_confidentialitate#index'
   get 'contact', to: 'contact_forms#new'

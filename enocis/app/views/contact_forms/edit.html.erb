@@ -1,6 +1,9 @@
-<h1>Editing Contact Form</h1>
+<%= render '/layouts/admin_panel' do %>
+  <h2>Editing Contact Form</h2>
 
-<%= render 'form', contact_form: @contact_form %>
+  <%= render 'form', contact_form: @contact_form %>
 
-<%= link_to 'Show', @contact_form %> |
-<%= link_to 'Back', contact_forms_path %>
+  <%= link_to 'Show', @contact_form %> |
+  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+<% end %>
+<%= render '/layouts/footer' %>

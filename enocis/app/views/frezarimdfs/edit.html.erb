@@ -1,6 +1,8 @@
-<h1>Editing Frezarimdf</h1>
+<%= render '/layouts/admin_panel' do %>
+  <h2>Editing Frezarimdf</h2>
 
-<%= render 'form', frezarimdf: @frezarimdf %>
+  <%= render 'form', frezarimdf: @frezarimdf %>
 
-<%= link_to 'Show', @frezarimdf, data: { turbolinks: false } %> |
-<%= link_to 'Back', frezarimdfs_path, data: { turbolinks: false } %>
+  <%= link_to 'Show', @frezarimdf, data: { turbolinks: false } %> |
+  <%= link_to 'Back', frezarimdfs_path, data: { turbolinks: false } %>
+<% end %>

@@ -11,6 +11,16 @@ class FrezarimdfsController < ApplicationController
       @frezarimdfs = Frezarimdf.all.order("id DESC")
     end 
   end
+  
+  def admin_index
+    @frezarimdf_categories = FrezarimdfCategory.all
+    cate = params[:cate]
+    if !cate.nil?
+      @frezarimdfs = Frezarimdf.where(frezarimdf_category_id: cate).order("id ASC")
+    else
+      @frezarimdfs = Frezarimdf.all.order("id DESC")
+    end 
+  end
 
   # GET /frezarimdfs/1 or /frezarimdfs/1.json
   def show

@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<%= render '/layouts/admin_panel' do %>
+  <p>
+    <strong>Name:</strong>
+    <%= @project_category.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project_category.name %>
-</p>
-
-<%= link_to 'Edit', edit_project_category_path(@project_category) %> |
-<%= link_to 'Back', project_categories_path %>
+  <%= link_to 'Edit', edit_project_category_path(@project_category) %> |
+  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+<% end %>

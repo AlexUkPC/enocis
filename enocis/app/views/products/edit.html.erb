@@ -1,6 +1,8 @@
-<h1>Editing Product</h1>
+<%= render '/layouts/admin_panel' do %>
+  <h2>Editing Product</h2>
 
-<%= render 'form', product: @product %>
+  <%= render 'form', product: @product %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+  <%= link_to 'Show', @product %> |
+  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+<% end %>

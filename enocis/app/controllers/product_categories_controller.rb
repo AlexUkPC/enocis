@@ -3,13 +3,9 @@ class ProductCategoriesController < ApplicationController
 
   # GET /product_categories or /product_categories.json
   def index
-      @products = Products.all
-      product = params[:product]
-      if !product.nil?
-        @product_categories = ProductCategory.where(product_category_id: product)
-      else
-        @product_categories = ProductCategory.all
-      end
+
+    @product_categories = ProductCategory.all
+
   end
 
   # GET /product_categories/1 or /product_categories/1.json

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<main role="main" class="container wider">
+ <%= render '/layouts/parallax_container', image: 'projects_bg.jpg' %> 
+
+	<div class="main_margin_top">
+		<h1>Panou administrare</h1>
+		<div class="white_bg page_container">
+      <div class="admin_panel">
+      <div class="admin_panel_inside">
+        <%= render '/layouts/admin_panel_navbar' %>
+        <%= yield %>
+      </div>
+      </div>
+    </div>
+  </div>
+</main>

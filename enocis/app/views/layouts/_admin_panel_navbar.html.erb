@@ -1,0 +1,32 @@
+<ul class="admin_panel_menu">
+  <%= link_to admin_panel_path, class: "#{'active' if controller_path=='admin_quick_access'}" do %>
+    <li>  
+      Quick menu
+    </li>
+  <% end %>
+  <%= link_to testimonials_path, class: "#{'active' if controller_path=='testimonials'}" do %>
+    <li>  
+      Home
+    </li>
+  <% end %>
+  <%= link_to products_path, class: "#{'active' if controller_path=='products' || controller_path=='product_categories'}" do %>
+    <li>  
+      Produse
+    </li>
+  <% end %>
+  <%= link_to admin_frezarimdfs_path, class: "#{'active' if controller_path=='frezarimdfs' || controller_path=='frezarimdf_categories'}" do %>
+    <li>  
+      Frezari
+    </li>
+  <% end %>
+  <%= link_to admin_projects_path, class: "#{'active' if controller_path=='projects' || controller_path=='project_categories'}" do %>
+    <li>  
+      Proiecte
+    </li>
+  <% end %>
+  <%= link_to contact_forms_path, class: "#{'active' if controller_path=='contact_forms'}" do %>
+    <li>  
+      Contact
+    </li>
+  <% end %>
+</ul>

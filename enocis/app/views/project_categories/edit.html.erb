@@ -1,6 +1,8 @@
-<h1>Editing Project Category</h1>
+<%= render '/layouts/admin_panel' do %>
+  <h2>Editing Project Category</h2>
 
-<%= render 'form', project_category: @project_category %>
+  <%= render 'form', project_category: @project_category %>
 
-<%= link_to 'Show', @project_category %> |
-<%= link_to 'Back', project_categories_path %>
+  <%= link_to 'Show', @project_category %> |
+  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+<% end %>

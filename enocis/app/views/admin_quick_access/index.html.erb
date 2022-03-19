@@ -1,0 +1,48 @@
+<%= render '/layouts/admin_panel' do %>
+  <div class="admin_quick_access">
+    <h2>Quick access panel</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ducimus sunt alias, impedit suscipit sapiente est saepe vel, praesentium quisquam labore ipsam blanditiis magnam cupiditate architecto aliquam repellendus. Aspernatur, facere.</p>
+    <p>NOTA: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos porro hic veniam aliquam ab veritatis ipsum, quas amet, maiores dolores odio quis nam nobis magni consequuntur sed omnis incidunt aliquid.</p>
+    <div class="quick-menu">
+      <div class="quick-menu-item">
+        <h3>Home</h3>
+        <ul>
+          <li><%= link_to 'Vezi testimoniale', testimonials_path %></li>
+        </ul>
+      </div>
+      <div class="quick-menu-item">
+        <h3>Produse</h3>
+        <ul>
+          <li><%= link_to 'Vezi produse', products_path %></li>
+          <li><%= link_to 'Adauga produs', new_product_path %></li>
+          <li><%= link_to 'Vezi categorii produse', product_categories_path %></li>
+          <li><%= link_to 'Adauga categorie produse', new_product_category_path %></li>
+        </ul>
+      </div>
+      <div class="quick-menu-item">
+        <h3>Frezari</h3>
+        <ul>
+          <li><%= link_to 'Vezi frezari', admin_frezarimdfs_path %></li>
+          <li><%= link_to 'Adauga frezare', new_frezarimdf_path %></li>
+          <li><%= link_to 'Vezi categorii frezari', frezarimdf_categories_path %></li>
+          <li><%= link_to 'Adauga categorie frezari', new_frezarimdf_category_path %></li>
+        </ul>
+      </div>
+      <div class="quick-menu-item">
+        <h3>Proiecte</h3>
+        <ul>
+          <li><%= link_to 'Vezi proiecte', admin_projects_path %></li>
+          <li><%= link_to 'Adauga proiect', new_project_path %></li>
+          <li><%= link_to 'Vezi categorii proiecte', project_categories_path %></li>
+          <li><%= link_to 'Adauga categorie proiecte', new_project_category_path %></li>
+        </ul>
+      </div>
+      <div class="quick-menu-item">
+        <h3>Contact</h3>
+        <ul>
+          <li><%= link_to 'Vezi formularele de contact', contact_forms_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>

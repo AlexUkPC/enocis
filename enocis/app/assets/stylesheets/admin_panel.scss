@@ -1,0 +1,66 @@
+@use "admin_panel_menu";
+.admin_panel{
+  position: relative;
+  background-image: url('frezari.jpg');
+  background-size: cover;
+  padding: 30px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.8);
+  }
+  .admin_panel_inside{
+    position: relative;
+    color: white;
+  }
+}
+.admin_quick_access{
+  h2{
+    color: white;
+    text-transform: uppercase;
+    border-bottom: 1px white solid;
+    padding-bottom: 10px;
+  }
+  p{
+    color: #e5ae49;
+    margin-bottom: 0;
+    &:last-child{
+      padding-bottom: 10px;
+      border-bottom: 1px #e5ae49 solid;
+    }
+  }
+  .quick-menu{
+    display: flex;
+    gap: 30px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+    .quick-menu-item{
+      border: 6px solid white;
+      padding: 60px 20px;
+      flex: 1 1 18%;
+      text-align: center;
+      h3{
+        color: white;
+        text-transform: uppercase;
+      }
+      ul{
+        padding-left: 0;
+        li{
+          
+          list-style: none;
+          padding: 5px 0;
+          a{
+            color: #e5ae49;
+            &:hover{
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

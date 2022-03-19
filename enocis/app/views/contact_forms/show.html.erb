@@ -1,24 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%= render '/layouts/admin_panel' do %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact_form.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @contact_form.name %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact_form.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @contact_form.email %>
+  </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @contact_form.phone %>
-</p>
+  <p>
+    <strong>Phone:</strong>
+    <%= @contact_form.phone %>
+  </p>
 
-<p>
-  <strong>Message:</strong>
-  <%= @contact_form.message %>
-</p>
+  <p>
+    <strong>Message:</strong>
+    <%= @contact_form.message %>
+  </p>
 
-<%= link_to 'Edit', edit_contact_form_path(@contact_form) %> |
-<%= link_to 'Back', contact_forms_path %>
+  <%= link_to 'Edit', edit_contact_form_path(@contact_form) %> |
+  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+  
+<% end %>
+<%= render '/layouts/footer' %>

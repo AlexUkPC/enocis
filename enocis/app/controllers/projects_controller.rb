@@ -13,6 +13,12 @@ class ProjectsController < ApplicationController
     end 
   end
 
+  def admin_index
+
+    @projects = Project.all.order("id ASC")
+
+  end
+
   # GET /projects/1 or /projects/1.json
   def show
   end

@@ -88,3 +88,11 @@ p{
   left:50%;
   top:0;
 }
+.container.wider{
+  max-width: 1640px;
+}
+@media (max-width: 767px) {
+  .container.wider{
+    max-width: 650px;
+  }
+}
