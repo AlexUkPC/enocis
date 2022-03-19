@@ -1,0 +1,8 @@
+document.querySelector("#new_testimonial_link").insertAdjacentHTML("afterend", "<%= escape_javascript render partial: 'new' %>");
+var testimonial_form = document.querySelector("main form");
+testimonial_form.style.opacity = 0;
+setTimeout(function() {
+  testimonial_form.style.transition = 'opacity 3s';
+  testimonial_form.style.opacity = 1;
+}, 10);
+document.querySelector("#new_testimonial_link").style.display = 'none';

@@ -1,0 +1,30 @@
+<%= form_with(model: @testimonial,data: {remote: true}, class: "testimonial-form", id: "testimonial-form") do |form| %>
+   <div class="field">
+    <%= form.label "Nume" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Functie" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Testmonial" %>
+    <%= form.text_area :comment %>
+  </div>
+  
+  <div class="field">
+    <%= form.label "Poza" %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="actions row">
+    <div class="col">
+      <%= form.submit 'Adauga testimonial' %>
+    </div>
+    <div class="col">
+      <%= link_to 'Cancel', '#' , onclick:"document.querySelector('#testimonial-form').style.display = 'none';document.querySelector('#new_testimonial_link').style.display = '';return false;", class: "cancel" %>
+    </div>
+  </div>
+<% end %>

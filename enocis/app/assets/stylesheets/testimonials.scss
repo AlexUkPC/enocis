@@ -5,7 +5,7 @@
   color: white;
   .carousel {
     position: relative;    
-    height: 600px;
+    height: 550px;
     .carousel-inner{
       max-width: 1140px;
       margin: 0;
@@ -65,7 +65,100 @@
       }
     }
   }
-  
+  .testimonial-form-container{
+    text-align: center;
+    padding-bottom: 20px;
+    max-width: 30%;
+    margin: 0 auto;
+    a:hover{
+      text-decoration: none;
+    }
+    .testimonial-form{
+      text-align: left;
+      input{
+        width: 100%;
+        background: none;
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: #ffffff;
+        margin-bottom: 15px;
+        padding: 0 0 8px;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+        outline:none;
+        letter-spacing: 0.5px;
+        color: white;
+        &[type=text]:focus{
+          background: none;
+          outline:none;
+          box-shadow:none;
+          border-color: #ffffff;
+        }
+        &[type=submit]{
+          display: inline-block;
+          font-size: 13px;
+          text-transform: uppercase;
+          padding: 10px 25px;
+          background: #E5AE49;
+          border-radius: 50px;
+          border: none;
+          color: #fff;
+          font-family: Arial, sans-serif;
+          cursor: pointer;
+        }
+      }
+      .cancel{
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        font-size: 13px;
+        text-transform: uppercase;
+        padding: 10px 25px;
+        background: #E5AE49;
+        border-radius: 50px;
+        border: none;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+      }
+      .form-control::placeholder{
+        color:#495057;
+        font-size:13px;
+      }
+      textarea{
+        color: white;
+        width: 100%;
+        background: none;
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: #ffffff;
+        height: 75px;
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+        padding:0;
+        border-radius:0;
+        &:focus{
+          background: none;
+          outline:none;
+          box-shadow:none;
+          border-color: #ffffff;
+        }
+      }
+    }
+    #new_testimonial_link{
+      font-size: 13px;
+      text-transform: uppercase;
+      padding: 10px 25px;
+      background: #E5AE49;
+      border-radius: 50px;
+      border: none;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+    }
+  }
   .carousel-control-prev,
   .carousel-control-next {
     width: 50px;

@@ -739,3 +739,18 @@ ActionText::RichText.create!(record_type: 'Project',record_id: project8.id, name
   
   </div>')
 
+testimonial1 = Testimonial.create!(
+  name: "John Doe",
+  title: "CEO",
+  comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quis consectetur accusantium veritatis, reiciendis, odio praesentium dolorem dolorum labore odit suscipit tenetur explicabo non cumque excepturi temporibus obcaecati itaque hic",
+  approved: true
+)
+testimonial1.image.attach(io: File.open(Rails.root.join('app/assets/images/testimonial1.png')), filename: 'testimonial1.png')
+
+testimonial2 = Testimonial.create!(
+  name: "Lily Smith",
+  title: "Manager",
+  comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quis consectetur accusantium veritatis, reiciendis, odio praesentium dolorem dolorum labore odit suscipit tenetur explicabo non cumque excepturi temporibus obcaecati itaque hic",
+  approved: true
+)
+testimonial2.image.attach(io: File.open(Rails.root.join('app/assets/images/testimonial2.jpg')), filename: 'testimonial2.jpg')

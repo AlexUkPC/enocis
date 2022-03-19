@@ -23,13 +23,15 @@ class TestimonialsController < ApplicationController
   def create
     @testimonial = Testimonial.new(testimonial_params)
 
-    respond_to do |format|
-      if @testimonial.save
-        format.html { redirect_to testimonial_url(@testimonial), notice: "Testimonial was successfully created." }
-        format.json { render :show, status: :created, location: @testimonial }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @testimonial.errors, status: :unprocessable_entity }
+    if @testimonial.save
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Thanks for your testimonial' }
+        format.js { flash[:notice] = @message = "Thanks for your testimonial" }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Unable to add testimonial' }
+        format.js { render :fail_create }
       end
     end
   end
