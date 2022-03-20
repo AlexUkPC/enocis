@@ -1,24 +1,26 @@
 <%= render '/layouts/admin_panel' do %>
-  <p>
-    <strong>Name:</strong>
-    <%= @testimonial.name %>
-  </p>
+  <div class="admin_testimonial_show">
+    <p>
+      <strong>Nume:</strong>
+      <%= @testimonial.name %>
+    </p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @testimonial.title %>
-  </p>
+    <p>
+      <strong>Functie:</strong>
+      <%= @testimonial.title %>
+    </p>
 
-  <p>
-    <strong>Comment:</strong>
-    <%= @testimonial.comment %>
-  </p>
+    <p>
+      <strong>Testimonial:</strong>
+      <%= @testimonial.comment %>
+    </p>
 
-  <p>
-    <strong>Approved:</strong>
-    <%= @testimonial.approved %>
-  </p>
+    <p>
+      <strong>Aprobat:</strong>
+      <%= @testimonial.approved ? "da" : "nu" %>
+    </p>
 
-  <%= link_to 'Edit', edit_testimonial_path(@testimonial) %> |
-  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+    <%= link_to 'Editeaza', edit_testimonial_path(@testimonial) %> |
+    <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+  </div>
 <% end %>

@@ -17,6 +17,63 @@
     position: relative;
     color: white;
   }
+  h2{
+    color: white;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  table {
+    overflow: hidden;
+    // table-layout: fixed;
+    text-align: center;
+  }
+  .width100{
+    width: 100%;
+  }
+  .width50{
+    width: 50%;
+  }
+  th{
+    color: #e5ae49;
+    border: solid 2px white;
+    height: 40px;
+    padding: 5px;
+  }
+  .two {
+    width: 2%;
+  }
+  .three {
+    width: 3%;
+  }
+  .five {
+    width: 5%;
+  }
+  .ten {
+    width: 10%;
+  }
+  .twenty {
+    width: 20%;
+  }
+  .fifthy {
+    width: 50%;
+  }
+  /* see me */
+  td {
+    border: solid 2px white;
+    padding: 5px;
+  }
+  i{
+    font-size: 20px;
+  }
+  .fa-eye{
+    color:white;
+  }
+  .fa-pencil-square{
+    color: green;
+  }
+  .fa-trash{
+    color: red;
+  }
 }
 .admin_quick_access{
   h2{
@@ -61,6 +118,16 @@
           }
         }
       }
+    }
+  }
+}
+.admin_testimonials{
+  
+}
+.container.wider{
+  .admin_testimonial_show{
+    p{
+      color: white;
     }
   }
 }

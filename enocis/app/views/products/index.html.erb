@@ -1,32 +1,50 @@
 <%= render '/layouts/admin_panel' do %>
 
-  <h2>Products</h2>
+  <h2>Vizualizare produse</h2>
 
-  <table>
+  <table class="width100">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Dimensions</th>
+        <th class="three"></th>
+        <th>Nume</th>
+        <th>Pret</th>
+        <th>Dimensiuni</th>
         <th>Material</th>
-        <th>Accessories</th>
-        <th>Color</th>
-        <th colspan="3"></th>
+        <th>Accessorii</th>
+        <th>Culoare</th>
+        <th>Categorie</th>
+        <th class="three">Vezi</th>
+        <th class="three">Edit</th>
+        <th class="three">Sterge</th>
       </tr>
     </thead>
 
     <tbody>
       <% @products.each do |product| %>
         <tr>
+          <td><%= product.id %></td>
           <td><%= product.name %></td>
           <td><%= product.price %></td>
           <td><%= product.dimensions %></td>
           <td><%= product.material %></td>
           <td><%= product.accessories %></td>
           <td><%= product.color %></td>
-          <td><%= link_to 'Show', product %></td>
-          <td><%= link_to 'Edit', edit_product_path(product) %></td>
-          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>to add categorie</td>
+           <td>
+              <%= link_to product do %>
+                <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to edit_product_path(product)do%>
+                <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+              <% end %>
+            </td>
         </tr>
       <% end %>
     </tbody>

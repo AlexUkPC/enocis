@@ -1,28 +1,46 @@
 <%= render '/layouts/admin_panel' do %>
 
-  <h2>Products</h2>
+  <h2>Proiecte</h2>
 
   <table>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Author</th>
-        <th>Date</th>
-        <th colspan="3"></th>
+        <th class="three"></th>
+        <th>Nume</th>
+        <th>Descriere</th>
+        <th>Autor</th>
+        <th>Data</th>
+        <th>Categorii</th>
+        <th class="three">Vezi</th>
+        <th class="three">Edit</th>
+        <th class="three">Sterge</th>
       </tr>
     </thead>
 
     <tbody>
       <% @projects.each do |project| %>
         <tr>
+          <td><%= project.id %></td>
           <td><%= project.name %></td>
-          <td><%= project.description %></td>
+          <td><%= excerpt(project.description.to_plain_text, "", radius: 100) %></td>
           <td><%= project.author %></td>
           <td><%= project.date %></td>
-          <td><%= link_to 'Show', project %></td>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>to add categorii</td>
+          <td>
+              <%= link_to project do %>
+                <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to edit_project_path(project) do%>
+                <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+              <% end %>
+            </td>
         </tr>
       <% end %>
     </tbody>
