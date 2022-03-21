@@ -14,27 +14,27 @@
         <h3>Produse</h3>
         <ul>
           <li><%= link_to 'Vezi produse', products_path %></li>
-          <li><%= link_to 'Adauga produs', new_product_path %></li>
+          <li><%= link_to 'Adauga produs', new_product_path, data: { turbolinks: false } %></li>
           <li><%= link_to 'Vezi categorii produse', product_categories_path %></li>
-          <li><%= link_to 'Adauga categorie produse', new_product_category_path %></li>
+          <li><%= link_to 'Adauga categorie produse', new_product_category_path, data: { turbolinks: false } %></li>
         </ul>
       </div>
       <div class="quick-menu-item">
         <h3>Frezari</h3>
         <ul>
           <li><%= link_to 'Vezi frezari', admin_frezarimdfs_path %></li>
-          <li><%= link_to 'Adauga frezare', new_frezarimdf_path %></li>
+          <li><%= link_to 'Adauga frezare', new_frezarimdf_path, data: { turbolinks: false } %></li>
           <li><%= link_to 'Vezi categorii frezari', frezarimdf_categories_path %></li>
-          <li><%= link_to 'Adauga categorie frezari', new_frezarimdf_category_path %></li>
+          <li><%= link_to 'Adauga categorie frezari', new_frezarimdf_category_path, data: { turbolinks: false } %></li>
         </ul>
       </div>
       <div class="quick-menu-item">
         <h3>Proiecte</h3>
         <ul>
           <li><%= link_to 'Vezi proiecte', admin_projects_path %></li>
-          <li><%= link_to 'Adauga proiect', new_project_path %></li>
+          <li><%= link_to 'Adauga proiect', new_project_path, data: { turbolinks: false } %></li>
           <li><%= link_to 'Vezi categorii proiecte', project_categories_path %></li>
-          <li><%= link_to 'Adauga categorie proiecte', new_project_category_path %></li>
+          <li><%= link_to 'Adauga categorie proiecte', new_project_category_path, data: { turbolinks: false } %></li>
         </ul>
       </div>
       <div class="quick-menu-item">

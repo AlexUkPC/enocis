@@ -125,5 +125,34 @@ $(document).ready(function(){
 		);
 		
 	};
+	function readURL(input, rm_image, image, poza) {
+		if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+						$(image).attr('src', e.target.result);
+						$(poza).show();
+						$(image).show();
+						$(rm_image).attr('value', 0);
+				}
+				
+				reader.readAsDataURL(input.files[0]);
+		}
+	}
 	
+	$("#testimonial_image").change(function(){
+		readURL(this, '#testimonial_remove_image', '#image', '#poza');
+	});
+	$("#product_image").change(function(){
+		readURL(this, '#product_remove_image', '#image', '#poza');
+	});
+	$("#frezarimdf_image_svg").change(function(){
+		readURL(this, '#frezarimdf_remove_image_svg', '#image', '#poza');
+	});
+	$("#product_category_cover_image").change(function(){
+		readURL(this, '#product_category_remove_cover_image', '#image1', '#poza1');
+	});
+	$("#product_category_front_image").change(function(){
+		readURL(this, '#product_category_remove_front_image', '#image2', '#poza2');
+	});
 })
+

@@ -1,7 +1,7 @@
 <%= render '/layouts/admin_panel' do %>
 
-  <h2>Vizualizare produse</h2>
-
+  <h2>Vizualizare produse</h2>  <%= link_to 'New Product', new_product_path %>
+  <hr>
   <table class="width100">
     <thead>
       <tr>
@@ -36,7 +36,7 @@
               <% end %>
             </td>
             <td>
-              <%= link_to edit_product_path(product)do%>
+              <%= link_to edit_product_path(product), data: { turbolinks: false } do%>
                 <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
               <% end %>
             </td>
@@ -52,5 +52,5 @@
 
   <br>
 
-  <%= link_to 'New Product', new_product_path %>
+ 
 <% end %>

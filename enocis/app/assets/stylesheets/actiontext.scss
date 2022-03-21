@@ -42,4 +42,11 @@
     letter-spacing: .5px;
     margin: 0 0 10px;
   }
+  
+}
+trix-toolbar{
+  .trix-button::before{
+    background-color: white;
+  }
+  
 }

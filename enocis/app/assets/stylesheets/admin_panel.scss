@@ -76,6 +76,106 @@
   .fa-trash{
     color: red;
   }
+  form{
+    width: 50%;
+    .actions{
+      margin-left: 155px;
+    }
+    .form_btn{
+      display: inline-block;
+      min-width: 100px;
+      a{
+        color: #e5ae49;
+        
+        &:hover{
+          text-decoration: none;
+        }
+      }
+      border: 2px solid #e5ae49;
+      text-transform:uppercase;
+      cursor: pointer;
+      border-radius: 50px;
+      padding: 5px;
+      text-align: center;
+    }
+    &.admin_project_form, &.admin_product_category_form{
+      width: 100%;
+      input, textarea{
+        width: 30%;
+        &[type=checkbox]{
+          width: auto;
+        }
+        &[type=submit]{
+          width: auto;
+        }
+      }
+    }
+  }
+  label{
+    width: 150px;
+  }
+  input, textarea{
+    width: 70%;
+    color: white;
+    background-color: transparent;
+    margin: 5px;
+    padding: 5px;
+    &[type=checkbox]{
+      width: auto;
+    }
+    &[type=submit]{
+      width: auto;
+      color: #e5ae49;
+      border-color: #e5ae49;
+      text-transform:uppercase;
+      cursor: pointer;
+      border-radius: 50px;
+      min-width: 100px;
+    }
+  }
+  select{
+    width: 70%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  textarea{
+    vertical-align: top;
+    min-height: 150px;
+  }
+  .poza{
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+    img{
+      margin: 5px; 
+      width: 100px;
+      height: 100px;
+    }
+    #poza, #poza1, #poza2{
+      display: inline-block;
+    }
+    label{
+      border: 2px solid #e5ae49;
+      width: 100px;
+      display: inline-block;
+      text-align: center;
+      margin-left: 5px;
+      color: #e5ae49;
+      border-radius: 50px;
+      padding: 5px;
+      cursor: pointer;
+    }
+    input[type=checkbox]{
+      display: none;
+    }
+    input[type=file]{
+      display: inline-block;
+      // margin-left: 0;
+      display: none;
+    }
+  }
 }
 .admin_quick_access{
   h2{
@@ -126,10 +226,50 @@
 .admin_testimonials{
   
 }
+.admin_testimonial_form{
+ 
+}
+.admin_project_form, .admin_product_category_form{
+  input{
+    &[type=checkbox]{
+      width: auto;
+    }
+  }
+  .editor{
+    display: inline-block;
+    width: 80%;
+    vertical-align: top;
+    margin: 5px;
+    trix-editor{
+      min-height: 200px;
+    }
+    
+  }
+  .categorii{
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+  }
+}
+.admin_project_form{
+  .project_image{
+    width: 100px;
+  }
+}
+
+.admin_product_form, .admin_frezarimdf_form{
+  .poza{
+    img{
+      width: 300px;
+      height: 200px;
+    }
+  }
+}
 .container.wider{
   .admin_testimonial_show{
     p{
       color: white;
+      width: 50%;
     }
   }
 }

@@ -1,4 +1,4 @@
-<%= form_with(model: product) do |form| %>
+<%= form_with(model: product, class:"admin_product_form") do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -12,45 +12,70 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label 'Nume' %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label 'Pret' %>
     <%= form.text_field :price %>
   </div>
 
   <div class="field">
-    <%= form.label :dimensions %>
+    <%= form.label 'Dimensiuni' %>
     <%= form.text_field :dimensions %>
   </div>
 
   <div class="field">
-    <%= form.label :material %>
+    <%= form.label 'Material' %>
     <%= form.text_field :material %>
   </div>
 
   <div class="field">
-    <%= form.label :accessories %>
+    <%= form.label 'Accesorii' %>
     <%= form.text_field :accessories %>
   </div>
 
   <div class="field">
-    <%= form.label :color %>
+    <%= form.label 'Culoare' %>
     <%= form.text_field :color %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
-  
-  <div class="field">
-      <%= form.select :product_category_id, ProductCategory.all.map {|c| [c.name, c.id]} %>
+    <%= form.label 'Categorie' %>
+    <%= form.select :product_category_id, ProductCategory.all.map {|c| [c.name, c.id]} %>
   </div> 
 
+  <div class="field">
+    <%= form.label 'Poza' %>
+    <div class="poza">
+        <div id="poza">
+    <% if product.image.attached? %>
+          <%= image_tag product.image.variant(resize_to_limit: [300, 200]), id: "image" %>
+          <br>
+          <%= form.label :remove_image do %>
+            <%= form.check_box :remove_image, onclick:"document.querySelector('#poza').style.display = 'none';"  %> 
+            Sterge
+          <% end %>
+    <% else %>
+    <img src="" id="image" style="display: none;">    
+    <% end %>
+    </div>
+    <%= form.label :image do %>
+      Upload
+    <% end %>
+    <%= form.file_field :image %>
+  </div>
+
   <div class="actions">
+    <div class="form_btn">
+      <%= link_to 'Inapoi', products_path, data: { turbolinks: false } %>
+    </div>
     <%= form.submit %>
+    <% if !current_page?(new_product_path)  %>
+      <div class="form_btn">
+        <%= link_to 'Vezi', @product, data: { turbolinks: false } %>
+      </div>
+    <% end %>
   </div>
 <% end %>

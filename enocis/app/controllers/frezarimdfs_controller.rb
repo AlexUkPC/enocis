@@ -82,6 +82,6 @@ class FrezarimdfsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def frezarimdf_params
-      params.require(:frezarimdf).permit(:name, :image, :image_svg, :frezarimdf_category_id)
+      params.require(:frezarimdf).permit(:name, :image, :image_svg, :frezarimdf_category_id, :remove_image_svg)
     end
 end

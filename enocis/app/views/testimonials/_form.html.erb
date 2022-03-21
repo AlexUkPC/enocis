@@ -1,4 +1,4 @@
-<%= form_with(model: testimonial) do |form| %>
+<%= form_with(model: testimonial, class:"admin_testimonial_form") do |form| %>
   <% if testimonial.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(testimonial.errors.count, "error") %> prohibited this testimonial from being saved:</h2>
@@ -12,31 +12,54 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label 'Nume' %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label 'Functie' %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :comment %>
+    <%= form.label 'Comentariu' %>
     <%= form.text_area :comment %>
   </div>
 
   <div class="field">
-    <%= form.label :approved %>
-    <%= form.check_box :approved %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :image %>
+    <%= form.label 'Poza' %>
+    <div class="poza">
+        <div id="poza">
+    <% if testimonial.image.attached? %>
+          <%= image_tag testimonial.image.variant(resize_to_limit: [100, 100]), id: "image" %>
+          <br>
+          <%= form.label :remove_image do %>
+            <%= form.check_box :remove_image, onclick:"document.querySelector('#poza').style.display = 'none';"  %> 
+            Sterge
+          <% end %>
+    <% else %>
+    <img src="" id="image" style="display: none;">    
+    <% end %>
+    </div>
+    <%= form.label :image do %>
+      Upload
+    <% end %>
     <%= form.file_field :image %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Aprobat' %>
+    <%= form.check_box :approved %>
   </div>
 
   <div class="actions">
+    <div class="form_btn">
+      <%= link_to 'Inapoi', testimonials_path, data: { turbolinks: false } %>
+    </div>
     <%= form.submit %>
+    <div class="form_btn">
+      <%= link_to 'Vezi', @testimonial, data: { turbolinks: false } %>
+    </div>
   </div>
 <% end %>

@@ -1,4 +1,4 @@
-<%= form_with(model: product_category) do |form| %>
+<%= form_with(model: product_category, class: "admin_product_category_form") do |form| %>
   <% if product_category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(product_category.errors.count, "error") %> prohibited this product_category from being saved:</h2>
@@ -12,36 +12,78 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label 'Nume' %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label 'Titlu' %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :data_icon %>
+    <%= form.label 'Icon' %>
     <%= form.text_field :data_icon %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.rich_text_area :description %>
+    <%= form.label 'Descriere' %>
+    <div class="editor">
+      <%= form.rich_text_area :description %>
+    </div>
   </div>
   
   <div class="field">
-    <%= form.label :cover_image %>
+    <%= form.label 'Poza fundal categorie' %>
+    <div class="poza">
+        <div id="poza1">
+    <% if product_category.cover_image.attached? %>
+          <%= image_tag product_category.cover_image.variant(resize_to_limit: [300, 200]), id: "image1" %>
+          <br>
+          <%= form.label :remove_cover_image do %>
+            <%= form.check_box :remove_cover_image, onclick:"document.querySelector('#poza1').style.display = 'none';"  %> 
+            Sterge
+          <% end %>
+    <% else %>
+    <img src="" id="image1" style="display: none;">    
+    <% end %>
+    </div>
+    <%= form.label :cover_image do %>
+      Upload
+    <% end %>
     <%= form.file_field :cover_image %>
   </div>
 
   <div class="field">
-    <%= form.label :front_image %>
+    <%= form.label 'Poza principala categorie' %>
+    <div class="poza">
+        <div id="poza2">
+    <% if product_category.front_image.attached? %>
+          <%= image_tag product_category.front_image.variant(resize_to_limit: [300, 200]), id: "image2" %>
+          <br>
+          <%= form.label :remove_front_image do %>
+            <%= form.check_box :remove_front_image, onclick:"document.querySelector('#poza2').style.display = 'none';"  %> 
+            Sterge
+          <% end %>
+    <% else %>
+    <img src="" id="image2" style="display: none;">    
+    <% end %>
+    </div>
+    <%= form.label :front_image do %>
+      Upload
+    <% end %>
     <%= form.file_field :front_image %>
   </div>
 
   <div class="actions">
+    <div class="form_btn">
+      <%= link_to 'Inapoi', product_categories_path, data: { turbolinks: false } %>
+    </div>
     <%= form.submit %>
+    <% if !current_page?(new_product_category_path)  %>
+      <div class="form_btn">
+        <%= link_to 'Vezi', @product_category, data: { turbolinks: false } %>
+      </div>
+    <% end %>
   </div>
 <% end %>

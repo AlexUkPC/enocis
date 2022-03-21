@@ -39,6 +39,7 @@ class TestimonialsController < ApplicationController
   # PATCH/PUT /testimonials/1 or /testimonials/1.json
   def update
     respond_to do |format|
+      # @testimonial.image.purge if (@testimonial.remove_image == '1')
       if @testimonial.update(testimonial_params)
         format.html { redirect_to testimonial_url(@testimonial), notice: "Testimonial was successfully updated." }
         format.json { render :show, status: :ok, location: @testimonial }
@@ -67,6 +68,6 @@ class TestimonialsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def testimonial_params
-      params.require(:testimonial).permit(:name, :title, :comment, :approved, :image)
+      params.require(:testimonial).permit(:name, :title, :comment, :approved, :image, :remove_image)
     end
 end
