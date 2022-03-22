@@ -18,11 +18,42 @@
     position: relative;
     color: white;
   }
+  .admin_top{
+    display: flex;
+    .admin_btn{
+      min-width: 100px;
+      border: 2px solid #e5ae49;
+      text-transform:uppercase;
+      cursor: pointer;
+      border-radius: 50px;
+      padding: 5px 10px;
+      text-align: center;
+      vertical-align: middle;
+      margin-left: 10px;
+      a{
+        color: #e5ae49;
+        
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+    
+    .push {
+      margin-left: auto;
+    }
+  }
   h2{
     color: white;
     font-size: 20px;
+    margin: 0;
+    line-height: 34px;
+    // display: inline-block;
+  }
+  hr{
+    height: 1px;
+    background-color: #e5ae49;
     margin-bottom: 30px;
-    border-bottom: 2px solid #e5ae49;
   }
   table {
     overflow: hidden;
@@ -177,12 +208,19 @@
     }
   }
 }
+.admin_project_category{
+  &::after{
+    content: "|";
+  }
+  &:last-child{
+    &::after{
+      content: "";
+    }
+  }
+}
 .admin_quick_access{
   h2{
-    color: white;
     text-transform: uppercase;
-    border-bottom: 1px white solid;
-    padding-bottom: 10px;
   }
   p{
     color: #e5ae49;
@@ -266,7 +304,7 @@
   }
 }
 .container.wider{
-  .admin_testimonial_show{
+  .admin_testimonial_show, .admin_contact_form_show, .admin_project_show, .admin_project_category_show, .admin_frezarimdf_category_show{
     p{
       color: white;
       width: 50%;

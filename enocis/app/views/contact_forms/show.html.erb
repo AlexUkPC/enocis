@@ -1,27 +1,27 @@
 <%= render '/layouts/admin_panel' do %>
+  <div class="admin_contact_form_show">
+    <p>
+      <strong>Nume:</strong>
+      <%= @contact_form.name %>
+    </p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @contact_form.name %>
-  </p>
+    <p>
+      <strong>Email:</strong>
+      <%= @contact_form.email %>
+    </p>
 
-  <p>
-    <strong>Email:</strong>
-    <%= @contact_form.email %>
-  </p>
+    <p>
+      <strong>Telefon:</strong>
+      <%= @contact_form.phone %>
+    </p>
 
-  <p>
-    <strong>Phone:</strong>
-    <%= @contact_form.phone %>
-  </p>
+    <p>
+      <strong>Mesaj:</strong>
+      <%= @contact_form.message %>
+    </p>
 
-  <p>
-    <strong>Message:</strong>
-    <%= @contact_form.message %>
-  </p>
-
-  <%= link_to 'Edit', edit_contact_form_path(@contact_form) %> |
-  <%= link_to 'Back', :back, data: { turbolinks: false } %>
-  
+    <%= link_to 'Edit', edit_contact_form_path(@contact_form) %> |
+    <%= link_to 'Back', :back, data: { turbolinks: false } %>
+  </div>
 <% end %>
 <%= render '/layouts/footer' %>

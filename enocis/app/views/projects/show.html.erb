@@ -1,20 +1,45 @@
 <%= render '/layouts/admin_panel' do %>
+  <div class="admin_project_show">
+    <p>
+      <strong>Nume:</strong>
+      <%= @project.name %>
+    </p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @project.name %>
-  </p>
+    <p>
+      <strong>Descriere:</strong>
+      <%= @project.description %>
+    </p>
 
-  <p>
-    <strong>Author:</strong>
-    <%= @project.author %>
-  </p>
+    <p>
+      <strong>Autor:</strong>
+      <%= @project.author %>
+    </p>
 
-  <p>
-    <strong>Date:</strong>
-    <%= @project.date %>
-  </p>
+    <p>
+      <strong>Data:</strong>
+      <%= @project.date %>
+    </p>
 
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+    <p>
+    <strong>Categorii:</strong>
+      <% for project_category in @project.project_categories %>
+        <span class="category"> 
+          <%= project_category.name %> |
+        </span>
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Imagini:</strong>
+      <% if @project.images.any? %>
+        <% @project.images.each do |image| %>
+          <%= image_tag image ,class: "d-block w-100", alt:"..." %>
+              
+        <% end %>
+      <% end %>
+    </p>
+
+    <%= link_to 'Edit', edit_project_path(@project) %> |
+    <%= link_to 'Back', :back, data: { turbolinks: false } %>
+  </div>
 <% end %>

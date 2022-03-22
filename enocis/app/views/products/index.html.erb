@@ -1,6 +1,10 @@
 <%= render '/layouts/admin_panel' do %>
 
-  <h2>Vizualizare produse</h2>  <%= link_to 'New Product', new_product_path %>
+  <div class="admin_top">
+    <h2>Vizualizare produse</h2>
+    <div class="admin_btn push"><%= link_to 'Lista categorii produse', product_categories_path %></div>
+    <div class="admin_btn"> <%= link_to 'Adauga produs', new_product_path %></div>
+  </div>
   <hr>
   <table class="width100">
     <thead>
@@ -29,7 +33,7 @@
           <td><%= product.material %></td>
           <td><%= product.accessories %></td>
           <td><%= product.color %></td>
-          <td>to add categorie</td>
+          <td><%= product.product_category.name %></td>
            <td>
               <%= link_to product do %>
                 <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>

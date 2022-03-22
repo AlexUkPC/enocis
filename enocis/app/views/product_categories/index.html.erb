@@ -1,7 +1,10 @@
 <%= render '/layouts/admin_panel' do %>
 
-  <h2>Categorii de produse</h2>
-
+  <div class="admin_top">
+    <h2>Categorii de produse</h2>
+    <div class="admin_btn push"><%= link_to 'Adauga categorie produse', new_product_category_path %></div>
+  </div>
+  <hr>
   <table class="width50">
     <thead>
       <tr>
@@ -42,5 +45,4 @@
 
   <br>
 
-  <%= link_to 'New Product Category', new_product_category_path %>
 <% end %>

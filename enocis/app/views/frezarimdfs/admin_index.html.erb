@@ -1,5 +1,11 @@
 <%= render '/layouts/admin_panel' do %>
-  <h2>Vizualizare frezari MDF</h2>
+
+  <div class="admin_top">
+    <h2>Vizualizare frezari MDF</h2>
+    <div class="admin_btn push"><%= link_to 'Lista categorii frezari', frezarimdf_categories_path %></div>
+    <div class="admin_btn"><%= link_to 'Adauga frezare', new_frezarimdf_path %></div>
+  </div>
+  <hr>
   <table class="width50">
     <thead>
       <tr>
@@ -17,7 +23,7 @@
         <tr>
           <td><%= frezarimdf.id %></td>
           <td><%= frezarimdf.name %></td>
-          <td>to add categorie</td>
+          <td><%= frezarimdf.frezarimdf_category.name %></td>
           <td>
               <%= link_to frezarimdf, data: { turbolinks: false } do %>
                 <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
@@ -40,6 +46,5 @@
 
   <br>
 
-  <%= link_to 'New frezarimdf', new_frezarimdf_path %>
-  <%= link_to 'Back', admin_panel_path %>
+
 <% end %>

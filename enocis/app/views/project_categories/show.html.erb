@@ -1,9 +1,11 @@
 <%= render '/layouts/admin_panel' do %>
-  <p>
-    <strong>Name:</strong>
-    <%= @project_category.name %>
-  </p>
+  <div class="admin_project_category_show">
+    <p>
+      <strong>Nume:</strong>
+      <%= @project_category.name %>
+    </p>
 
-  <%= link_to 'Edit', edit_project_category_path(@project_category) %> |
-  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+    <%= link_to 'Edit', edit_project_category_path(@project_category) %> |
+    <%= link_to 'Back', :back, data: { turbolinks: false } %>
+  </div>
 <% end %>

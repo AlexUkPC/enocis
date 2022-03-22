@@ -1,7 +1,10 @@
 <%= render '/layouts/admin_panel' do %>
 
-  <h2>Lista categorii frezari</h2>
-
+  <div class="admin_top">
+    <h2>Lista categorii frezari</h2>
+    <div class="admin_btn push"><%= link_to 'Adauga categorie frezari', new_frezarimdf_category_path %></div>
+  </div>
+  <hr>
   <table class="width50">
     <thead>
       <tr>
@@ -42,5 +45,5 @@
 
   <br>
 
-  <%= link_to 'New Frezarimdf Category', new_frezarimdf_category_path %>
+  
 <% end %>

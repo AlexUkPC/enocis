@@ -1,14 +1,16 @@
 <%= render '/layouts/admin_panel' do %>
-  <p>
-    <strong>Name:</strong>
-    <%= @frezarimdf_category.name %>
-  </p>
+  <div class="admin_frezarimdf_category_show">
+    <p>
+      <strong>Nume:</strong>
+      <%= @frezarimdf_category.name %>
+    </p>
 
-  <p>
-    <strong>Data icon:</strong>
-    <%= @frezarimdf_category.data_icon %>
-  </p>
+    <p>
+      <strong>Icon:</strong>
+      <%= @frezarimdf_category.data_icon %>
+    </p>
 
-  <%= link_to 'Edit', edit_frezarimdf_category_path(@frezarimdf_category), data: { turbolinks: false } %> |
-  <%= link_to 'Back', :back, data: { turbolinks: false } %>
+    <%= link_to 'Edit', edit_frezarimdf_category_path(@frezarimdf_category), data: { turbolinks: false } %> |
+    <%= link_to 'Back', :back, data: { turbolinks: false } %>
+  </div>
 <% end %>

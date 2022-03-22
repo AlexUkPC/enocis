@@ -1,7 +1,6 @@
 <%= render '/layouts/admin_panel' do %>
   <h2>Adauga categorie produse</h2>
-
+  <hr>
   <%= render 'form', product_category: @product_category %>
 
-  <%= link_to 'Back', :back, data: { turbolinks: false } %>
 <% end %>

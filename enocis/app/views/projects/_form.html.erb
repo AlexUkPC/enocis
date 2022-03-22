@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="field">
-    <%= form.label :images %>
+    <%= form.label "Imagini" %>
     <%= form.file_field :images, multiple: true %>
     <% if project.images.any? %>
       <% project.images.each do |image| %>
