@@ -1,6 +1,6 @@
 class ContactFormsController < ApplicationController
   before_action :set_contact_form, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:new, :create]
+  before_action :authenticate_user!, except: [:new, :create, :create_btm]
   # GET /contact_forms or /contact_forms.json
   def index
     @contact_forms = ContactForm.all
@@ -25,12 +25,12 @@ class ContactFormsController < ApplicationController
     @contact_form = ContactForm.new(contact_form_params)
 
     respond_to do |format|
-      if @contact_form.save
+      if verify_recaptcha(model: @contact_form) && @contact_form.confirm_email=="" && @contact_form.save
         format.html { redirect_to root_path, notice: "Contact form was successfully created." }
-        format.json { render :show, status: :created, location: @contact_form }
+        format.js { flash[:notice] = @message = "Thank you for your message. I'll get back to you soon!" }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @contact_form.errors, status: :unprocessable_entity }
+        format.js { render :fail_create }
       end
     end
   end
@@ -66,6 +66,6 @@ class ContactFormsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def contact_form_params
-      params.require(:contact_form).permit(:name, :email, :phone, :message)
+      params.require(:contact_form).permit(:name, :email, :phone, :message, :confirm_email)
     end
 end

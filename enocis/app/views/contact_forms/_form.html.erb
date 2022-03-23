@@ -20,6 +20,10 @@
     <%= form.label :email, "Email" %><span class="red">*</span></label>
     <%= form.text_field :email, placeholder: "Email...", class: "form-control" %>
   </span>
+  <div class="field">
+    <%= form.label :confirm_email, 'Confirm email', style: "display:none !important"%>
+    <%= form.text_field :confirm_email, class: "h-full-width", placeholder: "Confirm your email address", style: "display:none !important", tabindex: "-1", autocomplete: "off" %>
+  </div>
   <br/>
   <span>
     <%= form.label :phone, "Telefon" %><span class="red">*</span></label>
@@ -31,6 +35,11 @@
     <%= form.text_area :message, placeholder: "Mesaj...", class: "form-control" %>
   </span>
   <br/>
+  <div class="field" >
+    <%= flash[:recaptcha_error] %>
+    <%= recaptcha_tags id: 'contact_captcha' %>
+  </div>
+  <br>
   <div class="actions">
     <%= form.submit "Trimite", class: "contact_submit" %>
   </div>

@@ -5,6 +5,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :email, 'Email', style: "display:none !important"%>
+    <%= form.text_field :email, class: "h-full-width", placeholder: "Email address", style: "display:none !important", tabindex: "-1", autocomplete: "off" %>
+  </div>
+
+  <div class="field">
     <%= form.label "Functie" %>
     <%= form.text_field :title %>
   </div>
@@ -19,6 +24,9 @@
     <%= form.file_field :image %>
   </div>
 
+  <div class="field" >
+    <%= recaptcha_tags id: 'add_testimonial_captcha', theme: 'dark'  %>
+  </div>
   <div class="actions row">
     <div class="col">
       <%= form.submit 'Adauga testimonial' %>

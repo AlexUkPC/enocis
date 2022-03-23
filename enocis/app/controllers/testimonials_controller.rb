@@ -23,7 +23,7 @@ class TestimonialsController < ApplicationController
   def create
     @testimonial = Testimonial.new(testimonial_params)
 
-    if @testimonial.save
+    if verify_recaptcha(model: @testimonial) && @testimonial.email=="" && @testimonial.save
       respond_to do |format|
         format.html { redirect_to root_path, notice: 'Thanks for your testimonial' }
         format.js { flash[:notice] = @message = "Thanks for your testimonial" }
@@ -68,6 +68,6 @@ class TestimonialsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def testimonial_params
-      params.require(:testimonial).permit(:name, :title, :comment, :approved, :image, :remove_image)
+      params.require(:testimonial).permit(:name, :title, :comment, :approved, :image, :remove_image, :email)
     end
 end

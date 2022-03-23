@@ -1,0 +1,2 @@
+document.querySelector('#BottomContact').innerHTML = "<%= escape_javascript render partial: 'contact_forms/form_footer', locals: { contact_form: @contact_form } %>";
+grecaptcha.render('contact_captcha');

@@ -1,4 +1,4 @@
-<%= form_with(model: contact_form, id: "BottomContact", class: "bottom_contact_form") do |form| %>
+<%= form_with(model: contact_form, id: "BottomContact", class: "bottom_contact_form",data: {remote: true}) do |form| %>
   <% if contact_form.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(contact_form.errors.count, "error") %> prohibited this contact_form from being saved:</h2>
@@ -18,6 +18,12 @@
   <span>
     <%= form.text_field :email, placeholder: "Email...", class: "form-control" %>
   </span>
+  <span>
+    <div class="field">
+      <%= form.label :confirm_email, 'Confirm email', style: "display:none !important"%>
+      <%= form.text_field :confirm_email, class: "h-full-width", placeholder: "Confirm your email address", style: "display:none !important", tabindex: "-1", autocomplete: "off" %>
+    </div>
+  </span>
 
   <span>
     <%= form.text_field :phone, placeholder: "Telefon...", class: "form-control" %>
@@ -25,6 +31,11 @@
 
   <span>
     <%= form.text_area :message, placeholder: "Mesaj...", class: "form-control" %>
+  </span>
+
+  <span>
+    <%= flash[:recaptcha_error] %>
+    <%= recaptcha_tags id: 'contact_captcha', theme: 'dark' %>
   </span>
 
   <div>

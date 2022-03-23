@@ -3,3 +3,4 @@ document.querySelector("#new_testimonial_link").style.display = '';
 var testimonial_form = document.querySelector("main form");
 $('#testimonial-message').html("<%= escape_javascript render 'home/flash' %>").delay(3000).fadeOut(4000);
 testimonial_form.style.display = 'none';
+grecaptcha.render('add_testimonial_captcha');
