@@ -1,6 +1,6 @@
 class ProjectCategoriesController < ApplicationController
   before_action :set_project_category, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /project_categories or /project_categories.json
   def index
     @project_categories = ProjectCategory.all

@@ -7,10 +7,10 @@
 		<h1>Panou administrare</h1>
 		<div class="white_bg page_container">
       <div class="admin_panel">
-      <div class="admin_panel_inside">
-        <%= render '/layouts/admin_panel_navbar' %>
-        <%= yield %>
-      </div>
+        <div class="admin_panel_inside">
+          <%= render '/layouts/admin_panel_navbar' if (controller_path!='sessions' && controller_path!='devise/passwords')%>
+          <%= yield %>
+        </div>
       </div>
     </div>
   </div>

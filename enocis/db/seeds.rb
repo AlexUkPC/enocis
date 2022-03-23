@@ -5,7 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+user = CreateAdminService.new.call
+user2 = User.find_or_create_by!(email: 'admin2@enocis.ro') do |user|
+  user.password = '123456'
+  user.password_confirmation = '123456'
+  user.admin!
+end
+user3 = User.find_or_create_by!(email: 'user@enocis.ro') do |user|
+  user.password = '123456'
+  user.password_confirmation = '123456'
+end
 product_category1 = ProductCategory.create!(
   name: "Mobila Living",
   title: "Oferim solutii personalizate de mobila living potrivite stilului dumneavoastra",

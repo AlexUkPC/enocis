@@ -54,6 +54,9 @@
     height: 1px;
     background-color: #e5ae49;
     margin-bottom: 30px;
+    &.white{
+      background-color: white;
+    }
   }
   table {
     overflow: hidden;
@@ -303,11 +306,50 @@
     }
   }
 }
+
 .container.wider{
   .admin_testimonial_show, .admin_contact_form_show, .admin_project_show, .admin_project_category_show, .admin_frezarimdf_category_show{
     p{
       color: white;
       width: 50%;
+    }
+  }
+  .devise{
+    form{
+      p{
+        color: white;
+      }
+      border: 1px solid white;
+      margin: 50px auto;
+      max-width: 600px;
+      width: 100%;
+      padding: 30px;
+      input{
+        width: 100%;
+        margin-left: 0;
+        &:focus{
+          color: white;
+          background-color: transparent;
+        }
+        &[type=submit]{
+          width: auto;
+        }
+      }
+      input:-webkit-autofill {
+        background: transparent;
+      }
+      .actions{
+        margin-left: 0;
+      }
+      .reset_psw{
+        a{
+          color: #e5ae49;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+      
     }
   }
 }

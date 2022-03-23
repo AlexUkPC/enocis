@@ -1,6 +1,6 @@
 class FrezarimdfCategoriesController < ApplicationController
   before_action :set_frezarimdf_category, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /frezarimdf_categories or /frezarimdf_categories.json
   def index
       @frezarimdf_categories = FrezarimdfCategory.all

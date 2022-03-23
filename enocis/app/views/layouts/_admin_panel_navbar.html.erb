@@ -29,4 +29,9 @@
       Contact
     </li>
   <% end %>
+  <%= link_to destroy_user_session_path, title: "Log out", method: :delete do %>
+    <li>  
+      Logout
+    </li>
+  <% end %>
 </ul>

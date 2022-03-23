@@ -1,6 +1,6 @@
 class TestimonialsController < ApplicationController
   before_action :set_testimonial, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:new, :create]
   # GET /testimonials or /testimonials.json
   def index
     @testimonials = Testimonial.all

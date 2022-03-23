@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { sessions: "sessions" }
+  resources :users
   resources :testimonials
   resources :projects
   resources :project_categories

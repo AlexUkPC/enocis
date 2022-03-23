@@ -1,6 +1,6 @@
 class FrezarimdfsController < ApplicationController
   before_action :set_frezarimdf, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /frezarimdfs or /frezarimdfs.json
   def index
     @frezarimdf_categories = FrezarimdfCategory.all
