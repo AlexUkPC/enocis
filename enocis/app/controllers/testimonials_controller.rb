@@ -27,6 +27,7 @@ class TestimonialsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to root_path, notice: 'Thanks for your testimonial' }
         format.js { flash[:notice] = @message = "Thanks for your testimonial" }
+        NotifierMailer.new_testimonial(@testimonial).deliver_later
       end
     else
       respond_to do |format|

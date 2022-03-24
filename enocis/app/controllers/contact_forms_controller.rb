@@ -28,6 +28,7 @@ class ContactFormsController < ApplicationController
       if verify_recaptcha(model: @contact_form) && @contact_form.confirm_email=="" && @contact_form.save
         format.html { redirect_to new_contact_form_path, notice: "Contact form was successfully created." }
         format.js { flash[:notice] = @message = "Thank you for your message. I'll get back to you soon!" }
+        NotifierMailer.new_contact_form(@contact_form).deliver_later
       else
         format.html { render :new, status: :unprocessable_entity }
         format.js { render :fail_create }

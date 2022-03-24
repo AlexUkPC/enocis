@@ -11,10 +11,21 @@ services:
       - VIRTUAL_HOST=enocis.alexrogna.com
       - VIRTUAL_PORT=3000
       - LETSENCRYPT_HOST=enocis.alexrogna.com
+      - DELAYED_JOB_HOST=delayed_job_enocis
     networks:
       - proxy
     restart: always
-
+  delayed_job_enocis:
+    image: alexrogna/enocis_web:prod
+    command: ./bin/rails jobs:work
+    env_file:
+      - .env/production/database_enocis
+      - .env/production/web_enocis
+    environment:
+      - DELAYED_JOB_HOST=0.0.0.0
+    networks:
+      - proxy
+    restart: always
   database_enocis:
     image: postgres
     env_file:
