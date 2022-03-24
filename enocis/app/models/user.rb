@@ -11,7 +11,7 @@ class User < ApplicationRecord
   attr_writer :login
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
-
+  validates :email, :password, presence: true
   def set_default_role
     self.role ||= :user
   end

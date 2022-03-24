@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label 'Nume' %>
+    <%= form.label :name, 'Nume' %>
     <%= form.text_field :name %>
   </div>
 
@@ -38,7 +38,7 @@
   </div>
 
   <div class="field">
-      <%= form.label 'Categorie' %>
+      <%= form.label %>
       <%= form.select :frezarimdf_category_id, FrezarimdfCategory.all.map {|c| [c.name, c.id]} %>
   </div> 
 

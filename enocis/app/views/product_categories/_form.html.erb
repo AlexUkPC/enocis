@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label 'Nume' %>
+    <%= form.label :name, 'Nume' %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label 'Titlu' %>
+    <%= form.label :title, 'Titlu' %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label 'Icon' %>
+    <%= form.label :data_icon, 'Icon' %>
     <%= form.text_field :data_icon %>
   </div>
 
   <div class="field">
-    <%= form.label 'Descriere' %>
+    <%= form.label :description, 'Descriere' %>
     <div class="editor">
       <%= form.rich_text_area :description %>
     </div>

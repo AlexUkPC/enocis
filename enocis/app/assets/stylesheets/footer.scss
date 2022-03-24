@@ -92,7 +92,7 @@ footer.bottom{
     border-radius: 0;
     outline:none;
     letter-spacing: 0.5px;
-    &[type=text]:focus{
+    &[type=text]:focus, &[type=email]:focus, &[type=tel]:focus{
       background: none;
       outline:none;
       box-shadow:none;

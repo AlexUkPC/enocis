@@ -12,11 +12,13 @@
   <% end %>
 
   <span>
-    <%= form.text_field :name, placeholder: "Nume...", class: "form-control" %>
+    <%= form.text_field :name, placeholder: "Nume...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Numele este obligatoriu')",
+ oninput: "setCustomValidity('')"  %>
   </span>
 
   <span>
-    <%= form.text_field :email, placeholder: "Email...", class: "form-control" %>
+    <%= form.email_field :email, placeholder: "Email...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Adresa de email este obligatorie')",
+ oninput: "setCustomValidity('')"  %>
   </span>
   <span>
     <div class="field">
@@ -26,11 +28,12 @@
   </span>
 
   <span>
-    <%= form.text_field :phone, placeholder: "Telefon...", class: "form-control" %>
+    <%= form.telephone_field :phone, placeholder: "Telefon...", class: "form-control" %>
   </span>
 
   <span>
-    <%= form.text_area :message, placeholder: "Mesaj...", class: "form-control" %>
+    <%= form.text_area :message, placeholder: "Mesaj...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Mesajul este obligatoriu')",
+ oninput: "setCustomValidity('')" %>
   </span>
 
   <span>

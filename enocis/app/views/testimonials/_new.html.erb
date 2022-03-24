@@ -1,7 +1,8 @@
 <%= form_with(model: @testimonial,data: {remote: true}, class: "testimonial-form", id: "testimonial-form") do |form| %>
    <div class="field">
-    <%= form.label "Nume" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, "Nume" %>
+    <%= form.text_field :name, required: true, oninvalid: "this.setCustomValidity('Numele este obligatoriu')",
+ oninput: "setCustomValidity('')" %>
   </div>
 
   <div class="field">
@@ -10,13 +11,15 @@
   </div>
 
   <div class="field">
-    <%= form.label "Functie" %>
-    <%= form.text_field :title %>
+    <%= form.label :title, "Functie" %>
+    <%= form.text_field :title, required: true, oninvalid: "this.setCustomValidity('Functia este obligatorie')",
+ oninput: "setCustomValidity('')" %>
   </div>
 
   <div class="field">
-    <%= form.label "Testmonial" %>
-    <%= form.text_area :comment %>
+    <%= form.label :comment, "Testmonial" %>
+    <%= form.text_area :comment, required: true, oninvalid: "this.setCustomValidity('Testimonialul este obligatoriu')",
+ oninput: "setCustomValidity('')"  %>
   </div>
   
   <div class="field">

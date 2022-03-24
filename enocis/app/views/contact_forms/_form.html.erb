@@ -1,4 +1,4 @@
-<%= form_with(model: contact_form, id: "BottomContact") do |form| %>
+<%= form_with(model: contact_form, id: "Contact",data: {remote: true}) do |form| %>
   <% if contact_form.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(contact_form.errors.count, "error") %> prohibited this contact_form from being saved:</h2>
@@ -13,12 +13,14 @@
 
   <span>
     <%= form.label :name, 'Nume' %><span class="red">*</span>
-    <%= form.text_field :name, placeholder: "Nume...", class: "form-control" %>
+    <%= form.text_field :name, placeholder: "Nume...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Numele este obligatoriu')",
+ oninput: "setCustomValidity('')" %>
   </span>
   <br/>
   <span>
     <%= form.label :email, "Email" %><span class="red">*</span></label>
-    <%= form.text_field :email, placeholder: "Email...", class: "form-control" %>
+    <%= form.email_field :email, placeholder: "Email...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Adresa de email este obligatorie')",
+ oninput: "setCustomValidity('')"  %>
   </span>
   <div class="field">
     <%= form.label :confirm_email, 'Confirm email', style: "display:none !important"%>
@@ -26,13 +28,14 @@
   </div>
   <br/>
   <span>
-    <%= form.label :phone, "Telefon" %><span class="red">*</span></label>
+    <%= form.label :phone, "Telefon" %>
     <%= form.text_field :phone, placeholder: "Telefon...", class: "form-control" %>
   </span>
   <br/>
   <span>
     <%= form.label :message, "Mesaj" %><span class="red">*</span></label>
-    <%= form.text_area :message, placeholder: "Mesaj...", class: "form-control" %>
+    <%= form.text_area :message, placeholder: "Mesaj...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Mesajul este obligatoriu')",
+ oninput: "setCustomValidity('')" %>
   </span>
   <br/>
   <div class="field" >
