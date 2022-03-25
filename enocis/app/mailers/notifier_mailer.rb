@@ -7,7 +7,7 @@ class NotifierMailer < ApplicationMailer
   #
   def new_contact_form(contact_form)
     @contact_form = contact_form
-    mail to: "alexrogna@yahoo.com", subject: 'Formular de contact'
+    mail to: "alexrogna@yahoo.com",bcc: "mapadrianpetre@gmail.com", subject: 'Formular de contact'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -17,6 +17,6 @@ class NotifierMailer < ApplicationMailer
   #
   def new_testimonial(testimonial)
     @testimonial = testimonial
-    mail to: "alexrogna@yahoo.com", subject: 'Testimonial nou'
+    mail to: "alexrogna@yahoo.com",bcc: "mapadrianpetre@gmail.com", subject: 'Testimonial nou'
   end
 end

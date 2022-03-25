@@ -1,3 +1,6 @@
-Notifier#new_testimonial
+<%= @testimonial.name %><% if @testimonial.title %> cu functia de <%= @testimonial.title %><% end %> doreste sa adauge urmatorul testimonial:
 
-<%= @greeting %>, find me in app/views/notifier_mailer/new_testimonial.text.erb
+<%= @testimonial.comment %>
+
+Testimonialul nu va fi vizibil pana nu este aprobat!
+Pentru aprobare copiaza urmatorul link in browser: <%= edit_testimonial_url(@testimonial) %>

@@ -1,14 +1,14 @@
 <p>
-  Nume: <%= @testimonial.name %>
-</p>
-<p>
-    Functie: <%= @testimonial.title %> 
-</p>
-<p>
-    Testimonial: <%= @testimonial.comment %>
-</p>
-<p>
-   <% if @testimonial.image.attached? %>
-    <%= image_tag @testimonial.image.variant(resize_to_limit: [100, 100]) %>
+  <%= @testimonial.name %>
+  <% if @testimonial.title %> 
+    cu functia de <%= @testimonial.title %>
   <% end %>
+   doreste sa adauge urmatorul testimonial:
 </p>
+<p>
+    <%= @testimonial.comment %>
+</p>
+<hr>
+<br>
+<p>Testimonialul nu va fi vizibil pana nu este aprobat!</p>
+<p>Pentru aprobare apasa <%= link_to edit_testimonial_url(@testimonial) do%>aici<% end %></p>
