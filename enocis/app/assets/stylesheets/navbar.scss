@@ -150,7 +150,37 @@ nav{
 .navbar-collapse.collapse.in{
   display:block;
 }
-
+@media (max-width: 992px) {
+  nav{
+    .container{
+      max-width: 100%;
+    }
+    &.my_navbar {
+      .navbar-nav{
+        li{
+          a{
+            &.nav-link{
+              padding: 42px 12px 42px 12px;
+            }
+          }
+        }
+      }
+    }
+    &.navbar2{
+      .container{
+        .navbar-nav{
+          li{
+            a{
+              &.nav-link{
+                padding: 42px 12px 42px 12px; 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media (max-width: 767px) {
   nav{
     &.navbar{

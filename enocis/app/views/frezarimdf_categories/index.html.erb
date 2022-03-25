@@ -1,49 +1,49 @@
 <%= render '/layouts/admin_panel' do %>
-
-  <div class="admin_top">
-    <h2>Lista categorii frezari</h2>
-    <div class="admin_btn push"><%= link_to 'Adauga categorie frezari', new_frezarimdf_category_path %></div>
-  </div>
-  <hr>
-  <table class="width50">
-    <thead>
-      <tr>
-        <th class="five"></th>
-        <th>Nume</th>
-        <th>Icon</th>
-        <th class="ten">Vezi</th>
-        <th class="ten">Edit</th>
-        <th class="ten">Sterge</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @frezarimdf_categories.each do |frezarimdf_category| %>
+  <div class="admin_frezari_categories">
+    <div class="admin_top">
+      <h2>Lista categorii frezari</h2>
+      <div class="admin_btn push"><%= link_to 'Adauga categorie frezari', new_frezarimdf_category_path %></div>
+    </div>
+    <hr>
+    <table class="width50">
+      <thead>
         <tr>
-          <td><%= frezarimdf_category.id %></td>
-          <td><%= frezarimdf_category.name %></td>
-          <td><%= frezarimdf_category.data_icon %></td>
-          <td>
-              <%= link_to frezarimdf_category do %>
-                <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to edit_frezarimdf_category_path(frezarimdf_category) do%>
-                <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to frezarimdf_category, method: :delete, data: { confirm: 'Are you sure?' } do%>
-                <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
-              <% end %>
-            </td>
+          <th class="five"></th>
+          <th>Nume</th>
+          <th>Icon</th>
+          <th class="ten">Vezi</th>
+          <th class="ten">Edit</th>
+          <th class="ten">Sterge</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <br>
+      <tbody>
+        <% @frezarimdf_categories.each do |frezarimdf_category| %>
+          <tr>
+            <td><%= frezarimdf_category.id %></td>
+            <td><%= frezarimdf_category.name %></td>
+            <td><%= frezarimdf_category.data_icon %></td>
+            <td>
+                <%= link_to frezarimdf_category do %>
+                  <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to edit_frezarimdf_category_path(frezarimdf_category) do%>
+                  <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to frezarimdf_category, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                <% end %>
+              </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
+    <br>
+  </div>
   
 <% end %>

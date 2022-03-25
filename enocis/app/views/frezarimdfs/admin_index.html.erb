@@ -1,50 +1,50 @@
 <%= render '/layouts/admin_panel' do %>
-
-  <div class="admin_top">
-    <h2>Vizualizare frezari MDF</h2>
-    <div class="admin_btn push"><%= link_to 'Lista categorii frezari', frezarimdf_categories_path %></div>
-    <div class="admin_btn"><%= link_to 'Adauga frezare', new_frezarimdf_path %></div>
-  </div>
-  <hr>
-  <table class="width50">
-    <thead>
-      <tr>
-        <th class="five"></th>
-        <th>Nume</th>
-        <th>Categorie</th>
-        <th class="ten">Vezi</th>
-        <th class="ten">Edit</th>
-        <th class="ten">Sterge</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @frezarimdfs.each do |frezarimdf| %>
+  <div class="admin_frezari">
+    <div class="admin_top">
+      <h2>Vizualizare frezari MDF</h2>
+      <div class="admin_btn push"><%= link_to 'Lista categorii frezari', frezarimdf_categories_path %></div>
+      <div class="admin_btn"><%= link_to 'Adauga frezare', new_frezarimdf_path %></div>
+    </div>
+    <hr>
+    <table class="width50">
+      <thead>
         <tr>
-          <td><%= frezarimdf.id %></td>
-          <td><%= frezarimdf.name %></td>
-          <td><%= frezarimdf.frezarimdf_category.name %></td>
-          <td>
-              <%= link_to frezarimdf, data: { turbolinks: false } do %>
-                <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to edit_frezarimdf_path(frezarimdf), data: { turbolinks: false } do%>
-                <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to frezarimdf, method: :delete, data: { confirm: 'Are you sure?' } do%>
-                <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
-              <% end %>
-            </td>
+          <th class="five"></th>
+          <th>Nume</th>
+          <th>Categorie</th>
+          <th class="ten">Vezi</th>
+          <th class="ten">Edit</th>
+          <th class="ten">Sterge</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <br>
+      <tbody>
+        <% @frezarimdfs.each do |frezarimdf| %>
+          <tr>
+            <td><%= frezarimdf.id %></td>
+            <td><%= frezarimdf.name %></td>
+            <td><%= frezarimdf.frezarimdf_category.name %></td>
+            <td>
+                <%= link_to frezarimdf, data: { turbolinks: false } do %>
+                  <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to edit_frezarimdf_path(frezarimdf), data: { turbolinks: false } do%>
+                  <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to frezarimdf, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                <% end %>
+              </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
+    <br>
+  </div>
 
 <% end %>

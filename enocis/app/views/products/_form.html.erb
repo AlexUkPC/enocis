@@ -51,7 +51,7 @@
     <div class="poza">
         <div id="poza">
     <% if product.image.attached? %>
-          <%= image_tag product.image.variant(resize_to_limit: [300, 200]), id: "image" %>
+          <%= image_tag product.image, id: "image" %>
           <br>
           <%= form.label :remove_image do %>
             <%= form.check_box :remove_image, onclick:"document.querySelector('#poza').style.display = 'none';"  %> 

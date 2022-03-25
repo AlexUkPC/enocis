@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label 'Poza' %>
-    <div class="poza">
+    <div class="poza svg">
         <div id="poza">
     <% if frezarimdf.image_svg.attached? %>
           <%= image_tag frezarimdf.image_svg, id: "image" %>
@@ -38,7 +38,7 @@
   </div>
 
   <div class="field">
-      <%= form.label %>
+      <%= form.label 'Categorie' %>
       <%= form.select :frezarimdf_category_id, FrezarimdfCategory.all.map {|c| [c.name, c.id]} %>
   </div> 
 

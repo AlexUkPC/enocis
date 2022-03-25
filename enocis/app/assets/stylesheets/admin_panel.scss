@@ -1,7 +1,7 @@
 @use "admin_panel_menu";
 .admin_panel{
   position: relative;
-  background-image: url('frezari.jpg');
+  background-image: url('admin_panel_bg.jpg');
   background-size: cover;
   padding: 30px;
   min-height: 800px;
@@ -20,6 +20,7 @@
   }
   .admin_top{
     display: flex;
+    flex-wrap: wrap;
     .admin_btn{
       min-width: 100px;
       border: 2px solid #e5ae49;
@@ -111,7 +112,8 @@
     color: red;
   }
   form{
-    width: 50%;
+    width: 100%;
+    max-width: 675px;
     .actions{
       margin-left: 155px;
     }
@@ -184,8 +186,8 @@
     vertical-align: top;
     img{
       margin: 5px; 
-      width: 100px;
-      height: 100px;
+      // max-width: 100px;
+      // max-height: 100px;
     }
     #poza, #poza1, #poza2{
       display: inline-block;
@@ -270,7 +272,13 @@
 .admin_testimonial_form{
  
 }
+form{
+  &.admin_project_form{
+    max-width: 1675px;
+  }
+}
 .admin_project_form, .admin_product_category_form{
+  
   input{
     &[type=checkbox]{
       width: auto;
@@ -294,15 +302,21 @@
 }
 .admin_project_form{
   .project_image{
-    width: 100px;
+    max-width: 100px;
   }
 }
 
 .admin_product_form, .admin_frezarimdf_form{
   .poza{
     img{
-      width: 300px;
-      height: 200px;
+      width: 100%;
+      // max-width: 300px;
+      // max-height: 200px;
+    }
+    &.svg{
+      img{
+        width: 300px;
+      }
     }
   }
 }
@@ -350,6 +364,190 @@
         }
       }
       
+    }
+  }
+}
+@media (max-width: 1200px) {
+  
+}
+@media (max-width: 992px) {
+  .admin_panel{
+    form{
+      &.admin_project_form, &.admin_product_category_form{
+        input, textarea, .editor{
+          width: 70%;
+        }
+      }
+    }
+  }
+  .admin_products{
+    table{
+      tr{
+        th,td{
+          &:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .admin_product_categories,.admin_frezari, .admin_frezari_categories{
+    table{
+      &.width50{
+        width: 100%;
+      } 
+    }
+  }
+  .admin_projects{
+    table{
+      tr{
+        th,td{
+          &:nth-child(3){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .admin_contact_forms{
+    table{
+      tr{
+        th,td{
+          &:nth-child(5){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .admin_panel{
+    form{
+      .actions{
+        margin-left: 105px;
+      }
+    }
+    label{
+      width: 100px;
+    }
+    input, textarea, select, .poza{
+      width: 80%;
+    }
+    
+  }
+  .admin_quick_access{
+    .quick-menu{
+      gap: 20px;
+      .quick-menu-item{
+        padding: 40px 20px;
+        flex: 1 1 40%;
+      }
+    }
+  }
+  .admin_testimonials{
+    table{
+      tr{
+        th,td{
+          &:nth-child(4){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .admin_contact_forms{
+    table{
+      tr{
+        th,td{
+          &:nth-child(3){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .admin_panel{
+    form{
+      .actions{
+        margin-left: 0px;
+      }
+      &.admin_project_form, &.admin_product_category_form{
+        input, textarea, .editor{
+          width: 100%;
+        }
+      }
+    }
+    input, textarea, select, .poza{
+      width: 100%;
+      .img{
+        width: 100%;
+      }
+    }
+    .admin_top{
+      .push {
+        margin-left: 0;
+      }
+    }
+  }
+  .admin_quick_access{
+    .quick-menu{
+      gap: 10px;
+      .quick-menu-item{
+        padding: 20px 10px;
+        flex: 1 1 45%;
+      }
+    }
+  }
+  .admin_product_categories{
+    table{
+      tr{
+        th,td{
+          &:nth-child(3){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .admin_projects{
+    table{
+      tr{
+        th,td{
+          &:nth-child(4),&:nth-child(5){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .admin_contact_forms{
+    table{
+      tr{
+        th,td{
+          &:nth-child(4){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  .admin_panel{
+    padding: 5px;
+  }
+  .admin_testimonials, .admin_products{
+    table{
+      tr{
+        th,td{
+          &:nth-child(3){
+            display: none;
+          }
+        }
+      }
     }
   }
 }
