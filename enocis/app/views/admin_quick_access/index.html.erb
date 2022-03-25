@@ -2,8 +2,29 @@
   <div class="admin_quick_access">
     <h2>Quick access panel</h2>
     <hr>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ducimus sunt alias, impedit suscipit sapiente est saepe vel, praesentium quisquam labore ipsam blanditiis magnam cupiditate architecto aliquam repellendus. Aspernatur, facere.</p>
-    <p>NOTA: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos porro hic veniam aliquam ab veritatis ipsum, quas amet, maiores dolores odio quis nam nobis magni consequuntur sed omnis incidunt aliquid.</p>
+    <p>Accesare rapida pentru modificarea/adaugarea unor noi produse, modele de frezare, proiecte, aprobarea sau respingerea testimonialelor cat si vizualizarea mesajelor primite.</p>
+    <div class="counters-menu">
+      <%= link_to testimonials_path, class: "counter-item" do %>
+        <div class="counter-number"><%= @testimonials.count %></div>
+        <div class="counter-icon"><%= image_tag 'testimonials_icon.svg' %></div>
+      <% end %>
+      <%= link_to products_path, class: "counter-item" do %>
+        <div class="counter-number"><%= @products.count %></div>
+        <div class="counter-icon"><%= image_tag 'produse_icon.svg' %></div>
+      <% end %>
+      <%= link_to admin_frezarimdfs_path, class: "counter-item" do %>
+        <div class="counter-number"><%= @frezarimdfs.count %></div>
+        <div class="counter-icon"><%= image_tag 'frezari_icon.svg' %></div>
+      <% end %>
+      <%= link_to admin_projects_path, class: "counter-item" do %>
+        <div class="counter-number"><%= @projects.count %></div>
+        <div class="counter-icon"><%= image_tag 'proiecte_icon.svg' %></div>
+      <% end %>
+      <%= link_to contact_forms_path, class: "counter-item" do %>
+        <div class="counter-number"><%= @contact_forms.count %></div>
+        <div class="counter-icon"><%= image_tag 'messages_icon.svg' %></div>
+      <% end %>
+    </div>
     <div class="quick-menu">
       <div class="quick-menu-item">
         <h3>Home</h3>

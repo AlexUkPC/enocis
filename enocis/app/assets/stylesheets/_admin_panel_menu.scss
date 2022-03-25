@@ -9,6 +9,11 @@
     &:hover{
       text-decoration: none;
       color: #e5ae49;
+      &:last-child{
+        li{
+          border: none;
+        }
+      }
       li{
         border: 3px solid #e5ae49;
       }
@@ -19,14 +24,18 @@
         border: 3px solid #e5ae49;
       }
     }
-    li{
-      
+    li{ 
       list-style: none;
       border: 3px solid white;
       padding: 40px 10px;
       margin: 10px;
       text-align: center;
+    }
+    &:last-child{
+      li{
+        border: none;
       }
+    }
   }
 }
 @media (max-width: 1200px) {
