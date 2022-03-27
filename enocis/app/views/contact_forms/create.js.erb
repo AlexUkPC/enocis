@@ -1,4 +1,11 @@
-document.querySelector('#BottomContact').innerHTML = "<%= escape_javascript render partial: 'contact_forms/form_footer', locals: { contact_form: ContactForm.new } %>";
-
-$('#flash-message').html("<%= escape_javascript render 'home/flash' %>").delay(3000).fadeOut(4000);
+var element =  document.querySelector('#BottomContact');
+if (typeof(element) != 'undefined' && element != null)
+{
+  document.querySelector('#BottomContact').innerHTML = "<%= escape_javascript render partial: 'contact_forms/form_footer', locals: { contact_form: ContactForm.new } %>";
+}
+else
+{
+  document.querySelector('#Contact').innerHTML = "<%= escape_javascript render partial: 'contact_forms/form' , locals: { contact_form: ContactForm.new } %>";
+}
+$('#contact-form-message').html("<%= escape_javascript render 'home/flash' %>").delay(3000).fadeOut(4000);
 grecaptcha.render('contact_captcha');

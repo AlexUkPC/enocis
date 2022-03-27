@@ -6,7 +6,7 @@
     </p>
 
     <p>
-      <strong>Functie:</strong>
+      <strong>Companie/Functie:</strong>
       <%= @testimonial.title %>
     </p>
 
@@ -25,8 +25,11 @@
         <%= image_tag @testimonial.image.variant(resize_to_limit: [100, 100])%>
       <% end %>
     </p>
-
-    <%= link_to 'Editeaza', edit_testimonial_path(@testimonial), data: { turbolinks: false } %> |
-    <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+    <div class="show_btn">
+      <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+    </div>
+    <div class="show_btn">
+      <%= link_to 'Editeaza', edit_testimonial_path(@testimonial), data: { turbolinks: false } %> 
+    </div>
   </div>
 <% end %>

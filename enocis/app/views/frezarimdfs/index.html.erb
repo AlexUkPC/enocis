@@ -42,19 +42,9 @@
               <% end %>
               <div class="name"><%= frezarimdf.name %></div>
             <% end %>
-            
-            
-
-            <div class="links">
-              <%= link_to 'Edit', edit_frezarimdf_path(frezarimdf), data: { turbolinks: false } %>
-            
-              <%= link_to 'Destroy', frezarimdf, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
           </div>
         <% end %>
       </div>
-      <br><br><br><br>
-      <div class="link_new"><%= link_to 'New Frezarimdf', new_frezarimdf_path %></div>
     </div>
   </div>
 </main>

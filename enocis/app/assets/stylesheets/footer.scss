@@ -76,7 +76,11 @@ footer.bottom{
     margin-right: 20px;
   }
 }
-
+#contact-form-message{
+  .alert{
+    color: #e5ae49;
+  }
+}
 .bottom_contact_form{
   input{
     width: 100%;

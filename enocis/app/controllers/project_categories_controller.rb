@@ -3,7 +3,7 @@ class ProjectCategoriesController < ApplicationController
   before_action :authenticate_user!
   # GET /project_categories or /project_categories.json
   def index
-    @project_categories = ProjectCategory.all
+    @project_categories = ProjectCategory.all.order("id DESC")
   end
 
   # GET /project_categories/1 or /project_categories/1.json
@@ -25,7 +25,7 @@ class ProjectCategoriesController < ApplicationController
 
     respond_to do |format|
       if @project_category.save
-        format.html { redirect_to project_category_url(@project_category), notice: "Project category was successfully created." }
+        format.html { redirect_to project_categories_path, notice: "Project category was successfully created." }
         format.json { render :show, status: :created, location: @project_category }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -4,8 +4,11 @@
       <strong>Nume:</strong>
       <%= @project_category.name %>
     </p>
-
-    <%= link_to 'Edit', edit_project_category_path(@project_category) %> |
-    <%= link_to 'Back', :back, data: { turbolinks: false } %>
+    <div class="show_btn">
+      <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+    </div>
+    <div class="show_btn">
+      <%= link_to 'Editeaza', edit_project_category_path(@project_category), data: { turbolinks: false } %> 
+    </div>
   </div>
 <% end %>

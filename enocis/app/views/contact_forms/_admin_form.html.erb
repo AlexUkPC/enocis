@@ -1,18 +1,24 @@
 <%= form_with(model: contact_form, id: "Contact",data: {remote: true}) do |form| %>
-  
-  <% if notice && notice.present? %>
-      <div class="notice" role="alert">
-          <%= notice %>
-      </div>
-    <% end %>
+  <% if contact_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact_form.errors.count, "error") %> prohibited this contact_form from being saved:</h2>
+
+      <ul>
+        <% contact_form.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <span>
-    <%= form.label :name, 'Nume' %><span class="red">*</span>
+    <%= form.label :name, 'Nume' %>
     <%= form.text_field :name, placeholder: "Nume...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Numele este obligatoriu')",
  oninput: "setCustomValidity('')" %>
   </span>
   <br/>
   <span>
-    <%= form.label :email, "Email" %><span class="red">*</span></label>
+    <%= form.label :email, "Email" %></label>
     <%= form.email_field :email, placeholder: "Email...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Adresa de email este obligatorie')",
  oninput: "setCustomValidity('')"  %>
   </span>
@@ -27,17 +33,19 @@
   </span>
   <br/>
   <span>
-    <%= form.label :message, "Mesaj" %><span class="red">*</span></label>
+    <%= form.label :message, "Mesaj" %></label>
     <%= form.text_area :message, placeholder: "Mesaj...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Mesajul este obligatoriu')",
  oninput: "setCustomValidity('')" %>
   </span>
   <br/>
-  <div class="field" >
-    <%= flash[:recaptcha_error] %>
-    <%= recaptcha_tags id: 'contact_captcha' %>
-  </div>
   <br>
-  <div class="actions">
-    <%= form.submit "Trimite", class: "contact_submit" %>
+  <div class="actions" style="margin-left: 0">
+    <div class="form_btn">
+      <%= link_to 'Inapoi', contact_forms_path, data: { turbolinks: false } %>
+    </div>
+    <%= form.submit %>
+    <div class="form_btn">
+      <%= link_to 'Vezi', @contact_form, data: { turbolinks: false } %>
+    </div>
   </div>
 <% end %>

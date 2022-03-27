@@ -29,11 +29,11 @@
         </h2>
 
         <p>
-              <span class="icon-tools" ></span> Design.<br>
-              <span class="icon-tools-2" ></span> Montaj.<br>
-              <span class="icon-bike" ></span> Transport.<br>
-              <span class="icon-alarmclock" ></span> Revizuirea mobilierului semestrial/anual pe o perioada de 2 ani.<br>
-              <span class="icon-gears" ></span> Ajustari post-montaj.
+          <span class="icon-tools" ></span> Design.<br>
+          <span class="icon-tools-2" ></span> Montaj.<br>
+          <span class="icon-bike" ></span> Transport.<br>
+          <span class="icon-alarmclock" ></span> Revizuirea mobilierului semestrial/anual pe o perioada de 2 ani.<br>
+          <span class="icon-gears" ></span> Ajustari post-montaj.
         </p>
 
         <h2>
@@ -41,10 +41,21 @@
         </h2>
 
         <p>
-              <span class="icon-alarmclock" ></span> Revizuirea mobilierului semestrial/anual pe o perioada stabilita prin contract.<br>
-              <span class="icon-flag" ></span> Relocare.<br>
-          </p>
-			    <%= render '/layouts/second_nav' %>
+          <span class="icon-alarmclock" ></span> Revizuirea mobilierului semestrial/anual pe o perioada stabilita prin contract.<br>
+            <span class="icon-flag" ></span> Relocare.<br>
+        </p>
+        <% if current_user %>
+          <div class="container" style="margin-top: 20px">
+            <div class="show_btn">
+              <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+            </div>
+            <div class="show_btn">
+              <%= link_to 'Editeaza', edit_product_category_path(@product_category), data: { turbolinks: false } %> 
+            </div>
+          </div>
+        <% end %>
+
+        <%= render '/layouts/second_nav' %>
 
 			</div>
 

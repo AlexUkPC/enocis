@@ -7,10 +7,13 @@
 
     <p>
       <strong>Icon:</strong>
-      <%= @frezarimdf_category.data_icon %>
+      <span class="icon"><%= @frezarimdf_category.icon.letter  %></span>
     </p>
-
-    <%= link_to 'Edit', edit_frezarimdf_category_path(@frezarimdf_category), data: { turbolinks: false } %> |
-    <%= link_to 'Back', :back, data: { turbolinks: false } %>
+    <div class="show_btn">
+      <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+    </div>
+    <div class="show_btn">
+      <%= link_to 'Editeaza', edit_frezarimdf_category_path(@frezarimdf_category), data: { turbolinks: false } %> 
+    </div>
   </div>
 <% end %>

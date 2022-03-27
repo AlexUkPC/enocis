@@ -3,7 +3,7 @@ class FrezarimdfCategoriesController < ApplicationController
   before_action :authenticate_user!
   # GET /frezarimdf_categories or /frezarimdf_categories.json
   def index
-      @frezarimdf_categories = FrezarimdfCategory.all
+      @frezarimdf_categories = FrezarimdfCategory.all.order("id DESC")
 
   end
 
@@ -26,7 +26,7 @@ class FrezarimdfCategoriesController < ApplicationController
 
     respond_to do |format|
       if @frezarimdf_category.save
-        format.html { redirect_to frezarimdf_category_url(@frezarimdf_category), notice: "Frezarimdf category was successfully created." }
+        format.html { redirect_to frezarimdf_categories_path, notice: "Frezarimdf category was successfully created." }
         format.json { render :show, status: :created, location: @frezarimdf_category }
       else
         format.html { render :new, status: :unprocessable_entity }

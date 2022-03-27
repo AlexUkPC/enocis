@@ -19,9 +19,12 @@
       <strong>Mesaj:</strong>
       <%= @contact_form.message %>
     </p>
-
-    <%= link_to 'Edit', edit_contact_form_path(@contact_form) %> |
-    <%= link_to 'Back', :back, data: { turbolinks: false } %>
+    <div class="show_btn">
+      <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+    </div>
+    <div class="show_btn">
+      <%= link_to 'Editeaza', edit_contact_form_path(@contact_form), data: { turbolinks: false } %> 
+    </div>
   </div>
 <% end %>
 <%= render '/layouts/footer' %>

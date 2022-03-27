@@ -3,7 +3,7 @@ class TestimonialsController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
   # GET /testimonials or /testimonials.json
   def index
-    @testimonials = Testimonial.all
+    @testimonials = Testimonial.all.order("id DESC")
   end
 
   # GET /testimonials/1 or /testimonials/1.json
@@ -26,7 +26,7 @@ class TestimonialsController < ApplicationController
     if verify_recaptcha(model: @testimonial) && @testimonial.email=="" && @testimonial.save
       respond_to do |format|
         format.html { redirect_to root_path, notice: 'Thanks for your testimonial' }
-        format.js { flash[:notice] = @message = "Thanks for your testimonial" }
+        format.js { flash[:notice] = @message = "Multumim pentru testimonialul lasat" }
         NotifierMailer.new_testimonial(@testimonial).deliver_later
       end
     else

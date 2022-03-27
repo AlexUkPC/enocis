@@ -6,7 +6,7 @@ class FrezarimdfsController < ApplicationController
     @frezarimdf_categories = FrezarimdfCategory.all
     cate = params[:cate]
     if !cate.nil?
-      @frezarimdfs = Frezarimdf.where(frezarimdf_category_id: cate).order("id ASC")
+      @frezarimdfs = Frezarimdf.where(frezarimdf_category_id: cate).order("id DESC")
     else
       @frezarimdfs = Frezarimdf.all.order("id DESC")
     end 
@@ -16,7 +16,7 @@ class FrezarimdfsController < ApplicationController
     @frezarimdf_categories = FrezarimdfCategory.all
     cate = params[:cate]
     if !cate.nil?
-      @frezarimdfs = Frezarimdf.where(frezarimdf_category_id: cate).order("id ASC")
+      @frezarimdfs = Frezarimdf.where(frezarimdf_category_id: cate).order("id DESC")
     else
       @frezarimdfs = Frezarimdf.all.order("id DESC")
     end 
@@ -42,7 +42,7 @@ class FrezarimdfsController < ApplicationController
 
     respond_to do |format|
       if @frezarimdf.save
-        format.html { redirect_to frezarimdf_url(@frezarimdf), notice: "Frezarimdf was successfully created." }
+        format.html { redirect_to admin_frezarimdfs_path, notice: "Frezarimdf was successfully created." }
         format.json { render :show, status: :created, location: @frezarimdf }
       else
         format.html { render :new, status: :unprocessable_entity }

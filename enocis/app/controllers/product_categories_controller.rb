@@ -4,7 +4,7 @@ class ProductCategoriesController < ApplicationController
   # GET /product_categories or /product_categories.json
   def index
 
-    @product_categories = ProductCategory.all
+    @product_categories = ProductCategory.all.order("id DESC")
 
   end
 
@@ -27,7 +27,7 @@ class ProductCategoriesController < ApplicationController
 
     respond_to do |format|
       if @product_category.save
-        format.html { redirect_to product_category_url(@product_category), notice: "Product category was successfully created." }
+        format.html { redirect_to product_categories_path, notice: "Product category was successfully created." }
         format.json { render :show, status: :created, location: @product_category }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -38,8 +38,11 @@
         <% end %>
       <% end %>
     </p>
-
-    <%= link_to 'Edit', edit_project_path(@project) %> |
-    <%= link_to 'Back', :back, data: { turbolinks: false } %>
+    <div class="show_btn">
+      <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+    </div>
+    <div class="show_btn">
+      <%= link_to 'Editeaza', edit_project_path(@project), data: { turbolinks: false } %> 
+    </div>
   </div>
 <% end %>

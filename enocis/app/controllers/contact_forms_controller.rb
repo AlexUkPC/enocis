@@ -3,7 +3,7 @@ class ContactFormsController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create, :create_btm]
   # GET /contact_forms or /contact_forms.json
   def index
-    @contact_forms = ContactForm.all
+    @contact_forms = ContactForm.all.order("id DESC")
     @contact_form = ContactForm.new
   end
 
@@ -26,8 +26,8 @@ class ContactFormsController < ApplicationController
 
     respond_to do |format|
       if verify_recaptcha(model: @contact_form) && @contact_form.confirm_email=="" && @contact_form.save
-        format.html { redirect_to new_contact_form_path, notice: "Contact form was successfully created." }
-        format.js { flash[:notice] = @message = "Thank you for your message. I'll get back to you soon!" }
+        format.html { redirect_to contact_path, notice: "Multumim pentru mesaj. Veti fi contactat in cel mai scurt timp." }
+        format.js { flash[:notice] = @message = "Multumim pentru mesaj. Veti fi contactat in cel mai scurt timp." }
         NotifierMailer.new_contact_form(@contact_form).deliver_later
       else
         format.html { render :new, status: :unprocessable_entity }
