@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_24_113937) do
+ActiveRecord::Schema.define(version: 2022_03_26_103146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,8 @@ ActiveRecord::Schema.define(version: 2022_03_24_113937) do
     t.string "data_icon"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "icon_id", null: false
+    t.index ["icon_id"], name: "index_frezarimdf_categories_on_icon_id"
   end
 
   create_table "frezarimdfs", force: :cascade do |t|
@@ -94,12 +96,20 @@ ActiveRecord::Schema.define(version: 2022_03_24_113937) do
     t.index ["frezarimdf_category_id"], name: "index_frezarimdfs_on_frezarimdf_category_id"
   end
 
+  create_table "icons", force: :cascade do |t|
+    t.string "letter"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "product_categories", force: :cascade do |t|
     t.string "name"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "data_icon"
+    t.bigint "icon_id", null: false
+    t.index ["icon_id"], name: "index_product_categories_on_icon_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -159,6 +169,8 @@ ActiveRecord::Schema.define(version: 2022_03_24_113937) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "frezarimdf_categories", "icons"
   add_foreign_key "frezarimdfs", "frezarimdf_categories"
+  add_foreign_key "product_categories", "icons"
   add_foreign_key "products", "product_categories"
 end

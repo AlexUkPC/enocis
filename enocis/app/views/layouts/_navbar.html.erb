@@ -15,6 +15,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
+          <% if current_user %>
+            <li class="nav-item admin-panel-btn">
+              <%= link_to admin_panel_path, class: "nav-link" , data: { turbolinks: false } do %> 
+              <i class="fa fa-gear"></i> Panou administrare
+              <% end %>
+            </li>
+          <% end %>
           <li class="nav-item">
             <%= link_to "Home", root_path, class: "nav-link #{'active' if controller_path=='home'}" , data: { turbolinks: false } %> 
           </li>

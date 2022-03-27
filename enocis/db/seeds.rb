@@ -16,10 +16,14 @@ user3 = User.find_or_create_by!(email: 'alexrogna@yahoo.com') do |user|
   user.password_confirmation = '123456'
   user.admin!
 end
+icon = Hash.new
+[*'a'..'z', *'A'..'Z', *'0'..'9'].each { |letter| icon[letter] = Icon.create!(letter: letter) }
+
 product_category1 = ProductCategory.create!(
   name: "Mobila Living",
   title: "Oferim solutii personalizate de mobila living potrivite stilului dumneavoastra",
-  data_icon: "h"
+  data_icon: "h",
+  icon_id: icon['h'].id
 )
 ActionText::RichText.create!(record_type: 'ProductCategory',record_id: product_category1.id, name: 'description', body: '<div class="trix-content"><p>Cand vorbim de mobila living, fie ca alegem un design modern, minimalist, sau un design clasic, living-ul ramane zona unde petrecem timp alaturi de cei dragi, si este un spatiu care ne place sa transmita ceva despre personalitatea noastra.</p>
 
@@ -155,7 +159,8 @@ product11.image.attach(io: File.open(Rails.root.join('app/assets/images/Living_5
 product_category2 = ProductCategory.create!(
   name: "Mobila Bucatarie",
   title: "Mobila bucatarie creata pentru utilitatea si confortul dumneavoastra",
-  data_icon: "v"
+  data_icon: "v",
+  icon_id: icon['v'].id
 )
 ActionText::RichText.create!(record_type: 'ProductCategory',record_id: product_category2.id, name: 'description', body: '<div class="trix-content"><p>Cand vine vorba de mobila bucatarie, ulititatea trebuie imbinata cu confortul intr-un dozaj optim. Stim cu totii ca o perioada buna din rutina zilnica ne-o petrecem in bucatarie, iar mobila de bucatarie trebuie organizata pentru a transforma experienta in una cat mai relaxanta. </p>
 
@@ -288,11 +293,11 @@ product22 = Product.create!(
 )
 product22.image.attach(io: File.open(Rails.root.join('app/assets/images/Bucatarie_45.jpg')), filename: 'Bucatarie_45.jpg')
 
-
 product_category3 = ProductCategory.create!(
   name: "Mobila Dormitor",
   title: "Mobila dormitor personalizata pentru confortul dumneavoastra",
-  data_icon: "z"
+  data_icon: "z",
+  icon_id: icon['z'].id
 )
 ActionText::RichText.create!(record_type: 'ProductCategory',record_id: product_category3.id, name: 'description', body: '<div class="trix-content"><p>Odihna este poate cel mai important factor pentru a avea o viata sanatoasa, si din acest motiv punem accentul ca mobila dormitor sa creeze o ambienta perfecta pentru nevoile dumneavoastra. Mobila dormitor in general nu trebuie sa fie aglomerata, pentru a crea o atmosfera aerisita, relaxanta. </p>
 
@@ -372,11 +377,11 @@ product28 = Product.create!(
 )
 product28.image.attach(io: File.open(Rails.root.join('app/assets/images/Dormitor_27.jpg')), filename: 'Dormitor_27.jpg')
 
-
 product_category4 = ProductCategory.create!(
   name: "Mobilier Baie",
   title: "Mobilier baie proiectat pentru a ingloba necsitatile dumneavoastra",
-  data_icon: "Y"
+  data_icon: "Y",
+  icon_id: icon['Y'].id
 )
 ActionText::RichText.create!(record_type: 'ProductCategory',record_id: product_category4.id, name: 'description', body: '<div class="trix-content"><p>Punem la dispozitia dumneavoastra solutii practice, ergonomice si estetice de mobilier baie, realizate in concordanta cu dorintele dumneavoastra. Cand vorbim de mobilier baie, pana si alegerea optima a culorilor ajuta la o buna luminozitate si o ambienta relaxanta, lucruri necesare in locul unde ne desfasuram tabieturile zilnice. </p>
 
@@ -465,11 +470,11 @@ product35 = Product.create!(
 )
 product35.image.attach(io: File.open(Rails.root.join('app/assets/images/Baie_30.jpg')), filename: 'Baie_30.jpg')
 
-
 product_category5 = ProductCategory.create!(
   name: "Mobilier Birou",
   title: "Mobilier birou adaptat la standardele dumneavoastra",
-  data_icon: "l"
+  data_icon: "l",
+  icon_id: icon['l'].id
 )
 ActionText::RichText.create!(record_type: 'ProductCategory',record_id: product_category5.id, name: 'description', body: '<div class="trix-content"><p>Cand vorbim de mobilier birou, vorbim despre o organizare eleganta, functionala, practica si fiabila a elementelor, pentru a crea un mediu cat mai optim in atingerea rezultatelor. Mobilier birou trebuie sa atinga standarde cat mai apropiate de serviciile pe care le oferiti. </p></div>')
 product_category5.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/books-clock-contemporary-941546-e1533658438648.jpg')), filename: 'books-clock-contemporary-941546-e1533658438648.jpg')
@@ -519,11 +524,11 @@ product39 = Product.create!(
 )
 product39.image.attach(io: File.open(Rails.root.join('app/assets/images/Birou_16.jpg')), filename: 'Birou_16.jpg')
 
-
 product_category6 = ProductCategory.create!(
   name: "Mobila Exterior",
   title: "Solutii personalizate de mobila exterior pentru spatiul dumneavoastra",
-  data_icon: "H"
+  data_icon: "H",
+  icon_id: icon['H'].id
 )
 ActionText::RichText.create!(record_type: 'ProductCategory',record_id: product_category6.id, name: 'description', body: '<div class="trix-content"><p>Fie ca vorbim de curtea casei dumneavoastra sau de afacerea pe care o desfasurati in aer liber, va punem la dispozitie mobila exterior la cele mai inalte standarde. Mobila exterior, realizata din lemn, asigura longevitate, o utilitate optima si o intretinere cat mai usoara. </p></div>')
 product_category6.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/balcony-cafe-chairs-1237073-2-e1533660340869.jpg')), filename: 'balcony-cafe-chairs-1237073-2-e1533660340869.jpg')
@@ -531,15 +536,18 @@ product_category6.front_image.attach(io: File.open(Rails.root.join('app/assets/i
 
 frezarimdf_category1 = FrezarimdfCategory.create!(
   name: "Clasic",
-  data_icon: "N"
+  data_icon: "N",
+  icon_id: icon['N'].id
 )
 frezarimdf_category2 = FrezarimdfCategory.create!(
   name: "Modern",
-  data_icon: "A"
+  data_icon: "A",
+  icon_id: icon['A'].id
 )
 frezarimdf_category3 = FrezarimdfCategory.create!(
   name: "Line",
-  data_icon: "7"
+  data_icon: "7",
+  icon_id: icon['7'].id
 )
 frezarimdf1 = Frezarimdf.create!(
   name: "ENO-01",

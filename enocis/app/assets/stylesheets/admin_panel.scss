@@ -137,7 +137,7 @@
       padding: 5px;
       text-align: center;
     }
-    &.admin_project_form, &.admin_product_category_form{
+    &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form{
       width: 100%;
       input, textarea{
         width: 30%;
@@ -299,6 +299,27 @@
 .admin_testimonials{
   
 }
+.admin_frezari_categories, .admin_frezarimdf_category_form, .admin_product_category_form{
+  .icon{
+    font-family: "furniture";
+    font-size: 20px;
+  }
+}
+.admin_frezarimdf_category_form, .admin_product_category_form{
+  .icon{
+    width: 80%;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: top;
+    label{
+      width: 58px;
+    }
+    input{
+      display: block;
+      margin: 0 2.5px;
+    }
+  }
+}
 .admin_testimonial_form{
   .field{
     .poza{
@@ -311,11 +332,11 @@
   
 }
 form{
-  &.admin_project_form, &.admin_product_category_form{
+  &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form{
     max-width: 1675px;
   }
 }
-.admin_project_form, .admin_product_category_form{
+.admin_project_form, .admin_product_category_form, .admin_frezarimdf_category_form{
   
   input{
     &[type=checkbox]{
@@ -365,6 +386,11 @@ form{
 }
 
 .container.wider{
+  .admin_quick_access, .admin_testimonials{
+    p{
+      color: white;
+    }
+  }
   .admin_testimonial_show, .admin_contact_form_show, .admin_project_show, .admin_project_category_show, .admin_frezarimdf_category_show{
     p{
       color: white;

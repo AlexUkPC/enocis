@@ -63,6 +63,22 @@ nav{
           }
           
         }
+        &.admin-panel-btn{
+          a{
+            border: 1px solid #e5ae49;
+            padding: 4px;
+            margin: 38px 3px;
+            color: #e5ae49;
+            &:hover{
+              border-color: #df950c;
+              color:#df950c;
+              background-color: #fff;
+            }
+            &::after{
+              display: none;
+            }
+          }
+        }
       }
     }
   } 
@@ -95,6 +111,18 @@ nav{
               }
               color:#fff;
               padding: 42px 27px 42px 27px; 
+            }
+          }
+          &.admin-panel-btn{
+            a{
+              border: 1px solid #e5ae49;
+              padding: 4px;
+              margin: 38px 3px;
+              color: #e5ae49;
+              &:hover{
+                border-color: #df950c;
+                color:#df950c;
+              }
             }
           }
         }
@@ -160,7 +188,13 @@ nav{
         li{
           a{
             &.nav-link{
-              padding: 42px 12px 42px 12px;
+              padding: 42px 8px 42px 8px;
+            }
+          }
+          &.admin-panel-btn{
+            a{
+              padding: 4px;
+              margin: 38px 3px;
             }
           }
         }
@@ -172,7 +206,13 @@ nav{
           li{
             a{
               &.nav-link{
-                padding: 42px 12px 42px 12px; 
+                padding: 42px 7px 42px 7px; 
+              }
+            }
+            &.admin-panel-btn{
+              a{
+                padding: 4px;
+                margin: 38px 3px;
               }
             }
           }
@@ -202,6 +242,14 @@ nav{
               }
             }
           }
+          &.admin-panel-btn{
+            a{
+              margin: 3px;
+              &.nav-link{
+                border-color: #e5ae49;
+              }
+            }
+          }
         }
       }
     }
@@ -218,6 +266,16 @@ nav{
               &.nav-link{
                 color:#666;
                 padding: 1rem 2rem;
+                border-bottom:1px solid #eee;
+              }
+            }
+            &.admin-panel-btn{
+              a{
+                margin: 3px;
+                &.nav-link{
+                  color: #e5ae49;
+                  border-color: #e5ae49;
+                }
               }
             }
           }

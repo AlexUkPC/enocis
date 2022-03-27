@@ -4,7 +4,7 @@
 						<% @product_categories.each do |product_category| %>
 							<li class="nav-item item<%= product_category.id %>">
                 <%= link_to product_category, data: "turbolinks='false'", class: "nav-link" do %>
-									<span data-icon="<%= product_category.data_icon %>" class="icon"></span>
+									<span data-icon="<%= product_category.icon.letter %>" class="icon"></span>
 									<h3><%= product_category.name %></h3>
 								<% end %>
 							</li>

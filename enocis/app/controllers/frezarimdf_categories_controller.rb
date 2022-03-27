@@ -66,6 +66,6 @@ class FrezarimdfCategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def frezarimdf_category_params
-      params.require(:frezarimdf_category).permit(:name, :data_icon)
+      params.require(:frezarimdf_category).permit(:name, :icon_id)
     end
 end

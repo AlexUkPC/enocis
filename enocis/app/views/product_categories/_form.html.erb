@@ -22,8 +22,12 @@
   </div>
 
   <div class="field">
-    <%= form.label :data_icon, 'Icon' %>
-    <%= form.text_field :data_icon %>
+   <%= form.label :icon, 'Icon' %>
+    <div class="icon">
+      <%= form.collection_radio_buttons(:icon_id, Icon.all, :id, :letter) do |b| %>
+        <% b.label(:"data-value" => b.value) { b.radio_button(class: "radio_button") + b.text} %>
+      <% end %>
+    </div>
   </div>
 
   <div class="field">
