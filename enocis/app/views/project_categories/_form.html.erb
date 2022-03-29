@@ -12,7 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name, 'Nume'%>
+    <%= form.label :name do %>
+    <span class="label">Nume</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/project_categories_nume.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <%= form.text_field :name %>
   </div>
   

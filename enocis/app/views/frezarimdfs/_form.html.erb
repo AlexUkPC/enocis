@@ -12,12 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name, 'Nume' %>
+    <%= form.label :name do %>
+    <span class="label">Nume</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/frezarimdf_nume.PNG' %>
+          <%= image_tag 'info/frezarimdf_nume_show.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label 'Poza' %>
+    <%= form.label :image_svg do %>
+    <span class="label">Poza</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/frezarimdf_poza.PNG' %>
+          <%= image_tag 'info/frezarimdf_poza_show.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <div class="poza svg">
         <div id="poza">
     <% if frezarimdf.image_svg.attached? %>
@@ -38,7 +56,15 @@
   </div>
 
   <div class="field">
-      <%= form.label 'Categorie' %>
+      <%= form.label :frezarimdf_category_id do %>
+        <span class="label">Categorie</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/frezarimdf_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
       <%= form.select :frezarimdf_category_id, FrezarimdfCategory.all.map {|c| [c.name, c.id]} %>
   </div> 
 

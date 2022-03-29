@@ -194,6 +194,7 @@
 @media (max-width: 767px) {
   .testimoniale{
     .carousel{
+      height: 450px;
       .carousel-item{
         padding: 0 20px;
       }
@@ -204,10 +205,20 @@
     .carousel-control-next {
       right: 10%;
     }
+    .carousel-control-prev, .carousel-control-next {
+      top: 100px;
+    }
   }
 }
 @media (max-width: 575px) {
   .testimoniale{
+    .carousel{
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 20px;
+        top: 200px;
+      }
+    }
     .testimonial-form-container{
       min-width: auto;
       max-width: 100%;

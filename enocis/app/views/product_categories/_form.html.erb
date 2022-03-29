@@ -12,33 +12,47 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name, 'Nume' %>
+    <%= form.label :name do %>
+      <span class="label">Nume</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/products_categories_home_page_nume.PNG' %>
+          <%= image_tag 'info/products_categories_nume.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <%= form.text_field :name %>
+    
   </div>
 
   <div class="field">
-    <%= form.label :title, 'Titlu' %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-   <%= form.label :icon, 'Icon' %>
+   <%= form.label :icon do %>
+    <span class="label">Icon</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/products_categories_home_page_icon.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <div class="icon">
       <%= form.collection_radio_buttons(:icon_id, Icon.all, :id, :letter) do |b| %>
         <% b.label(:"data-value" => b.value) { b.radio_button(class: "radio_button") + b.text} %>
       <% end %>
     </div>
   </div>
-
-  <div class="field">
-    <%= form.label :description, 'Descriere' %>
-    <div class="editor">
-      <%= form.rich_text_area :description %>
-    </div>
-  </div>
   
   <div class="field">
-    <%= form.label 'Poza fundal categorie' %>
+    <%= form.label :cover_image do %>
+    <span class="label">Poza fundal</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/products_categories_poza_fundal_categorie.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <div class="poza">
         <div id="poza1">
     <% if product_category.cover_image.attached? %>
@@ -59,7 +73,15 @@
   </div>
 
   <div class="field">
-    <%= form.label 'Poza principala categorie' %>
+    <%= form.label :front_image do %>
+    <span class="label">Poza principala</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/products_categories_poza_principala_categorie.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <div class="poza">
         <div id="poza2">
     <% if product_category.front_image.attached? %>
@@ -77,6 +99,34 @@
       Upload
     <% end %>
     <%= form.file_field :front_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title do %>
+      <span class="label">Titlu</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/products_categories_titlu.PNG' %>
+        </span>
+      </span>
+    <% end %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description do %>
+    <span class="label">Descriere</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/products_categories_descriere.PNG' %>
+        </span>
+      </span>
+    <% end %>
+    <div class="editor">
+      <%= form.rich_text_area :description %>
+    </div>
   </div>
 
   <div class="actions">

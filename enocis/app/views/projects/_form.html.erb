@@ -12,29 +12,71 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name, "Nume" %>
+    <%= form.label :name do %>
+    <span class="label">Nume</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/projects_nume.PNG' %>
+          <%= image_tag 'info/project_nume.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :description, "Descriere" %>
+    <%= form.label :description do %>
+    <span class="label">Descriere</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/project_descriere.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <div class="editor">
       <%= form.rich_text_area :description %>
     </div>
   </div>
 
   <div class="field">
-    <%= form.label :author, "Autor" %>
+    <%= form.label :author do %>
+    <span class="label">Autor</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/project_autor.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <%= form.text_field :author %>
   </div>
 
   <div class="field project-date">
-    <%= form.label :date, "Data" %>
+    <%= form.label :date do %>
+    <span class="label">Data</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/project_data.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <%= form.date_field :date %>
   </div>
   
   <div class="field">
-    <%= form.label "Categorii" %>
+    <%= form.label :project_category_ids do %>
+    <span class="label">Categorii</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/projects_categorii.PNG' %>
+          <%= image_tag 'info/project_categorii.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <div class="categorii">
       <%= form.collection_check_boxes(:project_category_ids, ProjectCategory.all, :id, :name) do |b| %>
         <% b.label {b.check_box + b.text} %>
@@ -42,7 +84,16 @@
     </div>
   </div>
   <div class="field">
-    <%= form.label "Imagini" %>
+    <%= form.label :images do %>
+    <span class="label">Imagini</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/projects_imagini.PNG' %>
+          <%= image_tag 'info/project_imagini.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <%= form.file_field :images, multiple: true %>
     <% if project.images.any? %>
       <% project.images.each do |image| %>

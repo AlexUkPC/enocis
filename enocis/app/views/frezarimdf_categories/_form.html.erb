@@ -12,12 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name, 'Nume' %>
+    <%= form.label :name do %>
+    <span class="label">Nume</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/frezarimdfs_nume.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :icon, 'Icon' %>
+    <%= form.label :icon do %>
+    <span class="label">Icon</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/frezarimdfs_icon.PNG' %>
+        </span>
+      </span>
+    <% end %>
     <div class="icon">
       <%= form.collection_radio_buttons(:icon_id, Icon.all, :id, :letter) do |b| %>
         <% b.label(:"data-value" => b.value) { b.radio_button + b.text } %>
