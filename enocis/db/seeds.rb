@@ -745,7 +745,7 @@ project8 = Project.create!(
   project_category_ids: [project_category1.id, project_category3.id, project_category4.id]
 )
 project8.images.attach([{io: File.open(Rails.root.join('app/assets/images/Living_50.jpg')), filename: 'Living_50.jpg'},{io: File.open(Rails.root.join('app/assets/images/Dormitor_23.jpg')), filename: 'Dormitor_23.jpg'},{io: File.open(Rails.root.join('app/assets/images/Baie_2.jpg')), filename: 'Baie_2.jpg'}])
-ActionText::RichText.create!(record_type: 'Project',record_id: project8.id, name: 'description', body: '<div class="trix-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hoc sic expositum dissimile est superiori. Virtutis, magnitudinis animi, patientiae, fortitudinis fomentis dolor mitigari solet. Omnis enim est natura diligens sui. Respondeat totidem verbis. Duo Reges: constructio interrete. </p>
+ActionText::RichText.create!(record_type: 'Project',record_id: project8.id, name: 'description', body: '<div class="trix-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hoc sic expositum dissimile est superiori. Virtutisa, magnitudinis animi, patientiae, fortitudinis fomentis dolor mitigari solet. Omnis enim est natura diligens sui. Respondeat totidem verbis. Duo Reges: constructio interrete. </p>
 
   <p>Haec quo modo conveniant, non sane intellego. Tum Quintus: Est plane, Piso, ut dicis, inquit. Iam in altera philosophiae parte. Primum divisit ineleganter; Summum ením bonum exposuit vacuitatem doloris; Gerendus est mos, modo recte sentiat. </p>
   
