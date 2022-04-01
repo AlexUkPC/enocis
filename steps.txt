@@ -2,7 +2,6 @@ run git clone https://github.com/AlexUkPC/Default_project_Rails6_with_postgres_a
 move setup.sh in the main folder 
 run setup.sh
 
-    
 - [ ]  Config Postgresql
     
     in config/database.yml changes:
