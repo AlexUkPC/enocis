@@ -4,6 +4,8 @@ services:
     image: alexrogna/enocis_web:prod
     expose:
       - 3000
+    volumes:
+      - ./enocis/storage:/opt/app/storage
     env_file:
       - .env/production/database_enocis
       - .env/production/web_enocis
