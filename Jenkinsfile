@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Start server') {
             steps {
-                sh '/usr/local/bin/docker-compose up -d --remove-orphans'
+                sh '/usr/local/bin/docker-compose up -d'
             }
         }
         stage('Create database') {
@@ -42,7 +42,7 @@ pipeline {
                     waitUntil {
                         script {
                             try {
-                                def response = httpRequest 'http://0.0.0.0:3033'
+                                def response = httpRequest 'http://0.0.0.0:3026'
                                 return (response.status == 200)
                             }
                             catch (exception) {
