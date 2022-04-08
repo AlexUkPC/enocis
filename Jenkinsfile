@@ -42,7 +42,7 @@ pipeline {
                     waitUntil {
                         script {
                             try {
-                                def response = httpRequest 'http://0.0.0.0:3033'
+                                def response = httpRequest 'http://0.0.0.0:3026'
                                 return (response.status == 200)
                             }
                             catch (exception) {
