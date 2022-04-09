@@ -19,6 +19,15 @@ end
 icon = Hash.new
 [*'a'..'z', *'A'..'Z', *'0'..'9'].each { |letter| icon[letter] = Icon.create!(letter: letter) }
 
+company = Company.create!(
+  address: "Drumul de Centura Chitila-Mogosoaia nr. 3-5",
+  phone: "0723.609.644",
+  email1: "info@enocis.ro",
+  email2: "contact@enocis.ro",
+  facebook: "https://www.facebook.com/Enocismobila/",
+  instagram: "https://www.instagram.com/enocis_furniture"
+)
+
 product_category1 = ProductCategory.create!(
   name: "Mobila Living",
   title: "Oferim solutii personalizate de mobila living potrivite stilului dumneavoastra",

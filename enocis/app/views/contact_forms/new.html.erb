@@ -13,21 +13,27 @@
 					<h2 class="h2_address">Adresa</h2>
 					<span>
 						<i class="fa fa-map-marker"></i>
-						Drumul de Centura Chitila-Mogosoaia nr. 3-5
+						<%= @company.address %>
 					</span>
 					<h2 class="h2_callnow">Suna acum</h2>
 					<span>
-						<i class="fa fa-phone"></i>
-						(+40) 723.609.644
+						<a class="phone_call" href="tel:+<%= tel(@company.phone) %>">
+							<i class="fa fa-phone"></i>
+							<%= international_phone(@company.phone) %>
+						</a>
 					</span>
 					<h2 class="h2_email">Email</h2>
 					<span>
-						<i class="fa fa-envelope-o"></i>
-						info@enocis.ro
+						<a class="email" href="mailto:<%= @company.email1 %>">
+							<i class="fa fa-envelope-o"></i>
+							<%= @company.email1 %>
+						</a>
 					</span><br/>
 					<span>
-						<i class="fa fa-envelope-o"></i>
-						contact@enocis.ro
+						<a class="email" href="mailto:<%= @company.email2 %>">
+							<i class="fa fa-envelope-o"></i>
+							<%= @company.email2 %>
+						</a>
 					</span>
 
 				</div>

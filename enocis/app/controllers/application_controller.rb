@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :get_product_categories, :set_contact_form
+  before_action :get_product_categories, :set_contact_form, :get_company_details
   helper_method :retrieve_last_index_page_or_default
   def store_last_index_page
     session[:last_index_page] = request.fullpath
@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
   private
   def get_product_categories
     @product_categories = ProductCategory.all.order("id ASC")
+  end
+  def get_company_details
+    @company = Company.first
   end
   def set_contact_form
     @contact_form = ContactForm.new

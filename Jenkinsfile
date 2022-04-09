@@ -36,6 +36,11 @@ pipeline {
                 sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_enocis bin/rails db:migrate'
             }
         }
+        stage('Seed database') {
+            steps {
+                sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_enocis bin/rails db:seed:replant'
+            }
+        }
         stage('Wait for server to start') {
             steps {
                 timeout(10) {
