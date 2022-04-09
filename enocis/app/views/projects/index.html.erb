@@ -12,7 +12,7 @@
 	</div>
   <div class="row">
     <div class="project_cat_btns">
-      <%= link_to projects_path,class: "#{'cat_btn_active' if  !current_page?(projects_path(cate: 1)) && !current_page?(projects_path(cate: 2)) && !current_page?(projects_path(cate: 3)) && !current_page?(projects_path(cate: 4)) && !current_page?(projects_path(cate: 5)) && !current_page?(projects_path(cate: 6)) && !current_page?(projects_path(cate: 7)) && !current_page?(projects_path(cate: 8)) && !current_page?(projects_path(cate: 9))}", data: { turbolinks: false } do %>
+      <%= link_to projects_path,class: "#{'cat_btn_active' if  request.query_parameters=={} }", data: { turbolinks: false } do %>
         <div class="cat_btn">
           <span >Toate</span>
         </div>
