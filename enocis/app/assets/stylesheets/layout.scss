@@ -92,6 +92,17 @@ p{
 .container.wider{
   max-width: 1640px;
 }
+@media (max-width: 1640px) {
+  .container.wider{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    .page_container{
+      padding: 0;
+    }
+  }
+}
 @media (max-width: 767px) {
   .container.wider{
     max-width: 650px;
