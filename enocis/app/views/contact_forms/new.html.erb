@@ -1,5 +1,5 @@
 <main role="main" class="container">
-	<%= render '/layouts/parallax_container', image: 'blur-bottle-bright-building-273238.jpg' %> 
+	<%= render '/layouts/parallax_container', image: @company.contact_cover_image.attached? ? rails_blob_url(@company.contact_cover_image) : "" %> 
 
 	<h1>Contact</h1>
 	<div class="white_bg page_container">

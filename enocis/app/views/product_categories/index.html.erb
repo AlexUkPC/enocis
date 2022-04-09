@@ -2,7 +2,7 @@
   <div class="admin_product_categories">
     <div class="admin_top">
       <h2>Categorii de produse</h2>
-      <div class="admin_btn push"><%= link_to 'Adauga categorie produse', new_product_category_path %></div>
+      <div class="admin_btn push"><%= link_to 'Adauga categorie produse', new_product_category_path, data: { turbolinks: false } %></div>
     </div>
     <hr>
     <table class="width50">
@@ -29,7 +29,7 @@
                 <% end %>
               </td>
               <td>
-                <%= link_to edit_product_category_path(product_category) do%>
+                <%= link_to edit_product_category_path(product_category), data: { turbolinks: false } do%>
                   <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
                 <% end %>
               </td>

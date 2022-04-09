@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <main role="main" class="container wider">
-  <%= render '/layouts/parallax_container', image: 'frezari.jpg' %> 
+  <%= render '/layouts/parallax_container', image: @company.frezari_mdf_cover_image.attached? ? rails_blob_url(@company.frezari_mdf_cover_image) : "" %> 
 	
 	<h1>Model frezare</h1>
   <p>
@@ -11,7 +11,7 @@
   </p>
 
   <div class="white_bg page_container no-btm-pad">
-    <div class="container_frezari">
+    <div class="container_frezari" style="background-image: url(<%= @company.frezari_mdf_front_image.attached? ? asset_path(rails_blob_url(@company.frezari_mdf_front_image)) : "" %>);">
       <div class="frezari_categories">
         <div class="frezari_cat_btns">
           <%= link_to frezarimdfs_path,class: "#{'cat_btn_active' if  request.query_parameters=={}}", data: { turbolinks: false } do %>

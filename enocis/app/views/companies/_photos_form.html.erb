@@ -1,0 +1,299 @@
+<%= form_with(model: company, class:"admin_company_photos_form") do |form| %>
+  <h3>Poze Frezari MDF</h3>
+  <div class="row">
+    <div class="field col-md-6">
+      <%= form.label :frezari_mdf_cover_image do %>
+      <span class="label">Poza fundal</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_fundal_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_frezari_mdf_cover_image">
+      <% if company.frezari_mdf_cover_image.attached? %>
+            <%= image_tag company.frezari_mdf_cover_image.variant(resize_to_limit: [300, 200]), id: "image_frezari_mdf_cover_image" %>
+            <br>
+            <%= form.label :remove_frezari_mdf_cover_image do %>
+              <%= form.check_box :remove_frezari_mdf_cover_image, onclick:"document.querySelector('#poza_frezari_mdf_cover_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_frezari_mdf_cover_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :frezari_mdf_cover_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :frezari_mdf_cover_image %>
+      </div>
+    </div>
+
+    <div class="field col-md-6">
+      <%= form.label :frezari_mdf_front_image do %>
+      <span class="label">Poza principala</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_principala_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_frezari_mdf_front_image">
+      <% if company.frezari_mdf_front_image.attached? %>
+            <%= image_tag company.frezari_mdf_front_image.variant(resize_to_limit: [300, 200]), id: "image_frezari_mdf_front_image" %>
+            <br>
+            <%= form.label :remove_frezari_mdf_front_image do %>
+              <%= form.check_box :remove_frezari_mdf_front_image, onclick:"document.querySelector('#poza_frezari_mdf_front_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_frezari_mdf_front_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :frezari_mdf_front_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :frezari_mdf_front_image %>
+    </div>
+    </div>
+  </div>
+  <h3>Poze Proiecte</h3>
+  <div class="row">
+    <div class="field col-md-6">
+      <%= form.label :projects_cover_image do %>
+      <span class="label">Poza fundal</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_fundal_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_projects_cover_image">
+      <% if company.projects_cover_image.attached? %>
+            <%= image_tag company.projects_cover_image.variant(resize_to_limit: [300, 200]), id: "image_projects_cover_image" %>
+            <br>
+            <%= form.label :remove_projects_cover_image do %>
+              <%= form.check_box :remove_projects_cover_image, onclick:"document.querySelector('#poza_projects_cover_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_projects_cover_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :projects_cover_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :projects_cover_image %>
+      </div>
+    </div>
+
+    <div class="field col-md-6">
+      <%= form.label :projects_front_image do %>
+      <span class="label">Poza principala</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_principala_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_projects_front_image">
+      <% if company.projects_front_image.attached? %>
+            <%= image_tag company.projects_front_image.variant(resize_to_limit: [300, 200]), id: "image_projects_front_image" %>
+            <br>
+            <%= form.label :remove_projects_front_image do %>
+              <%= form.check_box :remove_projects_front_image, onclick:"document.querySelector('#poza_projects_front_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_projects_front_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :projects_front_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :projects_front_image %>
+    </div>
+    </div>
+  </div>
+  <h3>Poze Servicii</h3>
+  <div class="row">
+    <div class="field col-md-6">
+      <%= form.label :services_cover_image do %>
+      <span class="label">Poza fundal</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_fundal_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_services_cover_image">
+      <% if company.services_cover_image.attached? %>
+            <%= image_tag company.services_cover_image.variant(resize_to_limit: [300, 200]), id: "image_services_cover_image" %>
+            <br>
+            <%= form.label :remove_services_cover_image do %>
+              <%= form.check_box :remove_services_cover_image, onclick:"document.querySelector('#poza_services_cover_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_services_cover_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :services_cover_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :services_cover_image %>
+      </div>
+    </div>
+
+    <div class="field col-md-6">
+      <%= form.label :services_front_image do %>
+      <span class="label">Poza principala</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_principala_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_services_front_image">
+      <% if company.services_front_image.attached? %>
+            <%= image_tag company.services_front_image.variant(resize_to_limit: [300, 200]), id: "image_services_front_image" %>
+            <br>
+            <%= form.label :remove_services_front_image do %>
+              <%= form.check_box :remove_services_front_image, onclick:"document.querySelector('#poza_services_front_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_services_front_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :services_front_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :services_front_image %>
+    </div>
+    </div>
+  </div>
+  <h3>Poze Contact</h3>
+  <div class="row">
+    <div class="field col-md-6">
+      <%= form.label :contact_cover_image do %>
+      <span class="label">Poza fundal</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_fundal_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_contact_cover_image">
+      <% if company.contact_cover_image.attached? %>
+            <%= image_tag company.contact_cover_image.variant(resize_to_limit: [300, 200]), id: "image_contact_cover_image" %>
+            <br>
+            <%= form.label :remove_contact_cover_image do %>
+              <%= form.check_box :remove_contact_cover_image, onclick:"document.querySelector('#poza_contact_cover_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_contact_cover_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :contact_cover_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :contact_cover_image %>
+      </div>
+    </div>
+
+    <div class="field col-md-6">
+    </div>
+  </div>
+  <h3>Poze Politica de confidentialitate</h3>
+  <div class="row">
+    <div class="field col-md-6">
+      <%= form.label :politica_de_confidentialitate_cover_image do %>
+      <span class="label">Poza fundal</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_fundal_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_politica_de_confidentialitate_cover_image">
+      <% if company.politica_de_confidentialitate_cover_image.attached? %>
+            <%= image_tag company.politica_de_confidentialitate_cover_image.variant(resize_to_limit: [300, 200]), id: "image_politica_de_confidentialitate_cover_image" %>
+            <br>
+            <%= form.label :remove_politica_de_confidentialitate_cover_image do %>
+              <%= form.check_box :remove_politica_de_confidentialitate_cover_image, onclick:"document.querySelector('#poza_politica_de_confidentialitate_cover_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_politica_de_confidentialitate_cover_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :politica_de_confidentialitate_cover_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :politica_de_confidentialitate_cover_image %>
+      </div>
+    </div>
+
+    <div class="field col-md-6">
+    </div>
+  </div>
+  <h3>Poze Politica Cookies</h3>
+  <div class="row">
+    <div class="field col-md-6">
+      <%= form.label :politica_cookies_cover_image do %>
+      <span class="label">Poza fundal</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_fundal_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_politica_cookies_cover_image">
+      <% if company.politica_cookies_cover_image.attached? %>
+            <%= image_tag company.politica_cookies_cover_image.variant(resize_to_limit: [300, 200]), id: "image_politica_cookies_cover_image" %>
+            <br>
+            <%= form.label :remove_politica_cookies_cover_image do %>
+              <%= form.check_box :remove_politica_cookies_cover_image, onclick:"document.querySelector('#poza_politica_cookies_cover_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_politica_cookies_cover_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :politica_cookies_cover_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :politica_cookies_cover_image %>
+      </div>
+    </div>
+
+    <div class="field col-md-6">
+    </div>
+  </div>
+  <div class="actions">
+    <div class="form_btn">
+      <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+    </div>
+    <%= form.submit %>
+  </div>
+<% end %>

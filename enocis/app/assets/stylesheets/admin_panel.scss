@@ -192,7 +192,7 @@
       // max-width: 100px;
       // max-height: 100px;
     }
-    #poza, #poza1, #poza2{
+    &>div{
       display: inline-block;
     }
     label{
@@ -347,7 +347,7 @@
   
 }
 form{
-  &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_company_form{
+  &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_company_form, &.admin_company_photos_form{
     max-width: 1675px;
   }
   &.admin_company_form{
@@ -362,6 +362,16 @@ form{
     }
     .actions{
       margin: 10px 0 20px;
+    }
+  }
+  &.admin_company_photos_form{
+    .actions{
+      margin: 10px 0 20px;
+    }
+    h3{
+      color: white;
+      font-size: 18px;
+      margin-top: 20px;
     }
   }
 }
@@ -399,12 +409,12 @@ form{
   }
 }
 
-.admin_product_form, .admin_frezarimdf_form{
+.admin_product_form, .admin_frezarimdf_form, .admin_company_photos_form, .admin_product_category_form {
   .poza{
     img{
       width: 100%;
-      // max-width: 300px;
-      // max-height: 200px;
+      max-width: 300px;
+      max-height: 200px;
     }
     &.svg{
       img{

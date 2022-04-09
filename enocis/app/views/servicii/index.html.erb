@@ -1,10 +1,10 @@
 <main role="main" class="container">
-  <%= render '/layouts/parallax_container', image: 'furniture-handmade-man-279645-e1533310206405.jpg' %> 
+  <%= render '/layouts/parallax_container', image: @company.services_cover_image.attached? ? rails_blob_url(@company.services_cover_image) : "" %> 
 	
 	<h1>Servicii</h1>
 
 	<div class="white_bg page_container">
-    <%= image_tag 'abstract-architect-architectural-design-323645-e1533310392294.jpg', alt: 'Servicii', class: 'main_img' %>
+    <%= image_tag @company.services_front_image.attached? ? rails_blob_url(@company.services_front_image) : "" , alt: 'Servicii', class: 'main_img' %>
 		<div class="text_container serv">
       <h3 class="mycc"><span class="myicon icon-tools"></span>Design</h3>
       <p>

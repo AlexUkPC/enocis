@@ -154,5 +154,32 @@ $(document).ready(function(){
 	$("#product_category_front_image").change(function(){
 		readURL(this, '#product_category_remove_front_image', '#image2', '#poza2');
 	});
+	$("#company_frezari_mdf_cover_image").change(function(){
+		readURL(this, '#company_frezari_mdf_remove_cover_image', '#image_frezari_mdf_cover_image', '#poza_frezari_mdf_cover_image');
+	});
+	$("#company_frezari_mdf_front_image").change(function(){
+		readURL(this, '#company_frezari_mdf_remove_front_image', '#image_frezari_mdf_front_image', '#poza_frezari_mdf_front_image');
+	});
+	$("#company_projects_cover_image").change(function(){
+		readURL(this, '#company_projects_remove_cover_image', '#image_projects_cover_image', '#poza_projects_cover_image');
+	});
+	$("#company_projects_front_image").change(function(){
+		readURL(this, '#company_projects_remove_front_image', '#image_projects_front_image', '#poza_projects_front_image');
+	});
+	$("#company_services_cover_image").change(function(){
+		readURL(this, '#company_services_remove_cover_image', '#image_services_cover_image', '#poza_services_cover_image');
+	});
+	$("#company_services_front_image").change(function(){
+		readURL(this, '#company_services_remove_front_image', '#image_services_front_image', '#poza_services_front_image');
+	});
+	$("#company_contact_cover_image").change(function(){
+		readURL(this, '#company_contact_remove_cover_image', '#image_contact_cover_image', '#poza_contact_cover_image');
+	});
+	$("#company_politica_de_confidentialitate_cover_image").change(function(){
+		readURL(this, '#company_politica_de_confidentialitate_remove_cover_image', '#image_politica_de_confidentialitate_cover_image', '#poza_politica_de_confidentialitate_cover_image');
+	});
+	$("#company_politica_cookies_cover_image").change(function(){
+		readURL(this, '#company_politica_cookies_remove_cover_image', '#image_politica_cookies_cover_image', '#poza_politica_cookies_cover_image');
+	});
 })
 
