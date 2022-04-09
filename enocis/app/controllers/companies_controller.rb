@@ -18,6 +18,9 @@ class CompaniesController < ApplicationController
   # GET /companies/1/edit
   def edit
   end
+  
+  def edit_photos
+  end
 
   # POST /companies or /companies.json
   def create
@@ -38,7 +41,7 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update(company_params)
-        format.html { redirect_to companies_path, notice: "Company was successfully updated." }
+        format.html { redirect_to admin_panel_path, notice: "Company was successfully updated." }
         format.json { render :show, status: :ok, location: @company }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +68,6 @@ class CompaniesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def company_params
-      params.require(:company).permit(:address, :phone, :phone_name,:phone2, :phone2_name,:phone3, :phone3_name, :email1, :email2, :facebook, :instagram, :url_google_maps, :email_notice_contact)
+      params.require(:company).permit(:address, :phone, :phone_name,:phone2, :phone2_name,:phone3, :phone3_name, :email1, :email2, :facebook, :instagram, :url_google_maps, :email_notice_contact, :frezari_mdf_cover_image, :frezari_mdf_front_image, :projects_cover_image, :projects_front_image, :services_cover_image, :services_front_image, :contact_cover_image, :politica_de_confidentialitate_cover_image, :politica_cookies_cover_image, :remove_frezari_mdf_cover_image, :remove_frezari_mdf_front_image, :remove_projects_cover_image, :remove_projects_front_image, :remove_services_cover_image, :remove_services_front_image, :remove_contact_cover_image, :remove_politica_de_confidentialitate_cover_image, :remove_politica_cookies_cover_image)
     end
 end

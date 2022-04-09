@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :project_categories
   resources :frezarimdf_categories
   resources :frezarimdfs
+  get 'edit_photos', to: 'companies#edit_photos'
   get 'frezarimdf', to: 'frezarimdfs#index'
   get 'admin_frezarimdfs', to: 'frezarimdfs#admin_index'
   get 'admin_projects', to: 'projects#admin_index'

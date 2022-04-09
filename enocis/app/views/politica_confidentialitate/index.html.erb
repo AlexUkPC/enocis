@@ -1,5 +1,5 @@
 <main role="main" class="container">
-  <%= render '/layouts/parallax_container', image: 'furniture-handmade-man-279645-e1533310206405.jpg' %> 
+  <%= render '/layouts/parallax_container', image: @company.politica_de_confidentialitate_cover_image.attached? ? rails_blob_url(@company.politica_de_confidentialitate_cover_image) : "" %> 
 
 	<h1>Politica confidentialitate</h1>
 

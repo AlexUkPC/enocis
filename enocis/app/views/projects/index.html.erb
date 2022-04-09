@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <main role="main" class="projects">
- <%= render '/layouts/parallax_container', image: 'projects_bg.jpg' %> 
+ <%= render '/layouts/parallax_container', image: @company.projects_cover_image.attached? ? rails_blob_url(@company.projects_cover_image) : "" %> 
 
 	<div class="container main_margin_top">
 		<h1>Proiecte</h1>
 		<div class="white_bg page_container">
-      <%= image_tag 'projects_front.jpg', alt: 'Proiecte', class: 'main_img' %>
+      <%= image_tag @company.projects_front_image.attached? ? rails_blob_url(@company.projects_front_image) : "", alt: 'Proiecte', class: 'main_img' %>
 		</div>
     
 	</div>

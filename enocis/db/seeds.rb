@@ -34,6 +34,15 @@ company = Company.create!(
   instagram: "https://www.instagram.com/enocis_furniture",
   email_notice_contact: "alexrogna@yahoo.com"
 )
+company.frezari_mdf_cover_image.attach(io: File.open(Rails.root.join('app/assets/images/frezari.jpg')), filename: 'frezari.jpg')
+company.frezari_mdf_front_image.attach(io: File.open(Rails.root.join('app/assets/images/frezari.jpg')), filename: 'frezari.jpg')
+company.projects_cover_image.attach(io: File.open(Rails.root.join('app/assets/images/projects_bg.jpg')), filename: 'projects_bg.jpg')
+company.projects_front_image.attach(io: File.open(Rails.root.join('app/assets/images/projects_front.jpg')), filename: 'projects_front.jpg')
+company.services_cover_image.attach(io: File.open(Rails.root.join('app/assets/images/furniture-handmade-man-279645-e1533310206405.jpg')), filename: 'furniture-handmade-man-279645-e1533310206405.jpg')
+company.services_front_image.attach(io: File.open(Rails.root.join('app/assets/images/abstract-architect-architectural-design-323645-e1533310392294.jpg')), filename: 'abstract-architect-architectural-design-323645-e1533310392294.jpg')
+company.contact_cover_image.attach(io: File.open(Rails.root.join('app/assets/images/blur-bottle-bright-building-273238.jpg')), filename: 'blur-bottle-bright-building-273238.jpg')
+company.politica_de_confidentialitate_cover_image.attach(io: File.open(Rails.root.join('app/assets/images/furniture-handmade-man-279645-e1533310206405.jpg')), filename: 'furniture-handmade-man-279645-e1533310206405.jpg')
+company.politica_cookies_cover_image.attach(io: File.open(Rails.root.join('app/assets/images/furniture-handmade-man-279645-e1533310206405.jpg')), filename: 'furniture-handmade-man-279645-e1533310206405.jpg')
 
 product_category1 = ProductCategory.create!(
   name: "Mobila Living",
