@@ -1,37 +1,112 @@
-<%= form_with(model: company) do |form| %>
+<%= form_with(model: company, class:"admin_company_form") do |form| %>
   
-
-  <div class="field">
-    <%= form.label "Adresa" %>
-    <%= form.text_field :address %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="field">
+      <%= form.label "Adresa" %>
+      <%= form.text_field :address %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label "Telefon" %>
-    <%= form.text_field :phone %>
+  <div class="col-md-6">
+    <div class="field">
+      <%= form.label "URL Google Maps" %>
+      <%= form.text_field :url_google_maps %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label "Email" %>
-    <%= form.text_field :email1 %>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="field">
+          <%= form.label "Telefon principal" %>
+          <%= form.text_field :phone %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="field">
+          <%= form.label "Nume telefon principal" %>
+          <%= form.text_field :phone_name %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="field">
+          <%= form.label "Telefon stanga" %>
+          <%= form.text_field :phone2 %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="field">
+          <%= form.label "Nume telefon stanga" %>
+          <%= form.text_field :phone2_name %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="field">
+          <%= form.label "Telefon dreapta" %>
+          <%= form.text_field :phone3 %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="field">
+          <%= form.label "Nume telefon dreapta" %>
+          <%= form.text_field :phone3_name %>
+        </div>
+      </div>
+    </div>    
   </div>
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="field">
+          <%= form.label "Email principal" %>
+          <%= form.text_field :email1 %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="field">
+          <%= form.label "Email secundar" %>
+          <%= form.text_field :email2 %>
+        </div>
+      </div>
+    </div>    
 
-  <div class="field">
-    <%= form.label "Email" %>
-    <%= form.text_field :email2 %>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="field">
+          <%= form.label "Facebook" %>
+          <%= form.text_field :facebook %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="field">
+          <%= form.label "Instagram" %>
+          <%= form.text_field :instagram %>
+        </div>
+      </div>
+    </div>    
+    
+
+    
+
+    
+
+    
+
+    <div class="field">
+      <%= form.label "Email pe care se primesc notificarile de testimoniale si formulare de contact noi" %>
+      <%= form.text_field :email_notice_contact %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label "Facebook" %>
-    <%= form.text_field :facebook %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Instagram" %>
-    <%= form.text_field :instagram %>
-  </div>
-
+</div>
   <div class="actions">
+    <div class="form_btn">
+      <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+    </div>
     <%= form.submit %>
   </div>
 <% end %>

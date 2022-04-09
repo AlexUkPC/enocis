@@ -1,7 +1,9 @@
 <%= render '/layouts/admin_panel' do %>
-<%= render '/companies/form', company: @company  %>
   <div class="admin_contact_forms">
-    <h2>Formulare de contact</h2>
+    <div class="admin_top">
+      <h2>Formulare de contact</h2>
+      <div class="admin_btn push"><%= link_to 'Editaza detalii contact', companies_path %></div>
+    </div>
     <hr>
     <table class="width100">
       <thead>

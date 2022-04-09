@@ -21,11 +21,18 @@ icon = Hash.new
 
 company = Company.create!(
   address: "Drumul de Centura Chitila-Mogosoaia nr. 3-5",
+  url_google_maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2845.2510482887897!2d25.98209531552577!3d44.510010979101295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDMwJzM2LjAiTiAyNcKwNTknMDMuNCJF!5e0!3m2!1sro!2sro!4v1534928716237",
   phone: "0723.609.644",
+  phone_name: "",
+  phone2: "",
+  phone2_name: "",
+  phone3: "",
+  phone3_name: "",
   email1: "info@enocis.ro",
   email2: "contact@enocis.ro",
   facebook: "https://www.facebook.com/Enocismobila/",
-  instagram: "https://www.instagram.com/enocis_furniture"
+  instagram: "https://www.instagram.com/enocis_furniture",
+  email_notice_contact: "alexrogna@yahoo.com"
 )
 
 product_category1 = ProductCategory.create!(

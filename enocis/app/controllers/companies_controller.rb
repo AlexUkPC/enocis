@@ -38,7 +38,7 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update(company_params)
-        format.html { redirect_to contact_forms_path, notice: "Company was successfully updated." }
+        format.html { redirect_to companies_path, notice: "Company was successfully updated." }
         format.json { render :show, status: :ok, location: @company }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +65,6 @@ class CompaniesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def company_params
-      params.require(:company).permit(:address, :phone, :email1, :email2, :facebook, :instagram)
+      params.require(:company).permit(:address, :phone, :phone_name,:phone2, :phone2_name,:phone3, :phone3_name, :email1, :email2, :facebook, :instagram, :url_google_maps, :email_notice_contact)
     end
 end
