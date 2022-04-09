@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @company.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @company.phone %>
+</p>
+
+<p>
+  <strong>Email1:</strong>
+  <%= @company.email1 %>
+</p>
+
+<p>
+  <strong>Email2:</strong>
+  <%= @company.email2 %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @company.facebook %>
+</p>
+
+<p>
+  <strong>Instagram:</strong>
+  <%= @company.instagram %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

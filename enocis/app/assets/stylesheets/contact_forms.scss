@@ -22,11 +22,20 @@ h2{
   color: #e45b46;
   text-transform:uppercase;
 }
-.phone_call{
-  color:#868686;
+.phone_call, .email{
+  color:#666666;
 }
-.phone_call:hover{
-  color:#868686;
+.phone_call:hover, .email:hover{
+  color:#666666;
+  text-decoration: none;
+}
+.bottom_container{
+  .phone_call, .email{
+    color:#868686;
+  }
+  .phone_call:hover, .email:hover{
+    color:#868686;
+  }
 }
 .red{
   color:red;
