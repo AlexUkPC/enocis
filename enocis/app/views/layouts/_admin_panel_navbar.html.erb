@@ -24,7 +24,7 @@
       Proiecte
     </li>
   <% end %>
-  <%= link_to contact_forms_path, class: "#{'active' if controller_path=='contact_forms'}" do %>
+  <%= link_to contact_forms_path, class: "#{'active' if controller_path=='contact_forms' || controller_path=="companies"}" do %>
     <li>  
       Contact
     </li>

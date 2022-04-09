@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_09_080805) do
+ActiveRecord::Schema.define(version: 2022_04_09_114353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,13 @@ ActiveRecord::Schema.define(version: 2022_04_09_080805) do
     t.string "instagram"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "phone_name"
+    t.string "phone2"
+    t.string "phone2_name"
+    t.string "phone3"
+    t.string "phone3_name"
+    t.string "url_google_maps"
+    t.string "email_notice_contact"
   end
 
   create_table "contact_forms", force: :cascade do |t|

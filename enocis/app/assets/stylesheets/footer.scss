@@ -18,7 +18,7 @@ footer.bottom{
         font-weight:bold;
       }
       .bottom_call{
-        font-size:70px;
+        font-size:40px;
         color:#e5ae49;
         font-family: 'Ubuntu', sans-serif;
         font-weight: 300;
@@ -30,6 +30,14 @@ footer.bottom{
           text-decoration:none;
           color:#e5ae49;
         }
+      }
+      .bottom_call_name{
+        font-size:30px;
+        color:#e5ae49;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 200;
+        letter-spacing:2px;
+        margin-bottom:20px;
       }
     }
     h4{
@@ -146,6 +154,17 @@ footer.bottom{
   background:#000;
   padding:30px 0;
 }
+@media (max-width: 992px) {
+  footer.bottom{
+    .bottom_container{
+      .footer_heading_container{
+        .bottom_call{
+          font-size:30px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 767px) {
   footer.bottom{
     .bottom_container{
@@ -153,7 +172,7 @@ footer.bottom{
       .footer_heading_container{
         margin-bottom:30px;
         .bottom_call{
-          font-size:50px;
+          font-size:30px;
           margin-top:20px;
         }
       }

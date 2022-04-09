@@ -1,37 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Companies</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>Phone</th>
-      <th>Email1</th>
-      <th>Email2</th>
-      <th>Facebook</th>
-      <th>Instagram</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @companies.each do |company| %>
-      <tr>
-        <td><%= company.address %></td>
-        <td><%= company.phone %></td>
-        <td><%= company.email1 %></td>
-        <td><%= company.email2 %></td>
-        <td><%= company.facebook %></td>
-        <td><%= company.instagram %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Company', new_company_path %>
+<%= render '/layouts/admin_panel' do %>
+<h2>Editare detalii de contact</h2>
+<hr>
+<%= render 'form', company: @company  %>
+<% end %>
+<%= render '/layouts/footer' %>
