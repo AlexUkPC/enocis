@@ -18,16 +18,27 @@ h2{
 .h2_email{
   color: #56c2a2;
 }
+.h2_follow{
+  color: #60afc8;
+}
 .h2_mesaj{
   color: #e45b46;
   text-transform:uppercase;
 }
-.phone_call, .email{
+.phone_call, .email, .follow{
   color:#666666;
 }
-.phone_call:hover, .email:hover{
+.phone_call:hover, .email:hover, .follow:hover{
   color:#666666;
   text-decoration: none;
+}
+.follow{
+  border: 1px solid #666666;
+  border-radius: 50px;
+  display: block;
+  margin: 10px 0;
+  width: 120px;
+  text-align: center;
 }
 .bottom_container{
   .phone_call, .email{
@@ -35,6 +46,12 @@ h2{
   }
   .phone_call:hover, .email:hover{
     color:#868686;
+  }
+  .date_de_contact{
+    i{
+      width: 1px;
+      text-align: center;
+    }
   }
 }
 .red{
