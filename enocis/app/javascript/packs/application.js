@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "home"
 import "frezari"
+import "services"
 
 Rails.start()
 Turbolinks.start()

@@ -1,0 +1,32 @@
+<main role="main" class="container">
+  <%= render '/layouts/parallax_container', image: @company.services_cover_image.attached? ? rails_blob_url(@company.services_cover_image) : "" %> 
+	
+	<h1>Servicii</h1>
+
+	<div class="white_bg page_container">
+    <%= image_tag @company.services_front_image.attached? ? rails_blob_url(@company.services_front_image) : "" , alt: 'Servicii', class: 'main_img' %>
+		<div class="text_container services">
+      <div class="services_content">
+        <% @services.each do |service| %>
+          <button class="accordion"><h3><span class="myicon <%= service.icon %>"></span><%= service.title %></h3></button>
+          <div class="panel">
+            <p>
+              <%= service.description %>
+            </p>
+            <div class="row images">
+              <% if service.images.any? %>
+                <% service.images.each do |image| %>
+                  <%= image_tag image, class: "service_image col-md-4" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to 'New Service', new_service_path %>
+      <%= render '/layouts/second_nav' %>
+		</div>
+  
+	</div>
+  
+</main>

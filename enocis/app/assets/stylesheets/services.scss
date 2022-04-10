@@ -1,0 +1,87 @@
+// Place all the styles related to the Services controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.services{
+  padding: 20px 0;
+  .services_content{
+    text-align: center;
+    .accordion {
+      background-color: #fff;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      text-align: left;
+      border: 1px solid #e5ae49;
+      outline: none;
+      transition: 0.4s;
+      margin: 10px auto;
+      h3{
+        display: inline-block;
+        margin-bottom: 0;
+        .myicon{
+          color: #e5ae49;
+          padding: 10px 20px 10px 10px;
+        }
+      }
+    }
+  
+    .accordion:after {
+      font-family: FontAwesome;
+      content: "\f078";
+      font-size: 1.75rem;
+      color: #e5ae49;
+      float: right;
+      margin-left: 5px;
+      padding: 10px;
+    }
+    
+    .active:after {
+      content: "\f00d"; 
+    }
+    
+    .panel {
+      text-align: left;
+      padding: 0 3px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      .images{
+        // display: grid;
+        // grid-template-columns: repeat(3, 1fr);
+        // grid-auto-rows: 200px;
+        // align-items: center;
+        // justify-content: center;
+        // grid-gap: 15px;
+        .service_image{
+          // max-width: 300px;
+          // height: 200px;
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          margin-bottom: 30px;
+        }
+      }
+      
+    }
+  }
+}
+form{
+  .service_image{
+    max-width: 300px;
+  }
+}
+@media (max-width: 767px) {
+  .services{
+    .services_content{
+      .panel {
+        .images{
+          .service_image{
+            height: 300px;
+          }
+        }
+      }
+    }
+  }
+}

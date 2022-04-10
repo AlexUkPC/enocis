@@ -1,0 +1,61 @@
+<%= form_with(model: service) do |form| %>
+  <% if service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+        <% service.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :icon %>
+    <%= form.text_field :icon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description do %>
+    <span class="label">Descriere</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/products_categories_descriere.PNG' %>
+        </span>
+      </span>
+    <% end %>
+    <div class="editor">
+      <%= form.rich_text_area :description %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :images do %>
+    <span class="label">Imagini</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/projects_imagini.PNG' %>
+          <%= image_tag 'info/project_imagini.PNG' %>
+        </span>
+      </span>
+    <% end %>
+    <%= form.file_field :images, multiple: true %>
+    <% if service.images.any? %>
+      <% service.images.each do |image| %>
+        <%= image_tag image, class: "service_image" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
