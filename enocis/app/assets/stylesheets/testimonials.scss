@@ -105,10 +105,10 @@
           font-size: 13px;
           text-transform: uppercase;
           padding: 10px 25px;
-          background: #E5AE49;
+          background: transparent;
           border-radius: 50px;
-          border: none;
-          color: #fff;
+          border: 2px solid #e5ae49;
+          color: #e5ae49;
           font-family: Arial, sans-serif;
           cursor: pointer;
         }
@@ -120,10 +120,10 @@
         font-size: 13px;
         text-transform: uppercase;
         padding: 10px 25px;
-        background: #E5AE49;
+        background: transparent;
         border-radius: 50px;
-        border: none;
-        color: #fff;
+        border: 2px solid #e5ae49;
+        color: #e5ae49;
         font-family: Arial, sans-serif;
         cursor: pointer;
       }
