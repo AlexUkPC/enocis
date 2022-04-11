@@ -63,6 +63,18 @@
           margin-bottom: 30px;
         }
       }
+      .vid{
+        overflow: hidden;
+        width: 100%;
+        aspect-ratio: 16/9;
+        pointer-events: none;
+        margin-bottom: 30px;
+        iframe{
+          width: 300%;
+          height: 100%;
+          margin-left: -100%;
+        }
+      }
       
     }
   }

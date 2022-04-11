@@ -20,6 +20,16 @@
                 <% end %>
               <% end %>
             </div>
+            <div class="row">
+              <% for youtube in service.youtubes %> 
+                <div class="col-md-4">
+                  <div class="vid">        
+                    <iframe src="<%= embed(youtube.url) %>?playlist=<%= id(youtube.url) %>&autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe> 
+                  </div> 
+                </div>    
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>

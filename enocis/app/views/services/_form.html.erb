@@ -55,6 +55,14 @@
     <% end %>
   </div>
 
+  <h3>Add Youtube videos</h3>
+  <%= form.fields_for :youtubes do |youtube| %>
+      <%= render 'youtube_fields', f: youtube %>
+  <% end %>
+  <div class="links">
+      <%= link_to_add_association "Add Youtube videos", form, :youtubes %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

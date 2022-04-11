@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @youtube.url %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @youtube.service_id %>
+</p>
+
+<%= link_to 'Edit', edit_youtube_path(@youtube) %> |
+<%= link_to 'Back', youtubes_path %>
