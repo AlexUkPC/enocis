@@ -1,0 +1,49 @@
+<%= render '/layouts/admin_panel' do %>
+  <div class="admin_services">
+    <div class="admin_top">
+      <h2>Servicii</h2>
+      <div class="admin_btn push"><%= link_to 'Adauga serviciu', new_service_path, data: { turbolinks: false } %></div>
+    </div>
+    <hr>
+    <table>
+      <thead>
+        <tr>
+          <th class="three"></th>
+          <th>Nume</th>
+          <th>Descriere</th>
+          <th class="three">Vezi</th>
+          <th class="three">Edit</th>
+          <th class="three">Sterge</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @services.each do |service| %>
+          <tr>
+            <td><%= service.id %></td>
+            <td><%= service.title %></td>
+            <td><%= excerpt(service.description.to_plain_text, "", radius: 100) %></td>
+            <td>
+                <%= link_to service do %>
+                  <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to edit_service_path(service) do%>
+                  <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to service, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                <% end %>
+              </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+  </div>
+
+<% end %>

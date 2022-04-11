@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'frezarimdf', to: 'frezarimdfs#index'
   get 'admin_frezarimdfs', to: 'frezarimdfs#admin_index'
   get 'admin_projects', to: 'projects#admin_index'
+  get 'admin_services', to: 'services#admin_index'
   get 'admin_panel', to: 'admin_quick_access#index'
   get 'proiecte', to: 'projects#index'
   get 'politica-confidentialitate', to: 'politica_confidentialitate#index'

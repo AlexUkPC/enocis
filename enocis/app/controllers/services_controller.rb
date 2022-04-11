@@ -6,6 +6,12 @@ class ServicesController < ApplicationController
     @services = Service.all.order("id ASC")
   end
 
+  def admin_index
+
+    @services = Service.all.order("id DESC")
+
+  end
+
   # GET /services/1 or /services/1.json
   def show
   end
@@ -25,7 +31,7 @@ class ServicesController < ApplicationController
 
     respond_to do |format|
       if @service.save
-        format.html { redirect_to service_url(@service), notice: "Service was successfully created." }
+        format.html { redirect_to admin_services_path, notice: "Service was successfully created." }
         format.json { render :show, status: :created, location: @service }
       else
         format.html { render :new, status: :unprocessable_entity }
