@@ -8,7 +8,7 @@
 		<div class="text_container services">
       <div class="services_content">
         <% @services.each do |service| %>
-          <button class="accordion"><h3><span class="myicon <%= service.icon %>"></span><%= service.title %></h3></button>
+          <button class="accordion"><h3><span class="myicon <%= service.etline_icon.name %>"></span><%= service.title %></h3></button>
           <div class="panel">
             <p>
               <%= service.description %>

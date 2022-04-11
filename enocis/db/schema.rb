@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_10_170109) do
+ActiveRecord::Schema.define(version: 2022_04_11_125834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,12 @@ ActiveRecord::Schema.define(version: 2022_04_10_170109) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
+  create_table "etline_icons", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "frezarimdf_categories", force: :cascade do |t|
     t.string "name"
     t.string "data_icon"
@@ -163,10 +169,11 @@ ActiveRecord::Schema.define(version: 2022_04_10_170109) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.string "icon"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "etline_icon_id", null: false
+    t.index ["etline_icon_id"], name: "index_services_on_etline_icon_id"
   end
 
   create_table "testimonials", force: :cascade do |t|
@@ -206,5 +213,6 @@ ActiveRecord::Schema.define(version: 2022_04_10_170109) do
   add_foreign_key "frezarimdfs", "frezarimdf_categories"
   add_foreign_key "product_categories", "icons"
   add_foreign_key "products", "product_categories"
+  add_foreign_key "services", "etline_icons"
   add_foreign_key "youtubes", "services"
 end

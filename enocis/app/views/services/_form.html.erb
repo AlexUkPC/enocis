@@ -12,13 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :icon %>
-    <%= form.text_field :icon %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+   <%= form.label :etline_icon do %>
+    <span class="label">Icon</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/products_categories_home_page_icon.PNG' %>
+        </span>
+      </span>
+    <% end %>
+    <div class="etline-icon">
+      <%= form.collection_radio_buttons(:etline_icon_id, EtlineIcon.all, :id, :name) do |b| %>
+      
+        <% b.label(:"data-value" => b.value, class: "myicon "+ b.text) { b.radio_button(class: "radio_button") } %>
+      <% end %>
+    </div>
   </div>
 
   <div class="field">

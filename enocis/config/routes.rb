@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'proiecte', to: 'projects#index'
   get 'politica-confidentialitate', to: 'politica_confidentialitate#index'
   get 'contact', to: 'contact_forms#new'
-  get 'servicii', to: 'servicii#index'
+  get 'servicii', to: 'services#index'
   resources :products
   resources :product_categories
   root 'home#index'

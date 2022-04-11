@@ -3,7 +3,7 @@ class ServicesController < ApplicationController
 
   # GET /services or /services.json
   def index
-    @services = Service.all
+    @services = Service.all.order("id ASC")
   end
 
   # GET /services/1 or /services/1.json
@@ -65,6 +65,6 @@ class ServicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def service_params
-      params.require(:service).permit(:icon, :title, :description, images: [], youtubes_attributes:[:id, :url, :_destroy])
+      params.require(:service).permit(:title, :description, :etline_icon_id, images: [], youtubes_attributes:[:id, :url, :_destroy])
     end
 end
