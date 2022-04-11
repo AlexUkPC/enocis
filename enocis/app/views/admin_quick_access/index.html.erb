@@ -20,6 +20,10 @@
         <div class="counter-number"><%= @projects.count %></div>
         <div class="counter-icon"><%= image_tag 'proiecte_icon.svg' %></div>
       <% end %>
+      <%= link_to admin_services_path, class: "counter-item" do %>
+        <div class="counter-number"><%= @services.count %></div>
+        <div class="counter-icon"><%= image_tag 'messages_icon.svg' %></div>
+      <% end %>
       <%= link_to contact_forms_path, class: "counter-item" do %>
         <div class="counter-number"><%= @contact_forms.count %></div>
         <div class="counter-icon"><%= image_tag 'messages_icon.svg' %></div>
@@ -60,11 +64,18 @@
         </ul>
       </div>
       <div class="quick-menu-item">
+        <h3>Servicii</h3>
+        <ul>
+           <li><%= link_to 'Vezi servicii', admin_services_path, data: { turbolinks: false } %></li>
+           <li><%= link_to 'Adauga servicii', new_service_path, data: { turbolinks: false } %></li>
+        </ul>
+      </div>
+      <div class="quick-menu-item">
         <h3>Contact</h3>
         <ul>
-          <li><%= link_to 'Vezi formularele de contact', contact_forms_path, data: { turbolinks: false } %></li>
+           <li><%= link_to 'Vezi formularele de contact', contact_forms_path, data: { turbolinks: false } %></li>
            <li><%= link_to 'Editeaza detalii contact', companies_path, data: { turbolinks: false } %></li>
-           <li><%= link_to 'Editeaza poze', edit_photos_path, data: { turbolinks: false } %></li>
+           <li><%= link_to 'Editaza poze fundal', edit_photos_path, data: { turbolinks: false } %></li>
         </ul>
       </div>
     </div>

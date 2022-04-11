@@ -5,6 +5,7 @@ class AdminQuickAccessController < ApplicationController
     @products = Product.all
     @frezarimdfs = Frezarimdf.all
     @projects = Project.all
+    @services = Service.all
     @contact_forms = ContactForm.all
   end
 end

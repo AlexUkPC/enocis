@@ -62,7 +62,7 @@
   table {
     overflow: hidden;
     // table-layout: fixed;
-    text-align: center;
+    text-align: left;
   }
   .width100{
     width: 100%;
@@ -137,7 +137,7 @@
       padding: 5px;
       text-align: center;
     }
-    &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form{
+    &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_service_form{
       width: 100%;
       input, textarea{
         width: 30%;
@@ -147,6 +147,11 @@
         &[type=submit]{
           width: auto;
         }
+      }
+    }
+    &.admin_service_form{
+      input[type=radio]{
+        width: 100%;
       }
     }
   }
@@ -263,7 +268,7 @@
     .quick-menu-item{
       border: 6px solid white;
       padding: 60px 20px;
-      flex: 1 1 18%;
+      flex: 1 1 15%;
       text-align: center;
       h3{
         color: white;
@@ -291,7 +296,7 @@
     margin: 70px 0;
     flex-wrap: nowrap;
     .counter-item{
-      flex: 1 1 18%;
+      flex: 1 1 15%;
       text-align: center;
       font-size: 3.9rem;
       line-height: 3.9rem;
@@ -347,7 +352,7 @@
   
 }
 form{
-  &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_company_form, &.admin_company_photos_form{
+  &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_company_form, &.admin_company_photos_form, &.admin_service_form{
     max-width: 1675px;
   }
   &.admin_company_form{
@@ -375,7 +380,7 @@ form{
     }
   }
 }
-.admin_project_form, .admin_product_category_form, .admin_frezarimdf_category_form{
+.admin_project_form, .admin_product_category_form, .admin_frezarimdf_category_form, .admin_service_form{
   
   input{
     &[type=checkbox]{
@@ -430,10 +435,15 @@ form{
       color: white;
     }
   }
-  .admin_testimonial_show, .admin_contact_form_show, .admin_project_show, .admin_project_category_show, .admin_frezarimdf_category_show{
+  .admin_testimonial_show, .admin_contact_form_show, .admin_project_show, .admin_project_category_show, .admin_frezarimdf_category_show, .admin_service_show{
     p{
       color: white;
       width: 50%;
+    }
+  }
+  .admin_service_show{
+    .myicon{
+      font-size: 30px;
     }
   }
   .devise{
@@ -492,7 +502,7 @@ form{
 @media (max-width: 992px) {
   .admin_panel{
     form{
-      &.admin_project_form, &.admin_product_category_form{
+      &.admin_project_form, &.admin_product_category_form, &.admin_service_form{
         input, textarea, .editor{
           width: 70%;
         }
@@ -627,7 +637,7 @@ form{
       .actions{
         margin-left: 0px;
       }
-      &.admin_project_form, &.admin_product_category_form{
+      &.admin_project_form, &.admin_product_category_form, &.admin_service_form{
         input, textarea, .editor{
           width: 100%;
         }

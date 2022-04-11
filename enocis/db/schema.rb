@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_09_114353) do
+ActiveRecord::Schema.define(version: 2022_04_11_125834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,12 @@ ActiveRecord::Schema.define(version: 2022_04_09_114353) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
+  create_table "etline_icons", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "frezarimdf_categories", force: :cascade do |t|
     t.string "name"
     t.string "data_icon"
@@ -162,6 +168,14 @@ ActiveRecord::Schema.define(version: 2022_04_09_114353) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "services", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "etline_icon_id", null: false
+    t.index ["etline_icon_id"], name: "index_services_on_etline_icon_id"
+  end
+
   create_table "testimonials", force: :cascade do |t|
     t.string "name"
     t.string "title"
@@ -185,10 +199,20 @@ ActiveRecord::Schema.define(version: 2022_04_09_114353) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "youtubes", force: :cascade do |t|
+    t.string "url"
+    t.bigint "service_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["service_id"], name: "index_youtubes_on_service_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "frezarimdf_categories", "icons"
   add_foreign_key "frezarimdfs", "frezarimdf_categories"
   add_foreign_key "product_categories", "icons"
   add_foreign_key "products", "product_categories"
+  add_foreign_key "services", "etline_icons"
+  add_foreign_key "youtubes", "services"
 end

@@ -19,15 +19,89 @@ end
 icon = Hash.new
 [*'a'..'z', *'A'..'Z', *'0'..'9'].each { |letter| icon[letter] = Icon.create!(letter: letter) }
 
+etline_icon = Hash.new
+["icon-mobile", "icon-laptop", "icon-desktop", "icon-tablet", "icon-phone", "icon-document", "icon-documents", "icon-search", "icon-clipboard", "icon-newspaper", "icon-notebook", "icon-book-open", "icon-browser", "icon-calendar", "icon-presentation", "icon-picture", "icon-pictures", "icon-video", "icon-camera", "icon-printer", "icon-toolbox", "icon-briefcase", "icon-wallet", "icon-gift", "icon-bargraph", "icon-grid", "icon-expand", "icon-focus", "icon-edit", "icon-adjustments", "icon-ribbon", "icon-hourglass", "icon-lock", "icon-megaphone", "icon-shield", "icon-trophy", "icon-flag", "icon-map", "icon-puzzle", "icon-basket", "icon-envelope", "icon-streetsign", "icon-telescope", "icon-gears", "icon-key", "icon-paperclip", "icon-attachment", "icon-pricetags", "icon-lightbulb", "icon-layers", "icon-pencil", "icon-tools", "icon-tools-2", "icon-scissors", "icon-paintbrush", "icon-magnifying-glass", "icon-circle-compass", "icon-linegraph", "icon-mic", "icon-strategy", "icon-beaker", "icon-caution", "icon-recycle", "icon-anchor", "icon-profile-male", "icon-profile-female", "icon-bike", "icon-wine", "icon-hotairballoon", "icon-globe", "icon-genius", "icon-map-pin", "icon-dial", "icon-chat", "icon-heart", "icon-cloud", "icon-upload", "icon-download", "icon-target", "icon-hazardous", "icon-piechart", "icon-speedometer", "icon-global", "icon-compass", "icon-lifesaver", "icon-clock", "icon-aperture", "icon-quote", "icon-scope", "icon-alarmclock", "icon-refresh", "icon-happy", "icon-sad", "icon-facebook", "icon-twitter", "icon-googleplus", "icon-rss", "icon-tumblr", "icon-linkedin", "icon-dribbble"].each { |name| etline_icon[name] = EtlineIcon.create!(name: name) }
+
+service1 = Service.create!(
+  title: "Design",
+  etline_icon_id: etline_icon['icon-tools'].id,
+)
+ActionText::RichText.create!(record_type: 'Service',record_id: service1.id, name: 'description', body: '<div class="trix-content"><p>Fie ca vorbim de clasic sau de modern, echipa noastra de design este aici pentru a va oferi solutii personalizate, special create pentru a fi adaptate la nevoile dumneavoastra. Fiecare proiect este conceput de designerii nostrii impreuna cu dumneavoastra pentru a construi cea mai buna solutie care sa se adapteze exact la dorintele si viziunea dumneavoastra.</p></div>')
+service1.images.attach([{io: File.open(Rails.root.join('app/assets/images/services-design.jpg')), filename: 'services-design.jpg'}])
+
+service2 = Service.create!(
+  title: "Relocare",
+  etline_icon_id: etline_icon['icon-tools-2'].id,
+)
+ActionText::RichText.create!(record_type: 'Service',record_id: service2.id, name: 'description', body: '<div class="trix-content"><p>Daca doriti o relocare a mobilierului, echipa noastra de montaj va sta la dispozitie cu servicii de demontare, transport si montare a mobilierului existent. Tinem la proiectele create alaturi de clientii nostri, si ne dorim ca acestea sa fie intotdeauna intr-o stare perfecta. Din acest motiv, fie ca va schimbati locuinta, sau doar doriti sa schimbati locul mobilei, echipa noastra va sta la dispozitie pentru a va oferi siguranta ca totul se intampla in conditii cat mai optime.</p></div>')
+service2.images.attach([{io: File.open(Rails.root.join('app/assets/images/services-relocare.jpg')), filename: 'services-relocare.jpg'}, {io: File.open(Rails.root.join('app/assets/images/services-relocare-2.jpg')), filename: 'services-relocare-2.jpg'}])
+
+service3 = Service.create!(
+  title: "Revizuirea mobilierului semestrial/anual",
+  etline_icon_id: etline_icon['icon-alarmclock'].id,
+)
+ActionText::RichText.create!(record_type: 'Service',record_id: service3.id, name: 'description', body: '<div class="trix-content"><p>Echipa noastra va sta la dispozitie pentru revizuiri semestriale sau anuale ale mobilierului pentru a ne asigura ca produsele achizitionate se afla mereu in cea mai buna stare. Produsele oferite sunt cartea noastra de vizita si functionalitatea lor 100% este un reper de calitate pentru noi.</p></div>')
+
+service4 = Service.create!(
+  title: "Recondiționare pentru mobilierul existent",
+  etline_icon_id: etline_icon['icon-recycle'].id,
+)
+ActionText::RichText.create!(record_type: 'Service',record_id: service4.id, name: 'description', body: '<div class="trix-content"><p>Stim ce inseamna sa ai o piesa de mobilier cu o valoare sentimentala, sau poate cu o utilitate de neinlocuit, si din acest motiv punem la dispozitia clientilor nostri solutii de reconditionare a mobilierului existent.</p></div>')
+service4.images.attach([{io: File.open(Rails.root.join('app/assets/images/services-reconditionare.jpg')), filename: 'services-reconditionare.jpg'}, {io: File.open(Rails.root.join('app/assets/images/services-reconditionare-2.jpg')), filename: 'services-reconditionare-2.jpg'}, {io: File.open(Rails.root.join('app/assets/images/services-reconditionare-3.jpg')), filename: 'services-reconditionare-3.jpg'}])
+
+service5 = Service.create!(
+  title: "Servicii CNC",
+  etline_icon_id: etline_icon['icon-gears'].id,
+)
+ActionText::RichText.create!(record_type: 'Service',record_id: service5.id, name: 'description', body: '<div class="trix-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt praesentium quidem ut ab! Officia, facere fugiat aspernatur sunt eligendi recusandae sint totam nemo nisi, tenetur ut praesentium. Alias, expedita voluptates.</p></div>')
+service5.images.attach([{io: File.open(Rails.root.join('app/assets/images/services-cnc.jpg')), filename: 'services-cnc.jpg'}, {io: File.open(Rails.root.join('app/assets/images/services-cnc-2.jpg')), filename: 'services-cnc-2.jpg'}, {io: File.open(Rails.root.join('app/assets/images/services-cnc-3.jpg')), filename: 'services-cnc-3.jpg'}, {io: File.open(Rails.root.join('app/assets/images/services-cnc-4.jpg')), filename: 'services-cnc-4.jpg'}, {io: File.open(Rails.root.join('app/assets/images/services-cnc-5.jpg')), filename: 'services-cnc-5.jpg'}])
+
+youtube1 = Youtube.create!(
+  url: "https://www.youtube.com/watch?v=ZhiBI4nJFkI",
+  service_id: service1.id
+)
+youtube2 = Youtube.create!(
+  url: "https://www.youtube.com/watch?v=BHACKCNDMW8",
+  service_id: service1.id
+)
+youtube3 = Youtube.create!(
+  url: "https://www.youtube.com/watch?v=BHACKCNDMW8",
+  service_id: service2.id
+)
+youtube4 = Youtube.create!(
+  url: "https://www.youtube.com/watch?v=BHACKCNDMW8",
+  service_id: service3.id
+)
+youtube5 = Youtube.create!(
+  url: "https://www.youtube.com/watch?v=V_3FeIVOB3k",
+  service_id: service4.id
+)
+youtube6 = Youtube.create!(
+  url: "https://www.youtube.com/watch?v=BHACKCNDMW8",
+  service_id: service4.id
+)
+youtube7 = Youtube.create!(
+  url: "https://www.youtube.com/watch?v=bGCLRBSLsgQ",
+  service_id: service5.id
+)
+youtube8 = Youtube.create!(
+  url: "https://www.youtube.com/watch?v=PsWZpIoSFXY",
+  service_id: service5.id
+)
+youtube9 = Youtube.create!(
+  url: "https://www.youtube.com/watch?v=bL_L9JWdAp8",
+  service_id: service5.id
+)
+
 company = Company.create!(
   address: "Drumul de Centura Chitila-Mogosoaia nr. 3-5",
   url_google_maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2845.2510482887897!2d25.98209531552577!3d44.510010979101295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDMwJzM2LjAiTiAyNcKwNTknMDMuNCJF!5e0!3m2!1sro!2sro!4v1534928716237",
   phone: "0723.609.644",
-  phone_name: "",
-  phone2: "",
-  phone2_name: "",
-  phone3: "",
-  phone3_name: "",
+  phone_name: "John Doe",
+  phone2: "0723.609.645",
+  phone2_name: "John Doe",
+  phone3: "0723.609.646",
+  phone3_name: "John Doe",
   email1: "info@enocis.ro",
   email2: "contact@enocis.ro",
   facebook: "https://www.facebook.com/Enocismobila/",

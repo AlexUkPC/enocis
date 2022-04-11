@@ -1,0 +1,34 @@
+<%= render '/layouts/admin_panel' do %>
+  <div class="admin_service_show">
+    <p>
+      <strong>Titlu:</strong>
+      <%= @service.title %>
+    </p>
+
+    <p>
+      <strong>Icon:</strong>
+      <span class="myicon <%= @service.etline_icon.name %>"></span>
+    </p>
+
+    <p>
+      <strong>Descriere:</strong>
+      <%= @service.description %>
+    </p>
+
+    <p>
+      <strong>Imagini:</strong>
+      <% if @service.images.any? %>
+        <% @service.images.each do |image| %>
+          <%= image_tag image ,class: "d-block w-100", alt:"..." %>
+              
+        <% end %>
+      <% end %>
+    </p>
+    <div class="show_btn">
+      <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+    </div>
+    <div class="show_btn">
+      <%= link_to 'Editeaza', edit_service_path(@service), data: { turbolinks: false } %> 
+    </div>
+  </div>
+<% end %>
