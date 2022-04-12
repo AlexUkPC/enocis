@@ -2242,7 +2242,13 @@
       <div class="load_all">
         <button id="load_all" onclick="show_all_colors(event, 'RAL')">INCARCA TOT PALETARUL</button>
       </div>
+      
+      <div class="color-types">
+        <span class="color-type">MAT</span><span class="color-type">ULTRA-MAT</span><span class="color-type">LUCIOS</span><span class="color-type">SEMI-LUCIOS</span>
+        
+      </div>
       <div class="change_frezare">
+       
         <%= link_to 'SCHIMBA MODEL FREZARE', frezarimdfs_path, data: { turbolinks: false } %>
         <span class="small"> ATENTIE ! Daca utilizati butonul "SCHIMBA MODEL FREZARE", culorile salvate ca favorite pentru a face comparatie se vor reseta si vor trebui adaugate din nou.</span>
       </div>
