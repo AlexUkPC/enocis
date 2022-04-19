@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'Enocis Website<development@alexrogna.com>'
+  default from: 'Enocis Website<no-reply@enocis.ro>'
   layout 'mailer'
 end
