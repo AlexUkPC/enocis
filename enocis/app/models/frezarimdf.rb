@@ -3,4 +3,6 @@ class Frezarimdf < ApplicationRecord
   belongs_to :frezarimdf_category
   attr_accessor :remove_image_svg
   after_save { image_svg.purge if (remove_image_svg == '1' ) }
+  extend FriendlyId
+  friendly_id :name
 end

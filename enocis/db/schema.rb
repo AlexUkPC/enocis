@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_11_125834) do
+ActiveRecord::Schema.define(version: 2022_04_19_223809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,7 +108,9 @@ ActiveRecord::Schema.define(version: 2022_04_11_125834) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "icon_id", null: false
+    t.string "slug"
     t.index ["icon_id"], name: "index_frezarimdf_categories_on_icon_id"
+    t.index ["slug"], name: "index_frezarimdf_categories_on_slug", unique: true
   end
 
   create_table "frezarimdfs", force: :cascade do |t|
@@ -117,7 +119,20 @@ ActiveRecord::Schema.define(version: 2022_04_11_125834) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "image"
     t.bigint "frezarimdf_category_id", null: false
+    t.string "slug"
     t.index ["frezarimdf_category_id"], name: "index_frezarimdfs_on_frezarimdf_category_id"
+    t.index ["slug"], name: "index_frezarimdfs_on_slug", unique: true
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
   create_table "icons", force: :cascade do |t|
@@ -133,7 +148,9 @@ ActiveRecord::Schema.define(version: 2022_04_11_125834) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "data_icon"
     t.bigint "icon_id", null: false
+    t.string "slug"
     t.index ["icon_id"], name: "index_product_categories_on_icon_id"
+    t.index ["slug"], name: "index_product_categories_on_slug", unique: true
   end
 
   create_table "products", force: :cascade do |t|
@@ -146,13 +163,17 @@ ActiveRecord::Schema.define(version: 2022_04_11_125834) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "product_category_id", null: false
+    t.string "slug"
     t.index ["product_category_id"], name: "index_products_on_product_category_id"
+    t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
   create_table "project_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_project_categories_on_slug", unique: true
   end
 
   create_table "project_categories_projects", id: false, force: :cascade do |t|
@@ -166,6 +187,8 @@ ActiveRecord::Schema.define(version: 2022_04_11_125834) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_projects_on_slug", unique: true
   end
 
   create_table "services", force: :cascade do |t|

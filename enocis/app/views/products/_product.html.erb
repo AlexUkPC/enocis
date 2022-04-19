@@ -3,7 +3,7 @@
 		<% if product.image.attached? %>
 			<%= image_tag product.image, alt: product.name %>
 		<% end %>
-		<%= link_to product_path(product.id), class: "overlay" do %> 
+		<%= link_to product_path(product.friendly_id), class: "overlay" do %> 
 			<div class="top">
 				<span class="title">
 					<%= product.name %>

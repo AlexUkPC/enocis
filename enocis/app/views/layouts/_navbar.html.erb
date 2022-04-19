@@ -29,11 +29,11 @@
             <a class="nav-link dropdown-toggle <%= 'active' if controller_path=='product_categories' %>" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-turbolinks="false">Produse</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
             <% @product_categories.each do |product_category| %>
-                <%= link_to product_category.name, product_category, data: "turbolinks='false'", class: "dropdown-item #{'active' if current_page?(product_category_path(product_category.id))}" %>
+                <%= link_to product_category.name, product_category, data: "turbolinks='false'", class: "dropdown-item #{'active' if current_page?(product_category_path(product_category.friendly_id))}" %>
             <% end %>
           </li>
           <li class="nav-item">
-            <a class="nav-link <%= 'active' if controller_path=='frezarimdfs' %>" href="/frezarimdf" data-turbolinks="false">Frezari MDF</a>
+            <a class="nav-link <%= 'active' if controller_path=='frezarimdfs' %>" href="/frezari_mdf" data-turbolinks="false">Frezari MDF</a>
           </li>
           <li class="nav-item">
             <a class="nav-link <%= 'active' if controller_path=='projects' %>" href="/proiecte" data-turbolinks="false">Proiecte</a>
