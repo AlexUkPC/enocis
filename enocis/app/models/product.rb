@@ -3,4 +3,6 @@ class Product < ApplicationRecord
   belongs_to :product_category
   attr_accessor :remove_image
   after_save { image.purge if (remove_image == '1' ) }
+  extend FriendlyId
+  friendly_id :name
 end

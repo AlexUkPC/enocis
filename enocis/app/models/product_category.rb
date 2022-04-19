@@ -8,5 +8,6 @@ class ProductCategory < ApplicationRecord
   after_save { cover_image.purge if (remove_cover_image == '1' ) }
   attr_accessor :remove_front_image
   after_save { front_image.purge if (remove_front_image == '1' ) }
-  
+  extend FriendlyId
+  friendly_id :name
 end
