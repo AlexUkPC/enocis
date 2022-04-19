@@ -117,11 +117,11 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  config.action_mailer.default_url_options = { host: 'https://enocis.alexrogna.com' }
+  config.action_mailer.default_url_options = { host: 'https://enocis.ro' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "glc27.hostico.ro",
-      domain: "alexrogna.com",
+    address: "aphrodite.hosterion.net",
+      domain: "enocis.ro",
       port: 465,
       ssl: true,
       authentication: :login,
