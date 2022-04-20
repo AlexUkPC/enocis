@@ -37,12 +37,12 @@ class User < ApplicationRecord
 
   def self.find_recoverable_or_init_with_errors(conditions)
       conditions = conditions.dup
-      login = conditions.delete(:login).downcase
+      login = conditions.delete(:email).downcase
       recoverable = find_authenticatable(login)
 
       unless recoverable
-      recoverable = new(login: login)
-      recoverable.errors.add(:login, login.present? ? :not_found : :blank)
+      recoverable = new(email: login)
+      recoverable.errors.add(:email, login.present? ? :not_found : :blank)
       end
       recoverable
   end
