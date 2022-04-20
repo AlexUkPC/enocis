@@ -25,7 +25,7 @@
 				<p><%= @product_category.description %></p>
   
         <h2>
-          La orice comanda de mobila living sunt incluse:
+          La orice comanda de <%= @product_category.name.downcase %> sunt incluse:
         </h2>
 
         <p>
@@ -37,7 +37,7 @@
         </p>
 
         <h2>
-          Servicii optionale pentru mobila living:
+          Servicii optionale pentru <%= @product_category.name.downcase %>:
         </h2>
 
         <p>
