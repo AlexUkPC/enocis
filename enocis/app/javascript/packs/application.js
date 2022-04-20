@@ -10,6 +10,8 @@ import "channels"
 import "home"
 import "frezari"
 import "services"
+window.Cookies = require("js-cookie")
+import "cookies_eu"
 
 Rails.start()
 Turbolinks.start()

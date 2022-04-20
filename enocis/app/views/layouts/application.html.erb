@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Enocis</title>
+    <title>Enocis - Solutii personalizate de mobilier.</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -19,5 +19,6 @@
     <%= render '/layouts/navbar' %>
     <%= yield %>
     <%= render '/layouts/footer' if controller_path!='contact_forms' %>
+    <%= render 'cookies_eu/consent_banner', link: '/politica-cookies', target: '_blank' %>
   </body>
 </html>

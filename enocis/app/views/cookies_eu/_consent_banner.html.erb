@@ -1,0 +1,29 @@
+<% if cookies.kind_of? ActionDispatch::Cookies::CookieJar %>
+  <% if cookies && cookies['cookie_eu_consented'] != 'true' %>
+
+    <div class="cookie_consent js-cookies-eu">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2">
+
+						<%= image_tag 'GDPR-Icon.png', alt: 'GDPR-Icon' %>
+
+					</div>
+					<div class="col-md-8">
+						Pentru o functionare corecta a platformei Enocis, te rugam sa ne dai acordul pentru utilizarea fisierelor de tip cookie. Platforma Enocis foloseste cookies pentru a masura utilizarea platformei si alte functionalitati prin care putem arata utilizatorilor cel mai potrivit continut. <% if defined?(link).present? %>
+              <a href="<%= link %>" class="cookies-eu-link" target="<%= defined?(target).present? ? target : '' %>"> Click aici pentru mai multe detalii. </a>
+            <% end %>
+					</div>
+					
+					<div class="col-md-2 cookies-eu-button-holder">
+						<button class="cookie_but cookies-eu-ok js-cookies-eu-ok">
+							Da, Accept
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+  <% end %>
+<% else %>
+  <% raise Exception.new "'cookies' is a reserved Rails class, please rename your method" %>
+<% end %>
