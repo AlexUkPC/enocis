@@ -3,6 +3,8 @@
     <h2>Aprobare testimoniale</h2>
     <hr>
     <p>NOTA: Pentru a aproba un testimonial este necesar apasarea butonului de "Edit" si bifati marcajul din dreptul campului "Aprobare".</p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert2"><%= alert %></p>
     <table class="width100">
       <thead>
         <tr>
@@ -33,11 +35,11 @@
             </td>
             <td>
               <%= link_to edit_testimonial_path(testimonial), data: { turbolinks: false } do%>
-                <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
+                <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
               <% end %>
             </td>
             <td>
-              <%= link_to testimonial, method: :delete, data: { confirm: 'Are you sure?' } do%>
+              <%= link_to testimonial, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi testimonialul?' } do%>
                 <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
               <% end %>
             </td>

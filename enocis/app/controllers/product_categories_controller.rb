@@ -27,7 +27,7 @@ class ProductCategoriesController < ApplicationController
 
     respond_to do |format|
       if @product_category.save
-        format.html { redirect_to product_categories_path, notice: "Product category was successfully created." }
+        format.html { redirect_to product_categories_path, notice: "Categoria de produse a fost adaugata cu succes." }
         format.json { render :show, status: :created, location: @product_category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class ProductCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @product_category.update(product_category_params)
-        format.html { redirect_to product_category_url(@product_category), notice: "Product category was successfully updated." }
+        format.html { redirect_to product_categories_path, notice: "Categoria de produse a fost modificata." }
         format.json { render :show, status: :ok, location: @product_category }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class ProductCategoriesController < ApplicationController
     @product_category.destroy
 
     respond_to do |format|
-      format.html { redirect_to product_categories_url, notice: "Product category was successfully destroyed." }
+      format.html { redirect_to product_categories_url, notice: "Categoria de produse a fost stearsa." }
       format.json { head :no_content }
     end
   end

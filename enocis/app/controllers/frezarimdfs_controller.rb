@@ -42,7 +42,7 @@ class FrezarimdfsController < ApplicationController
 
     respond_to do |format|
       if @frezarimdf.save
-        format.html { redirect_to admin_frezarimdfs_path, notice: "Frezarimdf was successfully created." }
+        format.html { redirect_to admin_frezarimdfs_path, notice: "Frezarea MDF a fost adaugata cu succes." }
         format.json { render :show, status: :created, location: @frezarimdf }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -55,7 +55,7 @@ class FrezarimdfsController < ApplicationController
   def update
     respond_to do |format|
       if @frezarimdf.update(frezarimdf_params)
-        format.html { redirect_to frezarimdf_url(@frezarimdf), notice: "Frezarimdf was successfully updated." }
+        format.html { redirect_to admin_frezarimdfs_path, notice: "Frezarea MDF a fost modificata." }
         format.json { render :show, status: :ok, location: @frezarimdf }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -69,7 +69,7 @@ class FrezarimdfsController < ApplicationController
     @frezarimdf.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_frezarimdfs_url, notice: "Frezarimdf was successfully destroyed." }
+      format.html { redirect_to admin_frezarimdfs_url, notice: "Frezarea MDF a fost stearsa." }
       format.json { head :no_content }
     end
   end

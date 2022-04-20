@@ -6,6 +6,8 @@
       <div class="admin_btn"><%= link_to 'Adauga frezare', new_frezarimdf_path %></div>
     </div>
     <hr>
+    <p class="notice"><%= notice %></p>
+    <p class="alert2"><%= alert %></p>
     <table class="width50">
       <thead>
         <tr>
@@ -31,11 +33,11 @@
               </td>
               <td>
                 <%= link_to edit_frezarimdf_path(frezarimdf), data: { turbolinks: false } do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
+                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
                 <% end %>
               </td>
               <td>
-                <%= link_to frezarimdf, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <%= link_to frezarimdf, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi frezarea MDF?' } do%>
                   <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
                 <% end %>
               </td>
