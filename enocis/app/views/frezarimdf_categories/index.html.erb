@@ -5,6 +5,8 @@
       <div class="admin_btn push"><%= link_to 'Adauga categorie frezari', new_frezarimdf_category_path %></div>
     </div>
     <hr>
+    <p class="notice"><%= notice %></p>
+    <p class="alert2"><%= alert %></p>
     <table class="width50">
       <thead>
         <tr>
@@ -30,11 +32,11 @@
               </td>
               <td>
                 <%= link_to edit_frezarimdf_category_path(frezarimdf_category) do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
+                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
                 <% end %>
               </td>
               <td>
-                <%= link_to frezarimdf_category, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <%= link_to frezarimdf_category, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi categoria de frezari MDF?' } do%>
                   <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
                 <% end %>
               </td>

@@ -26,7 +26,7 @@ class FrezarimdfCategoriesController < ApplicationController
 
     respond_to do |format|
       if @frezarimdf_category.save
-        format.html { redirect_to frezarimdf_categories_path, notice: "Frezarimdf category was successfully created." }
+        format.html { redirect_to frezarimdf_categories_path, notice: "Categoria de frezari MDF a fost adaugata cu succes." }
         format.json { render :show, status: :created, location: @frezarimdf_category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class FrezarimdfCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @frezarimdf_category.update(frezarimdf_category_params)
-        format.html { redirect_to frezarimdf_category_url(@frezarimdf_category), notice: "Frezarimdf category was successfully updated." }
+        format.html { redirect_to frezarimdf_categories_path, notice: "Categoria de frezari MDF a fost modificata." }
         format.json { render :show, status: :ok, location: @frezarimdf_category }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class FrezarimdfCategoriesController < ApplicationController
     @frezarimdf_category.destroy
 
     respond_to do |format|
-      format.html { redirect_to frezarimdf_categories_url, notice: "Frezarimdf category was successfully destroyed." }
+      format.html { redirect_to frezarimdf_categories_url, notice: "Categoria de frezari MDF a fost stearsa." }
       format.json { head :no_content }
     end
   end

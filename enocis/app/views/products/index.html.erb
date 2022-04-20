@@ -6,6 +6,8 @@
       <div class="admin_btn"> <%= link_to 'Adauga produs', new_product_path %></div>
     </div>
     <hr>
+    <p class="notice"><%= notice %></p>
+    <p class="alert2"><%= alert %></p>
     <table class="width100">
       <thead>
         <tr>
@@ -45,7 +47,7 @@
                 <% end %>
               </td>
               <td>
-                <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <%= link_to product, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi produsul?' } do%>
                   <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
                 <% end %>
               </td>

@@ -5,6 +5,8 @@
       <div class="admin_btn push"><%= link_to 'Editaza detalii contact', companies_path %></div>
     </div>
     <hr>
+    <p class="notice"><%= notice %></p>
+    <p class="alert2"><%= alert %></p>
     <table class="width100">
       <thead>
         <tr>
@@ -34,11 +36,11 @@
               </td>
               <td>
                 <%= link_to edit_contact_form_path(contact_form) do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
+                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
                 <% end %>
               </td>
               <td>
-                <%= link_to contact_form, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <%= link_to contact_form, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi formularul de contact?' } do%>
                   <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
                 <% end %>
               </td>

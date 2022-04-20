@@ -6,6 +6,8 @@
       <div class="admin_btn"><%= link_to 'Adauga proiect', new_project_path %></div>
     </div>
     <hr>
+    <p class="notice"><%= notice %></p>
+    <p class="alert2"><%= alert %></p>
     <table>
       <thead>
         <tr>
@@ -43,11 +45,11 @@
               </td>
               <td>
                 <%= link_to edit_project_path(project) do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
+                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
                 <% end %>
               </td>
               <td>
-                <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <%= link_to project, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi proiectul?' } do%>
                   <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
                 <% end %>
               </td>

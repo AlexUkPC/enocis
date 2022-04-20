@@ -32,7 +32,7 @@ class ServicesController < ApplicationController
 
     respond_to do |format|
       if @service.save
-        format.html { redirect_to admin_services_path, notice: "Service was successfully created." }
+        format.html { redirect_to admin_servicii_path, notice: "Serviciul a fost adaugat cu succes." }
         format.json { render :show, status: :created, location: @service }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -45,7 +45,7 @@ class ServicesController < ApplicationController
   def update
     respond_to do |format|
       if @service.update(service_params)
-        format.html { redirect_to service_url(@service), notice: "Service was successfully updated." }
+        format.html { redirect_to admin_servicii_path, notice: "Serviciul a fost modificat." }
         format.json { render :show, status: :ok, location: @service }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -59,7 +59,7 @@ class ServicesController < ApplicationController
     @service.destroy
 
     respond_to do |format|
-      format.html { redirect_to services_url, notice: "Service was successfully destroyed." }
+      format.html { redirect_to admin_servicii_path, notice: "Serviciul  a fost sters." }
       format.json { head :no_content }
     end
   end

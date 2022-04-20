@@ -40,7 +40,7 @@ class ContactFormsController < ApplicationController
   def update
     respond_to do |format|
       if @contact_form.update(contact_form_params)
-        format.html { redirect_to contact_form_url(@contact_form), notice: "Contact form was successfully updated." }
+        format.html { redirect_to contact_forms_path, notice: "Formularul de contact a fost modificat." }
         format.json { render :show, status: :ok, location: @contact_form }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class ContactFormsController < ApplicationController
     @contact_form.destroy
 
     respond_to do |format|
-      format.html { redirect_to contact_forms_url, notice: "Contact form was successfully destroyed." }
+      format.html { redirect_to contact_forms_url, notice: "Formularul de contact a fost sters." }
       format.json { head :no_content }
     end
   end

@@ -42,7 +42,7 @@ class TestimonialsController < ApplicationController
     respond_to do |format|
       # @testimonial.image.purge if (@testimonial.remove_image == '1')
       if @testimonial.update(testimonial_params)
-        format.html { redirect_to testimonial_url(@testimonial), notice: "Testimonial was successfully updated." }
+        format.html { redirect_to testimonials_path, notice: "Testimonialul a fost modificat." }
         format.json { render :show, status: :ok, location: @testimonial }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class TestimonialsController < ApplicationController
     @testimonial.destroy
 
     respond_to do |format|
-      format.html { redirect_to testimonials_url, notice: "Testimonial was successfully destroyed." }
+      format.html { redirect_to testimonials_url, notice: "Testimonialul a fost sters." }
       format.json { head :no_content }
     end
   end

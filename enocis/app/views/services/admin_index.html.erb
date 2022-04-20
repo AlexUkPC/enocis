@@ -5,6 +5,8 @@
       <div class="admin_btn push"><%= link_to 'Adauga serviciu', new_service_path, data: { turbolinks: false } %></div>
     </div>
     <hr>
+    <p class="notice"><%= notice %></p>
+    <p class="alert2"><%= alert %></p>
     <table>
       <thead>
         <tr>
@@ -30,11 +32,11 @@
               </td>
               <td>
                 <%= link_to edit_service_path(service) do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>
+                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
                 <% end %>
               </td>
               <td>
-                <%= link_to service, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <%= link_to service, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi serviciul?' } do%>
                   <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
                 <% end %>
               </td>

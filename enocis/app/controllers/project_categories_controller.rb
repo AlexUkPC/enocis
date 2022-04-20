@@ -25,7 +25,7 @@ class ProjectCategoriesController < ApplicationController
 
     respond_to do |format|
       if @project_category.save
-        format.html { redirect_to project_categories_path, notice: "Project category was successfully created." }
+        format.html { redirect_to project_categories_path, notice: "Categoria de proiecte a fost adaugata cu succes." }
         format.json { render :show, status: :created, location: @project_category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ProjectCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @project_category.update(project_category_params)
-        format.html { redirect_to project_category_url(@project_category), notice: "Project category was successfully updated." }
+        format.html { redirect_to project_categories_path, notice: "Categoria de proiecte a fost modificata." }
         format.json { render :show, status: :ok, location: @project_category }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class ProjectCategoriesController < ApplicationController
     @project_category.destroy
 
     respond_to do |format|
-      format.html { redirect_to project_categories_url, notice: "Project category was successfully destroyed." }
+      format.html { redirect_to project_categories_url, notice: "Categoria de proiecte a fost sters." }
       format.json { head :no_content }
     end
   end
