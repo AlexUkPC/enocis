@@ -35,6 +35,7 @@ gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.5'
 gem 'cocoon', '~> 1.2', '>= 1.2.15'
 gem 'jquery-rails', '~> 4.4'
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
+gem 'cookies_eu'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

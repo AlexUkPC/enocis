@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'admin_panel', to: 'admin_quick_access#index'
   get 'proiecte', to: 'projects#index'
   get 'politica-confidentialitate', to: 'politica_confidentialitate#index'
+  get 'politica-cookies', to: 'politica_cookies#index'
   get 'contact', to: 'contact_forms#new'
   get 'servicii', to: 'services#index'
   resources :products, path: :produs

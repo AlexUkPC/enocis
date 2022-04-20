@@ -1,0 +1,2 @@
+module PoliticaCookiesHelper
+end
