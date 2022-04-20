@@ -23,7 +23,7 @@ class User < ApplicationRecord
   end
   def self.find_for_database_authentication(conditions)
       conditions = conditions.dup
-      login = conditions.delete(:login).downcase
+      login = conditions.delete(:login)
       find_authenticatable(login)
   end
 	def self.send_reset_password_instructions(conditions)
@@ -37,7 +37,7 @@ class User < ApplicationRecord
 
   def self.find_recoverable_or_init_with_errors(conditions)
       conditions = conditions.dup
-      login = conditions.delete(:email).downcase
+      login = conditions.delete(:email)
       recoverable = find_authenticatable(login)
 
       unless recoverable
