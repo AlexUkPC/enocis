@@ -27,7 +27,7 @@
             <td><%= frezarimdf.name %></td>
             <td><%= frezarimdf.frezarimdf_category.name %></td>
             <td>
-                <%= link_to frezarimdf, data: { turbolinks: false } do %>
+                <%= link_to frezarimdf_path(frezarimdf.id), data: { turbolinks: false } do %>
                   <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
                 <% end %>
               </td>

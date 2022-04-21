@@ -75,7 +75,7 @@
     <%= form.submit %>
     <% if !current_page?(new_frezarimdf_path)  %>
       <div class="form_btn">
-        <%= link_to 'Vezi', @frezarimdf, data: { turbolinks: false } %>
+        <%= link_to 'Vezi', frezarimdf_path(@frezarimdf.id), data: { turbolinks: false } %>
       </div>
     <% end %>
   </div>
