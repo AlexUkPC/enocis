@@ -1,0 +1,96 @@
+<%= form_with(model: social_project, class:"admin_social_project_form") do |form| %>
+  <% if social_project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(social_project.errors.count, "error") %> prohibited this social_project from being saved:</h2>
+
+      <ul>
+        <% social_project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :title, "Titlu" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :main_image do %>
+    <span class="label">Poza principala</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/products_poza.PNG' %>
+          <%= image_tag 'info/product_poza.PNG' %>
+        </span>
+      </span>
+    <% end %>
+    <div class="poza">
+        <div id="poza">
+    <% if social_project.main_image.attached? %>
+          <%= image_tag social_project.main_image, id: "image" %>
+          <br>
+          <%= form.label :remove_main_image do %>
+            <%= form.check_box :remove_main_image, onclick:"document.querySelector('#poza').style.display = 'none';"  %> 
+            Sterge
+          <% end %>
+    <% else %>
+    <img src="" id="image" style="display: none;">    
+    <% end %>
+    </div>
+    <%= form.label :main_image do %>
+      Upload
+    <% end %>
+    <%= form.file_field :main_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description do %>
+    <span class="label">Descriere</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/products_categories_descriere.PNG' %>
+        </span>
+      </span>
+    <% end %>
+    <div class="editor">
+      <%= form.rich_text_area :description %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :images do %>
+      <span class="label">Imagini</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/projects_imagini.PNG' %>
+          <%= image_tag 'info/project_imagini.PNG' %>
+        </span>
+      </span>
+    <% end %>
+    <%= form.file_field :images, multiple: true %>
+    <br>
+    <% if social_project.images.any? %>
+      <% social_project.images.each do |image| %>
+        <%= image_tag image, class: "social_project_image" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <span class="label">Adauga link video Youtube</span>
+  <%= form.fields_for :youtubesps do |youtubesp| %>
+      <%= render 'youtubesp_fields', f: youtubesp %>
+  <% end %>
+
+  <div class="links">
+      <%= link_to_add_association "Adauga", form, :youtubesps %>
+  </div>
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

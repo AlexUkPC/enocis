@@ -35,7 +35,7 @@
                 <% end %>
               </td>
               <td>
-                <%= link_to edit_contact_form_path(contact_form) do%>
+                <%= link_to edit_contact_form_path(contact_form), data: { turbolinks: false } do%>
                   <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
                 <% end %>
               </td>

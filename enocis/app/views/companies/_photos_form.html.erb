@@ -123,6 +123,69 @@
     </div>
     </div>
   </div>
+  <h3>Poze Proiecte Sociale</h3>
+  <div class="row">
+    <div class="field col-md-6">
+      <%= form.label :social_projects_cover_image do %>
+      <span class="label">Poza fundal</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_fundal_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_social_projects_cover_image">
+      <% if company.social_projects_cover_image.attached? %>
+            <%= image_tag company.social_projects_cover_image.variant(resize_to_limit: [300, 200]), id: "image_social_projects_cover_image" %>
+            <br>
+            <%= form.label :remove_social_projects_cover_image do %>
+              <%= form.check_box :remove_social_projects_cover_image, onclick:"document.querySelector('#poza_social_projects_cover_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_social_projects_cover_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :social_projects_cover_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :social_projects_cover_image %>
+      </div>
+    </div>
+
+    <div class="field col-md-6">
+      <%= form.label :social_projects_front_image do %>
+      <span class="label">Poza principala</span> 
+        <span class="info">
+          <i class="fa fa-info-circle info-name"></i>
+          <span class="hiddenimg">
+            <%= image_tag 'info/products_categories_poza_principala_categorie.PNG' %>
+          </span>
+        </span>
+      <% end %>
+      <div class="poza">
+          <div id="poza_social_projects_front_image">
+      <% if company.social_projects_front_image.attached? %>
+            <%= image_tag company.social_projects_front_image.variant(resize_to_limit: [300, 200]), id: "image_social_projects_front_image" %>
+            <br>
+            <%= form.label :remove_social_projects_front_image do %>
+              <%= form.check_box :remove_social_projects_front_image, onclick:"document.querySelector('#poza_social_projects_front_image').style.display = 'none';"  %> 
+              Sterge
+            <% end %>
+      <% else %>
+      <img src="" id="image_social_projects_front_image" style="display: none;">    
+      <% end %>
+      </div>
+      <%= form.label :social_projects_front_image do %>
+        Upload
+      <% end %>
+      <%= form.file_field :social_projects_front_image %>
+    </div>
+    </div>
+  </div>
+
   <h3>Poze Servicii</h3>
   <div class="row">
     <div class="field col-md-6">

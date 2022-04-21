@@ -145,6 +145,9 @@ $(document).ready(function(){
 	$("#product_image").change(function(){
 		readURL(this, '#product_remove_image', '#image', '#poza');
 	});
+	$("#social_project_main_image").change(function(){
+		readURL(this, '#social_project_main_remove_image', '#image', '#poza');
+	});
 	$("#frezarimdf_image_svg").change(function(){
 		readURL(this, '#frezarimdf_remove_image_svg', '#image', '#poza');
 	});
@@ -165,6 +168,12 @@ $(document).ready(function(){
 	});
 	$("#company_projects_front_image").change(function(){
 		readURL(this, '#company_projects_remove_front_image', '#image_projects_front_image', '#poza_projects_front_image');
+	});
+	$("#company_social_projects_cover_image").change(function(){
+		readURL(this, '#company_social_projects_remove_cover_image', '#image_social_projects_cover_image', '#poza_social_projects_cover_image');
+	});
+	$("#company_social_projects_front_image").change(function(){
+		readURL(this, '#company_social_projects_remove_front_image', '#image_social_projects_front_image', '#poza_social_projects_front_image');
 	});
 	$("#company_services_cover_image").change(function(){
 		readURL(this, '#company_services_remove_cover_image', '#image_services_cover_image', '#poza_services_cover_image');

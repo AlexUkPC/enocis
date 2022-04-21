@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_19_223809) do
+ActiveRecord::Schema.define(version: 2022_04_21_081239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -199,6 +199,14 @@ ActiveRecord::Schema.define(version: 2022_04_19_223809) do
     t.index ["etline_icon_id"], name: "index_services_on_etline_icon_id"
   end
 
+  create_table "social_projects", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_social_projects_on_slug", unique: true
+  end
+
   create_table "testimonials", force: :cascade do |t|
     t.string "name"
     t.string "title"
@@ -230,6 +238,14 @@ ActiveRecord::Schema.define(version: 2022_04_19_223809) do
     t.index ["service_id"], name: "index_youtubes_on_service_id"
   end
 
+  create_table "youtubesps", force: :cascade do |t|
+    t.string "url"
+    t.bigint "social_project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["social_project_id"], name: "index_youtubesps_on_social_project_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "frezarimdf_categories", "icons"
@@ -238,4 +254,5 @@ ActiveRecord::Schema.define(version: 2022_04_19_223809) do
   add_foreign_key "products", "product_categories"
   add_foreign_key "services", "etline_icons"
   add_foreign_key "youtubes", "services"
+  add_foreign_key "youtubesps", "social_projects"
 end
