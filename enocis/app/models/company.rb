@@ -3,6 +3,8 @@ class Company < ApplicationRecord
   has_one_attached :frezari_mdf_front_image
   has_one_attached :projects_cover_image
   has_one_attached :projects_front_image
+  has_one_attached :social_projects_cover_image
+  has_one_attached :social_projects_front_image
   has_one_attached :services_cover_image
   has_one_attached :services_front_image
   has_one_attached :contact_cover_image
@@ -16,6 +18,10 @@ class Company < ApplicationRecord
   after_save { projects_cover_image.purge if (remove_projects_cover_image == '1' ) }
   attr_accessor :remove_projects_front_image
   after_save { projects_front_image.purge if (remove_projects_front_image == '1' ) }
+  attr_accessor :remove_social_projects_cover_image
+  after_save { social_projects_cover_image.purge if (remove_social_projects_cover_image == '1' ) }
+  attr_accessor :remove_social_projects_front_image
+  after_save { social_projects_front_image.purge if (remove_social_projects_front_image == '1' ) }
   attr_accessor :remove_services_cover_image
   after_save { services_cover_image.purge if (remove_services_cover_image == '1' ) }
   attr_accessor :remove_services_front_image

@@ -262,13 +262,13 @@
   }
   .quick-menu{
     display: flex;
-    gap: 30px;
+    gap: 20px;
     margin: 50px 0;
     flex-wrap: wrap;
     .quick-menu-item{
       border: 6px solid white;
-      padding: 60px 20px;
-      flex: 1 1 15%;
+      padding: 30px 20px;
+      flex: 1 1 12%;
       text-align: center;
       h3{
         color: white;
@@ -296,7 +296,7 @@
     margin: 70px 0;
     flex-wrap: nowrap;
     .counter-item{
-      flex: 1 1 15%;
+      flex: 1 1 12%;
       text-align: center;
       font-size: 3.9rem;
       line-height: 3.9rem;

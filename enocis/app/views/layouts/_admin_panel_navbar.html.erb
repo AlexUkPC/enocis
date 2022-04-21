@@ -24,6 +24,11 @@
       Proiecte
     </li>
   <% end %>
+  <%= link_to admin_proiecte_sociale_path, class: "#{'active' if controller_path=='social_projects' }" do %>
+    <li>  
+      Proiecte Sociale
+    </li>
+  <% end %>
   <%= link_to admin_servicii_path, class: "#{'active' if controller_path=='services' }" do %>
     <li>  
       Servicii

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :social_projects, path: :proiecte_sociale
   resources :youtubes
   resources :services
   resources :companies
@@ -14,9 +15,11 @@ Rails.application.routes.draw do
   get 'frezari_mdf', to: 'frezarimdfs#index'
   get 'admin_frezarimdfs', to: 'frezarimdfs#admin_index'
   get 'admin_proiecte', to: 'projects#admin_index'
+  get 'admin_proiecte_sociale', to: 'social_projects#admin_index'
   get 'admin_servicii', to: 'services#admin_index'
   get 'admin_panel', to: 'admin_quick_access#index'
   get 'proiecte', to: 'projects#index'
+  get 'proiecte_sociale', to: 'social_projects#index'
   get 'politica-confidentialitate', to: 'politica_confidentialitate#index'
   get 'politica-cookies', to: 'politica_cookies#index'
   get 'contact', to: 'contact_forms#new'

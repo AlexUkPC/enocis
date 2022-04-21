@@ -1,0 +1,25 @@
+<main role="main" class="container wider">
+  <%= render '/layouts/parallax_container', image: @company.social_projects_cover_image.attached? ? rails_blob_url(@company.social_projects_cover_image) : "" %> 
+	
+	<h1>Proiecte Sociale</h1>
+  <div class="white_bg page_container">
+    <%= image_tag @company.social_projects_front_image.attached? ? rails_blob_url(@company.social_projects_front_image) : "" , alt: 'Servicii', class: 'main_img' %>
+    <div class="frezari">
+      <% @social_projects.each do |social_project| %>
+        <div class="frezare">
+          <%= link_to social_project_path(social_project.friendly_id), data: { turbolinks: false } do %>
+            <% if social_project.main_image.attached? %>
+              <%= image_tag social_project.main_image %>
+            <% end %>
+            <div class="name"><%= social_project.title %></div>
+            <div class="description"><%= social_project.description %></div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%= render '/layouts/second_nav' %>
+
+	</div>
+  
+</main>
+

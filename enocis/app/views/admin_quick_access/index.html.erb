@@ -20,6 +20,10 @@
         <div class="counter-number"><%= @projects.count %></div>
         <div class="counter-icon"><%= image_tag 'proiecte_icon.svg' %></div>
       <% end %>
+      <%= link_to admin_proiecte_sociale_path, class: "counter-item" do %>
+        <div class="counter-number"><%= @social_projects.count %></div>
+        <div class="counter-icon"><%= image_tag 'proiecte_icon.svg' %></div>
+      <% end %>
       <%= link_to admin_servicii_path, class: "counter-item" do %>
         <div class="counter-number"><%= @services.count %></div>
         <div class="counter-icon"><%= image_tag 'servicii_icon.svg' %></div>
@@ -61,6 +65,13 @@
           <li><%= link_to 'Adauga proiect', new_project_path, data: { turbolinks: false } %></li>
           <li><%= link_to 'Vezi categorii proiecte', project_categories_path %></li>
           <li><%= link_to 'Adauga categorie proiecte', new_project_category_path, data: { turbolinks: false } %></li>
+        </ul>
+      </div>
+      <div class="quick-menu-item">
+        <h3>Proiecte Sociale</h3>
+        <ul>
+          <li><%= link_to 'Vezi proiecte sociale', admin_proiecte_sociale_path %></li>
+          <li><%= link_to 'Adauga proiect social', new_social_project_path, data: { turbolinks: false } %></li>
         </ul>
       </div>
       <div class="quick-menu-item">
