@@ -18,7 +18,7 @@
         </div>
       <% end %>
       <% @project_categories.each do |project_category| %>
-        <%= link_to projects_path(:categorie => project_category.friendly_id), class: "#{'cat_btn_active' if current_page?(projects_path(:categorie => project_category.friendly_id))}", data: { turbolinks: false } do %>   
+        <%= link_to projects_path(:categorie => project_category.friendly_id, :cate => project_category.id), class: "#{'cat_btn_active' if current_page?(projects_path(:categorie => project_category.friendly_id))}", data: { turbolinks: false } do %>   
           <div class="cat_btn">
               <span><%= project_category.name %></span>
           </div>
