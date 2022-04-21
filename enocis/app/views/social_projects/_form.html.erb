@@ -11,7 +11,16 @@
     </div>
   <% end %>
   <div class="field">
-    <%= form.label :title, "Titlu" %>
+    <%= form.label :title do %>
+      <span class="label">Titlu</span> 
+      <span class="info">
+        <i class="fa fa-info-circle info-name"></i>
+        <span class="hiddenimg">
+          <%= image_tag 'info/proiecte_sociale_titlu.jpg' %>
+          <%= image_tag 'info/proiect_social_titlu.jpg' %>
+        </span>
+      </span>
+    <% end %>
     <%= form.text_field :title %>
   </div>
 
@@ -21,8 +30,8 @@
       <span class="info">
         <i class="fa fa-info-circle info-name"></i>
         <span class="hiddenimg">
-          <%= image_tag 'info/products_poza.PNG' %>
-          <%= image_tag 'info/product_poza.PNG' %>
+          <%= image_tag 'info/proiecte_sociale_poza.jpg' %>
+          <%= image_tag 'info/proiect_social_poza_principala.jpg' %>
         </span>
       </span>
     <% end %>
@@ -51,7 +60,8 @@
       <span class="info">
         <i class="fa fa-info-circle info-name"></i>
         <span class="hiddenimg">
-          <%= image_tag 'info/products_categories_descriere.PNG' %>
+          <%= image_tag 'info/proiecte_sociale_descriere.jpg' %>
+          <%= image_tag 'info/proiect_social_descriere.jpg' %>
         </span>
       </span>
     <% end %>
@@ -66,8 +76,7 @@
       <span class="info">
         <i class="fa fa-info-circle info-name"></i>
         <span class="hiddenimg">
-          <%= image_tag 'info/projects_imagini.PNG' %>
-          <%= image_tag 'info/project_imagini.PNG' %>
+          <%= image_tag 'info/proiect_social_imagini.jpg' %>
         </span>
       </span>
     <% end %>
@@ -81,6 +90,13 @@
   </div>
 
   <span class="label">Adauga link video Youtube</span>
+  <span class="info">
+    <i class="fa fa-info-circle info-name"></i>
+    <span class="hiddenimg">
+      <%= image_tag 'info/proiect_social_youtube_url.jpg' %>
+      <%= image_tag 'info/proiect_social_youtube.jpg' %>
+    </span>
+  </span>
   <%= form.fields_for :youtubesps do |youtubesp| %>
       <%= render 'youtubesp_fields', f: youtubesp %>
   <% end %>
