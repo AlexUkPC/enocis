@@ -1,4 +1,4 @@
-.hiddenimg {
+.hiddenimg, .hiddenimg-right {
   display: none;
 }
 span.label{
@@ -24,6 +24,18 @@ i.info-name{
     img{
       display: block;
       max-width: 39vw;
+    }
+  }
+  &:hover ~ .hiddenimg-right{
+    display: block;
+    position: absolute;
+    right:-350px;
+    top:10px;
+    z-index: 200;
+    display: flex;
+    img{
+      display: block;
+      max-width: 37vw;
     }
   }
   
