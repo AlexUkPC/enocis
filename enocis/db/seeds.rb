@@ -98,6 +98,84 @@ youtube9 = Youtube.create!(
   service_id: service5.id
 )
 
+social_project1 = SocialProject.create!(
+  title: "Proiect social 1",
+)
+social_project1.main_image.attach(io: File.open(Rails.root.join('app/assets/images/social_projects_1_main_image.jpg')), filename: 'social_projects_1_main_image.jpg')
+ActionText::RichText.create!(record_type: 'SocialProject',record_id: social_project1.id, name: 'description', body: '<div class="trix-content"><p>Am avut parte ieri de o zi cu totul specială! Un grup de elevi curioși dar și isteți ne-au făcut o vizită! Am vorbit în primul rând despre reguli de conduită în fabrică, dar am descoperit și tipuri de materiale sau cum funcționează diferitele utilaje. Am încheiat turul nostru cu o sesiune de art&craft ( coșulețe pentru ouăle de Paște) . Și după atâta trudă meritau o mică gustare 😉! A fost o super zi iar copiii ne-au încărcat cu cea mai pură bucurie și energie pozitivă! Mulțumim copii!</p></div>')
+social_project1.images.attach([{io: File.open(Rails.root.join('app/assets/images/social_projects_1_image_1.jpg')), filename: 'social_projects_1_image_1.jpg'},{io: File.open(Rails.root.join('app/assets/images/social_projects_1_image_2.jpg')), filename: 'social_projects_1_image_2.jpg'},{io: File.open(Rails.root.join('app/assets/images/social_projects_1_image_3.jpg')), filename: 'social_projects_1_image_3.jpg'}])
+
+social_project2 = SocialProject.create!(
+  title: "Proiect social 2",
+)
+social_project2.main_image.attach(io: File.open(Rails.root.join('app/assets/images/social_projects_2_main_image.jpg')), filename: 'social_projects_2_main_image.jpg')
+ActionText::RichText.create!(record_type: 'SocialProject',record_id: social_project2.id, name: 'description', body: '<div class="trix-content"><p>Sint modo partes vitae beatae. Nihil ad rem! Ne sit sane; Confecta res esset. Sed tamen intellego quid velit. Qui est in parvis malis. Sed quae tandem ista ratio est? Nam, ut sint illa vendibiliora, haec uberiora certe sunt.</p></div>')
+social_project2.images.attach([{io: File.open(Rails.root.join('app/assets/images/social_projects_2_image_1.jpg')), filename: 'social_projects_2_image_1.jpg'},{io: File.open(Rails.root.join('app/assets/images/social_projects_2_image_2.jpg')), filename: 'social_projects_2_image_2.jpg'}])
+
+social_project3 = SocialProject.create!(
+  title: "Proiect social 3",
+)
+social_project3.main_image.attach(io: File.open(Rails.root.join('app/assets/images/social_projects_3_main_image.jpg')), filename: 'social_projects_3_main_image.jpg')
+ActionText::RichText.create!(record_type: 'SocialProject',record_id: social_project3.id, name: 'description', body: '<div class="trix-content"><p>Qua igitur re ab deo vincitur, si aeternitate non vincitur? Tubulo putas dicere? Qua tu etiam inprudens utebare non numquam. Qui autem esse poteris, nisi te amor ipse ceperit? </p></div>')
+social_project3.images.attach([{io: File.open(Rails.root.join('app/assets/images/social_projects_3_image_1.jpg')), filename: 'social_projects_3_image_1.jpg'},{io: File.open(Rails.root.join('app/assets/images/social_projects_3_image_2.jpg')), filename: 'social_projects_3_image_2.jpg'}])
+
+social_project4 = SocialProject.create!(
+  title: "Proiect social 4",
+)
+social_project4.main_image.attach(io: File.open(Rails.root.join('app/assets/images/social_projects_4_main_image.jpg')), filename: 'social_projects_4_main_image.jpg')
+ActionText::RichText.create!(record_type: 'SocialProject',record_id: social_project4.id, name: 'description', body: '<div class="trix-content"><p>Qua igitur re ab deo vincitur, si aeternitate non vincitur? Tubulo putas dicere? Qua tu etiam inprudens utebare non numquam. Qui autem esse poteris, nisi te amor ipse ceperit? </p></div>')
+social_project4.images.attach([{io: File.open(Rails.root.join('app/assets/images/social_projects_3_image_1.jpg')), filename: 'social_projects_3_image_1.jpg'},{io: File.open(Rails.root.join('app/assets/images/social_projects_3_image_2.jpg')), filename: 'social_projects_3_image_2.jpg'}])
+
+social_project5 = SocialProject.create!(
+  title: "Proiect social 5",
+)
+social_project5.main_image.attach(io: File.open(Rails.root.join('app/assets/images/social_projects_5_main_image.jpg')), filename: 'social_projects_5_main_image.jpg')
+ActionText::RichText.create!(record_type: 'SocialProject',record_id: social_project5.id, name: 'description', body: '<div class="trix-content"><p>Qua igitur re ab deo vincitur, si aeternitate non vincitur? Tubulo putas dicere? Qua tu etiam inprudens utebare non numquam. Qui autem esse poteris, nisi te amor ipse ceperit? </p></div>')
+social_project5.images.attach([{io: File.open(Rails.root.join('app/assets/images/social_projects_3_image_1.jpg')), filename: 'social_projects_3_image_1.jpg'},{io: File.open(Rails.root.join('app/assets/images/social_projects_3_image_2.jpg')), filename: 'social_projects_3_image_2.jpg'}])
+
+social_project6 = SocialProject.create!(
+  title: "Proiect social 6",
+)
+social_project6.main_image.attach(io: File.open(Rails.root.join('app/assets/images/social_projects_6_main_image.jpg')), filename: 'social_projects_6_main_image.jpg')
+ActionText::RichText.create!(record_type: 'SocialProject',record_id: social_project6.id, name: 'description', body: '<div class="trix-content"><p>Qua igitur re ab deo vincitur, si aeternitate non vincitur? Tubulo putas dicere? Qua tu etiam inprudens utebare non numquam. Qui autem esse poteris, nisi te amor ipse ceperit? </p></div>')
+social_project6.images.attach([{io: File.open(Rails.root.join('app/assets/images/social_projects_3_image_1.jpg')), filename: 'social_projects_3_image_1.jpg'},{io: File.open(Rails.root.join('app/assets/images/social_projects_3_image_2.jpg')), filename: 'social_projects_3_image_2.jpg'}])
+
+social_project7 = SocialProject.create!(
+  title: "Proiect social 7",
+)
+social_project7.main_image.attach(io: File.open(Rails.root.join('app/assets/images/social_projects_7_main_image.jpg')), filename: 'social_projects_7_main_image.jpg')
+ActionText::RichText.create!(record_type: 'SocialProject',record_id: social_project7.id, name: 'description', body: '<div class="trix-content"><p>Qua igitur re ab deo vincitur, si aeternitate non vincitur? Tubulo putas dicere? Qua tu etiam inprudens utebare non numquam. Qui autem esse poteris, nisi te amor ipse ceperit? </p></div>')
+social_project7.images.attach([{io: File.open(Rails.root.join('app/assets/images/social_projects_3_image_1.jpg')), filename: 'social_projects_3_image_1.jpg'},{io: File.open(Rails.root.join('app/assets/images/social_projects_3_image_2.jpg')), filename: 'social_projects_3_image_2.jpg'}])
+
+youtubesp1 = Youtubesp.create!(
+  url: "https://www.youtube.com/watch?v=Ftc1m6bP0Lo",
+  social_project_id: social_project1.id
+)
+youtubesp2 = Youtubesp.create!(
+  url: "https://www.youtube.com/watch?v=mQw3LrayLYc",
+  social_project_id: social_project1.id
+)
+youtubesp3 = Youtubesp.create!(
+  url: "https://www.youtube.com/watch?v=mQw3LrayLYc",
+  social_project_id: social_project2.id
+)
+youtubesp4 = Youtubesp.create!(
+  url: "https://www.youtube.com/watch?v=mQw3LrayLYc",
+  social_project_id: social_project3.id
+)
+youtubesp5 = Youtubesp.create!(
+  url: "https://www.youtube.com/watch?v=Ftc1m6bP0Lo",
+  social_project_id: social_project3.id
+)
+youtubesp6 = Youtubesp.create!(
+  url: "https://www.youtube.com/watch?v=6exB9O_kT54",
+  social_project_id: social_project3.id
+)
+youtubesp7 = Youtubesp.create!(
+  url: "https://www.youtube.com/watch?v=6exB9O_kT54",
+  social_project_id: social_project4.id
+)
+
 company = Company.create!(
   address: "Drumul de Centura Chitila-Mogosoaia nr. 3-5",
   url_google_maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2845.2510482887897!2d25.98209531552577!3d44.510010979101295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDMwJzM2LjAiTiAyNcKwNTknMDMuNCJF!5e0!3m2!1sro!2sro!4v1534928716237",
@@ -117,6 +195,8 @@ company.frezari_mdf_cover_image.attach(io: File.open(Rails.root.join('app/assets
 company.frezari_mdf_front_image.attach(io: File.open(Rails.root.join('app/assets/images/frezari.jpg')), filename: 'frezari.jpg')
 company.projects_cover_image.attach(io: File.open(Rails.root.join('app/assets/images/projects_bg.jpg')), filename: 'projects_bg.jpg')
 company.projects_front_image.attach(io: File.open(Rails.root.join('app/assets/images/projects_front.jpg')), filename: 'projects_front.jpg')
+company.social_projects_cover_image.attach(io: File.open(Rails.root.join('app/assets/images/social_projects_bg.jpg')), filename: 'social_projects_bg.jpg')
+company.social_projects_front_image.attach(io: File.open(Rails.root.join('app/assets/images/social_projects_front.jpg')), filename: 'social_projects_front.jpg')
 company.services_cover_image.attach(io: File.open(Rails.root.join('app/assets/images/furniture-handmade-man-279645-e1533310206405.jpg')), filename: 'furniture-handmade-man-279645-e1533310206405.jpg')
 company.services_front_image.attach(io: File.open(Rails.root.join('app/assets/images/abstract-architect-architectural-design-323645-e1533310392294.jpg')), filename: 'abstract-architect-architectural-design-323645-e1533310392294.jpg')
 company.contact_cover_image.attach(io: File.open(Rails.root.join('app/assets/images/blur-bottle-bright-building-273238.jpg')), filename: 'blur-bottle-bright-building-273238.jpg')

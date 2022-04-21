@@ -1,4 +1,4 @@
-<%= form_with(model: social_project, class:"admin_service_form") do |form| %>
+<%= form_with(model: social_project, class:"admin_social_project_form") do |form| %>
   <% if social_project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(social_project.errors.count, "error") %> prohibited this social_project from being saved:</h2>
@@ -17,7 +17,7 @@
 
   <div class="field">
     <%= form.label :main_image do %>
-    <span class="label">Poza</span> 
+    <span class="label">Poza principala</span> 
       <span class="info">
         <i class="fa fa-info-circle info-name"></i>
         <span class="hiddenimg">
@@ -31,8 +31,8 @@
     <% if social_project.main_image.attached? %>
           <%= image_tag social_project.main_image, id: "image" %>
           <br>
-          <%= form.label :remove_image do %>
-            <%= form.check_box :remove_image, onclick:"document.querySelector('#poza').style.display = 'none';"  %> 
+          <%= form.label :remove_main_image do %>
+            <%= form.check_box :remove_main_image, onclick:"document.querySelector('#poza').style.display = 'none';"  %> 
             Sterge
           <% end %>
     <% else %>
@@ -75,7 +75,7 @@
     <br>
     <% if social_project.images.any? %>
       <% social_project.images.each do |image| %>
-        <%= image_tag image, class: "service_image" %>
+        <%= image_tag image, class: "social_project_image" %>
       <% end %>
     <% end %>
   </div>

@@ -1,5 +1,5 @@
 <%= render '/layouts/admin_panel' do %>
-  <div class="admin_services">
+  <div class="admin_social_projects">
     <div class="admin_top">
       <h2>Proiecte Sociale</h2>
       <div class="admin_btn push"><%= link_to 'Adauga proiect social', new_social_project_path, data: { turbolinks: false } %></div>
@@ -30,7 +30,7 @@
               <% end %>
             </td>
             <td>
-              <%= link_to edit_social_project_path(social_project) do%>
+              <%= link_to edit_social_project_path(social_project), data: { turbolinks: false } do%>
                 <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
               <% end %>
             </td>

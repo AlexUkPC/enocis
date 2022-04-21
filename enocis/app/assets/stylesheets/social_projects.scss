@@ -1,3 +1,137 @@
 // Place all the styles related to the SocialProjects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+form{
+  .social_project_image{
+    max-width: 300px;
+  }
+}
+.container.wider{
+  .social_project{
+    p{
+      margin: 30px;
+      color: #666;
+    }
+    .social_project_image{
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      margin-bottom: 30px;
+      &:nth-child(3n+1){
+        &:hover{
+          transform: scale(2) translate(23%, 0) ;
+        }
+      }
+      &:nth-child(3n+3){
+        &:hover{
+          transform: scale(2) translate(-23%, 0) ;
+        }
+      }
+      &:hover{
+        transform: scale(2);
+        transition: 0.6s ease-in-out;
+        z-index: 999;
+      }
+    }
+    .vid{
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16/9;
+      // pointer-events: none;
+      margin-bottom: 30px;
+      iframe{
+        width: 500%;
+        height: 100%;
+        margin-left: -200%;
+      }
+    }
+  }
+}
+.social_projects{
+  margin-top: 30px;
+  .social_project_card{
+    margin-bottom: 60px;
+  }
+  .social_project_image{
+    position: relative;
+    img{
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      opacity: 1;
+      display: block;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+    .overlay{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;  
+      opacity: 0;
+      transition: .5s ease;
+      background-color: #00000085;
+      i{
+        color: white;
+        font-size: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    }
+    &:hover .overlay{
+      opacity: 1;
+    }
+  }
+  h2{
+    margin: 10px 0;
+  }
+  a{
+    text-decoration: none;
+    color: #666;
+  }
+}
+main.social_project_main{
+  margin: 50px auto;
+}
+@media (max-width: 767px) {
+  .container.wider{
+    .social_project{
+      .social_project_image{
+        height: 300px;
+        &:nth-child(3n+1){
+          &:hover{
+            transform: none ;
+          }
+        }
+        &:nth-child(3n+3){
+          &:hover{
+            transform: none;
+          }
+        }
+        &:hover{
+          transform: none;
+          transition: 0.6s ease-in-out;
+          z-index: 999;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .container{
+    padding: 0;
+    .page_container{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

@@ -137,7 +137,7 @@
       padding: 5px;
       text-align: center;
     }
-    &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_service_form{
+    &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_service_form, &.admin_social_project_form{
       width: 100%;
       input, textarea{
         width: 30%;
@@ -352,7 +352,7 @@
   
 }
 form{
-  &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_company_form, &.admin_company_photos_form, &.admin_service_form{
+  &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_company_form, &.admin_company_photos_form, &.admin_service_form, &.admin_social_project_form{
     max-width: 1675px;
   }
   &.admin_company_form{
@@ -380,7 +380,7 @@ form{
     }
   }
 }
-.admin_project_form, .admin_product_category_form, .admin_frezarimdf_category_form, .admin_service_form{
+.admin_project_form, .admin_product_category_form, .admin_frezarimdf_category_form, .admin_service_form, .admin_social_project_form{
   
   input{
     &[type=checkbox]{
@@ -414,7 +414,7 @@ form{
   }
 }
 
-.admin_product_form, .admin_frezarimdf_form, .admin_company_photos_form, .admin_product_category_form {
+.admin_product_form, .admin_frezarimdf_form, .admin_company_photos_form, .admin_product_category_form, .admin_social_project_form {
   .poza{
     img{
       width: 100%;
@@ -502,7 +502,7 @@ form{
 @media (max-width: 992px) {
   .admin_panel{
     form{
-      &.admin_project_form, &.admin_product_category_form, &.admin_service_form{
+      &.admin_project_form, &.admin_product_category_form, &.admin_service_form, &.admin_social_project_form{
         input, textarea, .editor{
           width: 70%;
         }
@@ -637,7 +637,7 @@ form{
       .actions{
         margin-left: 0px;
       }
-      &.admin_project_form, &.admin_product_category_form, &.admin_service_form{
+      &.admin_project_form, &.admin_product_category_form, &.admin_service_form, &.admin_social_project_form{
         input, textarea, .editor{
           width: 100%;
         }

@@ -145,6 +145,9 @@ $(document).ready(function(){
 	$("#product_image").change(function(){
 		readURL(this, '#product_remove_image', '#image', '#poza');
 	});
+	$("#social_project_main_image").change(function(){
+		readURL(this, '#social_project_main_remove_image', '#image', '#poza');
+	});
 	$("#frezarimdf_image_svg").change(function(){
 		readURL(this, '#frezarimdf_remove_image_svg', '#image', '#poza');
 	});

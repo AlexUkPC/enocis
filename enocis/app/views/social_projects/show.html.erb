@@ -1,17 +1,20 @@
-<main role="main" class="container wider">
-  <%= render '/layouts/parallax_container', image: @company.services_cover_image.attached? ? rails_blob_url(@company.services_cover_image) : "" %>
+<header role="main" class="container">
+  <%= render '/layouts/parallax_container', image: @company.social_projects_cover_image.attached? ? rails_blob_url(@company.social_projects_cover_image) : "" %>
 
-  <h3><%= @social_project.title %></h3>
+  <h1><%= @social_project.title %></h1>
 
   <div class="white_bg page_container">
     <%= image_tag @social_project.main_image.attached? ? rails_blob_url(@social_project.main_image) : "" , alt: 'image', class: 'main_img' %>
+</header>
+<main role="main" class="container wider social_project_main">
+ <div class="social_project">
     <p>
       <%= @social_project.description %>
     </p>
-    <div class="row images">
+    <div class="row">
       <% if @social_project.images.any? %>
         <% @social_project.images.each do |image| %>
-          <%= image_tag image, class: "service_image col-md-4" %>
+          <%= image_tag image, class: "social_project_image col-md-4" %>
         <% end %>
       <% end %>
     </div>
@@ -27,3 +30,6 @@
     </div>
   </div>
 </main>
+<footer class="container">
+  <%= render '/layouts/second_nav' %>
+</footer>
