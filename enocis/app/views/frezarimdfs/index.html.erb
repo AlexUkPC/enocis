@@ -21,7 +21,7 @@
             </div>
           <% end %>
           <% @frezarimdf_categories.each do |frezarimdf_category| %>
-            <%= link_to frezarimdfs_path(:categorie => frezarimdf_category.friendly_id), class: "#{'cat_btn_active' if current_page?(frezarimdfs_path(:categorie => frezarimdf_category.friendly_id))}", data: { turbolinks: false } do %>   
+            <%= link_to frezarimdfs_path(:categorie => frezarimdf_category.friendly_id, :cate => frezarimdf_category.id), class: "#{'cat_btn_active' if current_page?(frezarimdfs_path(:categorie => frezarimdf_category.friendly_id))}", data: { turbolinks: false } do %>   
               <div class="cat_btn">
                   <span data-icon="<%= frezarimdf_category.icon.letter %>" class="icon"></span>
                   <span><%= frezarimdf_category.name %></span>
