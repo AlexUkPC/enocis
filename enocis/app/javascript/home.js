@@ -130,6 +130,7 @@ $(document).ready(function(){
 				var reader = new FileReader();
 				reader.onload = function (e) {
 						$(image).attr('src', e.target.result);
+						console.log(e.target.result)
 						$(poza).show();
 						$(image).show();
 						$(rm_image).attr('value', 0);
@@ -139,6 +140,24 @@ $(document).ready(function(){
 		}
 	}
 	
+	function readmultifiles(files) {
+		$(".to_delete").remove();
+		for (file of files) {
+			const reader = new FileReader();
+			reader.readAsDataURL(file);
+			reader.fileName = file.name;
+			reader.onload = (event) => {
+				const fileName = event.target.fileName;
+				const content = event.currentTarget.result;
+				console.log({ fileName, content });
+			
+				$("#multiple").after("<img class='to_delete social_project_image' src='"+event.target.result+"'>");
+			};
+		}
+	}
+	$("#multiple").change(function(){
+		readmultifiles(this.files);
+	});
 	$("#testimonial_image").change(function(){
 		readURL(this, '#testimonial_remove_image', '#image', '#poza');
 	});

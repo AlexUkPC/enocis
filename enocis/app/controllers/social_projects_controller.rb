@@ -69,6 +69,6 @@ class SocialProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def social_project_params
-      params.require(:social_project).permit(:title, :description, :main_image, images: [], youtubesps_attributes:[:id, :url, :_destroy])
+      params.require(:social_project).permit(:title, :description, :main_image, :remove_main_image, images: [], remove_images: [], youtubesps_attributes:[:id, :url, :_destroy])
     end
 end

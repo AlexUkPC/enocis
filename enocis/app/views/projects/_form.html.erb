@@ -94,11 +94,15 @@
         </span>
       </span>
     <% end %>
-    <%= form.file_field :images, multiple: true %>
     <% if project.images.any? %>
       <% project.images.each do |image| %>
-        <%= image_tag image, class: "project_image" %>
+        <div id="poza_<%= image.id %>" style="display: inline-block">
+          <%= image_tag image, class: "project_image" %>
+          <label for="project_remove_images_<%= image.id %>"><input type="checkbox" value="<%= image.id %>" name="project[remove_images][]" id="project_remove_images_<%= image.id %>", onclick= "document.querySelector('#poza_<%= image.id %>').style.display = 'none';">Sterge</label>
+        </div>
       <% end %>
+      <br>
+      <%= form.file_field :images, multiple: true, id: "multiple" %>
     <% end %>
   </div>
 
