@@ -11,12 +11,7 @@ user2 = User.find_or_create_by!(email: 'mapadrianpetre@gmail.com') do |user|
   user.password_confirmation = '123456'
   user.admin!
 end
-user3 = User.find_or_create_by!(email: 'alexrogna@yahoo.com') do |user|
-  user.password = '123456'
-  user.password_confirmation = '123456'
-  user.admin!
-end
-user4 = User.find_or_create_by!(email: 'vlad.rogna@gmail.com') do |user|
+user3 = User.find_or_create_by!(email: 'vlad.rogna@gmail.com') do |user|
   user.password = '123456'
   user.password_confirmation = '123456'
   user.admin!
