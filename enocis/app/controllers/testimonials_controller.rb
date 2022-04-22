@@ -40,7 +40,6 @@ class TestimonialsController < ApplicationController
   # PATCH/PUT /testimonials/1 or /testimonials/1.json
   def update
     respond_to do |format|
-      # @testimonial.image.purge if (@testimonial.remove_image == '1')
       if @testimonial.update(testimonial_params)
         format.html { redirect_to testimonials_path, notice: "Testimonialul a fost modificat." }
         format.json { render :show, status: :ok, location: @testimonial }

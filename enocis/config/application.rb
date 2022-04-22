@@ -19,6 +19,7 @@ module Enocis
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.active_storage.content_types_to_serve_as_binary -= ['image/svg+xml']
+    config.active_storage.replace_on_assign_to_many = false
     config.to_prepare do
       Devise::Mailer.layout "mailer"
     end

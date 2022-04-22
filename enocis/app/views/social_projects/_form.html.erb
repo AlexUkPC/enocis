@@ -36,14 +36,14 @@
       </span>
     <% end %>
     <div class="poza">
-        <div id="poza">
+      <div id="poza">
     <% if social_project.main_image.attached? %>
-          <%= image_tag social_project.main_image, id: "image" %>
-          <br>
-          <%= form.label :remove_main_image do %>
-            <%= form.check_box :remove_main_image, onclick:"document.querySelector('#poza').style.display = 'none';"  %> 
-            Sterge
-          <% end %>
+      <%= image_tag social_project.main_image, id: "image" %>
+      <br>
+      <%= form.label :remove_main_image do %>
+        <%= form.check_box :remove_main_image, onclick:"document.querySelector('#poza').style.display = 'none';"  %> 
+        Sterge
+      <% end %>
     <% else %>
     <img src="" id="image" style="display: none;">    
     <% end %>
@@ -80,12 +80,18 @@
         </span>
       </span>
     <% end %>
-    <%= form.file_field :images, multiple: true %>
-    <br>
+
     <% if social_project.images.any? %>
+      <input type="hidden" name="social_project[remove_images][]" value="">
       <% social_project.images.each do |image| %>
-        <%= image_tag image, class: "social_project_image" %>
+        <div id="poza_<%= image.id %>" style="display: inline-block">
+          <%= image_tag image, class: "social_project_image" %>
+          <label for="social_project_remove_images_<%= image.id %>"><input type="checkbox" value="<%= image.id %>" name="social_project[remove_images][]" id="social_project_remove_images_<%= image.id %>", onclick= "document.querySelector('#poza_<%= image.id %>').style.display = 'none';">Sterge</label>
+        </div>
       <% end %>
+      <br>
+      <%= form.file_field :images, multiple: true, id: "multiple" %>
+    
     <% end %>
   </div>
 

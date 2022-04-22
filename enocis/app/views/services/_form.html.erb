@@ -67,12 +67,15 @@
         </span>
       </span>
     <% end %>
-    <%= form.file_field :images, multiple: true %>
-    <br>
     <% if service.images.any? %>
       <% service.images.each do |image| %>
-        <%= image_tag image, class: "service_image" %>
+        <div id="poza_<%= image.id %>" style="display: inline-block">
+          <%= image_tag image, class: "service_image" %>
+          <label for="service_remove_images_<%= image.id %>"><input type="checkbox" value="<%= image.id %>" name="service[remove_images][]" id="service_remove_images_<%= image.id %>", onclick= "document.querySelector('#poza_<%= image.id %>').style.display = 'none';">Sterge</label>
+        </div>
       <% end %>
+      <br>
+      <%= form.file_field :images, multiple: true, id: "multiple" %>
     <% end %>
   </div>
 

@@ -72,6 +72,6 @@ class ServicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def service_params
-      params.require(:service).permit(:title, :description, :etline_icon_id, images: [], youtubes_attributes:[:id, :url, :_destroy])
+      params.require(:service).permit(:title, :description, :etline_icon_id, images: [], remove_images: [], youtubes_attributes:[:id, :url, :_destroy])
     end
 end
