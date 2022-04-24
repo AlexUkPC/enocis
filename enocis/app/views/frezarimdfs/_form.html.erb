@@ -11,72 +11,99 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name do %>
-    <span class="label">Nume</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/frezarimdf_nume.PNG' %>
-          <%= image_tag 'info/frezarimdf_nume_show.PNG' %>
-        </span>
-      </span>
-    <% end %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_svg do %>
-    <span class="label">Poza</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/frezarimdf_poza.PNG' %>
-          <%= image_tag 'info/frezarimdf_poza_show.PNG' %>
-        </span>
-      </span>
-    <% end %>
-    <div class="poza svg">
-        <div id="poza">
-    <% if frezarimdf.image_svg.attached? %>
-          <%= image_tag frezarimdf.image_svg, id: "image" %>
-          <br>
-          <%= form.label :remove_image_svg do %>
-            <%= form.check_box :remove_image_svg, onclick:"document.querySelector('#poza').style.display = 'none';"  %> 
-            Sterge
+  <div class="row">
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-2">
+          <%= form.label :name do %>
+            <span class="label">Nume</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/frezarimdf_nume.PNG' %>
+                <%= image_tag 'info/frezarimdf_nume_show.PNG' %>
+              </span>
+            </span>
           <% end %>
-    <% else %>
-    <img src="" id="image" style="display: none;">    
-    <% end %>
-    </div>
-    <%= form.label :image_svg do %>
-      Upload
-    <% end %>
-    <%= form.file_field :image_svg %>
-  </div>
-
-  <div class="field">
-      <%= form.label :frezarimdf_category_id do %>
-        <span class="label">Categorie</span> 
-        <span class="info">
-          <i class="fa fa-info-circle info-name"></i>
-          <span class="hiddenimg">
-            <%= image_tag 'info/frezarimdf_categorie.PNG' %>
-          </span>
-        </span>
-      <% end %>
-      <%= form.select :frezarimdf_category_id, FrezarimdfCategory.all.map {|c| [c.name, c.id]} %>
-  </div> 
-
-  <div class="actions">
-    <div class="form_btn">
-      <%= link_to 'Inapoi', admin_frezarimdfs_path, data: { turbolinks: false } %>
-    </div>
-    <%= form.submit %>
-    <% if !current_page?(new_frezarimdf_path)  %>
-      <div class="form_btn">
-        <%= link_to 'Vezi', frezarimdf_path(@frezarimdf.id), data: { turbolinks: false } %>
+        </div>
+        <div class="col-lg-10">
+          <%= form.text_field :name %>
+        </div>
       </div>
-    <% end %>
+      <div class="row">
+        <div class="col-lg-2">
+          <%= form.label :image_svg do %>
+            <span class="label">Poza</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/frezarimdf_poza.PNG' %>
+                <%= image_tag 'info/frezarimdf_poza_show.PNG' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-10">
+          <div class="row foto">
+            <div id="upload" class="col-3 upload">
+              <div class="form_btn">
+                <%= form.label :image_svg do %>
+                  Incarca
+                <% end %>
+              </div>
+              <%= form.file_field :image_svg %>
+            </div>
+            <% if frezarimdf.image_svg.attached? %>
+              <div id="poza" class="col-12 poza">
+                <%= image_tag frezarimdf.image_svg, id: "image" %>
+              </div>
+              <div id="checkbox" class="col-3 checkbox">
+                <%= form.label :remove_image_svg do %>
+                  <%= form.check_box :remove_image_svg, onclick:"document.querySelector('#poza').style.display = 'none';document.querySelector('#checkbox').style.display = 'none';" %> 
+                  <div class="form_btn">
+                    Sterge
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <div id="poza" class="col-12 poza">
+                <img src="" id="image" style="display: none;">   
+              </div> 
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+          <%= form.label :frezarimdf_category_id do %>
+            <span class="label">Categorie</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/frezarimdf_categorie.PNG' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-10">
+          <%= form.select :frezarimdf_category_id, FrezarimdfCategory.all.map {|c| [c.name, c.id]} %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-2 col-sm-3 form_btn">
+          <%= link_to 'Inapoi', admin_frezarimdfs_path, data: { turbolinks: false } %>
+        </div>
+        <div class="col-lg-2 col-sm-3 form_btn">
+          <%= form.submit %>
+        </div>
+        <% if !current_page?(new_frezarimdf_path)  %>
+          <div class="col-lg-2 col-sm-3 form_btn">
+            <%= link_to 'Vezi', frezarimdf_path(@frezarimdf.id), data: { turbolinks: false } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>

@@ -42,7 +42,7 @@ class SocialProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @social_project.update(social_project_params)
-        format.html { redirect_to admin_proiecte_sociale_path, notice: "Proiectul social a fost modificat." }
+        format.html { redirect_to admin_proiecte_sociale_path, notice: "Proiectul social a fost salvat." }
         format.json { render :show, status: :ok, location: @social_project }
       else
         format.html { render :edit, status: :unprocessable_entity }

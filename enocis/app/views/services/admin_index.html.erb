@@ -7,45 +7,45 @@
     <hr>
     <p class="notice"><%= notice %></p>
     <p class="alert2"><%= alert %></p>
-    <table>
-      <thead>
-        <tr>
-          <th class="three"></th>
-          <th>Nume</th>
-          <th>Descriere</th>
-          <th class="three">Vezi</th>
-          <th class="three">Edit</th>
-          <th class="three">Sterge</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @services.each do |service| %>
+    <div class="table">
+      <table>
+        <thead>
           <tr>
-            <td><%= service.id %></td>
-            <td><%= service.title %></td>
-            <td><%= excerpt(service.description.to_plain_text, "", radius: 100) %></td>
-            <td>
-                <%= link_to service do %>
-                  <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_service_path(service), data: { turbolinks: false } do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to service, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi serviciul?' } do%>
-                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
-                <% end %>
-              </td>
+            <th class="three"></th>
+            <th>Nume</th>
+            <th>Descriere</th>
+            <th class="three">Vezi</th>
+            <th class="three">Edit</th>
+            <th class="three">Sterge</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
 
-    <br>
+        <tbody>
+          <% @services.each do |service| %>
+            <tr>
+              <td><%= service.id %></td>
+              <td><%= service.title %></td>
+              <td><%= excerpt(service.description.to_plain_text, "", radius: 100) %></td>
+              <td>
+                  <%= link_to service do %>
+                    <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_service_path(service), data: { turbolinks: false } do%>
+                    <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to service, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi serviciul?' } do%>
+                    <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                  <% end %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 <% end %>

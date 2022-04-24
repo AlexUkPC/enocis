@@ -8,54 +8,54 @@
     <hr>
     <p class="notice"><%= notice %></p>
     <p class="alert2"><%= alert %></p>
-    <table class="width100">
-      <thead>
-        <tr>
-          <th class="three"></th>
-          <th>Nume</th>
-          <th>Pret</th>
-          <th>Dimensiuni</th>
-          <th>Material</th>
-          <th>Accessorii</th>
-          <th>Culoare</th>
-          <th>Categorie</th>
-          <th class="three">Vezi</th>
-          <th class="three">Edit</th>
-          <th class="three">Sterge</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @products.each do |product| %>
+    <div class="table">
+      <table class="width100">
+        <thead>
           <tr>
-            <td><%= product.id %></td>
-            <td><%= product.name %></td>
-            <td><%= product.price %></td>
-            <td><%= product.dimensions %></td>
-            <td><%= product.material %></td>
-            <td><%= product.accessories %></td>
-            <td><%= product.color %></td>
-            <td><%= product.product_category.name %></td>
-            <td>
-                <%= link_to product do %>
-                  <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_product_path(product), data: { turbolinks: false } do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to product, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi produsul?' } do%>
-                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
-                <% end %>
-              </td>
+            <th class="three"></th>
+            <th>Nume</th>
+            <th>Pret</th>
+            <th>Dimensiuni</th>
+            <th>Material</th>
+            <th>Accessorii</th>
+            <th>Culoare</th>
+            <th>Categorie</th>
+            <th class="three">Vezi</th>
+            <th class="three">Edit</th>
+            <th class="three">Sterge</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
 
-    <br>
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <td><%= product.id %></td>
+              <td><%= product.name %></td>
+              <td><%= product.price %></td>
+              <td><%= product.dimensions %></td>
+              <td><%= product.material %></td>
+              <td><%= product.accessories %></td>
+              <td><%= product.color %></td>
+              <td><%= product.product_category.name %></td>
+              <td>
+                  <%= link_to product do %>
+                    <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_product_path(product), data: { turbolinks: false } do%>
+                    <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to product, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi produsul?' } do%>
+                    <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                  <% end %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 <% end %>

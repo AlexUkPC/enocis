@@ -39,7 +39,7 @@ class FrezarimdfCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @frezarimdf_category.update(frezarimdf_category_params)
-        format.html { redirect_to frezarimdf_categories_path, notice: "Categoria de frezari MDF a fost modificata." }
+        format.html { redirect_to frezarimdf_categories_path, notice: "Categoria de frezari MDF a fost salvata." }
         format.json { render :show, status: :ok, location: @frezarimdf_category }
       else
         format.html { render :edit, status: :unprocessable_entity }

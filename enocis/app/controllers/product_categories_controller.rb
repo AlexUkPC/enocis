@@ -40,7 +40,7 @@ class ProductCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @product_category.update(product_category_params)
-        format.html { redirect_to product_categories_path, notice: "Categoria de produse a fost modificata." }
+        format.html { redirect_to product_categories_path, notice: "Categoria de produse a fost salvata." }
         format.json { render :show, status: :ok, location: @product_category }
       else
         format.html { render :edit, status: :unprocessable_entity }

@@ -1,199 +1,209 @@
 <%= form_with(model: company, class:"admin_company_form") do |form| %>
   
-<div class="row">
-  <div class="col-md-6">
-    <div class="field">
-      <%= form.label :address do %>
-        <span class="label">Adresa</span> 
-        <span class="info">
-          <i class="fa fa-info-circle info-name"></i>
-          <span class="hiddenimg">
-            <%= image_tag 'info/detalii_contact_footer_adresa.jpg' %>
-            <%= image_tag 'info/detalii_contact_adresa.jpg' %>
-          </span>
-        </span>
-      <% end %>
-      <%= form.text_field :address %>
+  <div class="row mb-0">
+    <div class="col-lg-12 p-lg-0">
+      <div class="row mb-0">
+        <div class="col-lg-6 pl-lg-0">
+          <div class="field">
+            <%= form.label :address do %>
+              <span class="label">Adresa</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg">
+                  <%= image_tag 'info/detalii_contact_footer_adresa.jpg' %>
+                  <%= image_tag 'info/detalii_contact_adresa.jpg' %>
+                </span>
+              </span>
+            <% end %>
+            <%= form.text_field :address %>
+          </div>
+        </div>
+        <div class="col-lg-6 pr-lg-0">
+          <div class="field">
+            <%= form.label "URL Google Maps" %>
+            <%= form.text_field :url_google_maps %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-md-6">
-    <div class="field">
-      <%= form.label "URL Google Maps" %>
-      <%= form.text_field :url_google_maps %>
+  <div class="row mt-0">
+    <div class="col-lg-6 pl-lg-0">
+      <div class="row">
+        <div class="col-lg-6 pl-lg-0">
+          <div class="field">
+            <%= form.label :phone do %>
+              <span class="label">Telefon principal</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg">
+                  <%= image_tag 'info/detalii_contact_footer_telefon_principal.jpg' %>
+                  <%= image_tag 'info/detalii_contact_telefon_principal.jpg' %>
+                </span>
+              </span>
+            <% end %>
+            <%= form.text_field :phone %>
+          </div>
+        </div>
+        <div class="col-lg-6 pr-lg-0">
+          <div class="field">
+            <%= form.label :phone_name do %>
+              <span class="label">Nume telefon principal</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg">
+                  <%= image_tag 'info/detalii_contact_footer_nume_telefon_principal.jpg' %>
+                </span>
+              </span>
+            <% end %>
+            <%= form.text_field :phone_name %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 pl-lg-0">
+          <div class="field">
+            <%= form.label :phone2 do %>
+              <span class="label">Telefon stanga</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg">
+                  <%= image_tag 'info/detalii_contact_footer_telefon_stanga.jpg' %>
+                  <%= image_tag 'info/detalii_contact_telefon_stanga.jpg' %>
+                </span>
+              </span>
+            <% end %>
+            <%= form.text_field :phone2 %>
+          </div>
+        </div>
+        <div class="col-lg-6 pr-lg-0">
+          <div class="field">
+            <%= form.label :phone2_name do %>
+              <span class="label">Nume telefon stanga</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg">
+                  <%= image_tag 'info/detalii_contact_footer_nume_telefon_stanga.jpg' %>
+                </span>
+              </span>
+            <% end %>
+            <%= form.text_field :phone2_name %>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-0">
+        <div class="col-lg-6 pl-lg-0">
+          <div class="field">
+            <%= form.label :phone3 do %>
+              <span class="label">Telefon dreapta</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg">
+                  <%= image_tag 'info/detalii_contact_footer_telefon_dreapta.jpg' %>
+                  <%= image_tag 'info/detalii_contact_telefon_dreapta.jpg' %>
+                </span>
+              </span>
+            <% end %>
+            <%= form.text_field :phone3 %>
+          </div>
+        </div>
+        <div class="col-lg-6 pr-lg-0">
+          <div class="field">
+            <%= form.label :phone3_name do %>
+              <span class="label">Nume telefon dreapta</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg">
+                  <%= image_tag 'info/detalii_contact_footer_nume_telefon_dreapta.jpg' %>
+                </span>
+              </span>
+            <% end %>
+            <%= form.text_field :phone3_name %>
+          </div>
+        </div>
+      </div>    
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="field">
-          <%= form.label :phone do %>
-            <span class="label">Telefon principal</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg">
-                <%= image_tag 'info/detalii_contact_footer_telefon_principal.jpg' %>
-                <%= image_tag 'info/detalii_contact_telefon_principal.jpg' %>
+    <div class="col-lg-6 pr-lg-0">
+      <div class="row">
+        <div class="col-lg-6 pl-lg-0">
+          <div class="field">
+            <%= form.label :email1 do %>
+              <span class="label">Email principal</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg-right">
+                  <%= image_tag 'info/detalii_contact_footer_email.jpg' %>
+                  <%= image_tag 'info/detalii_contact_email_principal.jpg' %>
+                </span>
               </span>
-            </span>
-          <% end %>
-          <%= form.text_field :phone %>
+            <% end %>
+            <%= form.text_field :email1 %>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="field">
-          <%= form.label :phone_name do %>
-            <span class="label">Nume telefon principal</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg">
-                <%= image_tag 'info/detalii_contact_footer_nume_telefon_principal.jpg' %>
+        <div class="col-lg-6 pr-lg-0">
+          <div class="field">
+            <%= form.label :email2 do %>
+              <span class="label">Email secundar</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg-right">
+                  <%= image_tag 'info/detalii_contact_email_secundar.jpg' %>
+                </span>
               </span>
-            </span>
-          <% end %>
-          <%= form.text_field :phone_name %>
+            <% end %>
+            <%= form.text_field :email2 %>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="field">
-          <%= form.label :phone2 do %>
-            <span class="label">Telefon stanga</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg">
-                <%= image_tag 'info/detalii_contact_footer_telefon_stanga.jpg' %>
-                <%= image_tag 'info/detalii_contact_telefon_stanga.jpg' %>
-              </span>
-            </span>
-          <% end %>
-          <%= form.text_field :phone2 %>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="field">
-          <%= form.label :phone2_name do %>
-            <span class="label">Nume telefon stanga</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg">
-                <%= image_tag 'info/detalii_contact_footer_nume_telefon_stanga.jpg' %>
-              </span>
-            </span>
-          <% end %>
-          <%= form.text_field :phone2_name %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="field">
-          <%= form.label :phone3 do %>
-            <span class="label">Telefon dreapta</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg">
-                <%= image_tag 'info/detalii_contact_footer_telefon_dreapta.jpg' %>
-                <%= image_tag 'info/detalii_contact_telefon_dreapta.jpg' %>
-              </span>
-            </span>
-          <% end %>
-          <%= form.text_field :phone3 %>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="field">
-          <%= form.label :phone3_name do %>
-            <span class="label">Nume telefon dreapta</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg">
-                <%= image_tag 'info/detalii_contact_footer_nume_telefon_dreapta.jpg' %>
-              </span>
-            </span>
-          <% end %>
-          <%= form.text_field :phone3_name %>
-        </div>
-      </div>
-    </div>    
-  </div>
-  <div class="col-md-6">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="field">
-          <%= form.label :email1 do %>
-            <span class="label">Email principal</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg-right">
-                <%= image_tag 'info/detalii_contact_footer_email.jpg' %>
-                <%= image_tag 'info/detalii_contact_email_principal.jpg' %>
-              </span>
-            </span>
-          <% end %>
-          <%= form.text_field :email1 %>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="field">
-          <%= form.label :email2 do %>
-            <span class="label">Email secundar</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg-right">
-                <%= image_tag 'info/detalii_contact_email_secundar.jpg' %>
-              </span>
-            </span>
-          <% end %>
-          <%= form.text_field :email2 %>
-        </div>
-      </div>
-    </div>    
+      </div>    
 
-    <div class="row">
-      <div class="col-md-6">
-        <div class="field">
-          <%= form.label :facebook do %>
-            <span class="label">Facebook</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg-right">
-                <%= image_tag 'info/detalii_contact_footer_facebook.jpg' %>
-                <%= image_tag 'info/detalii_contact_facebook.jpg' %>
+      <div class="row">
+        <div class="col-lg-6 pl-lg-0">
+          <div class="field">
+            <%= form.label :facebook do %>
+              <span class="label">Facebook</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg-right">
+                  <%= image_tag 'info/detalii_contact_footer_facebook.jpg' %>
+                  <%= image_tag 'info/detalii_contact_facebook.jpg' %>
+                </span>
               </span>
-            </span>
-          <% end %>
-          <%= form.text_field :facebook %>
+            <% end %>
+            <%= form.text_field :facebook %>
+          </div>
+        </div>
+        <div class="col-lg-6 pr-lg-0">
+          <div class="field">
+            <%= form.label :instagram do %>
+              <span class="label">Instagram</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg-right">
+                  <%= image_tag 'info/detalii_contact_footer_instagram.jpg' %>
+                  <%= image_tag 'info/detalii_contact_instagram.jpg' %>
+                </span>
+              </span>
+            <% end %>
+            <%= form.text_field :instagram %>
+          </div>
+        </div>
+      </div>   
+      <div class="row mb-0">
+        <div class="col-lg-12 pl-lg-0 pr-lg-0">
+          <%= form.label "Email pe care se primesc notificarile de testimoniale si formulare de contact noi" %>
+          <%= form.text_field :email_notice_contact %>
+        </div>
+      </div> 
+    </div>
+    <div class="col-12 pl-lg-0">
+      <div class="row">
+        <div class="col-lg-1 col-sm-2 form_btn ml-0">
+          <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
+        </div>
+        <div class="col-lg-1 col-sm-2 form_btn">
+          <%= form.submit %>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="field">
-          <%= form.label :instagram do %>
-            <span class="label">Instagram</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg-right">
-                <%= image_tag 'info/detalii_contact_footer_instagram.jpg' %>
-                <%= image_tag 'info/detalii_contact_instagram.jpg' %>
-              </span>
-            </span>
-          <% end %>
-          <%= form.text_field :instagram %>
-        </div>
-      </div>
-    </div>    
-    <div class="field">
-      <%= form.label "Email pe care se primesc notificarile de testimoniale si formulare de contact noi" %>
-      <%= form.text_field :email_notice_contact %>
     </div>
-  </div>
-</div>
-  <div class="actions">
-    <div class="form_btn">
-      <%= link_to 'Inapoi', :back, data: { turbolinks: false } %>
-    </div>
-    <%= form.submit %>
   </div>
 <% end %>

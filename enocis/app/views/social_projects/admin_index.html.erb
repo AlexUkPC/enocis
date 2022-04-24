@@ -7,43 +7,44 @@
     <hr>
     <p class="notice"><%= notice %></p>
     <p class="alert2"><%= alert %></p>
-    <table>
-      <thead>
-        <tr>
-          <th class="three"></th>
-          <th>Nume</th>
-          <th>Descriere</th>
-          <th class="three">Vezi</th>
-          <th class="three">Edit</th>
-          <th class="three">Sterge</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @social_projects.each do |social_project| %>
+    <div class="table">
+      <table>
+        <thead>
           <tr>
-            <td><%= social_project.id %></td>
-            <td><%= social_project.title %></td>
-            <td><%= excerpt(social_project.description.to_plain_text, "", radius: 100) %></td>
-            <td>
-              <%= link_to social_project do %>
-                <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to edit_social_project_path(social_project), data: { turbolinks: false } do%>
-                <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to social_project, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi proiectul social?' } do%>
-                <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
-              <% end %>
-            </td>
+            <th class="three"></th>
+            <th>Nume</th>
+            <th>Descriere</th>
+            <th class="three">Vezi</th>
+            <th class="three">Edit</th>
+            <th class="three">Sterge</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <br>
+        </thead>
+        <tbody>
+          <% @social_projects.each do |social_project| %>
+            <tr>
+              <td><%= social_project.id %></td>
+              <td><%= social_project.title %></td>
+              <td><%= excerpt(social_project.description.to_plain_text, "", radius: 100) %></td>
+              <td>
+                <%= link_to social_project do %>
+                  <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to edit_social_project_path(social_project), data: { turbolinks: false } do%>
+                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to social_project, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi proiectul social?' } do%>
+                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 <% end %>

@@ -41,7 +41,7 @@ class TestimonialsController < ApplicationController
   def update
     respond_to do |format|
       if @testimonial.update(testimonial_params)
-        format.html { redirect_to testimonials_path, notice: "Testimonialul a fost modificat." }
+        format.html { redirect_to testimonials_path, notice: "Testimonialul a fost salvat." }
         format.json { render :show, status: :ok, location: @testimonial }
       else
         format.html { render :edit, status: :unprocessable_entity }

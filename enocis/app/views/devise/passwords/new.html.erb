@@ -2,7 +2,7 @@
   <div class="devise">
     <h2>Reseteaza parola</h2>
     <hr class="white">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat provident nisi voluptas hic quia ad facere dolores eveniet! Fugit officiis odit pariatur reprehenderit quo consectetur reiciendis harum eaque. Magnam!
+    In cazul in care ai uitat parola contului o poti reseta folosind formularul de mai jos. Vei primi in cateva minute un email cu instructiuni de resetare a parolei.
     <hr>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -17,7 +17,7 @@
       <div class="form-group row">
         <div class="col-sm-2"></div>
         <div class="actions col-sm-10">
-          <%= f.submit "Trimite instructiuni resetare" %>
+          <%= f.submit "Trimite instructiuni resetare", class: "form_btn" %>
         </div>
       </div>
       <div class="reset_psw row">

@@ -51,7 +51,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to admin_proiecte_path, notice: "Proiectul a fost modificat." }
+        format.html { redirect_to admin_proiecte_path, notice: "Proiectul a fost salvat." }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit, status: :unprocessable_entity }

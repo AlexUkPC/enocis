@@ -11,98 +11,168 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title do %>
-    <span class="label">Titlu</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/servicii_titlu.jpg' %>
-        </span>
-      </span>
-    <% end %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-   <%= form.label :etline_icon do %>
-    <span class="label">Icon</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/servicii_icon.jpg' %>
-        </span>
-      </span>
-    <% end %>
-    <div class="etline-icon">
-      <%= form.collection_radio_buttons(:etline_icon_id, EtlineIcon.all, :id, :name) do |b| %>
-      
-        <% b.label(:"data-value" => b.value, class: "myicon "+ b.text) { b.radio_button(class: "radio_button") } %>
-      <% end %>
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+          <%= form.label :title do %>
+            <span class="label">Titlu</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/servicii_titlu.jpg' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-5">
+          <%= form.text_field :title %>
+        </div>
+        <div class="col-lg-6">
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="field">
-    <%= form.label :description do %>
-    <span class="label">Descriere</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/servicii_descriere.jpg' %>
-        </span>
-      </span>
-    <% end %>
-    <div class="editor">
-      <%= form.rich_text_area :description %>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+          <%= form.label :etline_icon do %>
+            <span class="label">Icon</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/servicii_icon.jpg' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-11 icons icons-services">
+          <%= form.collection_radio_buttons(:etline_icon_id, EtlineIcon.all, :id, :name) do |b| %>
+            <% b.label(:"data-value" => b.value, class: "myicon "+ b.text) { b.radio_button(class: "radio_button") } %>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="field">
-    <%= form.label :images do %>
-      <span class="label">Imagini</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/servicii_imagini.jpg' %>
-        </span>
-      </span>
-    <% end %>
-    <% if service.images.any? %>
-      <% service.images.each do |image| %>
-        <div id="poza_<%= image.id %>" style="display: inline-block">
-          <%= image_tag image, class: "service_image" %>
-          <label for="service_remove_images_<%= image.id %>"><input type="checkbox" value="<%= image.id %>" name="service[remove_images][]" id="service_remove_images_<%= image.id %>", onclick= "document.querySelector('#poza_<%= image.id %>').style.display = 'none';">Sterge</label>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+          <%= form.label :description do %>
+            <span class="label">Descriere</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/servicii_descriere.jpg' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-11">
+          <%= form.rich_text_area :description %>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <% if service.images.any? %>
+        <div class="row">
+          <div class="col-lg-1">
+            <%= form.label :images do %>
+              <span class="label">Imagini existente</span> 
+              <span class="info">
+                <i class="fa fa-info-circle info-name"></i>
+                <span class="hiddenimg">
+                  <%= image_tag 'info/servicii_imagini.jpg' %>
+                </span>
+              </span>
+            <% end %>
+          </div>
+          <div class="col-lg-11 pl-lg-0">
+            <div class="row mt-lg-2"><div class="col-12"><i class="fa fa-exclamation-triangle info-name"></i> La apasarea butoanelor de stergere de sub imagini acestea sunt introduse intr-o lista pentru a fi sterse, dar stergerea se face doar in momentul apasarii butonului Salveaza.</div></div><br>
+            <div class="row multiple_images foto">
+              <% service.images.each do |image| %>
+                <div id="poza_<%= image.id %>" style="display: inline-block" class="col-lg-3">
+                  <%= image_tag image, class: "social_project_image" %>
+                  <label for="service_remove_images_<%= image.id %>" class="checkbox"><input type="checkbox" value="<%= image.id %>" name="service[remove_images][]" id="service_remove_images_<%= image.id %>", onclick= "document.querySelector('#poza_<%= image.id %>').style.display = 'none';"><div class="col-3 form_btn">
+                    Sterge
+                  </div></label>
+                </div>
+              <% end %>
+            </div>
+          </div>
         </div>
       <% end %>
-      <br>
-    <% end %>
-    <%= form.file_field :images, multiple: true, id: "multiple" %>
-  </div>
-
-  <span class="label">Adauga link video Youtube</span>
-  <span class="info">
-    <i class="fa fa-info-circle info-name"></i>
-    <span class="hiddenimg">
-      <%= image_tag 'info/servicii_youtube_url.jpg' %>
-      <%= image_tag 'info/servicii_youtube.jpg' %>
-    </span>
-  </span>
-  <%= form.fields_for :youtubes do |youtube| %>
-      <%= render 'youtube_fields', f: youtube %>
-  <% end %>
-  <div class="links">
-      <%= link_to_add_association "Adauga", form, :youtubes %>
-  </div>
-
-  <div class="actions">
-    <div class="form_btn">
-      <%= link_to 'Inapoi', admin_servicii_path, data: { turbolinks: false } %>
-    </div>
-    <%= form.submit %>
-    <% if !current_page?(new_service_path)  %>
-      <div class="form_btn">
-        <%= link_to 'Vezi', @service, data: { turbolinks: false } %>
+      <div class="row">
+        <div class="col-lg-1">
+          <%= form.label "Imagini" do %>
+            <span class="label">Imagini noi</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/proiect_social_imagini.jpg' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-11 pl-lg-0">
+          <div class="row mt-lg-2"><div class="col-12"><i class="fa fa-exclamation-triangle info-name"></i> Pentru a adauga noi fotografii la proiect apasa pe butonul Adauga imagini si selecteaza imaginile dorite. Daca ai gresit ceva cand ai selectat imaginile(ai selectat prea multe/prea putine/etc.), apasa din nou pe butonul Adauga imagini si selecteaza-le pe cele corecte. In momentul apasarii butonului Adauga/Salveaza se vor adauga imaginile afisate mai jos. </div></div><br>
+          <div class="row multiple_images foto">
+            <div id="upload" class="col-lg-2 upload pl-lg-2">
+              <div class="form_btn">
+                <%= form.label :images do %>
+                  Adauga imagini
+                <% end %>
+              </div>
+              <%= form.file_field :images, multiple: true %>
+            </div>
+            <div id="uploaded" class="row">
+            
+            </div>
+          </div>
+        </div>
       </div>
-    <% end %>
+    </div>
+    
+
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+          <%= form.label "Youtube" do %>
+            <span class="label">Adauga link video Youtube</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/proiect_social_youtube_url.jpg' %>
+                <%= image_tag 'info/proiect_social_youtube.jpg' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-5 pl-lg-0">
+          <%= form.fields_for :youtubes do |youtube| %>
+            <%= render 'youtube_fields', f: youtube %>
+          <% end %>
+          <div class="col-3 form_btn">
+            <%= link_to_add_association "Adauga camp", form, :youtubes %>
+          </div>
+        </div>
+        <div class="col-lg-6">
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-1 col-sm-2 form_btn">
+          <%= link_to 'Inapoi', admin_servicii_path, data: { turbolinks: false } %>
+        </div>
+        <div class="col-lg-1 col-sm-2 form_btn">
+          <%= form.submit %>
+        </div>
+        <% if !current_page?(new_service_path)  %>
+          <div class="col-lg-1 col-sm-2 form_btn">
+            <%= link_to 'Vezi', @service, data: { turbolinks: false } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>
