@@ -1,4 +1,4 @@
-<%= form_with(model: product_category, class: "admin_product_category_form") do |form| %>
+<%= form_with(model: product_category) do |form| %>
   <% if product_category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(product_category.errors.count, "error") %> prohibited this product_category from being saved:</h2>
@@ -10,136 +10,186 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name do %>
-      <span class="label">Nume</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/products_categories_home_page_nume.PNG' %>
-          <%= image_tag 'info/products_categories_nume.PNG' %>
-        </span>
-      </span>
-    <% end %>
-    <%= form.text_field :name %>
-    
-  </div>
-
-  <div class="field">
-   <%= form.label :icon do %>
-    <span class="label">Icon</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/products_categories_home_page_icon.PNG' %>
-        </span>
-      </span>
-    <% end %>
-    <div class="icon">
-      <%= form.collection_radio_buttons(:icon_id, Icon.all, :id, :letter) do |b| %>
-        <% b.label(:"data-value" => b.value) { b.radio_button(class: "radio_button") + b.text} %>
-      <% end %>
-    </div>
-  </div>
-  
-  <div class="field">
-    <%= form.label :cover_image do %>
-    <span class="label">Poza fundal</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/products_categories_poza_fundal_categorie.PNG' %>
-        </span>
-      </span>
-    <% end %>
-    <div class="poza">
-        <div id="poza1">
-    <% if product_category.cover_image.attached? %>
-          <%= image_tag product_category.cover_image.variant(resize_to_limit: [300, 200]), id: "image1" %>
-          <br>
-          <%= form.label :remove_cover_image do %>
-            <%= form.check_box :remove_cover_image, onclick:"document.querySelector('#poza1').style.display = 'none';"  %> 
-            Sterge
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+          <%= form.label :name do %>
+            <span class="label">Nume</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/products_categories_home_page_nume.PNG' %>
+                <%= image_tag 'info/products_categories_nume.PNG' %>
+              </span>
+            </span>
           <% end %>
-    <% else %>
-    <img src="" id="image1" style="display: none;">    
-    <% end %>
-    </div>
-    <%= form.label :cover_image do %>
-      Upload
-    <% end %>
-    <%= form.file_field :cover_image %>
-  </div>
-  </div>
-
-  <div class="field">
-    <%= form.label :front_image do %>
-    <span class="label">Poza principala</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/products_categories_poza_principala_categorie.PNG' %>
-        </span>
-      </span>
-    <% end %>
-    <div class="poza">
-        <div id="poza2">
-    <% if product_category.front_image.attached? %>
-          <%= image_tag product_category.front_image.variant(resize_to_limit: [300, 200]), id: "image2" %>
-          <br>
-          <%= form.label :remove_front_image do %>
-            <%= form.check_box :remove_front_image, onclick:"document.querySelector('#poza2').style.display = 'none';"  %> 
-            Sterge
-          <% end %>
-    <% else %>
-    <img src="" id="image2" style="display: none;">    
-    <% end %>
-    </div>
-    <%= form.label :front_image do %>
-      Upload
-    <% end %>
-    <%= form.file_field :front_image %>
-  </div>
-  </div>
-
-  <div class="field">
-    <%= form.label :title do %>
-      <span class="label">Titlu</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/products_categories_titlu.PNG' %>
-        </span>
-      </span>
-    <% end %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description do %>
-    <span class="label">Descriere</span> 
-      <span class="info">
-        <i class="fa fa-info-circle info-name"></i>
-        <span class="hiddenimg">
-          <%= image_tag 'info/products_categories_descriere.PNG' %>
-        </span>
-      </span>
-    <% end %>
-    <div class="editor">
-      <%= form.rich_text_area :description %>
-    </div>
-  </div>
-
-  <div class="actions">
-    <div class="form_btn">
-      <%= link_to 'Inapoi', product_categories_path, data: { turbolinks: false } %>
-    </div>
-    <%= form.submit %>
-    <% if !current_page?(new_product_category_path)  %>
-      <div class="form_btn">
-        <%= link_to 'Vezi', @product_category, data: { turbolinks: false } %>
+        </div>
+        <div class="col-lg-5">
+          <%= form.text_field :name %>
+        </div>
+        <div class="col-lg-6">
+        </div>
       </div>
-    <% end %>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+          <%= form.label :icon do %>
+            <span class="label">Icon</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/products_categories_home_page_icon.PNG' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-11 icons">
+          <%= form.collection_radio_buttons(:icon_id, Icon.all, :id, :letter) do |b| %>
+            <% b.label(:"data-value" => b.value) { b.radio_button(class: "radio_button") + b.text} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+          <%= form.label :cover_image do %>
+            <span class="label">Poza fundal</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/products_categories_poza_fundal_categorie.PNG' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-5">
+          <div class="row foto">
+            <div id="upload" class="col-3 upload">
+              <div class="form_btn">
+                <%= form.label :cover_image do %>
+                  Incarca
+                <% end %>
+              </div>
+              <%= form.file_field :cover_image %>
+            </div>
+            <% if product_category.cover_image.attached? %>
+              <div id="poza1" class="col-12 poza">
+                <%= image_tag product_category.cover_image.variant(resize_to_limit: [300, 200]), id: "image1" %>
+              </div>
+              <div id="checkbox1" class="col-3 checkbox">
+                <%= form.label :remove_cover_image do %>
+                  <%= form.check_box :remove_cover_image, onclick:"document.querySelector('#poza1').style.display = 'none';document.querySelector('#checkbox1').style.display = 'none';"  %> 
+                  <div class="form_btn">
+                    Sterge
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <div id="poza1" class="col-12 poza">
+                <img src="" id="image1" style="display: none;"> 
+              </div>   
+            <% end %>
+          </div>
+        </div>
+        <div class="col-lg-1">
+          <%= form.label :front_image do %>
+            <span class="label">Poza principala</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/products_categories_poza_principala_categorie.PNG' %>
+              </span>
+            </span>
+            <% end %>
+        </div>
+        <div class="col-lg-5">
+          <div class="row foto">
+            <div id="upload" class="col-3 upload">
+              <div class="form_btn">
+                <%= form.label :front_image do %>
+                  Incarca
+                <% end %>
+              </div>
+              <%= form.file_field :front_image %>
+            </div>
+            <% if product_category.front_image.attached? %>
+              <div id="poza2" class="col-12 poza">
+                <%= image_tag product_category.front_image.variant(resize_to_limit: [400, 300]), id: "image2" %>
+              </div>
+              <div id="checkbox2" class="col-3 checkbox">
+                <%= form.label :remove_front_image do %>
+                  <%= form.check_box :remove_front_image, onclick:"document.querySelector('#poza2').style.display = 'none';document.querySelector('#checkbox2').style.display = 'none';"  %> 
+                  <div class="form_btn">
+                    Sterge
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <div id="poza2" class="col-12 poza">
+                <img src="" id="image2" style="display: none;"> 
+              </div>   
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+          <%= form.label :title do %>
+            <span class="label">Titlu</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/products_categories_titlu.PNG' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-5">
+          <%= form.text_field :title %>
+        </div>
+        <div class="col-lg-6">
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+          <%= form.label :description do %>
+            <span class="label">Descriere</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/products_categories_descriere.PNG' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-11">
+          <%= form.rich_text_area :description %>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-1 col-sm-2 form_btn">
+          <%= link_to 'Inapoi', product_categories_path, data: { turbolinks: false } %>
+        </div>
+        <div class="col-lg-1 col-sm-2 form_btn">
+          <%= form.submit %>
+        </div>
+        <% if !current_page?(new_product_category_path)  %>
+          <div class="col-lg-1 col-sm-2 form_btn">
+            <%= link_to 'Vezi', @product_category, data: { turbolinks: false } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>

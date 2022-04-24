@@ -35,4 +35,4 @@ en:
   helpers:
     submit:
       create: "Adauga"
-      update: "Modifica"
+      update: "Salveaza"

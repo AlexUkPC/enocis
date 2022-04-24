@@ -11,41 +11,53 @@
     </div>
   <% end %>
 
-  <span>
-    <%= form.label :name, 'Nume' %>
-    <%= form.text_field :name, placeholder: "Nume...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Numele este obligatoriu')",
- oninput: "setCustomValidity('')" %>
-  </span>
-  <br/>
-  <span>
-    <%= form.label :email, "Email" %></label>
-    <%= form.email_field :email, placeholder: "Email...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Adresa de email este obligatorie')",
- oninput: "setCustomValidity('')"  %>
-  </span>
-  <div class="field">
-    <%= form.label :confirm_email, 'Confirm email', style: "display:none !important"%>
-    <%= form.text_field :confirm_email, class: "h-full-width", placeholder: "Confirm your email address", style: "display:none !important", tabindex: "-1", autocomplete: "off" %>
-  </div>
-  <br/>
-  <span>
-    <%= form.label :phone, "Telefon" %>
-    <%= form.text_field :phone, placeholder: "Telefon...", class: "form-control" %>
-  </span>
-  <br/>
-  <span>
-    <%= form.label :message, "Mesaj" %></label>
-    <%= form.text_area :message, placeholder: "Mesaj...", class: "form-control", required: true, oninvalid: "this.setCustomValidity('Mesajul este obligatoriu')",
- oninput: "setCustomValidity('')" %>
-  </span>
-  <br/>
-  <br>
-  <div class="actions" style="margin-left: 0">
-    <div class="form_btn">
-      <%= link_to 'Inapoi', contact_forms_path, data: { turbolinks: false } %>
+  <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-2">
+          <%= form.label :name, 'Nume' %>
+        </div>
+        <div class="col-lg-10">
+          <%= form.text_field :name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+          <%= form.label :email, 'Email' %>
+        </div>
+        <div class="col-lg-10">
+          <%= form.text_field :email %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+          <%= form.label :phone, 'Telefon' %>
+        </div>
+        <div class="col-lg-10">
+          <%= form.text_field :phone %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+          <%= form.label :message, 'Mesaj' %>
+        </div>
+        <div class="col-lg-10">
+          <%= form.text_area :message %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-2 col-sm-3 form_btn">
+          <%= link_to 'Inapoi', contact_forms_path, data: { turbolinks: false } %>
+        </div>
+        <div class="col-lg-2 col-sm-3 form_btn">
+          <%= form.submit %>
+        </div>
+        <div class="col-lg-2 col-sm-3 form_btn">
+          <%= link_to 'Vezi', @contact_form, data: { turbolinks: false } %>
+        </div>
+      </div>
     </div>
-    <%= form.submit %>
-    <div class="form_btn">
-      <%= link_to 'Vezi', @contact_form, data: { turbolinks: false } %>
-    </div>
+    <div class="col-xl-6 col-lg-12"></div>
   </div>
 <% end %>

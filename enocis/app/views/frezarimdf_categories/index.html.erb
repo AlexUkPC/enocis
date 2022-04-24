@@ -7,45 +7,45 @@
     <hr>
     <p class="notice"><%= notice %></p>
     <p class="alert2"><%= alert %></p>
-    <table class="width50">
-      <thead>
-        <tr>
-          <th class="five"></th>
-          <th>Nume</th>
-          <th>Icon</th>
-          <th class="ten">Vezi</th>
-          <th class="ten">Edit</th>
-          <th class="ten">Sterge</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @frezarimdf_categories.each do |frezarimdf_category| %>
+    <div class="table">
+      <table class="width50">
+        <thead>
           <tr>
-            <td><%= frezarimdf_category.id %></td>
-            <td><%= frezarimdf_category.name %></td>
-            <td class="icon"><%= frezarimdf_category.icon.letter %></td>
-            <td>
-                <%= link_to frezarimdf_category do %>
-                  <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_frezarimdf_category_path(frezarimdf_category), data: { turbolinks: false } do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to frezarimdf_category, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi categoria de frezari MDF?' } do%>
-                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
-                <% end %>
-              </td>
+            <th class="five"></th>
+            <th>Nume</th>
+            <th>Icon</th>
+            <th class="ten">Vezi</th>
+            <th class="ten">Edit</th>
+            <th class="ten">Sterge</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
 
-    <br>
+        <tbody>
+          <% @frezarimdf_categories.each do |frezarimdf_category| %>
+            <tr>
+              <td><%= frezarimdf_category.id %></td>
+              <td><%= frezarimdf_category.name %></td>
+              <td class="icon"><%= frezarimdf_category.icon.letter %></td>
+              <td>
+                  <%= link_to frezarimdf_category do %>
+                    <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_frezarimdf_category_path(frezarimdf_category), data: { turbolinks: false } do%>
+                    <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to frezarimdf_category, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi categoria de frezari MDF?' } do%>
+                    <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                  <% end %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
   
 <% end %>

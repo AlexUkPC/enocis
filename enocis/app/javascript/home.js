@@ -125,13 +125,13 @@ $(document).ready(function(){
 		);
 		
 	};
-	function readURL(input, rm_image, image, poza) {
+	function readURL(input, rm_image, image, poza, checkbox) {
 		if (input.files && input.files[0]) {
 				var reader = new FileReader();
 				reader.onload = function (e) {
 						$(image).attr('src', e.target.result);
-						console.log(e.target.result)
 						$(poza).show();
+						$(checkbox).show();
 						$(image).show();
 						$(rm_image).attr('value', 0);
 				}
@@ -141,6 +141,7 @@ $(document).ready(function(){
 	}
 	
 	function readmultifiles(files) {
+		console.log("sssss")
 		$(".to_delete").remove();
 		for (file of files) {
 			const reader = new FileReader();
@@ -151,63 +152,87 @@ $(document).ready(function(){
 				const content = event.currentTarget.result;
 				console.log({ fileName, content });
 			
-				$("#multiple").after("<img class='to_delete social_project_image' src='"+event.target.result+"'>");
+				$("#uploaded").append("<div class='col-3 to_delete'><img src='"+event.target.result+"'></div>");
 			};
 		}
 	}
-	$("#multiple").change(function(){
+	$("#project_images").change(function(){
 		readmultifiles(this.files);
 	});
+	$("#social_project_images").change(function(){
+		readmultifiles(this.files);
+	});
+	$("#service_images").change(function(){
+		readmultifiles(this.files);
+	});
+
+	// function readfile(input) {
+		
+	// 	if (input.files && input.files[0]) {
+	// 			var reader = new FileReader();
+	// 			reader.readAsDataURL(input.files[0]);
+	// 			reader.onload = function (e) {
+	// 				console.log('aaaaaa')
+	// 					$("#image").attr('src', e.target.result);
+	// 					$("#image_div").show();
+	// 					$("#delete_checkbox").show();
+	// 					$("#checkbox").attr('value', 0);	
+	// 			}	
+	// 	}
+	// }
+	// $("#upload").change(function(){
+	// 	readfile(this);
+	// });
 	$("#testimonial_image").change(function(){
-		readURL(this, '#testimonial_remove_image', '#image', '#poza');
+		readURL(this, '#testimonial_remove_image', '#image', '#poza', '#checkbox');
 	});
 	$("#product_image").change(function(){
-		readURL(this, '#product_remove_image', '#image', '#poza');
+		readURL(this, '#product_remove_image', '#image', '#poza', '#checkbox');
 	});
 	$("#social_project_main_image").change(function(){
-		readURL(this, '#social_project_main_remove_image', '#image', '#poza');
+		readURL(this, '#social_project_main_remove_image', '#image', '#poza', '#checkbox');
 	});
 	$("#frezarimdf_image_svg").change(function(){
-		readURL(this, '#frezarimdf_remove_image_svg', '#image', '#poza');
+		readURL(this, '#frezarimdf_remove_image_svg', '#image', '#poza', '#checkbox');
 	});
 	$("#product_category_cover_image").change(function(){
-		readURL(this, '#product_category_remove_cover_image', '#image1', '#poza1');
+		readURL(this, '#product_category_remove_cover_image', '#image1', '#poza1', '#checkbox1');
 	});
 	$("#product_category_front_image").change(function(){
-		readURL(this, '#product_category_remove_front_image', '#image2', '#poza2');
+		readURL(this, '#product_category_remove_front_image', '#image2', '#poza2', '#checkbox2');
 	});
 	$("#company_frezari_mdf_cover_image").change(function(){
-		readURL(this, '#company_frezari_mdf_remove_cover_image', '#image_frezari_mdf_cover_image', '#poza_frezari_mdf_cover_image');
+		readURL(this, '#company_frezari_mdf_remove_cover_image', '#image_frezari_mdf_cover_image', '#poza_frezari_mdf_cover_image', '#checkbox_frezari_mdf_cover_image');
 	});
 	$("#company_frezari_mdf_front_image").change(function(){
-		readURL(this, '#company_frezari_mdf_remove_front_image', '#image_frezari_mdf_front_image', '#poza_frezari_mdf_front_image');
+		readURL(this, '#company_frezari_mdf_remove_front_image', '#image_frezari_mdf_front_image', '#poza_frezari_mdf_front_image', '#checkbox_frezari_mdf_front_image');
 	});
 	$("#company_projects_cover_image").change(function(){
-		readURL(this, '#company_projects_remove_cover_image', '#image_projects_cover_image', '#poza_projects_cover_image');
+		readURL(this, '#company_projects_remove_cover_image', '#image_projects_cover_image', '#poza_projects_cover_image', '#checkbox_projects_cover_image');
 	});
 	$("#company_projects_front_image").change(function(){
-		readURL(this, '#company_projects_remove_front_image', '#image_projects_front_image', '#poza_projects_front_image');
+		readURL(this, '#company_projects_remove_front_image', '#image_projects_front_image', '#poza_projects_front_image', '#checkbox_projects_front_image');
 	});
 	$("#company_social_projects_cover_image").change(function(){
-		readURL(this, '#company_social_projects_remove_cover_image', '#image_social_projects_cover_image', '#poza_social_projects_cover_image');
+		readURL(this, '#company_social_projects_remove_cover_image', '#image_social_projects_cover_image', '#poza_social_projects_cover_image', '#checkbox_social_projects_cover_image');
 	});
 	$("#company_social_projects_front_image").change(function(){
-		readURL(this, '#company_social_projects_remove_front_image', '#image_social_projects_front_image', '#poza_social_projects_front_image');
+		readURL(this, '#company_social_projects_remove_front_image', '#image_social_projects_front_image', '#poza_social_projects_front_image', '#checkbox_social_projects_front_image');
 	});
 	$("#company_services_cover_image").change(function(){
-		readURL(this, '#company_services_remove_cover_image', '#image_services_cover_image', '#poza_services_cover_image');
+		readURL(this, '#company_services_remove_cover_image', '#image_services_cover_image', '#poza_services_cover_image', '#checkbox_services_cover_image');
 	});
 	$("#company_services_front_image").change(function(){
-		readURL(this, '#company_services_remove_front_image', '#image_services_front_image', '#poza_services_front_image');
+		readURL(this, '#company_services_remove_front_image', '#image_services_front_image', '#poza_services_front_image', '#checkbox_services_front_image');
 	});
 	$("#company_contact_cover_image").change(function(){
-		readURL(this, '#company_contact_remove_cover_image', '#image_contact_cover_image', '#poza_contact_cover_image');
+		readURL(this, '#company_contact_remove_cover_image', '#image_contact_cover_image', '#poza_contact_cover_image', '#checkbox_contact_cover_image');
 	});
 	$("#company_politica_de_confidentialitate_cover_image").change(function(){
-		readURL(this, '#company_politica_de_confidentialitate_remove_cover_image', '#image_politica_de_confidentialitate_cover_image', '#poza_politica_de_confidentialitate_cover_image');
+		readURL(this, '#company_politica_de_confidentialitate_remove_cover_image', '#image_politica_de_confidentialitate_cover_image', '#poza_politica_de_confidentialitate_cover_image', '#checkbox_politica_de_confidentialitate_cover_image');
 	});
 	$("#company_politica_cookies_cover_image").change(function(){
-		readURL(this, '#company_politica_cookies_remove_cover_image', '#image_politica_cookies_cover_image', '#poza_politica_cookies_cover_image');
+		readURL(this, '#company_politica_cookies_remove_cover_image', '#image_politica_cookies_cover_image', '#poza_politica_cookies_cover_image', '#checkbox_politica_cookies_cover_image');
 	});
 })
 

@@ -6,6 +6,7 @@
     color: white;
     text-transform: uppercase;
     flex: 0 1 140px;
+    transition: all 0.2s ease-in-out;
     &:hover{
       text-decoration: none;
       color: #e5ae49;
@@ -31,6 +32,7 @@
       margin: 10px;
       text-align: center;
       height: 120px;
+      transition: all 0.2s ease-in-out;
     }
     &:last-child{
       li{

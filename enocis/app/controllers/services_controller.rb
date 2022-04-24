@@ -45,7 +45,7 @@ class ServicesController < ApplicationController
   def update
     respond_to do |format|
       if @service.update(service_params)
-        format.html { redirect_to admin_servicii_path, notice: "Serviciul a fost modificat." }
+        format.html { redirect_to admin_servicii_path, notice: "Serviciul a fost salvat." }
         format.json { render :show, status: :ok, location: @service }
       else
         format.html { render :edit, status: :unprocessable_entity }

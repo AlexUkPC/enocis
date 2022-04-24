@@ -3,62 +3,62 @@
     <div class="admin_top">
       <h2>Proiecte</h2>
       <div class="admin_btn push"><%= link_to 'Lista categorii proiecte', project_categories_path %></div>
-      <div class="admin_btn"><%= link_to 'Adauga proiect', new_project_path %></div>
+      <div class="admin_btn"><%= link_to 'Adauga proiect', new_project_path, data: { turbolinks: false } %></div>
     </div>
     <hr>
     <p class="notice"><%= notice %></p>
     <p class="alert2"><%= alert %></p>
-    <table>
-      <thead>
-        <tr>
-          <th class="three"></th>
-          <th>Nume</th>
-          <th>Descriere</th>
-          <th>Autor</th>
-          <th>Data</th>
-          <th>Categorii</th>
-          <th class="three">Vezi</th>
-          <th class="three">Edit</th>
-          <th class="three">Sterge</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @projects.each do |project| %>
+    <div class="table">
+      <table>
+        <thead>
           <tr>
-            <td><%= project.id %></td>
-            <td><%= project.name %></td>
-            <td><%= excerpt(project.description.to_plain_text, "", radius: 100) %></td>
-            <td><%= project.author %></td>
-            <td><%= project.date %></td>
-            <td> 
-              <% for project_category in project.project_categories %>
-                <span class="admin_project_category"> 
-                  <%= project_category.name %>
-                </span>
-              <% end %>
-            </td>
-            <td>
-                <%= link_to project do %>
-                  <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_project_path(project), data: { turbolinks: false } do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to project, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi proiectul?' } do%>
-                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
-                <% end %>
-              </td>
+            <th class="three"></th>
+            <th>Nume</th>
+            <th>Descriere</th>
+            <th>Autor</th>
+            <th>Data</th>
+            <th>Categorii</th>
+            <th class="three">Vezi</th>
+            <th class="three">Edit</th>
+            <th class="three">Sterge</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
 
-    <br>
+        <tbody>
+          <% @projects.each do |project| %>
+            <tr>
+              <td><%= project.id %></td>
+              <td><%= project.name %></td>
+              <td><%= excerpt(project.description.to_plain_text, "", radius: 100) %></td>
+              <td><%= project.author %></td>
+              <td><%= project.date %></td>
+              <td> 
+                <% for project_category in project.project_categories %>
+                  <span class="admin_project_category"> 
+                    <%= project_category.name %>
+                  </span>
+                <% end %>
+              </td>
+              <td>
+                  <%= link_to project do %>
+                    <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_project_path(project), data: { turbolinks: false } do%>
+                    <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to project, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi proiectul?' } do%>
+                    <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                  <% end %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 <% end %>

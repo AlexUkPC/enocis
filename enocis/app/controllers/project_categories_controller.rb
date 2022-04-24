@@ -38,7 +38,7 @@ class ProjectCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @project_category.update(project_category_params)
-        format.html { redirect_to project_categories_path, notice: "Categoria de proiecte a fost modificata." }
+        format.html { redirect_to project_categories_path, notice: "Categoria de proiecte a fost salvata." }
         format.json { render :show, status: :ok, location: @project_category }
       else
         format.html { render :edit, status: :unprocessable_entity }

@@ -7,43 +7,43 @@
     <hr>
     <p class="notice"><%= notice %></p>
     <p class="alert2"><%= alert %></p>
-    <table class="width50">
-      <thead>
-        <tr>
-          <th class="five"></th>
-          <th>Nume</th>
-          <th class="ten">Vezi</th>
-          <th class="ten">Edit</th>
-          <th class="ten">Sterge</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @project_categories.each do |project_category| %>
+    <div class="table">
+      <table class="width50">
+        <thead>
           <tr>
-            <td><%= project_category.id %></td>
-            <td><%= project_category.name %></td>
-            <td>
-                <%= link_to project_category do %>
-                  <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_project_category_path(project_category), data: { turbolinks: false } do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to project_category, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi categoria de proiecte?' } do%>
-                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
-                <% end %>
-              </td>
+            <th class="five"></th>
+            <th>Nume</th>
+            <th class="ten">Vezi</th>
+            <th class="ten">Edit</th>
+            <th class="ten">Sterge</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
 
-    <br>
+        <tbody>
+          <% @project_categories.each do |project_category| %>
+            <tr>
+              <td><%= project_category.id %></td>
+              <td><%= project_category.name %></td>
+              <td>
+                  <%= link_to project_category do %>
+                    <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_project_category_path(project_category), data: { turbolinks: false } do%>
+                    <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to project_category, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi categoria de proiecte?' } do%>
+                    <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                  <% end %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
   
 <% end %>

@@ -7,49 +7,49 @@
     <hr>
     <p class="notice"><%= notice %></p>
     <p class="alert2"><%= alert %></p>
-    <table class="width100">
-      <thead>
-        <tr>
-          <th class="three"></th>
-          <th class="ten">Nume</th>
-          <th class="ten">Email</th>
-          <th class="ten">Telefon</th>
-          <th>Messaj</th>
-          <th class="three">Vezi</th>
-          <th class="three">Edit</th>
-          <th class="three">Sterge</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @contact_forms.each do |contact_form| %>
+    <div class="table">
+      <table class="width100">
+        <thead>
           <tr>
-            <td><%= contact_form.id %></td>
-            <td><%= contact_form.name %></td>
-            <td><%= contact_form.email %></td>
-            <td><%= contact_form.phone %></td>
-            <td><%= excerpt(contact_form.message, "", radius: 100) %></td>
-            <td>
-                <%= link_to contact_form do %>
-                  <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_contact_form_path(contact_form), data: { turbolinks: false } do%>
-                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to contact_form, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi formularul de contact?' } do%>
-                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
-                <% end %>
-              </td>
+            <th class="three"></th>
+            <th class="ten">Nume</th>
+            <th class="ten">Email</th>
+            <th class="ten">Telefon</th>
+            <th>Messaj</th>
+            <th class="three">Vezi</th>
+            <th class="three">Edit</th>
+            <th class="three">Sterge</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
 
-    <br>
+        <tbody>
+          <% @contact_forms.each do |contact_form| %>
+            <tr>
+              <td><%= contact_form.id %></td>
+              <td><%= contact_form.name %></td>
+              <td><%= contact_form.email %></td>
+              <td><%= contact_form.phone %></td>
+              <td><%= excerpt(contact_form.message, "", radius: 100) %></td>
+              <td>
+                  <%= link_to contact_form do %>
+                    <i class="fa fa-eye" aria-hidden="true" title="Vezi"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_contact_form_path(contact_form), data: { turbolinks: false } do%>
+                    <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to contact_form, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi formularul de contact?' } do%>
+                    <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                  <% end %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 <% end %>
 <%= render '/layouts/footer' %>

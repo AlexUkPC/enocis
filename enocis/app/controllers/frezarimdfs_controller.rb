@@ -55,7 +55,7 @@ class FrezarimdfsController < ApplicationController
   def update
     respond_to do |format|
       if @frezarimdf.update(frezarimdf_params)
-        format.html { redirect_to admin_frezarimdfs_path, notice: "Frezarea MDF a fost modificata." }
+        format.html { redirect_to admin_frezarimdfs_path, notice: "Frezarea MDF a fost salvata." }
         format.json { render :show, status: :ok, location: @frezarimdf }
       else
         format.html { render :edit, status: :unprocessable_entity }

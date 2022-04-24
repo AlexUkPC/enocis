@@ -4,7 +4,7 @@
   background-image: url('admin_panel_bg.jpg');
   background-size: cover;
   padding: 30px;
-  min-height: 800px;
+  min-height: 700px;
   &::before {
     content: '';
     position: absolute;
@@ -14,9 +14,7 @@
     left: 0px;
     background-color: rgba(0,0,0,0.8);
   }
-  .trix-dialog{
-    background-color: rgb(27, 27, 27);
-  }
+  
   .admin_panel_inside{
     position: relative;
     color: white;
@@ -34,11 +32,19 @@
       text-align: center;
       vertical-align: middle;
       margin-left: 10px;
+      transition: all 0.2s ease-in-out;
       a{
         color: #e5ae49;
-        
+        transition: all 0.2s ease-in-out;
         &:hover{
           text-decoration: none;
+        }
+      }
+      &:hover{
+        border-color: white;
+        color: white;
+        a{
+          color: white;
         }
       }
     }
@@ -62,391 +68,260 @@
       background-color: white;
     }
   }
-  table {
-    overflow: hidden;
-    // table-layout: fixed;
-    text-align: left;
-  }
-  .width100{
-    width: 100%;
-  }
-  .width50{
-    width: 50%;
-  }
-  tr:nth-child(even) {
-    background: #2C2C2C
-  }
-  th{
-    color: #e5ae49;
-    // border: solid 2px white;
-    height: 40px;
-    padding: 5px;
-  }
-  .two {
-    width: 2%;
-  }
-  .three {
-    width: 3%;
-  }
-  .five {
-    width: 5%;
-  }
-  .ten {
-    width: 10%;
-  }
-  .twenty {
-    width: 20%;
-  }
-  .fifthy {
-    width: 50%;
-  }
-  /* see me */
-  td {
-    // border: solid 2px white;
-    padding: 5px;
-  }
-  i{
-    font-size: 20px;
-  }
-  .fa-eye{
-    color:white;
-  }
-  .fa-pencil-square{
-    color: green;
-  }
-  .fa-trash{
-    color: red;
-  }
-  form{
-    width: 100%;
-    max-width: 675px;
-    .actions{
-      margin-left: 155px;
+  .table{
+    overflow-y: auto;
+    max-height: 380px;
+    scrollbar-color: #E5AE49 white;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      width: 7px;
     }
-    .form_btn{
-      display: inline-block;
-      min-width: 100px;
-      a{
-        color: #e5ae49;
-        
-        &:hover{
-          text-decoration: none;
-        }
-      }
-      border: 2px solid #e5ae49;
-      text-transform:uppercase;
-      cursor: pointer;
-      border-radius: 50px;
-      padding: 5px;
-      text-align: center;
-    }
-    &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_service_form, &.admin_social_project_form{
-      width: 100%;
-      input, textarea{
-        width: 30%;
-        &[type=checkbox]{
-          width: auto;
-        }
-        &[type=submit]{
-          width: auto;
-        }
-      }
-    }
-    &.admin_service_form{
-      input[type=radio]{
-        width: 100%;
-      }
-    }
-  }
-  label{
-    width: 150px;
-  }
-  input, textarea{
-    width: 70%;
-    color: white;
-    background-color: transparent;
-    margin: 5px;
-    padding: 5px;
-    &[type=checkbox]{
-      width: auto;
-    }
-    &[type=submit]{
-      width: auto;
-      color: #e5ae49;
-      border-color: #e5ae49;
-      text-transform:uppercase;
-      cursor: pointer;
-      border-radius: 50px;
-      min-width: 100px;
-    }
-  }
-  select{
-    width: 70%;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    margin: 5px;
-  }
-  textarea{
-    vertical-align: top;
-    min-height: 150px;
-  }
-  .poza{
-    display: inline-block;
-    width: 70%;
-    vertical-align: top;
-    img{
-      margin: 5px; 
-      // max-width: 100px;
-      // max-height: 100px;
-    }
-    &>div{
-      display: inline-block;
-    }
-    label{
-      border: 2px solid #e5ae49;
-      width: 100px;
-      display: inline-block;
-      text-align: center;
-      margin-left: 5px;
-      color: #e5ae49;
-      border-radius: 50px;
-      padding: 5px;
-      cursor: pointer;
-    }
-    input[type=checkbox]{
+    &::-webkit-scrollbar-track {
       display: none;
+  
     }
-    input[type=file]{
-      display: inline-block;
-      // margin-left: 0;
-      display: none;
+    &::-webkit-scrollbar-thumb {
+      background: #E5AE49;
+      min-height: 7vh;
     }
-  }
-}
-.show_btn{
-  display: inline-block;
-  min-width: 100px;
-  a{
-    color: #e5ae49;
-    
-    &:hover{
-      text-decoration: none;
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgb(226, 165, 51);
     }
-  }
-  border: 2px solid #e5ae49;
-  text-transform:uppercase;
-  cursor: pointer;
-  border-radius: 50px;
-  padding: 5px;
-  text-align: center;
-}
-.admin_project_category{
-  &::after{
-    content: "|";
-  }
-  &:last-child{
-    &::after{
-      content: "";
-    }
-  }
-}
-.admin_quick_access{
-  h2{
-    text-transform: uppercase;
-  }
-  p{
-    color: #e5ae49;
-    margin-bottom: 0;
-    &:last-child{
-      padding-bottom: 10px;
-      border-bottom: 1px #e5ae49 solid;
-    }
-  }
-  .quick-menu{
-    display: flex;
-    gap: 20px;
-    margin: 50px 0;
-    flex-wrap: wrap;
-    .quick-menu-item{
-      border: 6px solid white;
-      padding: 30px 20px;
-      flex: 1 1 12%;
-      text-align: center;
-      h3{
-        color: white;
-        text-transform: uppercase;
+    table {
+      text-align: left;
+      thead{
+        background-color: #141414;
+        position: sticky;
+        top: 0;
       }
-      ul{
-        padding-left: 0;
-        li{
-          
-          list-style: none;
-          padding: 5px 0;
-          a{
-            color: #e5ae49;
-            &:hover{
-              text-decoration: none;
-            }
+      tbody{
+        tr{
+          // transition: all 0.2s ease-in-out;
+          &:hover{
+            background: rgba(255, 255, 255, 0.253);
+            // color: #141414;
           }
         }
       }
     }
-  }
-  .counters-menu{
-    display: flex;
-    gap: 30px;
-    margin: 70px 0;
-    flex-wrap: nowrap;
-    .counter-item{
-      flex: 1 1 12%;
-      text-align: center;
-      font-size: 3.9rem;
-      line-height: 3.9rem;
-      font-weight: bold;
+    .width100{
+      width: 100%;
+    }
+    .width50{
+      width: 50%;
+    }
+    tr:nth-child(even) {
+      background: #2c2c2cd7
+    }
+    th{
       color: #e5ae49;
-      &:hover{
-        text-decoration: none;
+      // border: solid 2px white;
+      height: 30px;
+      padding: 5px;
+    }
+    .two {
+      width: 2%;
+    }
+    .three {
+      width: 3%;
+    }
+    .five {
+      width: 5%;
+    }
+    .ten {
+      width: 10%;
+    }
+    .twenty {
+      width: 20%;
+    }
+    .fifthy {
+      width: 50%;
+    }
+    /* see me */
+    td {
+      // border: solid 2px white;
+      padding: 5px;
+    }
+    i{
+      font-size: 20px;
+    }
+    .fa-eye{
+      color:white;
+    }
+    .fa-pencil-square{
+      color: green;
+    }
+    .fa-trash{
+      color: red;
+    }
+  }
+  form{
+    .row{
+      margin: 20px 0;
+      .col-12{
+        .row{
+          margin-bottom: 0;
+        }
       }
-      .counter-icon, .counter-number{
-        display: inline-block;
-      }
-      .counter-icon{
-        width: 3.9rem;
-        img{
-          vertical-align: top;
+      &.foto{
+        margin: 0;
+        .form_btn{
+          margin-left: 0;
+          margin-bottom: 10px;
         }
       }
     }
-  }
-  
-}
-
-.admin_frezari_categories, .admin_frezarimdf_category_form, .admin_product_category_form, .admin_frezarimdf_category_show{
-  .icon{
-    font-family: "furniture";
-    font-size: 20px;
-  }
-}
-.admin_frezarimdf_category_form, .admin_product_category_form{
-  .icon{
-    width: 80%;
-    display: inline-block;
-    margin-left: 5px;
-    vertical-align: top;
     label{
-      width: 58px;
-    }
-    input{
-      display: block;
-      margin: 0 2.5px;
-    }
-  }
-}
-.admin_testimonial_form{
-  .field{
-    .poza{
-      img{
-        width: 100px;
-        height: 100px;
-      }
-    }
-  }
-  
-}
-form{
-  &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_company_form, &.admin_company_photos_form, &.admin_service_form, &.admin_social_project_form{
-    max-width: 1675px;
-  }
-  &.admin_company_form{
-    label{
+      margin-top: 0;
+      padding-top: 7px;
       width: 100%;
-      margin-bottom: 0;
-      margin-top: 10px;
     }
-    input{
+    .info{
+      margin-left: 5px;
+    }
+    input, textarea{
       width: 100%;
-      margin-left: 0;
-    }
-    .actions{
-      margin: 10px 0 20px;
-    }
-  }
-  &.admin_company_photos_form{
-    .actions{
-      margin: 10px 0 20px;
-    }
-    h3{
       color: white;
-      font-size: 18px;
-      margin-top: 20px;
+      background-color: transparent;
+      padding: 5px;
+      vertical-align: middle;
+      &[type=checkbox]{
+        width: auto;
+        margin-top: 10px;
+      }
+      
     }
-  }
-}
-.admin_project_form, .admin_product_category_form, .admin_frezarimdf_category_form, .admin_service_form, .admin_social_project_form{
-  
-  input{
-    &[type=checkbox]{
-      width: auto;
-    }
-  }
-  .editor{
-    display: inline-block;
-    width: 80%;
-    vertical-align: top;
-    margin: 5px;
-    trix-editor{
-      min-height: 200px;
-    }
-    
-  }
-  .project-date{
     ::-webkit-calendar-picker-indicator {
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23bbbbbb" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
     }
-  }
-  .categorii{
-    display: inline-block;
-    width: 30%;
-    vertical-align: top;
-  }
-}
-.admin_project_form{
-  .project_image{
-    max-width: 100px;
-  }
-}
-
-.admin_product_form, .admin_frezarimdf_form, .admin_company_photos_form, .admin_product_category_form, .admin_social_project_form {
-  .poza{
-    img{
-      width: 100%;
-      max-width: 300px;
-      max-height: 200px;
-    }
-    &.svg{
-      img{
-        width: 300px;
+    .checkboxes{
+      input[type=checkbox]{
+        margin-top: 0;
+        margin-right: 3px;
+      }
+      label{
+        width: auto;
+        margin-right: 20px;
       }
     }
-  }
-}
-
-.container.wider{
-  .admin_quick_access, .admin_testimonials{
-    p{
+    .multiple_images{
+      img{
+        width: 100%;
+        object-fit:cover;
+      }
+    }
+    .nested-fields{
+      .form_btn{
+        margin-left: 0;
+        margin-top: 0;
+      }
+    }
+    select{
+      width: 100%;
+      padding: 10px 10px;
+      background-color: #2b2a3304;
       color: white;
     }
-  }
-  .admin_testimonial_show, .admin_contact_form_show, .admin_project_show, .admin_project_category_show, .admin_frezarimdf_category_show, .admin_service_show{
-    p{
-      color: white;
-      width: 50%;
+    trix-editor{
+      min-height: 200px;
     }
-  }
-  .admin_service_show{
-    .myicon{
+    .trix-dialog{
+      background-color: rgb(27, 27, 27);
+    }
+    .icons{
+      font-family: "furniture";
       font-size: 30px;
+      
+      label{
+        text-align: center;
+        width: 30px;
+        padding-top: 0;
+        margin-right: 13px;
+      }
+      &.icons-services{
+        label{
+          width: 35px;
+          margin-bottom: 30px;
+        }
+        
+      }
+    }
+    textarea{
+      vertical-align: top;
+      min-height: 150px;
+    }
+    
+    .foto{
+      .poza, .checkbox, .upload{
+        padding-left: 0;
+        input[type=checkbox]{
+          display: none;
+        }
+        input[type=file]{
+          display: none;
+        }
+        label{
+          padding-top: 0;
+          margin-bottom: 0;
+          width: auto;
+        }
+        img{
+          width: 400px;
+          max-height: 300px;
+          object-fit:cover;
+        }
+      }
+      .poza_testimonial{
+        img{
+          width: 150px;
+          height: auto;
+        }
+      }
+    }
+    &.admin_company_photos_form{
+      h3{
+        color: white;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+    }
+    .form_btn{
+      margin-top: 10px;
+      margin-left: 10px;
+      border: 2px solid #e5ae49;
+      text-transform:uppercase;
+      cursor: pointer;
+      border-radius: 50px;
+      padding: 5px;
+      text-align: center;
+      min-width: 100px;
+      color: #e5ae49;
+      transition: all 0.2s ease-in-out;
+      a{
+        color: #e5ae49;
+        transition: all 0.2s ease-in-out;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+      input{
+        border: none;
+        text-transform:uppercase;
+        color: #e5ae49;
+        cursor: pointer;
+        padding: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover{
+        border-color: white;
+        color: white;
+        a{
+          color: white;
+        }
+        input{
+          color: white;
+        }
+      }
     }
   }
   .devise{
@@ -483,11 +358,379 @@ form{
             text-decoration: none;
           }
         }
-      }
-      
+      }    
+    }
+  }
+  // form{
+  //   width: 100%;
+  //   max-width: 675px;
+  //   .actions{
+  //     margin-left: 155px;
+  //   }
+  //   .form_btn{
+  //     display: inline-block;
+  //     min-width: 100px;
+  //     a{
+  //       color: #e5ae49;
+        
+  //       &:hover{
+  //         text-decoration: none;
+  //       }
+  //     }
+  //     border: 2px solid #e5ae49;
+  //     text-transform:uppercase;
+  //     cursor: pointer;
+  //     border-radius: 50px;
+  //     padding: 5px;
+  //     text-align: center;
+  //   }
+  //   &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_service_form, &.admin_social_project_form{
+  //     width: 100%;
+  //     input, textarea{
+  //       width: 30%;
+  //       &[type=checkbox]{
+  //         width: auto;
+  //       }
+  //       &[type=submit]{
+  //         width: auto;
+  //       }
+  //     }
+  //   }
+  //   &.admin_service_form{
+  //     input[type=radio]{
+  //       width: 100%;
+  //     }
+  //   }
+  // }
+  // label{
+  //   width: 150px;
+  // }
+  // input, textarea{
+  //   width: 70%;
+  //   color: white;
+  //   background-color: transparent;
+  //   margin: 5px;
+  //   padding: 5px;
+  //   &[type=checkbox]{
+  //     width: auto;
+  //   }
+  //   &[type=submit]{
+  //     width: auto;
+  //     color: #e5ae49;
+  //     border-color: #e5ae49;
+  //     text-transform:uppercase;
+  //     cursor: pointer;
+  //     border-radius: 50px;
+  //     min-width: 100px;
+  //   }
+  // }
+  // select{
+  //   width: 70%;
+  //   padding: 5px 10px;
+  //   border: none;
+  //   border-radius: 5px;
+  //   margin: 5px;
+  // }
+  // textarea{
+  //   vertical-align: top;
+  //   min-height: 150px;
+  // }
+  // .poza{
+  //   display: inline-block;
+  //   width: 70%;
+  //   vertical-align: top;
+  //   img{
+  //     margin: 5px; 
+  //     // max-width: 100px;
+  //     // max-height: 100px;
+  //   }
+  //   &>div{
+  //     display: inline-block;
+  //   }
+  //   label{
+  //     border: 2px solid #e5ae49;
+  //     width: 100px;
+  //     display: inline-block;
+  //     text-align: center;
+  //     margin-left: 5px;
+  //     color: #e5ae49;
+  //     border-radius: 50px;
+  //     padding: 5px;
+  //     cursor: pointer;
+  //   }
+  //   input[type=checkbox]{
+  //     display: none;
+  //   }
+  //   input[type=file]{
+  //     display: inline-block;
+  //     // margin-left: 0;
+  //     display: none;
+  //   }
+  // }
+}
+.show_btn{
+  display: inline-block;
+  min-width: 100px;
+  a{
+    color: #e5ae49;
+    
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  border: 2px solid #e5ae49;
+  text-transform:uppercase;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 5px;
+  text-align: center;
+}
+.admin_project_category{
+  &::after{
+    content: "|";
+  }
+  &:last-child{
+    &::after{
+      content: "";
     }
   }
 }
+.admin_quick_access{
+
+  p{
+    color: #e5ae49;
+    margin-bottom: 0;
+    &:last-child{
+      padding-bottom: 10px;
+      border-bottom: 1px #e5ae49 solid;
+    }
+  }
+  .quick-menu{
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    flex-wrap: wrap;
+    .quick-menu-item{
+      border: 6px solid white;
+      padding: 20px 20px;
+      flex: 1 1 12%;
+      text-align: center;
+      h3{
+        color: white;
+        text-transform: uppercase;
+      }
+      ul{
+        padding-left: 0;
+        margin-bottom: 0;
+        li{
+          
+          list-style: none;
+          padding: 5px 0;
+          a{
+            color: #e5ae49;
+            &:hover{
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .counters-menu{
+    display: flex;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: nowrap;
+    .counter-item{
+      flex: 1 1 12%;
+      text-align: center;
+      font-size: 3.9rem;
+      line-height: 3.9rem;
+      font-weight: bold;
+      color: #e5ae49;
+      &:hover{
+        text-decoration: none;
+      }
+      .counter-icon, .counter-number{
+        display: inline-block;
+      }
+      .counter-icon{
+        width: 3.9rem;
+        img{
+          vertical-align: top;
+        }
+      }
+    }
+  }
+  
+}
+
+// .admin_frezari_categories, .admin_frezarimdf_category_form, .admin_product_category_form, .admin_frezarimdf_category_show{
+//   .icon{
+//     font-family: "furniture";
+//     font-size: 20px;
+//   }
+// }
+// .admin_frezarimdf_category_form, .admin_product_category_form{
+//   .icon{
+//     width: 80%;
+//     display: inline-block;
+//     margin-left: 5px;
+//     vertical-align: top;
+//     label{
+//       width: 58px;
+//     }
+//     input{
+//       display: block;
+//       margin: 0 2.5px;
+//     }
+//   }
+// }
+// .admin_testimonial_form{
+//   .field{
+//     .poza{
+//       img{
+//         width: 100px;
+//         height: 100px;
+//       }
+//     }
+//   }
+  
+// }
+// form{
+//   &.admin_project_form, &.admin_product_category_form, &.admin_frezarimdf_category_form, &.admin_company_form, &.admin_company_photos_form, &.admin_service_form, &.admin_social_project_form{
+//     max-width: 1675px;
+//   }
+//   &.admin_company_form{
+//     label{
+//       width: 100%;
+//       margin-bottom: 0;
+//       margin-top: 10px;
+//     }
+//     input{
+//       width: 100%;
+//       margin-left: 0;
+//     }
+//     .actions{
+//       margin: 10px 0 20px;
+//     }
+//   }
+//   &.admin_company_photos_form{
+//     .actions{
+//       margin: 10px 0 20px;
+//     }
+//     h3{
+//       color: white;
+//       font-size: 18px;
+//       margin-top: 20px;
+//     }
+//   }
+// }
+// .admin_project_form, .admin_product_category_form, .admin_frezarimdf_category_form, .admin_service_form, .admin_social_project_form{
+  
+//   input{
+//     &[type=checkbox]{
+//       width: auto;
+//     }
+//   }
+//   .editor{
+//     display: inline-block;
+//     width: 80%;
+//     vertical-align: top;
+//     margin: 5px;
+//     trix-editor{
+//       min-height: 200px;
+//     }
+    
+//   }
+//   .project-date{
+//     ::-webkit-calendar-picker-indicator {
+//       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23bbbbbb" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+//     }
+//   }
+//   .categorii{
+//     display: inline-block;
+//     width: 30%;
+//     vertical-align: top;
+//   }
+// }
+// .admin_project_form{
+//   .project_image{
+//     max-width: 100px;
+//   }
+// }
+
+// .admin_product_form, .admin_frezarimdf_form, .admin_company_photos_form, .admin_product_category_form, .admin_social_project_form {
+//   .poza{
+//     img{
+//       width: 100%;
+//       max-width: 300px;
+//       max-height: 200px;
+//     }
+//     &.svg{
+//       img{
+//         width: 300px;
+//       }
+//     }
+//   }
+// }
+
+// .container.wider{
+//   .admin_quick_access, .admin_testimonials{
+//     p{
+//       color: white;
+//     }
+//   }
+//   .admin_testimonial_show, .admin_contact_form_show, .admin_project_show, .admin_project_category_show, .admin_frezarimdf_category_show, .admin_service_show{
+//     p{
+//       color: white;
+//       width: 50%;
+//     }
+//   }
+//   .admin_service_show{
+//     .myicon{
+//       font-size: 30px;
+//     }
+//   }
+//   .devise{
+//     form{
+//       p{
+//         color: white;
+//       }
+//       border: 1px solid white;
+//       margin: 50px auto;
+//       max-width: 600px;
+//       width: 100%;
+//       padding: 30px;
+//       input{
+//         width: 100%;
+//         margin-left: 0;
+//         &:focus{
+//           color: white;
+//           background-color: transparent;
+//         }
+//         &[type=submit]{
+//           width: auto;
+//         }
+//       }
+//       input:-webkit-autofill {
+//         background: transparent;
+//       }
+//       .actions{
+//         margin-left: 0;
+//       }
+//       .reset_psw{
+//         a{
+//           color: #e5ae49;
+//           &:hover{
+//             text-decoration: none;
+//           }
+//         }
+//       }
+      
+//     }
+//   }
+// }
 
 // @media (min-width: 1900px) {
 //   .admin_quick_access{
