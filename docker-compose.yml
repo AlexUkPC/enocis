@@ -68,3 +68,7 @@ volumes:
   gem_cache_enocis:
 networks:
   network:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.239.0/24" 

@@ -8,37 +8,37 @@ pipeline {
     stages {
         stage('Bundle Install') {
             steps {
-                sh '/usr/local/bin/docker-compose run --rm web_enocis bundle install'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins run --rm web_enocis-jenkins bundle install'
             }
         }
         stage('Webpacker Install') {
             steps {
-                sh '/usr/local/bin/docker-compose run --rm web_enocis bin/rails webpacker:install'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins run --rm web_enocis-jenkins bin/rails webpacker:install'
             }
         }
         stage('Stop old containers') {
             steps {
-                sh '/usr/local/bin/docker-compose stop'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins stop'
             }
         }
         stage('Start server') {
             steps {
-                sh '/usr/local/bin/docker-compose up -d'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins up -d'
             }
         }
         stage('Create database') {
             steps {
-                sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_enocis bin/rails db:create'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins exec -T --user "$(id -u):$(id -g)" web_enocis-jenkins bin/rails db:create'
             }
         }
         stage('Migrate database') {
             steps {
-                sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_enocis bin/rails db:migrate'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins exec -T --user "$(id -u):$(id -g)" web_enocis-jenkins bin/rails db:migrate'
             }
         }
         stage('Seed database') {
             steps {
-                sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_enocis bin/rails db:seed:replant'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins exec -T --user "$(id -u):$(id -g)" web_enocis-jenkins bin/rails db:seed:replant'
             }
         }
         stage('Wait for server to start') {
@@ -47,7 +47,7 @@ pipeline {
                     waitUntil {
                         script {
                             try {
-                                def response = httpRequest 'http://0.0.0.0:3026'
+                                def response = httpRequest 'http://0.0.0.0:13026'
                                 return (response.status == 200)
                             }
                             catch (exception) {
@@ -60,7 +60,7 @@ pipeline {
         }
         stage('Unit test') {
             steps {
-                sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_enocis bin/rails test:models'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins exec -T --user "$(id -u):$(id -g)" web_enocis-jenkins bin/rails test:models'
             }   
         } 
     }

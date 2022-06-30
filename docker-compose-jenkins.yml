@@ -1,0 +1,74 @@
+version: "3"
+services:
+  web_enocis_jenkins:
+    build:
+      context: .
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    ports:
+      - "13026:3000"
+    volumes: 
+      - ./enocis:/opt/app
+      - gem_cache_enocis:/gems
+    env_file: 
+      - .env/jenkins/database_enocis
+      - .env/jenkins/web_enocis
+    environment: 
+      - WEBPACKER_DEV_SERVER_HOST=webpack_dev_server_enocis_jenkins
+      - DELAYED_JOB_HOST=delayed_job_enocis
+    networks:
+      - network_enocis_jenkins
+  webpack_dev_server_enocis_jenkins:
+    build:
+      context: .
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    command: ./bin/webpack-dev-server
+    ports: 
+      - "14026:4026"
+    volumes: 
+      - ./enocis:/opt/app
+      - gem_cache_enocis:/gems
+    env_file: 
+      - .env/jenkins/database_enocis
+      - .env/jenkins/web_enocis
+    environment: 
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+    networks:
+      - network_enocis_jenkins
+  delayed_job_enocis_jenkins:
+    build:
+      context: .
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    command: ./bin/rails jobs:work
+    volumes: 
+      - ./enocis:/opt/app
+      - gem_cache_enocis:/gems
+    env_file: 
+      - .env/jenkins/database_enocis
+      - .env/jenkins/web_enocis
+    environment: 
+      - DELAYED_JOB_HOST=0.0.0.0
+    networks:
+      - network_enocis_jenkins
+  database_enocis:
+    image: postgres
+    env_file: 
+      - .env/jenkins/database_enocis
+    volumes: 
+      - db_data_enocis:/var/lib/postgresql/data
+    networks:
+      - network_enocis_jenkins
+volumes: 
+  db_data_enocis:
+  gem_cache_enocis:
+networks:
+  network_enocis_jenkins:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.239.0/24" 
