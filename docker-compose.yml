@@ -18,7 +18,7 @@ services:
       - WEBPACKER_DEV_SERVER_HOST=webpack_dev_server_enocis
       - DELAYED_JOB_HOST=delayed_job_enocis
     networks:
-      - network
+      - network_enocis
   webpack_dev_server_enocis:
     build:
       context: .
@@ -37,7 +37,7 @@ services:
     environment: 
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
     networks:
-      - network
+      - network_enocis
   delayed_job_enocis:
     build:
       context: .
@@ -54,7 +54,7 @@ services:
     environment: 
       - DELAYED_JOB_HOST=0.0.0.0
     networks:
-      - network
+      - network_enocis
   database_enocis:
     image: postgres
     env_file: 
@@ -62,13 +62,13 @@ services:
     volumes: 
       - db_data_enocis:/var/lib/postgresql/data
     networks:
-      - network
+      - network_enocis
 volumes: 
   db_data_enocis:
   gem_cache_enocis:
 networks:
-  network:
+  network_enocis:
     ipam:
       driver: default
       config:
-        - subnet: "172.16.239.0/24" 
+        - subnet: "172.16.237.0/24" 

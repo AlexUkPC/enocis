@@ -1,3 +1,3 @@
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=some_password
-POSTGRES_DB=enocis_development
+POSTGRES_DB=enocis_development_jenkins
