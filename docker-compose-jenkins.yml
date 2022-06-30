@@ -55,7 +55,7 @@ services:
       - DELAYED_JOB_HOST=0.0.0.0
     networks:
       - network_enocis_jenkins
-  database_enocis:
+  database_enocis_jenkins:
     image: postgres
     env_file: 
       - .env/jenkins/database_enocis
@@ -71,4 +71,4 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: "172.16.237.0/24" 
+        - subnet: "172.16.236.0/24" 
