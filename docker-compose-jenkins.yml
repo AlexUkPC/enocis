@@ -38,6 +38,23 @@ services:
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
     networks:
       - network_enocis_jenkins
+  # delayed_job_enocis_jenkins:
+  #   build:
+  #     context: .
+  #     args:
+  #       USER_ID: "${USER_ID:-1000}"
+  #       GROUP_ID: "${GROUP_ID:-1000}"
+  #   command: ./bin/rails jobs:work
+  #   volumes: 
+  #     - ./enocis:/opt/app
+  #     - gem_cache_enocis:/gems
+  #   env_file: 
+  #     - .env/jenkins/database_enocis
+  #     - .env/jenkins/web_enocis
+  #   environment: 
+  #     - DELAYED_JOB_HOST=0.0.0.0
+  #   networks:
+  #     - network_enocis_jenkins
   database_enocis_jenkins:
     image: postgres:13
     env_file: 
