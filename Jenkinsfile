@@ -6,6 +6,13 @@ pipeline {
         string(name: 'REF', defaultValue: '\${ghprbActualCommit}', description: 'Commit to build')
     }
     stages {
+        stage('Prepare x files') {
+           steps {
+                sh 'chmod +x *.sh'
+                sh 'chmod +x enocis/docker-entrypoint.sh'
+                sh 'chmod +x enocis/bin/*'
+            }
+        }
         stage('Bundle Install') {
             steps {
                 sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml run --rm web_enocis_jenkins bundle install'
@@ -23,11 +30,12 @@ pipeline {
         }
         stage('Start server') {
             steps {
-                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml up -d'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml up -d --remove-orphans --force-recreate'
             }
         }
         stage('Create database') {
             steps {
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml exec -T --user "$(id -u):$(id -g)" web_enocis_jenkins bin/rails db:drop'
                 sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml exec -T --user "$(id -u):$(id -g)" web_enocis_jenkins bin/rails db:create'
             }
         }
@@ -47,7 +55,7 @@ pipeline {
                     waitUntil {
                         script {
                             try {
-                                def response = httpRequest 'http://0.0.0.0:13026'
+                                def response = httpRequest 'http://0.0.0.0:13002'
                                 return (response.status == 200)
                             }
                             catch (exception) {
@@ -63,5 +71,10 @@ pipeline {
                 sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml exec -T --user "$(id -u):$(id -g)" web_enocis_jenkins bin/rails test:models'
             }   
         } 
+        stage('Stop containers') {
+            steps {
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml stop'
+            }
+        }
     }
 }
