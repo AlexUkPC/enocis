@@ -7,7 +7,7 @@ services:
         USER_ID: "${USER_ID:-1000}"
         GROUP_ID: "${GROUP_ID:-1000}"
     ports:
-      - "3026:3000"
+      - "3002:3000"
     volumes: 
       - ./enocis:/opt/app
       - gem_cache_enocis:/gems
@@ -27,7 +27,7 @@ services:
         GROUP_ID: "${GROUP_ID:-1000}"
     command: ./bin/webpack-dev-server
     ports: 
-      - "4026:4026"
+      - "4002:4002"
     volumes: 
       - ./enocis:/opt/app
       - gem_cache_enocis:/gems
@@ -56,7 +56,7 @@ services:
     networks:
       - network_enocis
   database_enocis:
-    image: postgres
+    image: postgres:13
     env_file: 
       - .env/development/database_enocis
     volumes: 
@@ -71,4 +71,4 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: "172.16.237.0/24" 
+        - subnet: "172.10.2.0/24" 

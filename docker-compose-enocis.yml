@@ -29,7 +29,7 @@ services:
       - proxy
     restart: always
   database_enocis:
-    image: postgres
+    image: postgres:13
     env_file:
       - .env/production/database_enocis
     volumes:
@@ -47,4 +47,4 @@ services:
 volumes:
   db_data_enocis:
 networks:
-  proxy:
+  proxy: 
