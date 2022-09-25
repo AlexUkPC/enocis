@@ -47,4 +47,4 @@ services:
 volumes:
   db_data_enocis:
 networks:
-  proxy:
+  proxy: 
