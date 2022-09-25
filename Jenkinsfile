@@ -35,6 +35,7 @@ pipeline {
         }
         stage('Create database') {
             steps {
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml exec -T --user "$(id -u):$(id -g)" web_enocis_jenkins bin/rails db:drop'
                 sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml exec -T --user "$(id -u):$(id -g)" web_enocis_jenkins bin/rails db:create'
             }
         }
