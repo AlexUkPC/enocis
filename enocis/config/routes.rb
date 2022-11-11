@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :promotions
   resources :social_projects, path: :proiecte_sociale
   resources :youtubes
   resources :services

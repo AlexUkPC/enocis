@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_21_081239) do
+ActiveRecord::Schema.define(version: 2022_11_11_151939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -189,6 +189,19 @@ ActiveRecord::Schema.define(version: 2022_04_21_081239) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.index ["slug"], name: "index_projects_on_slug", unique: true
+  end
+
+  create_table "promotions", force: :cascade do |t|
+    t.string "title"
+    t.string "title_color", default: "#E5AE49"
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "is_active", default: true
+    t.string "btn_text", default: "Mergi la website"
+    t.string "btn_url", default: "https://www.enocis.ro"
+    t.string "bg_color", default: "#000000"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "services", force: :cascade do |t|

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @promotion.title %>
+</p>
+
+<p>
+  <strong>Title color:</strong>
+  <%= @promotion.title_color %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @promotion.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @promotion.end_date %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @promotion.is_active %>
+</p>
+
+<p>
+  <strong>Btn text:</strong>
+  <%= @promotion.btn_text %>
+</p>
+
+<p>
+  <strong>Btn url:</strong>
+  <%= @promotion.btn_url %>
+</p>
+
+<p>
+  <strong>Bg color:</strong>
+  <%= @promotion.bg_color %>
+</p>
+
+<%= link_to 'Edit', edit_promotion_path(@promotion) %> |
+<%= link_to 'Back', promotions_path %>

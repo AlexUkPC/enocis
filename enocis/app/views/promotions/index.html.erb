@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Promotions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Title color</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Is active</th>
+      <th>Btn text</th>
+      <th>Btn url</th>
+      <th>Bg color</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promotions.each do |promotion| %>
+      <tr>
+        <td><%= promotion.title %></td>
+        <td><%= promotion.title_color %></td>
+        <td><%= promotion.start_date %></td>
+        <td><%= promotion.end_date %></td>
+        <td><%= promotion.is_active %></td>
+        <td><%= promotion.btn_text %></td>
+        <td><%= promotion.btn_url %></td>
+        <td><%= promotion.bg_color %></td>
+        <td><%= link_to 'Show', promotion %></td>
+        <td><%= link_to 'Edit', edit_promotion_path(promotion) %></td>
+        <td><%= link_to 'Destroy', promotion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promotion', new_promotion_path %>
