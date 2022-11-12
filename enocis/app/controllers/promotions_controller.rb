@@ -4,7 +4,7 @@ class PromotionsController < ApplicationController
 
   # GET /promotions or /promotions.json
   def index
-    @promotions = Promotion.all
+    @promotions = Promotion.all.order("id DESC")
   end
 
   # GET /promotions/1 or /promotions/1.json
