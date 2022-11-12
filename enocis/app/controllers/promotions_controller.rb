@@ -26,7 +26,7 @@ class PromotionsController < ApplicationController
 
     respond_to do |format|
       if @promotion.save
-        format.html { redirect_to promotion_url(@promotion), notice: "Promotion was successfully created." }
+        format.html { redirect_to promotions_path, notice: "Promotie adaugat cu succes." }
         format.json { render :show, status: :created, location: @promotion }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class PromotionsController < ApplicationController
   def update
     respond_to do |format|
       if @promotion.update(promotion_params)
-        format.html { redirect_to promotion_url(@promotion), notice: "Promotion was successfully updated." }
+        format.html { redirect_to promotions_path, notice: "Promotia a fost salvata." }
         format.json { render :show, status: :ok, location: @promotion }
       else
         format.html { render :edit, status: :unprocessable_entity }

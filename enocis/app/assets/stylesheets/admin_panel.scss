@@ -271,6 +271,14 @@
           object-fit:cover;
         }
       }
+      .poza_promotii{
+        img{
+          width: 400px;
+          max-height: 300px;
+          object-fit: contain;
+          object-position: left top;
+        }
+      }
       .poza_testimonial{
         img{
           width: 150px;

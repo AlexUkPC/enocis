@@ -1,5 +1,7 @@
 class Promotion < ApplicationRecord
   scope :between_dates, lambda {|date| where("(start_date <= ? AND end_date >= ?)", date, date )}
+  validates :start_date, presence: true
+  validates :end_date, presence: true
   has_one_attached :bg_image
   has_one_attached :main_image_landscape
   has_one_attached :main_image_portrait
