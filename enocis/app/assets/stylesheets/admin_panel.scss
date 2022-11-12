@@ -250,7 +250,12 @@
       vertical-align: top;
       min-height: 150px;
     }
-    
+    input[type=color]{
+      border: none;
+      padding: 0;
+      height: 30px;
+      width: 30px;
+    }
     .foto{
       .poza, .checkbox, .upload{
         padding-left: 0;
