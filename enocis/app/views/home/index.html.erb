@@ -1,3 +1,19 @@
+
+<% if @promotion %>
+	<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#promotionModal').modal('show');
+    });
+	</script>
+
+	<div class="modal" id="promotionModal" tabindex="-1" role="dialog" aria-labelledby="promotionModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content" style="background-color: <%= @promotion.bg_color %>;background-image: url('<%= @promotion.bg_image.attached? ? asset_path(rails_blob_url(@promotion.bg_image)) : ""  %>')">
+				<%= render 'modal_content' %>
+			</div>
+		</div>
+	</div>
+<% end %>
 <main role="main" class="home_page">
 	<%= render 'slider' %>	
 	<%= render 'home_menu' %>	

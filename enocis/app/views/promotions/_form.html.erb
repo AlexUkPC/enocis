@@ -1,0 +1,195 @@
+<%= form_with(model: promotion) do |form| %>
+  <% if promotion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(promotion.errors.count, "error") %> prohibited this promotion from being saved:</h2>
+
+      <ul>
+        <% promotion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title_color %>
+    <%= form.text_field :title_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_active %>
+    <%= form.check_box :is_active %>
+  </div>
+
+  <div class="field">
+    <%= form.label :btn_text %>
+    <%= form.text_field :btn_text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :btn_url %>
+    <%= form.text_field :btn_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bg_color %>
+    <%= form.text_field :bg_color %>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row mt-0">
+        <div class="col-lg-3">
+          <%= form.label :bg_image do %>
+            <span class="label">Poza fundal</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/frezari_mdf_poza_fundal.jpg' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <div class="row foto">
+            <div id="upload" class="col-3 upload">
+              <div class="form_btn">
+                <%= form.label :bg_image do %>
+                  Incarca
+                <% end %>
+              </div>
+              <%= form.file_field :bg_image %>
+            </div>
+            <% if promotion.bg_image.attached? %>
+              <div id="poza_bg_image" class="col-12 poza">
+                <%= image_tag promotion.bg_image.variant(resize_to_limit: [300, 200]), id: "image_bg_image" %>
+              </div>
+              <div id="checkbox_bg_image" class="col-3 checkbox">
+                <%= form.label :remove_bg_image do %>
+                  <%= form.check_box :remove_bg_image, onclick:"document.querySelector('#poza_bg_image').style.display = 'none';document.querySelector('#checkbox_bg_image').style.display = 'none';"  %> 
+                  <div class="form_btn">
+                    Sterge
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <div id="poza_bg_image" class="col-12 poza">
+                <img src="" id="image_bg_image" style="display: none;"> 
+              </div>   
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row mt-0">
+        <div class="col-lg-3">
+          <%= form.label :main_image_landscape do %>
+            <span class="label">Poza landscape</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/frezari_mdf_poza_fundal.jpg' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <div class="row foto">
+            <div id="upload" class="col-3 upload">
+              <div class="form_btn">
+                <%= form.label :main_image_landscape do %>
+                  Incarca
+                <% end %>
+              </div>
+              <%= form.file_field :main_image_landscape %>
+            </div>
+            <% if promotion.main_image_landscape.attached? %>
+              <div id="poza_main_image_landscape" class="col-12 poza">
+                <%= image_tag promotion.main_image_landscape.variant(resize_to_limit: [300, 200]), id: "image_main_image_landscape" %>
+              </div>
+              <div id="checkbox_main_image_landscape" class="col-3 checkbox">
+                <%= form.label :remove_main_image_landscape do %>
+                  <%= form.check_box :remove_main_image_landscape, onclick:"document.querySelector('#poza_main_image_landscape').style.display = 'none';document.querySelector('#checkbox_main_image_landscape').style.display = 'none';"  %> 
+                  <div class="form_btn">
+                    Sterge
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <div id="poza_main_image_landscape" class="col-12 poza">
+                <img src="" id="image_main_image_landscape" style="display: none;"> 
+              </div>   
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row mt-0">
+        <div class="col-lg-3">
+          <%= form.label :main_image_portrait do %>
+            <span class="label">Poza portret</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/frezari_mdf_poza_fundal.jpg' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <div class="row foto">
+            <div id="upload" class="col-3 upload">
+              <div class="form_btn">
+                <%= form.label :main_image_portrait do %>
+                  Incarca
+                <% end %>
+              </div>
+              <%= form.file_field :main_image_portrait %>
+            </div>
+            <% if promotion.main_image_portrait.attached? %>
+              <div id="poza_main_image_portrait" class="col-12 poza">
+                <%= image_tag promotion.main_image_portrait.variant(resize_to_limit: [300, 200]), id: "image_main_image_portrait" %>
+              </div>
+              <div id="checkbox_main_image_portrait" class="col-3 checkbox">
+                <%= form.label :remove_main_image_portrait do %>
+                  <%= form.check_box :remove_main_image_portrait, onclick:"document.querySelector('#poza_main_image_portrait').style.display = 'none';document.querySelector('#checkbox_main_image_portrait').style.display = 'none';"  %> 
+                  <div class="form_btn">
+                    Sterge
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <div id="poza_main_image_portrait" class="col-12 poza">
+                <img src="" id="image_main_image_portrait" style="display: none;"> 
+              </div>   
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="modal-header">
+	<h3 class="modal-title" id="promotionModalLabel" style="color: <%= @promotion.title_color %>"><%= @promotion.title %></h3>
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+<div class="modal-body d-none d-sm-block" style="background-image: url('<%= @promotion.main_image_landscape.attached? ? asset_path(rails_blob_url(@promotion.main_image_landscape)) : ""  %>')">
+</div>
+<div class="modal-body d-block d-sm-none" style="background-image: url('<%= @promotion.main_image_portrait.attached? ? asset_path(rails_blob_url(@promotion.main_image_portrait)) : ""  %>')">
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-secondary" <%= @promotion.btn_url != "" && @promotion.btn_url != "https://www.enocis.ro" && @promotion.btn_url != "www.enocis.ro" ? "onclick=window.location.href='#{@promotion.btn_url}';" : "data-dismiss=modal" %>><%= @promotion.btn_text != "" ? @promotion.btn_text : "Mergi la website" %></button>
+</div>
