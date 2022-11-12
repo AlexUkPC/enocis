@@ -1,5 +1,6 @@
 class PromotionsController < ApplicationController
   before_action :set_promotion, only: %i[ show edit update destroy ]
+  # before_action :authenticate_user!
 
   # GET /promotions or /promotions.json
   def index
@@ -65,6 +66,6 @@ class PromotionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def promotion_params
-      params.require(:promotion).permit(:title, :title_color, :start_date, :end_date, :is_active, :btn_text, :btn_url, :bg_color)
+      params.require(:promotion).permit(:title, :title_color, :start_date, :end_date, :is_active, :btn_text, :btn_url, :bg_color, :bg_image, :remove_bg_image, :main_image_landscape, :remove_main_image_landscape, :main_image_portrait, :remove_main_image_portrait)
     end
 end

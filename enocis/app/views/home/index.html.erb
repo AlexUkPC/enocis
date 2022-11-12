@@ -8,20 +8,8 @@
 
 	<div class="modal" id="promotionModal" tabindex="-1" role="dialog" aria-labelledby="promotionModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
-			<div class="modal-content" style="background-color: <%= @promotion.bg_color %>">
-				<div class="modal-header">
-					<h3 class="modal-title" id="promotionModalLabel" style="color: <%= @promotion.title_color %>"><%= @promotion.title %></h3>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					
-					<%= image_tag 'promo.png', class: "img-fluid"%>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" <%= @promotion.btn_url != "" && @promotion.btn_url != "https://www.enocis.ro" && @promotion.btn_url != "www.enocis.ro" ? "onclick=window.location.href='#{@promotion.btn_url}';" : "data-dismiss=modal" %>><%= @promotion.btn_text != "" ? @promotion.btn_text : "Mergi la website" %></button>
-				</div>
+			<div class="modal-content" style="background-color: <%= @promotion.bg_color %>;background-image: url('<%= @promotion.bg_image.attached? ? asset_path(rails_blob_url(@promotion.bg_image)) : ""  %>')">
+				<%= render 'modal_content' %>
 			</div>
 		</div>
 	</div>

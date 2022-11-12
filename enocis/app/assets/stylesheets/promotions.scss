@@ -9,25 +9,33 @@
     height: 100%;
     margin: 0;
     .modal-content{
-      padding: 8vh 20vw;
+      padding: 2vh 11vw;
       height: 100%;
       border: 0;
       border-radius: 0;
       background-color: black;
       color: white;
+      justify-content: space-around;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       .modal-header{
-        // align-items: center;
+        align-items: center;
         border-bottom: none;
         h3{
           font-weight: 900;
-          font-size: 3rem;
+          font-size: 2rem;
         }
       }
       .modal-body{
         overflow-y: auto;
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-size: contain;
       }
       .modal-footer{
         border-top: none;
+        padding: 30px;
       }
       .close{
         font-size: 2rem;
@@ -46,6 +54,34 @@
         &:hover{
           border: #e99d11 1px solid;
           color: #e99d11;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .modal {
+    .modal-dialog{
+      .modal-content{
+        padding: 6vh 8vw;
+        .modal-header{
+          h3{
+            font-size: 3vw;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .modal {
+    .modal-dialog{
+      .modal-content{
+        padding: 4vh 4vw;
+        .modal-header{
+          h3{
+            font-size: 5vw;
+          }
         }
       }
     }
