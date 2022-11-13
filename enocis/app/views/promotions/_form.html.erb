@@ -20,8 +20,7 @@
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/products_nume.PNG' %>
-                <%= image_tag 'info/product_nume.PNG' %>
+                <%= image_tag 'info/promotion_title.png' %>
               </span>
             </span>
           <% end %>
@@ -30,6 +29,8 @@
           <%= form.text_field :title %>
         </div>
       </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
       <div class="row">
         <div class="col-lg-3">
           <%= form.label :title_color do %>
@@ -37,8 +38,7 @@
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/products_nume.PNG' %>
-                <%= image_tag 'info/product_nume.PNG' %>
+                <%= image_tag 'info/promotion_title.png' %>
               </span>
             </span>
           <% end %>
@@ -47,57 +47,46 @@
           <%= form.color_field :title_color %>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-3">
-          <%= form.label :start_date do %>
-            <span class="label">Data inceput</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg">
-                <%= image_tag 'info/products_nume.PNG' %>
-                <%= image_tag 'info/product_nume.PNG' %>
-              </span>
-            </span>
-          <% end %>
-        </div>
-        <div class="col-lg-9">
-          <%= form.date_field :start_date %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3">
-          <%= form.label :end_date do %>
-            <span class="label">Data final</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg">
-                <%= image_tag 'info/products_nume.PNG' %>
-                <%= image_tag 'info/product_nume.PNG' %>
-              </span>
-            </span>
-          <% end %>
-        </div>
-        <div class="col-lg-9">
-          <%= form.date_field :end_date %>
-        </div>
-      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
       <div class="row">
         <div class="col-lg-3">
           <%= form.label :is_active do %>
-            <span class="label">Activa</span> 
-            <span class="info">
-              <i class="fa fa-info-circle info-name"></i>
-              <span class="hiddenimg">
-                <%= image_tag 'info/products_nume.PNG' %>
-                <%= image_tag 'info/product_nume.PNG' %>
-              </span>
-            </span>
+            <span class="label">Activa</span>
           <% end %>
         </div>
         <div class="col-lg-9">
           <%= form.check_box :is_active %>
         </div>
       </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <%= form.label :start_date do %>
+            <span class="label">Data inceput</span> 
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <%= form.date_field :start_date %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <%= form.label :end_date do %>
+            <span class="label">Data final</span> 
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <%= form.date_field :end_date %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
       <div class="row">
         <div class="col-lg-3">
           <%= form.label :btn_text do %>
@@ -105,8 +94,7 @@
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/products_nume.PNG' %>
-                <%= image_tag 'info/product_nume.PNG' %>
+                <%= image_tag 'info/promotion_btn.png' %>
               </span>
             </span>
           <% end %>
@@ -115,6 +103,8 @@
           <%= form.text_field :btn_text %>
         </div>
       </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
       <div class="row">
         <div class="col-lg-3">
           <%= form.label :btn_url do %>
@@ -122,8 +112,7 @@
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/products_nume.PNG' %>
-                <%= image_tag 'info/product_nume.PNG' %>
+                <%= image_tag 'info/promotion_btn.png' %>
               </span>
             </span>
           <% end %>
@@ -132,6 +121,8 @@
           <%= form.text_field :btn_url %>
         </div>
       </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
       <div class="row">
         <div class="col-lg-3">
           <%= form.label :bg_color do %>
@@ -139,8 +130,7 @@
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/products_nume.PNG' %>
-                <%= image_tag 'info/product_nume.PNG' %>
+                <%= image_tag 'info/promotion_bg_color.png' %>
               </span>
             </span>
           <% end %>
@@ -149,6 +139,8 @@
           <%= form.color_field :bg_color %>
         </div>
       </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
       <div class="row mt-0">
         <div class="col-lg-3">
           <%= form.label :bg_image do %>
@@ -156,7 +148,7 @@
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/frezari_mdf_poza_fundal.jpg' %>
+                <%= image_tag 'info/promotion_bg_image.png' %>
               </span>
             </span>
           <% end %>
@@ -191,14 +183,16 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
       <div class="row mt-0">
         <div class="col-lg-3">
           <%= form.label :main_image_landscape do %>
-            <span class="label">Poza landscape</span> 
+            <span class="label">Poza desktop</span> 
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/frezari_mdf_poza_fundal.jpg' %>
+                <%= image_tag 'info/promotion_main_image_landscape.png' %>
               </span>
             </span>
           <% end %>
@@ -233,14 +227,16 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
       <div class="row mt-0">
         <div class="col-lg-3">
           <%= form.label :main_image_portrait do %>
-            <span class="label">Poza portrait</span> 
+            <span class="label">Poza mobil</span> 
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/frezari_mdf_poza_fundal.jpg' %>
+                <%= image_tag 'info/promotion_main_image_portrait.png' %>
               </span>
             </span>
           <% end %>
@@ -275,6 +271,8 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
       <div class="row">
         <div class="col-lg-3">
         </div>
