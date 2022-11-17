@@ -1,41 +1,48 @@
-<p id="notice"><%= notice %></p>
+<%= render '/layouts/admin_panel' do %>
+  <div class="admin_promotions">
+    <div class="admin_top">
+      <h2>Vizualizare promotii</h2>
+      <div class="admin_btn push"> <%= link_to 'Adauga promotie', new_promotion_path %></div>
+    </div>
+    <hr>
+    <p class="notice"><%= notice %></p>
+    <p class="alert2"><%= alert %></p>
+    <div class="table">
+      <table class="width100">
+        <thead>
+          <tr>
+            <th class="three"></th>
+            <th>Titlu promotie</th>
+            <th>Data de inceput</th>
+            <th>Data de final</th>
+            <th>Activa</th>
+            <th class="three">Edit</th>
+            <th class="three">Sterge</th>
+          </tr>
+        </thead>
 
-<h1>Promotions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Title color</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Is active</th>
-      <th>Btn text</th>
-      <th>Btn url</th>
-      <th>Bg color</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @promotions.each do |promotion| %>
-      <tr>
-        <td><%= promotion.title %></td>
-        <td><%= promotion.title_color %></td>
-        <td><%= promotion.start_date %></td>
-        <td><%= promotion.end_date %></td>
-        <td><%= promotion.is_active %></td>
-        <td><%= promotion.btn_text %></td>
-        <td><%= promotion.btn_url %></td>
-        <td><%= promotion.bg_color %></td>
-        <td><%= link_to 'Show', promotion %></td>
-        <td><%= link_to 'Edit', edit_promotion_path(promotion) %></td>
-        <td><%= link_to 'Destroy', promotion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Promotion', new_promotion_path %>
+        <tbody>
+          <% @promotions.each do |promotion| %>
+            <tr>
+              <td><%= promotion.id %></td>
+              <td><%= promotion.title %></td>
+              <td><%= promotion.start_date %></td>
+              <td><%= promotion.end_date %></td>
+              <td><%= promotion.is_active ? "Da" : "Nu" %></td>
+              <td>
+                <%= link_to edit_promotion_path(promotion), data: { turbolinks: false } do%>
+                  <i class="fa fa-pencil-square" aria-hidden="true" title="Editeaza"></i>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to promotion, method: :delete, data: { confirm: 'Esti sigur ca vrei sa stergi produsul?' } do%>
+                  <i class="fa fa-trash" aria-hidden="true" title="Sterge"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>

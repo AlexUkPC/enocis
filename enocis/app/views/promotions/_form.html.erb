@@ -1,4 +1,4 @@
-<%= form_with(model: promotion) do |form| %>
+<%= form_with(model: promotion, class:"admin_promotion_form") do |form| %>
   <% if promotion.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(promotion.errors.count, "error") %> prohibited this promotion from being saved:</h2>
@@ -11,55 +11,144 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :title_color %>
-    <%= form.text_field :title_color %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.date_select :end_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :is_active %>
-    <%= form.check_box :is_active %>
-  </div>
-
-  <div class="field">
-    <%= form.label :btn_text %>
-    <%= form.text_field :btn_text %>
-  </div>
-
-  <div class="field">
-    <%= form.label :btn_url %>
-    <%= form.text_field :btn_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bg_color %>
-    <%= form.text_field :bg_color %>
-  </div>
   <div class="row">
-    <div class="col-md-6">
-      <div class="row mt-0">
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <%= form.label :title do %>
+            <span class="label">Titlu promotie</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/promotion_title.png' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <%= form.text_field :title %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <%= form.label :title_color do %>
+            <span class="label">Culoare titlu</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/promotion_title.png' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <%= form.color_field :title_color %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <%= form.label :is_active do %>
+            <span class="label">Activa</span>
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <%= form.check_box :is_active %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <%= form.label :start_date do %>
+            <span class="label">Data inceput</span> 
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <%= form.date_field :start_date %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <%= form.label :end_date do %>
+            <span class="label">Data final</span> 
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <%= form.date_field :end_date %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <%= form.label :btn_text do %>
+            <span class="label">Text buton</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/promotion_btn.png' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <%= form.text_field :btn_text %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <%= form.label :btn_url do %>
+            <span class="label">Link buton</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/promotion_btn.png' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <%= form.text_field :btn_url %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <%= form.label :bg_color do %>
+            <span class="label">Culoare fundal</span> 
+            <span class="info">
+              <i class="fa fa-info-circle info-name"></i>
+              <span class="hiddenimg">
+                <%= image_tag 'info/promotion_bg_color.png' %>
+              </span>
+            </span>
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <%= form.color_field :bg_color %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
         <div class="col-lg-3">
           <%= form.label :bg_image do %>
             <span class="label">Poza fundal</span> 
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/frezari_mdf_poza_fundal.jpg' %>
+                <%= image_tag 'info/promotion_bg_image.png' %>
               </span>
             </span>
           <% end %>
@@ -75,37 +164,35 @@
               <%= form.file_field :bg_image %>
             </div>
             <% if promotion.bg_image.attached? %>
-              <div id="poza_bg_image" class="col-12 poza">
-                <%= image_tag promotion.bg_image.variant(resize_to_limit: [300, 200]), id: "image_bg_image" %>
+              <div id="poza1" class="col-12 poza_promotii">
+                <%= image_tag promotion.bg_image, id: "image1" %>
               </div>
-              <div id="checkbox_bg_image" class="col-3 checkbox">
+              <div id="checkbox1" class="col-3 checkbox">
                 <%= form.label :remove_bg_image do %>
-                  <%= form.check_box :remove_bg_image, onclick:"document.querySelector('#poza_bg_image').style.display = 'none';document.querySelector('#checkbox_bg_image').style.display = 'none';"  %> 
+                  <%= form.check_box :remove_bg_image, onclick:"document.querySelector('#poza1').style.display = 'none';document.querySelector('#checkbox1').style.display = 'none';"  %> 
                   <div class="form_btn">
                     Sterge
                   </div>
                 <% end %>
               </div>
             <% else %>
-              <div id="poza_bg_image" class="col-12 poza">
-                <img src="" id="image_bg_image" style="display: none;"> 
+              <div id="poza1" class="col-12 poza_promotii">
+                <img src="" id="image1" style="display: none;"> 
               </div>   
             <% end %>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
+    <div class="col-xl-6 col-lg-12">
       <div class="row mt-0">
         <div class="col-lg-3">
           <%= form.label :main_image_landscape do %>
-            <span class="label">Poza landscape</span> 
+            <span class="label">Poza desktop</span> 
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/frezari_mdf_poza_fundal.jpg' %>
+                <%= image_tag 'info/promotion_main_image_landscape.png' %>
               </span>
             </span>
           <% end %>
@@ -121,37 +208,35 @@
               <%= form.file_field :main_image_landscape %>
             </div>
             <% if promotion.main_image_landscape.attached? %>
-              <div id="poza_main_image_landscape" class="col-12 poza">
-                <%= image_tag promotion.main_image_landscape.variant(resize_to_limit: [300, 200]), id: "image_main_image_landscape" %>
+              <div id="poza2" class="col-12 poza_promotii">
+                <%= image_tag promotion.main_image_landscape, id: "image2" %>
               </div>
-              <div id="checkbox_main_image_landscape" class="col-3 checkbox">
+              <div id="checkbox2" class="col-3 checkbox">
                 <%= form.label :remove_main_image_landscape do %>
-                  <%= form.check_box :remove_main_image_landscape, onclick:"document.querySelector('#poza_main_image_landscape').style.display = 'none';document.querySelector('#checkbox_main_image_landscape').style.display = 'none';"  %> 
+                  <%= form.check_box :remove_main_image_landscape, onclick:"document.querySelector('#poza2').style.display = 'none';document.querySelector('#checkbox2').style.display = 'none';"  %> 
                   <div class="form_btn">
                     Sterge
                   </div>
                 <% end %>
               </div>
             <% else %>
-              <div id="poza_main_image_landscape" class="col-12 poza">
-                <img src="" id="image_main_image_landscape" style="display: none;"> 
+              <div id="poza2" class="col-12 poza_promotii">
+                <img src="" id="image2" style="display: none;"> 
               </div>   
             <% end %>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
+    <div class="col-xl-6 col-lg-12">
       <div class="row mt-0">
         <div class="col-lg-3">
           <%= form.label :main_image_portrait do %>
-            <span class="label">Poza portret</span> 
+            <span class="label">Poza mobil</span> 
             <span class="info">
               <i class="fa fa-info-circle info-name"></i>
               <span class="hiddenimg">
-                <%= image_tag 'info/frezari_mdf_poza_fundal.jpg' %>
+                <%= image_tag 'info/promotion_main_image_portrait.png' %>
               </span>
             </span>
           <% end %>
@@ -167,29 +252,37 @@
               <%= form.file_field :main_image_portrait %>
             </div>
             <% if promotion.main_image_portrait.attached? %>
-              <div id="poza_main_image_portrait" class="col-12 poza">
-                <%= image_tag promotion.main_image_portrait.variant(resize_to_limit: [300, 200]), id: "image_main_image_portrait" %>
+              <div id="poza3" class="col-12 poza_promotii">
+                <%= image_tag promotion.main_image_portrait, id: "image3" %>
               </div>
-              <div id="checkbox_main_image_portrait" class="col-3 checkbox">
+              <div id="checkbox3" class="col-3 checkbox">
                 <%= form.label :remove_main_image_portrait do %>
-                  <%= form.check_box :remove_main_image_portrait, onclick:"document.querySelector('#poza_main_image_portrait').style.display = 'none';document.querySelector('#checkbox_main_image_portrait').style.display = 'none';"  %> 
+                  <%= form.check_box :remove_main_image_portrait, onclick:"document.querySelector('#poza3').style.display = 'none';document.querySelector('#checkbox3').style.display = 'none';"  %> 
                   <div class="form_btn">
                     Sterge
                   </div>
                 <% end %>
               </div>
             <% else %>
-              <div id="poza_main_image_portrait" class="col-12 poza">
-                <img src="" id="image_main_image_portrait" style="display: none;"> 
+              <div id="poza3" class="col-12 poza_promotii">
+                <img src="" id="image3" style="display: none;"> 
               </div>   
             <% end %>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="col-xl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-2 form_btn">
+           <%= link_to 'Inapoi', promotions_path, data: { turbolinks: false } %>
+        </div>
+        <div class="col-lg-2 form_btn">
+          <%= form.submit %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>

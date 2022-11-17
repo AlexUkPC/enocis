@@ -234,5 +234,14 @@ $(document).ready(function(){
 	$("#company_politica_cookies_cover_image").change(function(){
 		readURL(this, '#company_politica_cookies_remove_cover_image', '#image_politica_cookies_cover_image', '#poza_politica_cookies_cover_image', '#checkbox_politica_cookies_cover_image');
 	});
+	$("#promotion_bg_image").change(function(){
+		readURL(this, '#promotion_remove_bg_image', '#image1', '#poza1', '#checkbox1');
+	});
+	$("#promotion_main_image_landscape").change(function(){
+		readURL(this, '#promotion_remove_main_image_landscape', '#image2', '#poza2', '#checkbox2');
+	});
+	$("#promotion_main_image_portrait").change(function(){
+		readURL(this, '#promotion_remove_main_image_portrait', '#image3', '#poza3', '#checkbox3');
+	});
 })
 

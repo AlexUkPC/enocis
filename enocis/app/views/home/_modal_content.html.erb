@@ -6,7 +6,7 @@
 </div>
 <div class="modal-body d-none d-sm-block" style="background-image: url('<%= @promotion.main_image_landscape.attached? ? asset_path(rails_blob_url(@promotion.main_image_landscape)) : ""  %>')">
 </div>
-<div class="modal-body d-block d-sm-none" style="background-image: url('<%= @promotion.main_image_portrait.attached? ? asset_path(rails_blob_url(@promotion.main_image_portrait)) : ""  %>')">
+<div class="modal-body d-block d-sm-none" style="background-image: url('<%= @promotion.main_image_portrait.attached? ? asset_path(rails_blob_url(@promotion.main_image_portrait)) : @promotion.main_image_landscape.attached? ? asset_path(rails_blob_url(@promotion.main_image_landscape)) : ""  %>')">
 </div>
 <div class="modal-footer">
 	<button type="button" class="btn btn-secondary" <%= @promotion.btn_url != "" && @promotion.btn_url != "https://www.enocis.ro" && @promotion.btn_url != "www.enocis.ro" ? "onclick=window.location.href='#{@promotion.btn_url}';" : "data-dismiss=modal" %>><%= @promotion.btn_text != "" ? @promotion.btn_text : "Mergi la website" %></button>

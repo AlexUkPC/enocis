@@ -250,7 +250,12 @@
       vertical-align: top;
       min-height: 150px;
     }
-    
+    input[type=color]{
+      border: none;
+      padding: 0;
+      height: 30px;
+      width: 30px;
+    }
     .foto{
       .poza, .checkbox, .upload{
         padding-left: 0;
@@ -269,6 +274,14 @@
           width: 400px;
           max-height: 300px;
           object-fit:cover;
+        }
+      }
+      .poza_promotii{
+        img{
+          width: 400px;
+          max-height: 300px;
+          object-fit: contain;
+          object-position: left top;
         }
       }
       .poza_testimonial{
